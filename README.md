@@ -2,3 +2,7 @@
 
 
 Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https://github.com/beatriz-ag).
+
+- [ ] Finnish Report
+- [ ] Create Branches
+- [ ] Implement code...

@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Beatriz Aguiar/Desktop/uni/untitled/Graph.h
+vector
+-
+queue
+-
+list
+-
+limits
+-
+cmath
+-
+MutablePriorityQueue.h
+C:/Users/Beatriz Aguiar/Desktop/uni/untitled/MutablePriorityQueue.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/untitled/MutablePriorityQueue.h
+vector
+-
+
+C:/Users/Beatriz Aguiar/Desktop/uni/untitled/main.cpp
+iostream
+-
+Graph.h
+C:/Users/Beatriz Aguiar/Desktop/uni/untitled/Graph.h
+vector
+-
+chrono
+-
+thread
+-
+

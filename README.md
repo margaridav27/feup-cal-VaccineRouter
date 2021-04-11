@@ -5,6 +5,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 
 
 TO DO
+- [x] Be nerdy but awesome
 - [ ] Finnish Report
   - [ ] Review objective function
   - [ ] Node's extensions needed in algorithms

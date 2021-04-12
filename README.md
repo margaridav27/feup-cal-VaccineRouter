@@ -14,8 +14,6 @@ TO DO
   - [x] Problems & algorithms - 4th iteration             
   - [ ] Analysis & results - Exact vs aproximate solution  - Maggy 12/04
   - [ ] Conclusion   
-  - [ ] Summary      - Eu fiz tópicos, queres que faça o textinho tmb? :EYES:
-                     - U GO GIRL 
   - [x] Details      
   - [x] References   
 - [ ] Create Branches

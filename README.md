@@ -10,12 +10,12 @@ TO DO
   - [ ] Review objective function
   - [X] Node's extensions needed in algorithms
   - [x] Update UML diagram
-  - [x] Problems & algorithms - 3rd iteration              - Maggy 12/04
-  - [x] Problems & algorithms - 4th iteration              - Maggy 12/04
+  - [x] Problems & algorithms - 3rd iteration              
+  - [x] Problems & algorithms - 4th iteration             
   - [ ] Analysis & results - Exact vs aproximate solution  - Maggy 12/04
   - [ ] Conclusion   
-  - [ ] Summary      - Bia 12/04
-  - [ ] Details      - Bia 12/04
-  - [ ] References   - Bia 12/04
+  - [ ] Summary      - Eu fiz tópicos, queres que faça o textinho tmb? :EYES:
+  - [x] Details      
+  - [x] References   
 - [ ] Create Branches
 - [ ] Implement code...

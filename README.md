@@ -12,7 +12,7 @@ TO DO
   - [x] Update UML diagram
   - [x] Problems & algorithms - 3rd iteration              
   - [x] Problems & algorithms - 4th iteration             
-  - [ ] Analysis & results - Exact vs aproximate solution  - Maggy 12/04
+  - [x] Analysis & results - Exact vs aproximate solution  - Maggy 12/04
   - [ ] Conclusion   
   - [x] Details      
   - [x] References   

@@ -67,10 +67,10 @@ RM = "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src"
+CMAKE_SOURCE_DIR = "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -99,9 +99,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -142,6 +142,195 @@ src/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/build
 .PHONY : src/fast
 
+algorithms/AStar.obj: algorithms/AStar.cpp.obj
+
+.PHONY : algorithms/AStar.obj
+
+# target to build an object file
+algorithms/AStar.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/AStar.cpp.obj
+.PHONY : algorithms/AStar.cpp.obj
+
+algorithms/AStar.i: algorithms/AStar.cpp.i
+
+.PHONY : algorithms/AStar.i
+
+# target to preprocess a source file
+algorithms/AStar.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/AStar.cpp.i
+.PHONY : algorithms/AStar.cpp.i
+
+algorithms/AStar.s: algorithms/AStar.cpp.s
+
+.PHONY : algorithms/AStar.s
+
+# target to generate assembly for a file
+algorithms/AStar.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/AStar.cpp.s
+.PHONY : algorithms/AStar.cpp.s
+
+graph/Edge.obj: graph/Edge.cpp.obj
+
+.PHONY : graph/Edge.obj
+
+# target to build an object file
+graph/Edge.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Edge.cpp.obj
+.PHONY : graph/Edge.cpp.obj
+
+graph/Edge.i: graph/Edge.cpp.i
+
+.PHONY : graph/Edge.i
+
+# target to preprocess a source file
+graph/Edge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Edge.cpp.i
+.PHONY : graph/Edge.cpp.i
+
+graph/Edge.s: graph/Edge.cpp.s
+
+.PHONY : graph/Edge.s
+
+# target to generate assembly for a file
+graph/Edge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Edge.cpp.s
+.PHONY : graph/Edge.cpp.s
+
+graph/Graph.obj: graph/Graph.cpp.obj
+
+.PHONY : graph/Graph.obj
+
+# target to build an object file
+graph/Graph.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Graph.cpp.obj
+.PHONY : graph/Graph.cpp.obj
+
+graph/Graph.i: graph/Graph.cpp.i
+
+.PHONY : graph/Graph.i
+
+# target to preprocess a source file
+graph/Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Graph.cpp.i
+.PHONY : graph/Graph.cpp.i
+
+graph/Graph.s: graph/Graph.cpp.s
+
+.PHONY : graph/Graph.s
+
+# target to generate assembly for a file
+graph/Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Graph.cpp.s
+.PHONY : graph/Graph.cpp.s
+
+graph/GraphProcessor.obj: graph/GraphProcessor.cpp.obj
+
+.PHONY : graph/GraphProcessor.obj
+
+# target to build an object file
+graph/GraphProcessor.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/GraphProcessor.cpp.obj
+.PHONY : graph/GraphProcessor.cpp.obj
+
+graph/GraphProcessor.i: graph/GraphProcessor.cpp.i
+
+.PHONY : graph/GraphProcessor.i
+
+# target to preprocess a source file
+graph/GraphProcessor.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/GraphProcessor.cpp.i
+.PHONY : graph/GraphProcessor.cpp.i
+
+graph/GraphProcessor.s: graph/GraphProcessor.cpp.s
+
+.PHONY : graph/GraphProcessor.s
+
+# target to generate assembly for a file
+graph/GraphProcessor.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/GraphProcessor.cpp.s
+.PHONY : graph/GraphProcessor.cpp.s
+
+graph/Node.obj: graph/Node.cpp.obj
+
+.PHONY : graph/Node.obj
+
+# target to build an object file
+graph/Node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Node.cpp.obj
+.PHONY : graph/Node.cpp.obj
+
+graph/Node.i: graph/Node.cpp.i
+
+.PHONY : graph/Node.i
+
+# target to preprocess a source file
+graph/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Node.cpp.i
+.PHONY : graph/Node.cpp.i
+
+graph/Node.s: graph/Node.cpp.s
+
+.PHONY : graph/Node.s
+
+# target to generate assembly for a file
+graph/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Node.cpp.s
+.PHONY : graph/Node.cpp.s
+
+graph/NodeA.obj: graph/NodeA.cpp.obj
+
+.PHONY : graph/NodeA.obj
+
+# target to build an object file
+graph/NodeA.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeA.cpp.obj
+.PHONY : graph/NodeA.cpp.obj
+
+graph/NodeA.i: graph/NodeA.cpp.i
+
+.PHONY : graph/NodeA.i
+
+# target to preprocess a source file
+graph/NodeA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeA.cpp.i
+.PHONY : graph/NodeA.cpp.i
+
+graph/NodeA.s: graph/NodeA.cpp.s
+
+.PHONY : graph/NodeA.s
+
+# target to generate assembly for a file
+graph/NodeA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeA.cpp.s
+.PHONY : graph/NodeA.cpp.s
+
+graph/NodeD.obj: graph/NodeD.cpp.obj
+
+.PHONY : graph/NodeD.obj
+
+# target to build an object file
+graph/NodeD.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeD.cpp.obj
+.PHONY : graph/NodeD.cpp.obj
+
+graph/NodeD.i: graph/NodeD.cpp.i
+
+.PHONY : graph/NodeD.i
+
+# target to preprocess a source file
+graph/NodeD.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeD.cpp.i
+.PHONY : graph/NodeD.cpp.i
+
+graph/NodeD.s: graph/NodeD.cpp.s
+
+.PHONY : graph/NodeD.s
+
+# target to generate assembly for a file
+graph/NodeD.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeD.cpp.s
+.PHONY : graph/NodeD.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -169,6 +358,195 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+model/ApplicationCenter.obj: model/ApplicationCenter.cpp.obj
+
+.PHONY : model/ApplicationCenter.obj
+
+# target to build an object file
+model/ApplicationCenter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/ApplicationCenter.cpp.obj
+.PHONY : model/ApplicationCenter.cpp.obj
+
+model/ApplicationCenter.i: model/ApplicationCenter.cpp.i
+
+.PHONY : model/ApplicationCenter.i
+
+# target to preprocess a source file
+model/ApplicationCenter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/ApplicationCenter.cpp.i
+.PHONY : model/ApplicationCenter.cpp.i
+
+model/ApplicationCenter.s: model/ApplicationCenter.cpp.s
+
+.PHONY : model/ApplicationCenter.s
+
+# target to generate assembly for a file
+model/ApplicationCenter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/ApplicationCenter.cpp.s
+.PHONY : model/ApplicationCenter.cpp.s
+
+model/StorageCenter.obj: model/StorageCenter.cpp.obj
+
+.PHONY : model/StorageCenter.obj
+
+# target to build an object file
+model/StorageCenter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/StorageCenter.cpp.obj
+.PHONY : model/StorageCenter.cpp.obj
+
+model/StorageCenter.i: model/StorageCenter.cpp.i
+
+.PHONY : model/StorageCenter.i
+
+# target to preprocess a source file
+model/StorageCenter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/StorageCenter.cpp.i
+.PHONY : model/StorageCenter.cpp.i
+
+model/StorageCenter.s: model/StorageCenter.cpp.s
+
+.PHONY : model/StorageCenter.s
+
+# target to generate assembly for a file
+model/StorageCenter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/StorageCenter.cpp.s
+.PHONY : model/StorageCenter.cpp.s
+
+model/VaccineRouter.obj: model/VaccineRouter.cpp.obj
+
+.PHONY : model/VaccineRouter.obj
+
+# target to build an object file
+model/VaccineRouter.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/VaccineRouter.cpp.obj
+.PHONY : model/VaccineRouter.cpp.obj
+
+model/VaccineRouter.i: model/VaccineRouter.cpp.i
+
+.PHONY : model/VaccineRouter.i
+
+# target to preprocess a source file
+model/VaccineRouter.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/VaccineRouter.cpp.i
+.PHONY : model/VaccineRouter.cpp.i
+
+model/VaccineRouter.s: model/VaccineRouter.cpp.s
+
+.PHONY : model/VaccineRouter.s
+
+# target to generate assembly for a file
+model/VaccineRouter.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/VaccineRouter.cpp.s
+.PHONY : model/VaccineRouter.cpp.s
+
+model/Vehicle.obj: model/Vehicle.cpp.obj
+
+.PHONY : model/Vehicle.obj
+
+# target to build an object file
+model/Vehicle.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/Vehicle.cpp.obj
+.PHONY : model/Vehicle.cpp.obj
+
+model/Vehicle.i: model/Vehicle.cpp.i
+
+.PHONY : model/Vehicle.i
+
+# target to preprocess a source file
+model/Vehicle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/Vehicle.cpp.i
+.PHONY : model/Vehicle.cpp.i
+
+model/Vehicle.s: model/Vehicle.cpp.s
+
+.PHONY : model/Vehicle.s
+
+# target to generate assembly for a file
+model/Vehicle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/model/Vehicle.cpp.s
+.PHONY : model/Vehicle.cpp.s
+
+ui/Interface.obj: ui/Interface.cpp.obj
+
+.PHONY : ui/Interface.obj
+
+# target to build an object file
+ui/Interface.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/ui/Interface.cpp.obj
+.PHONY : ui/Interface.cpp.obj
+
+ui/Interface.i: ui/Interface.cpp.i
+
+.PHONY : ui/Interface.i
+
+# target to preprocess a source file
+ui/Interface.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/ui/Interface.cpp.i
+.PHONY : ui/Interface.cpp.i
+
+ui/Interface.s: ui/Interface.cpp.s
+
+.PHONY : ui/Interface.s
+
+# target to generate assembly for a file
+ui/Interface.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/ui/Interface.cpp.s
+.PHONY : ui/Interface.cpp.s
+
+utilities/Coordinates.obj: utilities/Coordinates.cpp.obj
+
+.PHONY : utilities/Coordinates.obj
+
+# target to build an object file
+utilities/Coordinates.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/utilities/Coordinates.cpp.obj
+.PHONY : utilities/Coordinates.cpp.obj
+
+utilities/Coordinates.i: utilities/Coordinates.cpp.i
+
+.PHONY : utilities/Coordinates.i
+
+# target to preprocess a source file
+utilities/Coordinates.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/utilities/Coordinates.cpp.i
+.PHONY : utilities/Coordinates.cpp.i
+
+utilities/Coordinates.s: utilities/Coordinates.cpp.s
+
+.PHONY : utilities/Coordinates.s
+
+# target to generate assembly for a file
+utilities/Coordinates.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/utilities/Coordinates.cpp.s
+.PHONY : utilities/Coordinates.cpp.s
+
+utilities/Time.obj: utilities/Time.cpp.obj
+
+.PHONY : utilities/Time.obj
+
+# target to build an object file
+utilities/Time.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/utilities/Time.cpp.obj
+.PHONY : utilities/Time.cpp.obj
+
+utilities/Time.i: utilities/Time.cpp.i
+
+.PHONY : utilities/Time.i
+
+# target to preprocess a source file
+utilities/Time.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/utilities/Time.cpp.i
+.PHONY : utilities/Time.cpp.i
+
+utilities/Time.s: utilities/Time.cpp.s
+
+.PHONY : utilities/Time.s
+
+# target to generate assembly for a file
+utilities/Time.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/utilities/Time.cpp.s
+.PHONY : utilities/Time.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -178,9 +556,51 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... src
+	@echo ... algorithms/AStar.obj
+	@echo ... algorithms/AStar.i
+	@echo ... algorithms/AStar.s
+	@echo ... graph/Edge.obj
+	@echo ... graph/Edge.i
+	@echo ... graph/Edge.s
+	@echo ... graph/Graph.obj
+	@echo ... graph/Graph.i
+	@echo ... graph/Graph.s
+	@echo ... graph/GraphProcessor.obj
+	@echo ... graph/GraphProcessor.i
+	@echo ... graph/GraphProcessor.s
+	@echo ... graph/Node.obj
+	@echo ... graph/Node.i
+	@echo ... graph/Node.s
+	@echo ... graph/NodeA.obj
+	@echo ... graph/NodeA.i
+	@echo ... graph/NodeA.s
+	@echo ... graph/NodeD.obj
+	@echo ... graph/NodeD.i
+	@echo ... graph/NodeD.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
+	@echo ... model/ApplicationCenter.obj
+	@echo ... model/ApplicationCenter.i
+	@echo ... model/ApplicationCenter.s
+	@echo ... model/StorageCenter.obj
+	@echo ... model/StorageCenter.i
+	@echo ... model/StorageCenter.s
+	@echo ... model/VaccineRouter.obj
+	@echo ... model/VaccineRouter.i
+	@echo ... model/VaccineRouter.s
+	@echo ... model/Vehicle.obj
+	@echo ... model/Vehicle.i
+	@echo ... model/Vehicle.s
+	@echo ... ui/Interface.obj
+	@echo ... ui/Interface.i
+	@echo ... ui/Interface.s
+	@echo ... utilities/Coordinates.obj
+	@echo ... utilities/Coordinates.i
+	@echo ... utilities/Coordinates.s
+	@echo ... utilities/Time.obj
+	@echo ... utilities/Time.i
+	@echo ... utilities/Time.s
 .PHONY : help
 
 

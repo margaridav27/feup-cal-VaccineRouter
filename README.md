@@ -6,17 +6,16 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 
 TO DO
 - [x] Be nerdy but awesome
-- [ ] Finnish Report
-  - [ ] Review objective function
-  - [ ] Node's extensions needed in algorithms
-  - [ ] Update UML diagram
-  - [ ] Problems & algorithms - 3rd iteration
-  - [ ] Problems & algorithms - 4th iteration
-  - [ ] Analysis & results - Exact vs aproximate solution
-  - [ ] Conclusion
-  - [ ] Summary
-  - [ ] Details
-  - [ ] Glossary
-  - [ ] References
+- [x] Finnish Report
+  - [x] Review objective function
+  - [X] Node's extensions needed in algorithms
+  - [x] Update UML diagram
+  - [x] Problems & algorithms - 3rd iteration              
+  - [x] Problems & algorithms - 4th iteration             
+  - [x] Analysis & results - Exact vs aproximate solution 
+  - [x] Conclusion   
+  - [x] Details      
+  - [x] References   
+- [ ] REPORT FINAL REVIEW TOGETHER
 - [ ] Create Branches
 - [ ] Implement code...

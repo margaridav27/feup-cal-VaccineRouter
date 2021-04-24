@@ -3,7 +3,19 @@
 
 
 class Coordinates {
+private:
+    double latitude;
+    double longitude;
+public:
+    Coordinates(double latitude, double longitude);
 
+    double getLatitude() const;
+    double getLongitude() const;
+
+    void setLatitude(double lat);
+    void setLongitude(double lon);
+
+    static double calculateEuclidianDistance(Coordinates c1, Coordinates c2);
 };
 
 

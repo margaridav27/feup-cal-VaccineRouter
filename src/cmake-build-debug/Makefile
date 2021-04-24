@@ -169,32 +169,59 @@ algorithms/AStar.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/AStar.cpp.s
 .PHONY : algorithms/AStar.cpp.s
 
-graph/Edge.obj: graph/Edge.cpp.obj
+algorithms/Dijkstra.obj: algorithms/Dijkstra.cpp.obj
 
-.PHONY : graph/Edge.obj
+.PHONY : algorithms/Dijkstra.obj
 
 # target to build an object file
-graph/Edge.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Edge.cpp.obj
-.PHONY : graph/Edge.cpp.obj
+algorithms/Dijkstra.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/Dijkstra.cpp.obj
+.PHONY : algorithms/Dijkstra.cpp.obj
 
-graph/Edge.i: graph/Edge.cpp.i
+algorithms/Dijkstra.i: algorithms/Dijkstra.cpp.i
 
-.PHONY : graph/Edge.i
+.PHONY : algorithms/Dijkstra.i
 
 # target to preprocess a source file
-graph/Edge.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Edge.cpp.i
-.PHONY : graph/Edge.cpp.i
+algorithms/Dijkstra.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/Dijkstra.cpp.i
+.PHONY : algorithms/Dijkstra.cpp.i
 
-graph/Edge.s: graph/Edge.cpp.s
+algorithms/Dijkstra.s: algorithms/Dijkstra.cpp.s
 
-.PHONY : graph/Edge.s
+.PHONY : algorithms/Dijkstra.s
 
 # target to generate assembly for a file
-graph/Edge.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Edge.cpp.s
-.PHONY : graph/Edge.cpp.s
+algorithms/Dijkstra.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/Dijkstra.cpp.s
+.PHONY : algorithms/Dijkstra.cpp.s
+
+algorithms/Tarjan.obj: algorithms/Tarjan.cpp.obj
+
+.PHONY : algorithms/Tarjan.obj
+
+# target to build an object file
+algorithms/Tarjan.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/Tarjan.cpp.obj
+.PHONY : algorithms/Tarjan.cpp.obj
+
+algorithms/Tarjan.i: algorithms/Tarjan.cpp.i
+
+.PHONY : algorithms/Tarjan.i
+
+# target to preprocess a source file
+algorithms/Tarjan.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/Tarjan.cpp.i
+.PHONY : algorithms/Tarjan.cpp.i
+
+algorithms/Tarjan.s: algorithms/Tarjan.cpp.s
+
+.PHONY : algorithms/Tarjan.s
+
+# target to generate assembly for a file
+algorithms/Tarjan.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/algorithms/Tarjan.cpp.s
+.PHONY : algorithms/Tarjan.cpp.s
 
 graph/Graph.obj: graph/Graph.cpp.obj
 
@@ -250,86 +277,113 @@ graph/GraphProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/GraphProcessor.cpp.s
 .PHONY : graph/GraphProcessor.cpp.s
 
-graph/Node.obj: graph/Node.cpp.obj
+graph/edge/Edge.obj: graph/edge/Edge.cpp.obj
 
-.PHONY : graph/Node.obj
-
-# target to build an object file
-graph/Node.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Node.cpp.obj
-.PHONY : graph/Node.cpp.obj
-
-graph/Node.i: graph/Node.cpp.i
-
-.PHONY : graph/Node.i
-
-# target to preprocess a source file
-graph/Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Node.cpp.i
-.PHONY : graph/Node.cpp.i
-
-graph/Node.s: graph/Node.cpp.s
-
-.PHONY : graph/Node.s
-
-# target to generate assembly for a file
-graph/Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/Node.cpp.s
-.PHONY : graph/Node.cpp.s
-
-graph/NodeA.obj: graph/NodeA.cpp.obj
-
-.PHONY : graph/NodeA.obj
+.PHONY : graph/edge/Edge.obj
 
 # target to build an object file
-graph/NodeA.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeA.cpp.obj
-.PHONY : graph/NodeA.cpp.obj
+graph/edge/Edge.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/edge/Edge.cpp.obj
+.PHONY : graph/edge/Edge.cpp.obj
 
-graph/NodeA.i: graph/NodeA.cpp.i
+graph/edge/Edge.i: graph/edge/Edge.cpp.i
 
-.PHONY : graph/NodeA.i
+.PHONY : graph/edge/Edge.i
 
 # target to preprocess a source file
-graph/NodeA.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeA.cpp.i
-.PHONY : graph/NodeA.cpp.i
+graph/edge/Edge.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/edge/Edge.cpp.i
+.PHONY : graph/edge/Edge.cpp.i
 
-graph/NodeA.s: graph/NodeA.cpp.s
+graph/edge/Edge.s: graph/edge/Edge.cpp.s
 
-.PHONY : graph/NodeA.s
+.PHONY : graph/edge/Edge.s
 
 # target to generate assembly for a file
-graph/NodeA.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeA.cpp.s
-.PHONY : graph/NodeA.cpp.s
+graph/edge/Edge.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/edge/Edge.cpp.s
+.PHONY : graph/edge/Edge.cpp.s
 
-graph/NodeD.obj: graph/NodeD.cpp.obj
+graph/node/Node.obj: graph/node/Node.cpp.obj
 
-.PHONY : graph/NodeD.obj
+.PHONY : graph/node/Node.obj
 
 # target to build an object file
-graph/NodeD.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeD.cpp.obj
-.PHONY : graph/NodeD.cpp.obj
+graph/node/Node.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/Node.cpp.obj
+.PHONY : graph/node/Node.cpp.obj
 
-graph/NodeD.i: graph/NodeD.cpp.i
+graph/node/Node.i: graph/node/Node.cpp.i
 
-.PHONY : graph/NodeD.i
+.PHONY : graph/node/Node.i
 
 # target to preprocess a source file
-graph/NodeD.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeD.cpp.i
-.PHONY : graph/NodeD.cpp.i
+graph/node/Node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/Node.cpp.i
+.PHONY : graph/node/Node.cpp.i
 
-graph/NodeD.s: graph/NodeD.cpp.s
+graph/node/Node.s: graph/node/Node.cpp.s
 
-.PHONY : graph/NodeD.s
+.PHONY : graph/node/Node.s
 
 # target to generate assembly for a file
-graph/NodeD.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/NodeD.cpp.s
-.PHONY : graph/NodeD.cpp.s
+graph/node/Node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/Node.cpp.s
+.PHONY : graph/node/Node.cpp.s
+
+graph/node/NodeA.obj: graph/node/NodeA.cpp.obj
+
+.PHONY : graph/node/NodeA.obj
+
+# target to build an object file
+graph/node/NodeA.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/NodeA.cpp.obj
+.PHONY : graph/node/NodeA.cpp.obj
+
+graph/node/NodeA.i: graph/node/NodeA.cpp.i
+
+.PHONY : graph/node/NodeA.i
+
+# target to preprocess a source file
+graph/node/NodeA.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/NodeA.cpp.i
+.PHONY : graph/node/NodeA.cpp.i
+
+graph/node/NodeA.s: graph/node/NodeA.cpp.s
+
+.PHONY : graph/node/NodeA.s
+
+# target to generate assembly for a file
+graph/node/NodeA.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/NodeA.cpp.s
+.PHONY : graph/node/NodeA.cpp.s
+
+graph/node/NodeD.obj: graph/node/NodeD.cpp.obj
+
+.PHONY : graph/node/NodeD.obj
+
+# target to build an object file
+graph/node/NodeD.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/NodeD.cpp.obj
+.PHONY : graph/node/NodeD.cpp.obj
+
+graph/node/NodeD.i: graph/node/NodeD.cpp.i
+
+.PHONY : graph/node/NodeD.i
+
+# target to preprocess a source file
+graph/node/NodeD.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/NodeD.cpp.i
+.PHONY : graph/node/NodeD.cpp.i
+
+graph/node/NodeD.s: graph/node/NodeD.cpp.s
+
+.PHONY : graph/node/NodeD.s
+
+# target to generate assembly for a file
+graph/node/NodeD.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/graph/node/NodeD.cpp.s
+.PHONY : graph/node/NodeD.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -559,24 +613,30 @@ help:
 	@echo ... algorithms/AStar.obj
 	@echo ... algorithms/AStar.i
 	@echo ... algorithms/AStar.s
-	@echo ... graph/Edge.obj
-	@echo ... graph/Edge.i
-	@echo ... graph/Edge.s
+	@echo ... algorithms/Dijkstra.obj
+	@echo ... algorithms/Dijkstra.i
+	@echo ... algorithms/Dijkstra.s
+	@echo ... algorithms/Tarjan.obj
+	@echo ... algorithms/Tarjan.i
+	@echo ... algorithms/Tarjan.s
 	@echo ... graph/Graph.obj
 	@echo ... graph/Graph.i
 	@echo ... graph/Graph.s
 	@echo ... graph/GraphProcessor.obj
 	@echo ... graph/GraphProcessor.i
 	@echo ... graph/GraphProcessor.s
-	@echo ... graph/Node.obj
-	@echo ... graph/Node.i
-	@echo ... graph/Node.s
-	@echo ... graph/NodeA.obj
-	@echo ... graph/NodeA.i
-	@echo ... graph/NodeA.s
-	@echo ... graph/NodeD.obj
-	@echo ... graph/NodeD.i
-	@echo ... graph/NodeD.s
+	@echo ... graph/edge/Edge.obj
+	@echo ... graph/edge/Edge.i
+	@echo ... graph/edge/Edge.s
+	@echo ... graph/node/Node.obj
+	@echo ... graph/node/Node.i
+	@echo ... graph/node/Node.s
+	@echo ... graph/node/NodeA.obj
+	@echo ... graph/node/NodeA.i
+	@echo ... graph/node/NodeA.s
+	@echo ... graph/node/NodeD.obj
+	@echo ... graph/node/NodeD.i
+	@echo ... graph/node/NodeD.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

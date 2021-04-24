@@ -86,10 +86,16 @@
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/algorithms/AStar.h">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/Edge.cpp">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/algorithms/Dijkstra.cpp">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/Edge.h">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/algorithms/Dijkstra.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/algorithms/Tarjan.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/algorithms/Tarjan.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/Graph.cpp">
@@ -104,22 +110,28 @@
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/GraphProcessor.h">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/Node.cpp">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/edge/Edge.cpp">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/Node.h">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/edge/Edge.h">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/NodeA.cpp">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/node/Node.cpp">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/NodeA.h">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/node/Node.h">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/NodeD.cpp">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/node/NodeA.cpp">
 			<Option target="src"/>
 		</Unit>
-		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/NodeD.h">
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/node/NodeA.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/node/NodeD.cpp">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/graph/node/NodeD.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/main.cpp">
@@ -159,6 +171,9 @@
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/utilities/Coordinates.h">
+			<Option target="src"/>
+		</Unit>
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/utilities/MutablePriorityQueue.h">
 			<Option target="src"/>
 		</Unit>
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/utilities/Time.cpp">

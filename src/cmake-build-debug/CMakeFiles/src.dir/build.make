@@ -167,57 +167,57 @@ CMakeFiles/src.dir/graph/GraphProcessor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/GraphProcessor.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\GraphProcessor.cpp" -o CMakeFiles\src.dir\graph\GraphProcessor.cpp.s
 
-CMakeFiles/src.dir/graph/Node.cpp.obj: CMakeFiles/src.dir/flags.make
-CMakeFiles/src.dir/graph/Node.cpp.obj: ../graph/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/src.dir/graph/Node.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\Node.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\Node.cpp"
+CMakeFiles/src.dir/graph/node/Node.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/graph/node/Node.cpp.obj: ../graph/node/Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/src.dir/graph/node/Node.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\node\Node.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\Node.cpp"
 
-CMakeFiles/src.dir/graph/Node.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/Node.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\Node.cpp" > CMakeFiles\src.dir\graph\Node.cpp.i
+CMakeFiles/src.dir/graph/node/Node.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/node/Node.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\Node.cpp" > CMakeFiles\src.dir\graph\node\Node.cpp.i
 
-CMakeFiles/src.dir/graph/Node.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/Node.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\Node.cpp" -o CMakeFiles\src.dir\graph\Node.cpp.s
+CMakeFiles/src.dir/graph/node/Node.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/node/Node.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\Node.cpp" -o CMakeFiles\src.dir\graph\node\Node.cpp.s
 
-CMakeFiles/src.dir/graph/NodeD.cpp.obj: CMakeFiles/src.dir/flags.make
-CMakeFiles/src.dir/graph/NodeD.cpp.obj: ../graph/NodeD.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/src.dir/graph/NodeD.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\NodeD.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\NodeD.cpp"
+CMakeFiles/src.dir/graph/node/NodeD.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/graph/node/NodeD.cpp.obj: ../graph/node/NodeD.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/src.dir/graph/node/NodeD.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\node\NodeD.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\NodeD.cpp"
 
-CMakeFiles/src.dir/graph/NodeD.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/NodeD.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\NodeD.cpp" > CMakeFiles\src.dir\graph\NodeD.cpp.i
+CMakeFiles/src.dir/graph/node/NodeD.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/node/NodeD.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\NodeD.cpp" > CMakeFiles\src.dir\graph\node\NodeD.cpp.i
 
-CMakeFiles/src.dir/graph/NodeD.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/NodeD.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\NodeD.cpp" -o CMakeFiles\src.dir\graph\NodeD.cpp.s
+CMakeFiles/src.dir/graph/node/NodeD.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/node/NodeD.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\NodeD.cpp" -o CMakeFiles\src.dir\graph\node\NodeD.cpp.s
 
-CMakeFiles/src.dir/graph/NodeA.cpp.obj: CMakeFiles/src.dir/flags.make
-CMakeFiles/src.dir/graph/NodeA.cpp.obj: ../graph/NodeA.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/src.dir/graph/NodeA.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\NodeA.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\NodeA.cpp"
+CMakeFiles/src.dir/graph/node/NodeA.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/graph/node/NodeA.cpp.obj: ../graph/node/NodeA.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/src.dir/graph/node/NodeA.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\node\NodeA.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\NodeA.cpp"
 
-CMakeFiles/src.dir/graph/NodeA.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/NodeA.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\NodeA.cpp" > CMakeFiles\src.dir\graph\NodeA.cpp.i
+CMakeFiles/src.dir/graph/node/NodeA.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/node/NodeA.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\NodeA.cpp" > CMakeFiles\src.dir\graph\node\NodeA.cpp.i
 
-CMakeFiles/src.dir/graph/NodeA.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/NodeA.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\NodeA.cpp" -o CMakeFiles\src.dir\graph\NodeA.cpp.s
+CMakeFiles/src.dir/graph/node/NodeA.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/node/NodeA.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\node\NodeA.cpp" -o CMakeFiles\src.dir\graph\node\NodeA.cpp.s
 
-CMakeFiles/src.dir/graph/Edge.cpp.obj: CMakeFiles/src.dir/flags.make
-CMakeFiles/src.dir/graph/Edge.cpp.obj: ../graph/Edge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/src.dir/graph/Edge.cpp.obj"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\Edge.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\Edge.cpp"
+CMakeFiles/src.dir/graph/edge/Edge.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/graph/edge/Edge.cpp.obj: ../graph/edge/Edge.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/src.dir/graph/edge/Edge.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\graph\edge\Edge.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\edge\Edge.cpp"
 
-CMakeFiles/src.dir/graph/Edge.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/Edge.cpp.i"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\Edge.cpp" > CMakeFiles\src.dir\graph\Edge.cpp.i
+CMakeFiles/src.dir/graph/edge/Edge.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/graph/edge/Edge.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\edge\Edge.cpp" > CMakeFiles\src.dir\graph\edge\Edge.cpp.i
 
-CMakeFiles/src.dir/graph/Edge.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/Edge.cpp.s"
-	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\Edge.cpp" -o CMakeFiles\src.dir\graph\Edge.cpp.s
+CMakeFiles/src.dir/graph/edge/Edge.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/graph/edge/Edge.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\graph\edge\Edge.cpp" -o CMakeFiles\src.dir\graph\edge\Edge.cpp.s
 
 CMakeFiles/src.dir/model/VaccineRouter.cpp.obj: CMakeFiles/src.dir/flags.make
 CMakeFiles/src.dir/model/VaccineRouter.cpp.obj: ../model/VaccineRouter.cpp
@@ -271,6 +271,32 @@ CMakeFiles/src.dir/model/Vehicle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/model/Vehicle.cpp.s"
 	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\model\Vehicle.cpp" -o CMakeFiles\src.dir\model\Vehicle.cpp.s
 
+CMakeFiles/src.dir/algorithms/Tarjan.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/algorithms/Tarjan.cpp.obj: ../algorithms/Tarjan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/src.dir/algorithms/Tarjan.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\algorithms\Tarjan.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\algorithms\Tarjan.cpp"
+
+CMakeFiles/src.dir/algorithms/Tarjan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/algorithms/Tarjan.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\algorithms\Tarjan.cpp" > CMakeFiles\src.dir\algorithms\Tarjan.cpp.i
+
+CMakeFiles/src.dir/algorithms/Tarjan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/algorithms/Tarjan.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\algorithms\Tarjan.cpp" -o CMakeFiles\src.dir\algorithms\Tarjan.cpp.s
+
+CMakeFiles/src.dir/algorithms/Dijkstra.cpp.obj: CMakeFiles/src.dir/flags.make
+CMakeFiles/src.dir/algorithms/Dijkstra.cpp.obj: ../algorithms/Dijkstra.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/src.dir/algorithms/Dijkstra.cpp.obj"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\src.dir\algorithms\Dijkstra.cpp.obj -c "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\algorithms\Dijkstra.cpp"
+
+CMakeFiles/src.dir/algorithms/Dijkstra.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/src.dir/algorithms/Dijkstra.cpp.i"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\algorithms\Dijkstra.cpp" > CMakeFiles\src.dir\algorithms\Dijkstra.cpp.i
+
+CMakeFiles/src.dir/algorithms/Dijkstra.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/src.dir/algorithms/Dijkstra.cpp.s"
+	C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\algorithms\Dijkstra.cpp" -o CMakeFiles\src.dir\algorithms\Dijkstra.cpp.s
+
 # Object files for target src
 src_OBJECTS = \
 "CMakeFiles/src.dir/main.cpp.obj" \
@@ -280,14 +306,16 @@ src_OBJECTS = \
 "CMakeFiles/src.dir/utilities/Coordinates.cpp.obj" \
 "CMakeFiles/src.dir/graph/Graph.cpp.obj" \
 "CMakeFiles/src.dir/graph/GraphProcessor.cpp.obj" \
-"CMakeFiles/src.dir/graph/Node.cpp.obj" \
-"CMakeFiles/src.dir/graph/NodeD.cpp.obj" \
-"CMakeFiles/src.dir/graph/NodeA.cpp.obj" \
-"CMakeFiles/src.dir/graph/Edge.cpp.obj" \
+"CMakeFiles/src.dir/graph/node/Node.cpp.obj" \
+"CMakeFiles/src.dir/graph/node/NodeD.cpp.obj" \
+"CMakeFiles/src.dir/graph/node/NodeA.cpp.obj" \
+"CMakeFiles/src.dir/graph/edge/Edge.cpp.obj" \
 "CMakeFiles/src.dir/model/VaccineRouter.cpp.obj" \
 "CMakeFiles/src.dir/model/ApplicationCenter.cpp.obj" \
 "CMakeFiles/src.dir/model/StorageCenter.cpp.obj" \
-"CMakeFiles/src.dir/model/Vehicle.cpp.obj"
+"CMakeFiles/src.dir/model/Vehicle.cpp.obj" \
+"CMakeFiles/src.dir/algorithms/Tarjan.cpp.obj" \
+"CMakeFiles/src.dir/algorithms/Dijkstra.cpp.obj"
 
 # External object files for target src
 src_EXTERNAL_OBJECTS =
@@ -299,19 +327,21 @@ src.exe: CMakeFiles/src.dir/utilities/Time.cpp.obj
 src.exe: CMakeFiles/src.dir/utilities/Coordinates.cpp.obj
 src.exe: CMakeFiles/src.dir/graph/Graph.cpp.obj
 src.exe: CMakeFiles/src.dir/graph/GraphProcessor.cpp.obj
-src.exe: CMakeFiles/src.dir/graph/Node.cpp.obj
-src.exe: CMakeFiles/src.dir/graph/NodeD.cpp.obj
-src.exe: CMakeFiles/src.dir/graph/NodeA.cpp.obj
-src.exe: CMakeFiles/src.dir/graph/Edge.cpp.obj
+src.exe: CMakeFiles/src.dir/graph/node/Node.cpp.obj
+src.exe: CMakeFiles/src.dir/graph/node/NodeD.cpp.obj
+src.exe: CMakeFiles/src.dir/graph/node/NodeA.cpp.obj
+src.exe: CMakeFiles/src.dir/graph/edge/Edge.cpp.obj
 src.exe: CMakeFiles/src.dir/model/VaccineRouter.cpp.obj
 src.exe: CMakeFiles/src.dir/model/ApplicationCenter.cpp.obj
 src.exe: CMakeFiles/src.dir/model/StorageCenter.cpp.obj
 src.exe: CMakeFiles/src.dir/model/Vehicle.cpp.obj
+src.exe: CMakeFiles/src.dir/algorithms/Tarjan.cpp.obj
+src.exe: CMakeFiles/src.dir/algorithms/Dijkstra.cpp.obj
 src.exe: CMakeFiles/src.dir/build.make
 src.exe: CMakeFiles/src.dir/linklibs.rsp
 src.exe: CMakeFiles/src.dir/objects1.rsp
 src.exe: CMakeFiles/src.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable src.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable src.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\src.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

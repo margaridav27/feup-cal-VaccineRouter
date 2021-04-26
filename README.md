@@ -4,17 +4,18 @@
 Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https://github.com/beatriz-ag).
 
 
-##TO DO
+## TO DO
 
 ### Sprint 1 - Create classes and implement algorithms     
 ##### 2 May
 
-_Maggy_
+**Maggy**
 - [ ] Tarjan                  
 - [ ] begin interface         
 - [ ] StorageCenter           
 - [ ] ApplicationCenter  
-_Bia_    
+
+**Bia**    
 - [ ] GraphViewer             
 - [ ] Vehicle                 
 - [ ] VaccineRouter           

@@ -4,23 +4,25 @@
 Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https://github.com/beatriz-ag).
 
 
-TO DO
+##TO DO
 
-Sprint 1 - Create classes and implement algorithms     
-2 May
+### Sprint 1 - Create classes and implement algorithms     
+##### 2 May
 
-- [ ] Tarjan                  - Maggy
-- [ ] begin interface         - Maggy
-- [ ] StorageCenter           - Maggy
-- [ ] ApplicationCenter       - Maggy
-- [ ] GraphViewer             - Bia
-- [ ] Vehicle                 - Bia
-- [ ] VaccineRouter           - Bia
-- [ ] A*                      - Bia
-- [ ] Djistrka                - Bia
+_Maggy_
+- [ ] Tarjan                  
+- [ ] begin interface         
+- [ ] StorageCenter           
+- [ ] ApplicationCenter  
+_Bia_    
+- [ ] GraphViewer             
+- [ ] Vehicle                 
+- [ ] VaccineRouter           
+- [ ] A*                      
+- [ ] Djistrka               
 
-Sprint 2 - Implement classes and interligations
-14 May
+### Sprint 2 - Implement classes and interligations
+##### 14 May
 
 - [ ] REUNITE, THINK AND REGISTER
 - [ ] Divide tasks
@@ -29,8 +31,8 @@ Sprint 2 - Implement classes and interligations
 - [ ] StorageCenter           
 - [ ] ApplicationCenter       
 
-Sprint 3 - hardcore testing
-19 May tops
+### Sprint 3 - hardcore testing
+##### 19 May tops
 - [ ] test hardcore bia
 - [ ] test chillada maggy
     

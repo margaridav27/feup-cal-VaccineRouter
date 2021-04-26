@@ -7,7 +7,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 ## TO DO
 
 ### Sprint 1 - Create classes and implement algorithms     
-##### 2 May
+#### 2 May
 
 **Maggy**
 - [ ] Tarjan                  
@@ -23,7 +23,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] Djistrka               
 
 ### Sprint 2 - Implement classes and interligations
-##### 14 May
+#### 14 May
 
 - [ ] REUNITE, THINK AND REGISTER
 - [ ] Divide tasks
@@ -33,7 +33,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] ApplicationCenter       
 
 ### Sprint 3 - hardcore testing
-##### 19 May tops
+#### 19 May tops
 - [ ] test hardcore bia
 - [ ] test chillada maggy
     

@@ -8,7 +8,7 @@ TO DO
 
 Sprint 1 - Create classes and implement algorithms     
 2 May
-[#1589F0]
+
 - [ ] Djistrka                - Bia
 - [ ] A*                      - Bia
 - [ ] Tarjan                  - Maggy

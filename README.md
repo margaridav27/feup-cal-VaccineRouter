@@ -13,14 +13,17 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] Tarjan                  
 - [ ] begin interface         
 - [ ] StorageCenter           
-- [ ] ApplicationCenter  
+- [ ] ApplicationCenter 
+- [ ] Mutable priority queue 
 
 **Bia**    
 - [ ] GraphViewer             
 - [ ] Vehicle                 
 - [ ] VaccineRouter           
 - [ ] A*                      
-- [ ] Djistrka               
+- [ ] Djistrka    
+- [ ] Coords
+- [ ] Time           
 
 ### Sprint 2 - Implement classes and interligations
 #### 14 May

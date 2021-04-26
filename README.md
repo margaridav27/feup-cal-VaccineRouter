@@ -9,15 +9,15 @@ TO DO
 Sprint 1 - Create classes and implement algorithms     
 2 May
 
-- [ ] Djistrka                - Bia
-- [ ] A*                      - Bia
 - [ ] Tarjan                  - Maggy
 - [ ] begin interface         - Maggy
+- [ ] StorageCenter           - Maggy
+- [ ] ApplicationCenter       - Maggy
 - [ ] GraphViewer             - Bia
 - [ ] Vehicle                 - Bia
 - [ ] VaccineRouter           - Bia
-- [ ] StorageCenter           - Maggy
-- [ ] ApplicationCenter       - Maggy
+- [ ] A*                      - Bia
+- [ ] Djistrka                - Bia
 
 Sprint 2 - Implement classes and interligations
 14 May
@@ -31,4 +31,6 @@ Sprint 2 - Implement classes and interligations
 
 Sprint 3 - hardcore testing
 19 May tops
+- [ ] test hardcore bia
+- [ ] test chillada maggy
     

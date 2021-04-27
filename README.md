@@ -10,6 +10,9 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 #### 2 May
 
 **Maggy**
+- [ ] Node
+- [ ] Edge
+- [ ] Graph
 - [ ] Tarjan                  
 - [ ] begin interface         
 - [ ] StorageCenter           
@@ -22,8 +25,8 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] VaccineRouter           
 - [ ] A*                      
 - [ ] Djistrka    
-- [ ] Coords
-- [ ] Time           
+- [ ] Coords (necessary operators)
+- [ ] Time (necessary operators)          
 
 ### Sprint 2 - Implement classes and interligations
 #### 14 May
@@ -38,5 +41,5 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 ### Sprint 3 - hardcore testing
 #### 19 May tops
 - [ ] test hardcore bia
-- [ ] test chillada maggy
+- [ ] test chillada maggy (true)
     

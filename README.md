@@ -10,9 +10,9 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 #### 2 May
 
 **Maggy**
-- [ ] Node
-- [ ] Edge
-- [ ] Graph
+- [x] Node
+- [x] Edge
+- [x] Graph
 - [ ] Tarjan                  
 - [ ] begin interface         
 - [ ] StorageCenter           

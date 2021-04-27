@@ -3,13 +3,13 @@
 
 #include "NodeD.h"
 
-
 template<class T>
-class NodeA : public NodeD {
+class NodeA : public NodeD<T> {
 private:
-    double euclidianDist;
+    double euclidianDist{};
 public:
-
+    NodeA();
+    NodeA(const NodeD<T> *nodeD, double euclidianDist);
 };
 
 

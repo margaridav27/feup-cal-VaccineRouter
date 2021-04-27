@@ -4,12 +4,13 @@
 #include "Node.h"
 
 template <class T>
-class NodeD : public Node {
+class NodeD : public Node<T> {
 private:
-    double dist;
+    double dist{};
     Node<T> *path;
 public:
-
+    NodeD();
+    NodeD(const Node<T> *node, double dist, Node<T> *path);
 };
 
 

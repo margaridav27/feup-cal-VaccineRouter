@@ -1,10 +1,8 @@
 #include "Edge.h"
 
-template<class T>
-Edge<T>::Edge() {}
+Edge::Edge() {}
 
-template<class T>
-Edge<T>::Edge(unsigned int id, double w, Node<T> *dest) :
+Edge::Edge(unsigned int id, double w, Node *dest) :
     id(id),
     w(w),
     dest(dest) {}

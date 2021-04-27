@@ -5,14 +5,12 @@
 constexpr auto UINT_MAX = std::numeric_limits<unsigned int>::max();
 constexpr auto DOUBLE_MAX = std::numeric_limits<double>::max();
 
-template <class T>
-NodeD<T>::NodeD() : Node<T>() {
+NodeD::NodeD() : Node() {
     this->dist = DOUBLE_MAX;
     this->path = nullptr;
 }
 
-template <class T>
-NodeD<T>::NodeD(const Node<T> *node, double dist, Node<T> *path) : Node<T>(node) {
+NodeD::NodeD(const Node *node, double dist, Node *path) : Node(*node) {
     this->dist = dist;
     this->path = path;
 }

@@ -3,14 +3,13 @@
 
 #include "Node.h"
 
-template <class T>
-class NodeD : public Node<T> {
+class NodeD : public Node {
 private:
     double dist{};
-    Node<T> *path;
+    Node *path;
 public:
     NodeD();
-    NodeD(const Node<T> *node, double dist, Node<T> *path);
+    NodeD(const Node *node, double dist, Node *path);
 };
 
 

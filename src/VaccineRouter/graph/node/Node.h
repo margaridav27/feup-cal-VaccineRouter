@@ -27,16 +27,6 @@ public:
     void setAdj(const std::vector<Edge *> &adj);
 };
 
-struct NodeHash {
-    bool operator()(const Node *node1, const Node *node2) const {
-        return node1.getId() == node2.getId();
-    }
-
-    int operator()(const Node &d) const {
-        return d.getId();
-    }
-};
-
-typedef std::unordered_set<Node, NodeHash, NodeHash> NodeHashTable;
+// TODO define hash
 
 #endif //SRC_NODE_H

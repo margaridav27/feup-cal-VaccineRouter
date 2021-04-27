@@ -11,5 +11,6 @@ public:
     NodeA(const NodeD *nodeD, double euclidianDist);
 };
 
+// TODO redefine hash
 
 #endif //SRC_NODEA_H

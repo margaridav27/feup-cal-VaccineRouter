@@ -5,12 +5,11 @@
 
 class NodeA : public NodeD {
 private:
-    double euclidianDist{};
+    double euclidianDist;
 public:
     NodeA();
     NodeA(const NodeD *nodeD, double euclidianDist);
 };
 
-// TODO redefine hash
 
 #endif //SRC_NODEA_H

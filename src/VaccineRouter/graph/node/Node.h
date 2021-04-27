@@ -11,22 +11,27 @@ protected:
     unsigned int id;
     Coordinates coordinates;
     std::vector<Edge *> adj;
+    bool visited;
 public:
     Node();
     Node(unsigned int id);
-    Node(unsigned int id, const std::vector<Edge *> &adj);
+    Node(unsigned int id, const Coordinates &coordinates);
+    Node(unsigned int id, std::vector<Edge *> adj);
     Node(unsigned int id, const Coordinates &coordinates, std::vector<Edge *> adj);
-    Node(Node *node);
 
     unsigned int getId() const;
-
     const Coordinates &getCoordinates() const;
     void setCoordinates(const Coordinates &coordinates);
-
     const std::vector<Edge *> &getAdj() const;
     void setAdj(const std::vector<Edge *> &adj);
+
+    void setUnvisited();
+    void setVisited();
+    bool wasVisited() const;
+
+    void addEdge(Node *dest, double weight);
+    bool removeNodeTo(Node *node);
 };
 
-// TODO define hash
 
 #endif //SRC_NODE_H

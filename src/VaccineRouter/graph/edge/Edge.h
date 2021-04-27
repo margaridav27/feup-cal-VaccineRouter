@@ -5,12 +5,14 @@
 
 class Edge {
 private:
-    unsigned int id;
-    double w;
+    double weight;
     Node *dest;
 public:
     Edge();
-    Edge(unsigned int id, double w, Node *dest);
+    Edge(Node *dest, double weight);
+
+    double getWeight() const;
+    Node *getDest() const;
 };
 
 

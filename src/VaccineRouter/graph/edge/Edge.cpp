@@ -1,10 +1,21 @@
+#include <limits>
+
 #include "Edge.h"
 
-Edge::Edge() {}
+constexpr auto DOUBLE_MAX = std::numeric_limits<double>::max();
 
-Edge::Edge(unsigned int id, double w, Node *dest) :
-    id(id),
-    w(w),
-    dest(dest) {}
+Edge::Edge() :
+        dest(nullptr),
+        weight(DOUBLE_MAX) {}
 
+Edge::Edge(Node *dest, double weight) :
+        dest(dest),
+        weight(weight) {}
 
+double Edge::getWeight() const {
+    return weight;
+}
+
+Node *Edge::getDest() const {
+    return dest;
+}

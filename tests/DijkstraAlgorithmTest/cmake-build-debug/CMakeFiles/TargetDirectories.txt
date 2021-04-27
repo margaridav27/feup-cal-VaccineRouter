@@ -1,0 +1,3 @@
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/tests/DijkstraAlgorithmTest/cmake-build-debug/CMakeFiles/DijkstraAlgorithmTest.dir
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/tests/DijkstraAlgorithmTest/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/tests/DijkstraAlgorithmTest/cmake-build-debug/CMakeFiles/rebuild_cache.dir

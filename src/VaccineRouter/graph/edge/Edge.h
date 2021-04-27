@@ -10,7 +10,8 @@ private:
     double w;
     Node<T> *dest;
 public:
-
+    Edge();
+    Edge(unsigned int id, double w, Node<T> *dest);
 };
 
 

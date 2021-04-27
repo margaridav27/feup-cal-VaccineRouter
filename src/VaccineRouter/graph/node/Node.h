@@ -13,7 +13,18 @@ protected:
     Coordinates coordinates;
     std::vector<Edge<T> *> adj;
 public:
+    Node();
+    Node(unsigned int id);
+    Node(unsigned int id, const std::vector<Edge<T> *> &adj);
+    Node(unsigned int id, const Coordinates &coordinates, const std::vector<Edge<T> *> &adj);
 
+    unsigned int getId() const;
+
+    const Coordinates &getCoordinates() const;
+    void setCoordinates(const Coordinates &coordinates);
+
+    const std::vector<Edge<T> *> &getAdj() const;
+    void setAdj(const std::vector<Edge<T> *> &adj);
 };
 
 

@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.obj"
   "CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj"
   "CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.obj"
+  "CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj"
   "CMakeFiles/src.dir/VaccineRouter/utilities/Time.cpp.obj"
   "CMakeFiles/src.dir/main.cpp.obj"
   "libsrc.dll.a"

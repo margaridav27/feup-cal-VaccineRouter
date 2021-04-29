@@ -547,6 +547,33 @@ VaccineRouter/utilities/Coordinates.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.s
 .PHONY : VaccineRouter/utilities/Coordinates.cpp.s
 
+VaccineRouter/utilities/MutablePriorityQueue.obj: VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
+
+.PHONY : VaccineRouter/utilities/MutablePriorityQueue.obj
+
+# target to build an object file
+VaccineRouter/utilities/MutablePriorityQueue.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
+.PHONY : VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
+
+VaccineRouter/utilities/MutablePriorityQueue.i: VaccineRouter/utilities/MutablePriorityQueue.cpp.i
+
+.PHONY : VaccineRouter/utilities/MutablePriorityQueue.i
+
+# target to preprocess a source file
+VaccineRouter/utilities/MutablePriorityQueue.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.i
+.PHONY : VaccineRouter/utilities/MutablePriorityQueue.cpp.i
+
+VaccineRouter/utilities/MutablePriorityQueue.s: VaccineRouter/utilities/MutablePriorityQueue.cpp.s
+
+.PHONY : VaccineRouter/utilities/MutablePriorityQueue.s
+
+# target to generate assembly for a file
+VaccineRouter/utilities/MutablePriorityQueue.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.s
+.PHONY : VaccineRouter/utilities/MutablePriorityQueue.cpp.s
+
 VaccineRouter/utilities/Time.obj: VaccineRouter/utilities/Time.cpp.obj
 
 .PHONY : VaccineRouter/utilities/Time.obj
@@ -655,6 +682,9 @@ help:
 	@echo ... VaccineRouter/utilities/Coordinates.obj
 	@echo ... VaccineRouter/utilities/Coordinates.i
 	@echo ... VaccineRouter/utilities/Coordinates.s
+	@echo ... VaccineRouter/utilities/MutablePriorityQueue.obj
+	@echo ... VaccineRouter/utilities/MutablePriorityQueue.i
+	@echo ... VaccineRouter/utilities/MutablePriorityQueue.s
 	@echo ... VaccineRouter/utilities/Time.obj
 	@echo ... VaccineRouter/utilities/Time.i
 	@echo ... VaccineRouter/utilities/Time.s

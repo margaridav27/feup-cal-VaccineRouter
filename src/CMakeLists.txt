@@ -12,6 +12,7 @@ add_executable(src main.cpp
         VaccineRouter/utilities/Time.h
         VaccineRouter/utilities/Coordinates.cpp
         VaccineRouter/utilities/Coordinates.h
+        VaccineRouter/utilities/MutablePriorityQueue.cpp
         VaccineRouter/utilities/MutablePriorityQueue.h
         VaccineRouter/graph/Graph.cpp
         VaccineRouter/graph/Graph.h

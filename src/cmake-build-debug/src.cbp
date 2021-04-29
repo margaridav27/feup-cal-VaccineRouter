@@ -170,6 +170,9 @@
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h">
 			<Option target="src"/>
 		</Unit>
+		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.cpp">
+			<Option target="src"/>
+		</Unit>
 		<Unit filename="C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h">
 			<Option target="src"/>
 		</Unit>

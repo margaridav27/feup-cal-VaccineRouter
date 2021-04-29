@@ -10,15 +10,15 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 #### 2 May
 
 **Maggy**
-- [ ] Node
-- [ ] Edge
-- [ ] Graph
+- [x] Node
+- [x] Edge
+- [x] Graph
+- [x] Mutable priority queue
 - [ ] Tarjan                  
 - [ ] begin interface         
 - [ ] StorageCenter           
 - [ ] ApplicationCenter 
-- [ ] Mutable priority queue 
-
+ 
 **Bia**    
 - [ ] GraphViewer             
 - [ ] Vehicle                 

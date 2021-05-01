@@ -20,7 +20,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] begin interface         
  
 **Bia**    
-- [ ] GraphViewer             
+- [x] GraphViewer             
 - [ ] Vehicle                 
 - [ ] VaccineRouter           
 - [ ] A*                      

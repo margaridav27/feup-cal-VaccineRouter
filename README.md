@@ -21,7 +21,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
  
 **Bia**    
 - [x] GraphViewer             
-- [ ] Vehicle                 
+- [x] Vehicle                 
 - [ ] VaccineRouter           
 - [ ] A*                      
 - [x] Djistrka    

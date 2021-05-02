@@ -65,4 +65,8 @@ template<class T>
 void MutablePriorityQueue<T>::set(unsigned i, T *x) {
     H[i] = x;
     x->queueIndex = i;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f

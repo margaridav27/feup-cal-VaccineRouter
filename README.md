@@ -4,18 +4,42 @@
 Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https://github.com/beatriz-ag).
 
 
-TO DO
-- [x] Be nerdy but awesome
-- [x] Finnish Report
-  - [x] Review objective function
-  - [X] Node's extensions needed in algorithms
-  - [x] Update UML diagram
-  - [x] Problems & algorithms - 3rd iteration              
-  - [x] Problems & algorithms - 4th iteration             
-  - [x] Analysis & results - Exact vs aproximate solution 
-  - [x] Conclusion   
-  - [x] Details      
-  - [x] References   
-- [ ] REPORT FINAL REVIEW TOGETHER
-- [ ] Create Branches
-- [ ] Implement code...
+## TO DO
+
+### Sprint 1 - Create classes and implement algorithms     
+#### 2 May
+
+**Maggy**
+- [x] Node
+- [x] Edge
+- [x] Graph
+- [x] Mutable priority queue
+- [x] StorageCenter           
+- [x] ApplicationCenter
+- [ ] Tarjan                  
+- [ ] begin interface         
+ 
+**Bia**    
+- [x] GraphViewer             
+- [ ] Vehicle                 
+- [ ] VaccineRouter           
+- [ ] A*                      
+- [ ] Djistrka    
+- [ ] Coords (necessary operators)
+- [ ] Time (necessary operators)          
+
+### Sprint 2 - Implement classes and interligations
+#### 14 May
+
+- [ ] REUNITE, THINK AND REGISTER
+- [ ] Divide tasks
+- [ ] Vehicle                 
+- [ ] VaccineRouter           
+- [ ] StorageCenter           
+- [ ] ApplicationCenter       
+
+### Sprint 3 - hardcore testing
+#### 19 May tops
+- [ ] test hardcore bia
+- [ ] test chillada maggy (true)
+    

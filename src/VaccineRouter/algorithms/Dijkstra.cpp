@@ -1,4 +1,5 @@
 #include "Dijkstra.h"
+<<<<<<< HEAD
 #include "../graph/Graph.h"
 #include "../graph/edge/Edge.h"
 #include "../graph/Graph.h"
@@ -47,3 +48,5 @@ bool relax(Node *n, Node *w, Edge *e, double residual, double cost) {
     else
         return false;
 }
+=======
+>>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f

@@ -1,0 +1,60 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.cpp
+Dijkstra.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.h
+../graph/Graph.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+../graph/edge/Edge.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+../graph/Graph.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+../utilities/MutablePriorityQueue.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
+limits
+-
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.cpp
+algorithm
+-
+queue
+-
+Graph.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+vector
+-
+node/Node.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+edge/Edge.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+../utilities/Coordinates.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+../node/Node.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+vector
+-
+../edge/Edge.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+../../utilities/Coordinates.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
+vector
+-
+

@@ -1,6 +1,17 @@
+
 cmake_minimum_required(VERSION 3.17)
-project(src)
+project(VaccineRouter)
 
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-add_executable(src main.cpp algorithms/AStar.cpp algorithms/AStar.h ui/Interface.cpp ui/Interface.h utilities/Time.cpp utilities/Time.h utilities/Coordinates.cpp utilities/Coordinates.h graph/Graph.cpp graph/Graph.h graph/GraphProcessor.cpp graph/GraphProcessor.h graph/Node.cpp graph/Node.h graph/NodeD.cpp graph/NodeD.h graph/NodeA.cpp graph/NodeA.h graph/Edge.cpp graph/Edge.h model/VaccineRouter.cpp model/VaccineRouter.h model/ApplicationCenter.cpp model/ApplicationCenter.h model/StorageCenter.cpp model/StorageCenter.h model/Vehicle.cpp model/Vehicle.h)
+include_directories("lib/GraphViewerCpp/SFML/include")
+link_directories("lib/GraphViewerCpp/SFML/lib")
+add_subdirectory("lib/GraphViewerCpp")
+include_directories("lib/GraphViewerCpp/include")
+
+file(GLOB_RECURSE SRC "VaccineRouter/*.cpp" "VaccineRouter/*.h" )
+add_executable(VaccineRouter ${SRC})
+target_link_libraries(${PROJECT_NAME} graphviewer)

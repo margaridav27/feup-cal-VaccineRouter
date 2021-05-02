@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\cal_proj.dir/objects.a
+C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\ar.exe cr CMakeFiles\cal_proj.dir/objects.a @CMakeFiles\cal_proj.dir\objects1.rsp
+C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE -g   -Wl,--whole-archive CMakeFiles\cal_proj.dir/objects.a -Wl,--no-whole-archive  -o cal_proj.exe -Wl,--out-implib,libcal_proj.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cal_proj.dir\linklibs.rsp

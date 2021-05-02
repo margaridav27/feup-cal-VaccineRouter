@@ -13,8 +13,8 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] Node
 - [x] Edge
 - [x] Graph
-- [x] Mutable priority queue
-- [x] StorageCenter           
+- [ ] Mutable priority queue
+- [ ] StorageCenter           
 - [x] ApplicationCenter
 - [ ] Tarjan                  
 - [ ] begin interface         
@@ -24,7 +24,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] Vehicle                 
 - [ ] VaccineRouter           
 - [ ] A*                      
-- [ ] Djistrka    
+- [x] Djistrka    
 - [ ] Coords (necessary operators)
 - [ ] Time (necessary operators)          
 

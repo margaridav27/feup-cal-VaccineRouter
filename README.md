@@ -25,8 +25,8 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [ ] VaccineRouter           
 - [ ] A*                      
 - [x] Djistrka    
-- [ ] Coords (necessary operators)
-- [ ] Time (necessary operators)          
+- [x] Coords (necessary operators)
+- [x] Time (necessary operators)          
 
 ### Sprint 2 - Implement classes and interligations
 #### 14 May

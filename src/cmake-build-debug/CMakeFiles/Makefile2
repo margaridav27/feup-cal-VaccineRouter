@@ -301,8 +301,8 @@ CMakeFiles/src.dir/clean:
 
 # All Build rule for target.
 CMakeFiles/VaccineRouter.dir/all: lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all
-CMakeFiles/VaccineRouter.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 CMakeFiles/VaccineRouter.dir/all: lib/GraphViewerCpp/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
+CMakeFiles/VaccineRouter.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 CMakeFiles/VaccineRouter.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/build
@@ -330,8 +330,8 @@ CMakeFiles/VaccineRouter.dir/clean:
 # Target rules for target lib/GraphViewerCpp/CMakeFiles/graphviewer.dir
 
 # All Build rule for target.
-lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
+lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\CMakeFiles\graphviewer.dir\build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\CMakeFiles\graphviewer.dir\build.make lib/GraphViewerCpp/CMakeFiles/graphviewer.dir/build
@@ -467,8 +467,8 @@ lib/GraphViewerCpp/SFML/src/SFML/Network/CMakeFiles/sfml-network.dir/clean:
 # Target rules for target lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir
 
 # All Build rule for target.
-lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: lib/GraphViewerCpp/SFML/src/SFML/System/CMakeFiles/sfml-system.dir/all
+lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/all: lib/GraphViewerCpp/SFML/src/SFML/Window/CMakeFiles/sfml-window.dir/all
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\SFML\src\SFML\Graphics\CMakeFiles\sfml-graphics.dir\build.make lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/depend
 	$(MAKE) $(MAKESILENT) -f lib\GraphViewerCpp\SFML\src\SFML\Graphics\CMakeFiles\sfml-graphics.dir\build.make lib/GraphViewerCpp/SFML/src/SFML/Graphics/CMakeFiles/sfml-graphics.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51 "Built target sfml-graphics"

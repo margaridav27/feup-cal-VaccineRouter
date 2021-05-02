@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/main.cpp
+iostream
+-
+GraphViewer/graphViewer.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.cpp
+Time.h
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.h
+
+C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.h
+string
+-
+iostream
+-
+

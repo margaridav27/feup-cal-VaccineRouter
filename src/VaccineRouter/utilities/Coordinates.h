@@ -7,6 +7,13 @@ class Coordinates {
 public:
     Coordinates(double x,double y);
     Coordinates(Coordinates *c);
+
+    Coordinates *getCoordinates();
+    double getX() const;
+    double getY() const;
+    void setCoordinates(double x, double y);
+
+    double calculateEuclidianDistance(Coordinates c);
 };
 
 

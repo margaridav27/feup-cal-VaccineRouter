@@ -92,7 +92,9 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
-CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Edge.cpp.obj
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.cpp
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
@@ -102,9 +104,16 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/GraphProcessor.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/GraphProcessor.h
-CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Node.cpp.obj
-CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/NodeA.cpp.obj
-CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/NodeD.cpp.obj
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.cpp
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.cpp
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.h
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/main.cpp
@@ -112,8 +121,12 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/StorageCenter.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/StorageCenter.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/Vehicle.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.h
@@ -126,6 +139,12 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.cpp
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.h

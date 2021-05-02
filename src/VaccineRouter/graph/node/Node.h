@@ -1,14 +1,11 @@
-#ifndef SRC_NODE_H
-#define SRC_NODE_H
+#ifndef VACCINEROUTER_NODE_H
+#define VACCINEROUTER_NODE_H
 
 #include <vector>
-
+#include <limits>
 #include "../edge/Edge.h"
 #include "../../utilities/Coordinates.h"
-
-<<<<<<< HEAD
-constexpr auto UINT_MAX = std::numeric_limits<unsigned int>::max();
-constexpr auto DOUBLE_MAX = std::numeric_limits<double>::max();
+class Edge;
 
 class Node {
 private:
@@ -18,29 +15,23 @@ private:
     std::vector<Edge *> outgoing;
     std::vector<Edge *> incoming;
     bool visited;
-
     double dist;
     Edge *path;
-
     double euclidianDist;
-=======
-class Node {
-protected:
-    unsigned int id;
-    Coordinates coordinates;
-    std::vector<Edge *> adj;
-    bool visited;
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+    int queueIndex = 0;
+
 public:
     Node();
     Node(unsigned int id);
     Node(unsigned int id, const Coordinates &coordinates);
     Node(unsigned int id, std::vector<Edge *> adj);
     Node(unsigned int id, const Coordinates &coordinates, std::vector<Edge *> adj);
+    Node(const Node *node, double euclidianDist);
+
 
     unsigned int getId() const;
-<<<<<<< HEAD
     double getDist() const;
+    int getQueueIndex() const;
 
     const Coordinates &getCoordinates() const;
     void setCoordinates(const Coordinates &coordinates);
@@ -52,12 +43,7 @@ public:
     void setAdj(const std::vector<Edge *> &adj);
     void setPath(Edge * n);
     void setDist(double dist);
-=======
-    const Coordinates &getCoordinates() const;
-    void setCoordinates(const Coordinates &coordinates);
-    const std::vector<Edge *> &getAdj() const;
-    void setAdj(const std::vector<Edge *> &adj);
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+    void setQueueIndex(int index);
 
     void setUnvisited();
     void setVisited();
@@ -65,12 +51,9 @@ public:
 
     void addEdge(Node *dest, double weight);
     bool removeNodeTo(Node *node);
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+    bool operator<(Node &n) const;
 };
 
 
-#endif //SRC_NODE_H
+#endif //VACCINEROUTER_NODE_H

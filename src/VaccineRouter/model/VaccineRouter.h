@@ -1,5 +1,5 @@
-#ifndef SRC_VACCINEROUTER_H
-#define SRC_VACCINEROUTER_H
+#ifndef VACCINEROUTER_VACCINEROUTER_H
+#define VACCINEROUTER_VACCINEROUTER_H
 
 
 class VaccineRouter {
@@ -7,4 +7,4 @@ class VaccineRouter {
 };
 
 
-#endif //SRC_VACCINEROUTER_H
+#endif //VACCINEROUTER_VACCINEROUTER_H

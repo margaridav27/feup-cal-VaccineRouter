@@ -14,19 +14,19 @@
 /**
  * class T must have: (i) accessible field int queueIndex; (ii) operator< defined.
  */
+#include "../graph/node/Node.h"
 
-template<class T>
 class MutablePriorityQueue {
 private:
-    std::vector<T *> H;
+    std::vector<Node *> H;
     void heapifyUp(unsigned i);
     void heapifyDown(unsigned i);
-    inline void set(unsigned i, T *x);
+    inline void set(unsigned i, Node *x);
 public:
     MutablePriorityQueue();
-    void insert(T *x);
-    T *extractMin();
-    void decreaseKey(T *x);
+    void insert(Node *x);
+    Node *extractMin();
+    void decreaseKey(Node *x);
     bool empty();
 };
 

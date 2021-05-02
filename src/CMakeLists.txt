@@ -12,12 +12,11 @@ link_directories("lib/GraphViewerCpp/SFML/lib")
 add_subdirectory("lib/GraphViewerCpp")
 include_directories("lib/GraphViewerCpp/include")
 
-<<<<<<< HEAD
 file(GLOB_RECURSE SRC "VaccineRouter/*.cpp" "VaccineRouter/*.h" )
 add_executable(VaccineRouter ${SRC})
 target_link_libraries(${PROJECT_NAME} graphviewer)
-=======
-add_executable(src main.cpp
+
+add_executable(src VaccineRouter/main.cpp
         VaccineRouter/algorithms/AStar.cpp
         VaccineRouter/algorithms/AStar.h
         VaccineRouter/ui/Interface.cpp
@@ -34,10 +33,6 @@ add_executable(src main.cpp
         VaccineRouter/graph/GraphProcessor.h
         VaccineRouter/graph/node/Node.cpp
         VaccineRouter/graph/node/Node.h
-        VaccineRouter/graph/node/NodeD.cpp
-        VaccineRouter/graph/node/NodeD.h
-        VaccineRouter/graph/node/NodeA.cpp
-        VaccineRouter/graph/node/NodeA.h
         VaccineRouter/graph/edge/Edge.cpp
         VaccineRouter/graph/edge/Edge.h
         VaccineRouter/model/VaccineRouter.cpp
@@ -52,4 +47,3 @@ add_executable(src main.cpp
         VaccineRouter/algorithms/Tarjan.h
         VaccineRouter/algorithms/Dijkstra.cpp
         VaccineRouter/algorithms/Dijkstra.h)
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f

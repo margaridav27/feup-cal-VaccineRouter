@@ -10,13 +10,10 @@ Node *Graph::getNode(unsigned int id) {
     return nullptr;
 }
 
-<<<<<<< HEAD
 std::vector<Node *> Graph::getNodeSet(){
     return this->nodeSet;
 }
 
-=======
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 bool Graph::addNode(unsigned int id, Coordinates coords) {
     if (getNode(id) != nullptr) return false;
     nodeSet.push_back(new Node(id, coords));
@@ -47,19 +44,16 @@ bool Graph::removeEdge(unsigned int sourceID, unsigned int destID) {
 }
 
 void Graph::_dfs(Node *node, std::vector<Node *> &res) const {
-<<<<<<< HEAD
 if (!node->wasVisited()) {
 res.push_back(node);
 node->setVisited();
 for (auto &edge : node->getAdj()) _dfs(edge->getDest(), res);
 }
-=======
     if (!node->wasVisited()) {
         res.push_back(node);
         node->setVisited();
         for (auto &edge : node->getAdj()) _dfs(edge->getDest(), res);
     }
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 }
 
 std::vector<Node *> Graph::dfs() {
@@ -110,8 +104,3 @@ std::vector<Node *> Graph::bfs(unsigned int sourceID) {
 
     return res;
 }
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f

@@ -1,41 +1,35 @@
 #include "MutablePriorityQueue.h"
 
-template<class T>
-MutablePriorityQueue<T>::MutablePriorityQueue() {
+MutablePriorityQueue::MutablePriorityQueue() {
     H.push_back(nullptr);
     // indices will be used starting in 1
     // to facilitate parent/child calculations
 }
 
-template<class T>
-bool MutablePriorityQueue<T>::empty() {
+bool MutablePriorityQueue::empty() {
     return H.size() == 1;
 }
 
-template<class T>
-T *MutablePriorityQueue<T>::extractMin() {
+Node *MutablePriorityQueue::extractMin() {
     auto x = H[1];
     H[1] = H.back();
     H.pop_back();
     if (H.size() > 1) heapifyDown(1);
     heapifyDown(1);
-    x->queueIndex = 0;
+    x->setQueueIndex(0);
     return x;
 }
 
-template<class T>
-void MutablePriorityQueue<T>::insert(T *x) {
+void MutablePriorityQueue::insert(Node *x) {
     H.push_back(x);
     heapifyUp(H.size() - 1);
 }
 
-template<class T>
-void MutablePriorityQueue<T>::decreaseKey(T *x) {
-    heapifyUp(x->queueIndex);
+void MutablePriorityQueue::decreaseKey(Node *x) {
+    heapifyUp(x->getQueueIndex());
 }
 
-template<class T>
-void MutablePriorityQueue<T>::heapifyUp(unsigned i) {
+void MutablePriorityQueue::heapifyUp(unsigned i) {
     auto x = H[i];
     while (i > 1 && *x < *H[parent(i)]) {
         set(i, H[parent(i)]);
@@ -44,8 +38,7 @@ void MutablePriorityQueue<T>::heapifyUp(unsigned i) {
     set(i, x);
 }
 
-template<class T>
-void MutablePriorityQueue<T>::heapifyDown(unsigned i) {
+void MutablePriorityQueue::heapifyDown(unsigned i) {
     auto x = H[i];
     while (true) {
         unsigned k = leftChild(i);
@@ -61,12 +54,7 @@ void MutablePriorityQueue<T>::heapifyDown(unsigned i) {
     set(i, x);
 }
 
-template<class T>
-void MutablePriorityQueue<T>::set(unsigned i, T *x) {
+void MutablePriorityQueue::set(unsigned i, Node *x) {
     H[i] = x;
-    x->queueIndex = i;
-<<<<<<< HEAD
+    x->setQueueIndex(i);
 }
-=======
-}
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f

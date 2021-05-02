@@ -118,10 +118,24 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.s: cmake_forc
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.s"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\algorithms\Dijkstra.cpp" -o CMakeFiles\VaccineRouter.dir\VaccineRouter\algorithms\Dijkstra.cpp.s
 
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/algorithms/Tarjan.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\algorithms\Tarjan.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\algorithms\Tarjan.cpp"
+
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.i"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\algorithms\Tarjan.cpp" > CMakeFiles\VaccineRouter.dir\VaccineRouter\algorithms\Tarjan.cpp.i
+
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.s"
+	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\algorithms\Tarjan.cpp" -o CMakeFiles\VaccineRouter.dir\VaccineRouter\algorithms\Tarjan.cpp.s
+
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj: ../VaccineRouter/graph/Graph.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\graph\Graph.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\graph\Graph.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.i: cmake_force
@@ -135,7 +149,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.s: cmake_force
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj: ../VaccineRouter/graph/GraphProcessor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\graph\GraphProcessor.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\graph\GraphProcessor.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.i: cmake_force
@@ -149,7 +163,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.s: cmake_for
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: ../VaccineRouter/graph/edge/Edge.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\graph\edge\Edge.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\graph\edge\Edge.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.i: cmake_force
@@ -163,7 +177,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.s: cmake_force
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRouter/graph/node/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\graph\node\Node.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\graph\node\Node.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.i: cmake_force
@@ -177,7 +191,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.s: cmake_force
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\main.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\main.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.i: cmake_force
@@ -191,7 +205,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.s: cmake_force
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: ../VaccineRouter/model/ApplicationCenter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\model\ApplicationCenter.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\model\ApplicationCenter.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.i: cmake_force
@@ -205,7 +219,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.s: cmake_
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/model/StorageCenter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\model\StorageCenter.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\model\StorageCenter.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.i: cmake_force
@@ -219,7 +233,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.s: cmake_forc
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/model/VaccineRouter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\model\VaccineRouter.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\model\VaccineRouter.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.i: cmake_force
@@ -233,7 +247,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.s: cmake_forc
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/model/Vehicle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\model\Vehicle.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\model\Vehicle.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.i: cmake_force
@@ -247,7 +261,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.s: cmake_force
 CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/ui/Interface.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\ui\Interface.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\ui\Interface.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.i: cmake_force
@@ -261,7 +275,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.s: cmake_force
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj: ../VaccineRouter/utilities/Coordinates.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\utilities\Coordinates.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\utilities\Coordinates.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.i: cmake_force
@@ -275,7 +289,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.s: cmake_fo
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: ../VaccineRouter/utilities/MutablePriorityQueue.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\utilities\MutablePriorityQueue.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\utilities\MutablePriorityQueue.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.i: cmake_force
@@ -289,7 +303,7 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.s:
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj: CMakeFiles/VaccineRouter.dir/flags.make
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj: CMakeFiles/VaccineRouter.dir/includes_CXX.rsp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj: ../VaccineRouter/utilities/Time.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj"
 	C:\PROGRA~2\MINGW-~1\I686-8~1.0-P\mingw32\bin\G__~1.EXE  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\VaccineRouter.dir\VaccineRouter\utilities\Time.cpp.obj -c "C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\VaccineRouter\utilities\Time.cpp"
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.i: cmake_force
@@ -305,6 +319,7 @@ VaccineRouter_OBJECTS = \
 "CMakeFiles/VaccineRouter.dir/VaccineRouter/GraphViewer/graphViewer.cpp.obj" \
 "CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj" \
 "CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj" \
+"CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj" \
 "CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj" \
 "CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj" \
 "CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj" \
@@ -325,6 +340,7 @@ VaccineRouter_EXTERNAL_OBJECTS =
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/GraphViewer/graphViewer.cpp.obj
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj
+VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj
@@ -346,7 +362,7 @@ VaccineRouter.exe: lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/linklibs.rsp
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/objects1.rsp
 VaccineRouter.exe: CMakeFiles/VaccineRouter.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_17) "Linking CXX executable VaccineRouter.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="C:\Users\Beatriz Aguiar\Desktop\uni\current\CAL\feup-cal\Projects\feup-cal-VaccineRouter\src\cmake-build-debug\CMakeFiles" --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable VaccineRouter.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\VaccineRouter.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

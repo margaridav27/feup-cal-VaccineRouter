@@ -3,52 +3,59 @@
 
 #include "Node.h"
 
-<<<<<<< HEAD
-=======
-constexpr auto UINT_MAX = std::numeric_limits<unsigned int>::max();
-constexpr auto DOUBLE_MAX = std::numeric_limits<double>::max();
+constexpr auto UI_MAX = std::numeric_limits<double>::max();
 
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 Node::Node() :
-        id(UINT_MAX),
+        id(),
         coordinates(Coordinates(DOUBLE_MAX, DOUBLE_MAX)),
-        visited(false) {}
+        visited(false) ,
+        dist(DOUBLE_MAX),
+        path(nullptr){}
 
 Node::Node(unsigned int id) :
         id(id),
         coordinates(Coordinates(DOUBLE_MAX, DOUBLE_MAX)),
-        visited(false) {}
+        visited(false),
+        dist(DOUBLE_MAX),
+        path(nullptr){}
 
 Node::Node(unsigned int id, const Coordinates &coordinates) :
         id(id),
         coordinates(coordinates),
-        visited(false) {}
+        visited(false),
+        dist(DOUBLE_MAX),
+        path(nullptr){}
 
 Node::Node(unsigned int id, std::vector<Edge *> adj) :
         id(id),
         coordinates(Coordinates(DOUBLE_MAX, DOUBLE_MAX)),
         adj(std::move(adj)),
-        visited(false) {}
+        visited(false),
+        dist(DOUBLE_MAX),path(nullptr){}
 
 Node::Node(unsigned int id, const Coordinates &coordinates, std::vector<Edge *> adj) :
         id(id),
         coordinates(coordinates),
         adj(std::move(adj)),
-        visited(false) {}
+        visited(false),
+        dist(DOUBLE_MAX),
+        path(nullptr){}
 
-<<<<<<< HEAD
-Node::Node(const NodeD *nodeD, double euclidianDist) :
-{
-    this->euclidianDist = euclidianDist;
-}
+Node::Node(const Node *node, double euclidianDist) :
+        id(node->id),
+        coordinates(node->coordinates),
+        adj(std::move(node->adj)),
+        visited(false),
+        euclidianDist(euclidianDist),
+        dist(DOUBLE_MAX),
+        path(nullptr){}
+
 unsigned int Node::getId() const { return id; }
 
-double getDist() const { return this->dist; }
+double Node::getDist() const { return this->dist; }
 
-=======
-unsigned int Node::getId() const { return id; }
+int Node::getQueueIndex() const{ return this->queueIndex;}
 
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 const Coordinates &Node::getCoordinates() const { return coordinates; }
 
 void Node::setCoordinates(const Coordinates &coordinates) {
@@ -63,16 +70,18 @@ void Node::setVisited() { visited = true; }
 
 void Node::setUnvisited() { visited = false; }
 
-<<<<<<< HEAD
 void Node::setDist(double dist){
     this->dist = dist;
 }
-void Node::setPath(Node * path){
+void Node::setPath(Edge *path){
     this->path = path;
 }
 
-=======
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+void Node::setQueueIndex(int index){
+    this->queueIndex = index;
+}
+
+
 bool Node::wasVisited() const { return visited; }
 
 void Node::addEdge(Node *dest, double weight) {
@@ -90,7 +99,6 @@ bool Node::removeNodeTo(Node *node) {
     return false;
 }
 
-<<<<<<< HEAD
 std::vector<Edge *> Node::getOutgoing(){
     return this->outgoing;
 }
@@ -98,9 +106,7 @@ std::vector<Edge *> Node::getOutgoing(){
 std::vector<Edge *> Node::getIncoming(){
     return this->incoming;
 }
-=======
 
-
-
-
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+bool Node::operator<(Node & node) const {
+    return this->dist < node.getDist();
+}

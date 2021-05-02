@@ -1,5 +1,5 @@
-#ifndef SRC_STORAGECENTER_H
-#define SRC_STORAGECENTER_H
+#ifndef VACCINEROUTER_STORAGECENTER_H
+#define VACCINEROUTER_STORAGECENTER_H
 
 #include "Vehicle.h"
 #include "../graph/node/Node.h"
@@ -26,4 +26,4 @@ public:
 };
 
 
-#endif //SRC_STORAGECENTER_H
+#endif //VACCINEROUTER_STORAGECENTER_H

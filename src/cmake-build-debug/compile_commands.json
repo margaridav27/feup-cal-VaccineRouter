@@ -1,6 +1,86 @@
 [
 {
   "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\main.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\main.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/main.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\algorithms\\AStar.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\algorithms\\AStar.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/AStar.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\ui\\Interface.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\ui\\Interface.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/ui/Interface.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\utilities\\Time.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\utilities\\Time.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\utilities\\Coordinates.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\utilities\\Coordinates.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\utilities\\MutablePriorityQueue.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\utilities\\MutablePriorityQueue.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\graph\\Graph.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\graph\\Graph.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\graph\\GraphProcessor.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\graph\\GraphProcessor.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/GraphProcessor.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\graph\\node\\Node.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\graph\\node\\Node.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\graph\\edge\\Edge.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\graph\\edge\\Edge.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\model\\VaccineRouter.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\model\\VaccineRouter.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\model\\ApplicationCenter.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\model\\ApplicationCenter.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\model\\StorageCenter.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\model\\StorageCenter.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/StorageCenter.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\model\\Vehicle.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\model\\Vehicle.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/model/Vehicle.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\algorithms\\Tarjan.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\algorithms\\Tarjan.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/src.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\src.dir\\VaccineRouter\\algorithms\\Dijkstra.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\algorithms\\Dijkstra.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
   "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/VaccineRouter.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\VaccineRouter.dir\\VaccineRouter\\GraphViewer\\graphViewer.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\GraphViewer\\graphViewer.cpp\"",
   "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.cpp"
 },
@@ -13,6 +93,11 @@
   "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
   "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/VaccineRouter.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\VaccineRouter.dir\\VaccineRouter\\algorithms\\Dijkstra.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\algorithms\\Dijkstra.cpp\"",
   "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.cpp"
+},
+{
+  "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",
+  "command": "C:\\PROGRA~2\\MINGW-~1\\I686-8~1.0-P\\mingw32\\bin\\G__~1.EXE   @CMakeFiles/VaccineRouter.dir/includes_CXX.rsp -g   -std=gnu++14 -o CMakeFiles\\VaccineRouter.dir\\VaccineRouter\\algorithms\\Tarjan.cpp.obj -c \"C:\\Users\\Beatriz Aguiar\\Desktop\\uni\\current\\CAL\\feup-cal\\Projects\\feup-cal-VaccineRouter\\src\\VaccineRouter\\algorithms\\Tarjan.cpp\"",
+  "file": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.cpp"
 },
 {
   "directory": "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug",

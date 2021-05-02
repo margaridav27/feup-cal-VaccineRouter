@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/VaccineRouter.dir/VaccineRouter/GraphViewer/graphViewer.cpp.obj"
   "CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj"
   "CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj"
+  "CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj"
   "CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj"
   "CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj"
   "CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj"

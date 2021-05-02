@@ -1,7 +1,7 @@
-#ifndef SRC_ASTAR_H
-#define SRC_ASTAR_H
+#ifndef VACCINEROUTER_ASTAR_H
+#define VACCINEROUTER_ASTAR_H
 
 
 void displayGraphx();
 
-#endif //SRC_ASTAR_H
+#endif //VACCINEROUTER_ASTAR_H

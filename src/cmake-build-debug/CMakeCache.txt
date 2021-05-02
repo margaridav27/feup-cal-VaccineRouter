@@ -24,8 +24,8 @@ CMAKE_ADDR2LINE:FILEPATH=C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/ar.exe
 
-//No help, variable specified on the command line.
-CMAKE_BUILD_TYPE:UNINITIALIZED=Debug
+//Choose the type of build (Debug or Release)
+CMAKE_BUILD_TYPE:STRING=Debug
 
 //Id string of the compiler for the CodeBlocks IDE. Automatically
 // detected when left empty
@@ -121,7 +121,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 CMAKE_GNUtoMS:BOOL=OFF
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/cal_proj
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/VaccineRouter
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files (x86)/mingw-w64/i686-8.1.0-posix-dwarf-rt_v6-rev0/mingw32/bin/ld.exe
@@ -349,12 +349,6 @@ VaccineRouter_BINARY_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/
 VaccineRouter_SOURCE_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src
 
 //Value Computed by CMake
-cal_proj_BINARY_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug
-
-//Value Computed by CMake
-cal_proj_SOURCE_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src
-
-//Value Computed by CMake
 graphviewer_BINARY_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp
 
 //Dependencies for the target
@@ -377,12 +371,6 @@ sfml-system_LIB_DEPENDS:STATIC=general;winmm;
 
 //Dependencies for the target
 sfml-window_LIB_DEPENDS:STATIC=general;sfml-system;general;winmm;general;gdi32;
-
-//Value Computed by CMake
-vacc_BINARY_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug
-
-//Value Computed by CMake
-vacc_SOURCE_DIR:STATIC=C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src
 
 
 ########################
@@ -497,7 +485,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=10
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

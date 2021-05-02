@@ -3,8 +3,10 @@
 
 
 class Coordinates {
-
-
+    double x,y;
+public:
+    Coordinates(double x,double y);
+    Coordinates(Coordinates *c);
 };
 
 

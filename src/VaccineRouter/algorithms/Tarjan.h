@@ -1,5 +1,5 @@
-#ifndef SRC_TARJAN_H
-#define SRC_TARJAN_H
+#ifndef VACCINEROUTER_TARJAN_H
+#define VACCINEROUTER_TARJAN_H
 
 
 class Tarjan {

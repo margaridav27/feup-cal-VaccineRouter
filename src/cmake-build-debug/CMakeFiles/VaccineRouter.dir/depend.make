@@ -92,6 +92,8 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../Vacci
 CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/utilities/MutablePriorityQueue.h
 
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/algorithms/Tarjan.cpp
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/algorithms/Tarjan.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj: ../VaccineRouter/graph/Graph.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj: ../VaccineRouter/graph/Graph.h
@@ -102,8 +104,15 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj: ../VaccineRouter
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj: ../VaccineRouter/graph/GraphProcessor.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj: ../VaccineRouter/graph/GraphProcessor.h
 
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: ../VaccineRouter/graph/edge/Edge.cpp
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
-
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRouter/graph/node/Node.cpp
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/GraphViewer/graphViewer.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/main.cpp
@@ -111,8 +120,12 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/main.c
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: ../VaccineRouter/model/ApplicationCenter.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: ../VaccineRouter/model/ApplicationCenter.h
 
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/graph/node/Node.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/model/StorageCenter.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/model/StorageCenter.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/model/Vehicle.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/model/VaccineRouter.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/model/VaccineRouter.h
@@ -125,6 +138,12 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRoute
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj: ../VaccineRouter/utilities/Coordinates.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
+
+CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: ../VaccineRouter/utilities/MutablePriorityQueue.cpp
+CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj: ../VaccineRouter/utilities/MutablePriorityQueue.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj: ../VaccineRouter/utilities/Time.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj: ../VaccineRouter/utilities/Time.h

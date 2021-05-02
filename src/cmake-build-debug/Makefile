@@ -176,6 +176,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named src
+
+# Build rule for target.
+src: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 src
+.PHONY : src
+
+# fast build rule for target.
+src/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/build
+.PHONY : src/fast
+
+#=============================================================================
 # Target rules for targets named VaccineRouter
 
 # Build rule for target.
@@ -312,11 +325,8 @@ VaccineRouter/algorithms/AStar.obj: VaccineRouter/algorithms/AStar.cpp.obj
 
 # target to build an object file
 VaccineRouter/algorithms/AStar.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj
 .PHONY : VaccineRouter/algorithms/AStar.cpp.obj
 
 VaccineRouter/algorithms/AStar.i: VaccineRouter/algorithms/AStar.cpp.i
@@ -325,11 +335,8 @@ VaccineRouter/algorithms/AStar.i: VaccineRouter/algorithms/AStar.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/algorithms/AStar.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.i
 .PHONY : VaccineRouter/algorithms/AStar.cpp.i
 
 VaccineRouter/algorithms/AStar.s: VaccineRouter/algorithms/AStar.cpp.s
@@ -338,11 +345,8 @@ VaccineRouter/algorithms/AStar.s: VaccineRouter/algorithms/AStar.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/algorithms/AStar.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.s
 .PHONY : VaccineRouter/algorithms/AStar.cpp.s
 
 VaccineRouter/algorithms/Dijkstra.obj: VaccineRouter/algorithms/Dijkstra.cpp.obj
@@ -351,11 +355,8 @@ VaccineRouter/algorithms/Dijkstra.obj: VaccineRouter/algorithms/Dijkstra.cpp.obj
 
 # target to build an object file
 VaccineRouter/algorithms/Dijkstra.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj
 .PHONY : VaccineRouter/algorithms/Dijkstra.cpp.obj
 
 VaccineRouter/algorithms/Dijkstra.i: VaccineRouter/algorithms/Dijkstra.cpp.i
@@ -364,11 +365,8 @@ VaccineRouter/algorithms/Dijkstra.i: VaccineRouter/algorithms/Dijkstra.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/algorithms/Dijkstra.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.i
 .PHONY : VaccineRouter/algorithms/Dijkstra.cpp.i
 
 VaccineRouter/algorithms/Dijkstra.s: VaccineRouter/algorithms/Dijkstra.cpp.s
@@ -377,176 +375,8 @@ VaccineRouter/algorithms/Dijkstra.s: VaccineRouter/algorithms/Dijkstra.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/algorithms/Dijkstra.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.s
-.PHONY : VaccineRouter/algorithms/Dijkstra.cpp.s
-
-VaccineRouter/graph/Graph.obj: VaccineRouter/graph/Graph.cpp.obj
-
-.PHONY : VaccineRouter/graph/Graph.obj
-
-# target to build an object file
-VaccineRouter/graph/Graph.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj
-.PHONY : VaccineRouter/graph/Graph.cpp.obj
-
-VaccineRouter/graph/Graph.i: VaccineRouter/graph/Graph.cpp.i
-
-.PHONY : VaccineRouter/graph/Graph.i
-
-# target to preprocess a source file
-VaccineRouter/graph/Graph.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.i
-.PHONY : VaccineRouter/graph/Graph.cpp.i
-
-VaccineRouter/graph/Graph.s: VaccineRouter/graph/Graph.cpp.s
-
-.PHONY : VaccineRouter/graph/Graph.s
-
-# target to generate assembly for a file
-VaccineRouter/graph/Graph.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.s
-.PHONY : VaccineRouter/graph/Graph.cpp.s
-
-VaccineRouter/graph/GraphProcessor.obj: VaccineRouter/graph/GraphProcessor.cpp.obj
-
-.PHONY : VaccineRouter/graph/GraphProcessor.obj
-
-# target to build an object file
-VaccineRouter/graph/GraphProcessor.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj
-.PHONY : VaccineRouter/graph/GraphProcessor.cpp.obj
-
-VaccineRouter/graph/GraphProcessor.i: VaccineRouter/graph/GraphProcessor.cpp.i
-
-.PHONY : VaccineRouter/graph/GraphProcessor.i
-
-# target to preprocess a source file
-VaccineRouter/graph/GraphProcessor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.i
-.PHONY : VaccineRouter/graph/GraphProcessor.cpp.i
-
-VaccineRouter/graph/GraphProcessor.s: VaccineRouter/graph/GraphProcessor.cpp.s
-
-.PHONY : VaccineRouter/graph/GraphProcessor.s
-
-# target to generate assembly for a file
-VaccineRouter/graph/GraphProcessor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.s
-.PHONY : VaccineRouter/graph/GraphProcessor.cpp.s
-
-VaccineRouter/graph/edge/Edge.obj: VaccineRouter/graph/edge/Edge.cpp.obj
-
-.PHONY : VaccineRouter/graph/edge/Edge.obj
-
-# target to build an object file
-VaccineRouter/graph/edge/Edge.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj
-.PHONY : VaccineRouter/graph/edge/Edge.cpp.obj
-
-VaccineRouter/graph/edge/Edge.i: VaccineRouter/graph/edge/Edge.cpp.i
-
-.PHONY : VaccineRouter/graph/edge/Edge.i
-
-# target to preprocess a source file
-VaccineRouter/graph/edge/Edge.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.i
-.PHONY : VaccineRouter/graph/edge/Edge.cpp.i
-
-VaccineRouter/graph/edge/Edge.s: VaccineRouter/graph/edge/Edge.cpp.s
-
-.PHONY : VaccineRouter/graph/edge/Edge.s
-
-# target to generate assembly for a file
-VaccineRouter/graph/edge/Edge.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.s
-.PHONY : VaccineRouter/graph/edge/Edge.cpp.s
-
-VaccineRouter/graph/node/Node.obj: VaccineRouter/graph/node/Node.cpp.obj
-
-.PHONY : VaccineRouter/graph/node/Node.obj
-
-# target to build an object file
-VaccineRouter/graph/node/Node.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj
-.PHONY : VaccineRouter/graph/node/Node.cpp.obj
-
-VaccineRouter/graph/node/Node.i: VaccineRouter/graph/node/Node.cpp.i
-
-.PHONY : VaccineRouter/graph/node/Node.i
-
-# target to preprocess a source file
-VaccineRouter/graph/node/Node.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.i
-.PHONY : VaccineRouter/graph/node/Node.cpp.i
-
-VaccineRouter/graph/node/Node.s: VaccineRouter/graph/node/Node.cpp.s
-
-.PHONY : VaccineRouter/graph/node/Node.s
-
-# target to generate assembly for a file
-VaccineRouter/graph/node/Node.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.s
-.PHONY : VaccineRouter/graph/node/Node.cpp.s
-
-VaccineRouter/main.obj: VaccineRouter/main.cpp.obj
-
-.PHONY : VaccineRouter/main.obj
-
-# target to build an object file
-VaccineRouter/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj
-.PHONY : VaccineRouter/main.cpp.obj
-
-VaccineRouter/main.i: VaccineRouter/main.cpp.i
-
-.PHONY : VaccineRouter/main.i
-
-# target to preprocess a source file
-VaccineRouter/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.i
-.PHONY : VaccineRouter/main.cpp.i
-
-VaccineRouter/main.s: VaccineRouter/main.cpp.s
-
-.PHONY : VaccineRouter/main.s
-
-# target to generate assembly for a file
-VaccineRouter/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.s
-.PHONY : VaccineRouter/main.cpp.s
-
-VaccineRouter/model/ApplicationCenter.obj: VaccineRouter/model/ApplicationCenter.cpp.obj
-
-.PHONY : VaccineRouter/model/ApplicationCenter.obj
-
-# target to build an object file
-VaccineRouter/model/ApplicationCenter.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj
-.PHONY : VaccineRouter/model/ApplicationCenter.cpp.obj
-
-VaccineRouter/model/ApplicationCenter.i: VaccineRouter/model/ApplicationCenter.cpp.i
-
-.PHONY : VaccineRouter/model/ApplicationCenter.i
-
-# target to preprocess a source file
-VaccineRouter/model/ApplicationCenter.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.i
-.PHONY : VaccineRouter/model/ApplicationCenter.cpp.i
-
-VaccineRouter/model/ApplicationCenter.s: VaccineRouter/model/ApplicationCenter.cpp.s
-
-.PHONY : VaccineRouter/model/ApplicationCenter.s
-
-# target to generate assembly for a file
-VaccineRouter/model/ApplicationCenter.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.s
-.PHONY : VaccineRouter/model/ApplicationCenter.cpp.s
-
-VaccineRouter/model/StorageCenter.obj: VaccineRouter/model/StorageCenter.cpp.obj
-
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.s
 .PHONY : VaccineRouter/algorithms/Dijkstra.cpp.s
 
 VaccineRouter/algorithms/Tarjan.obj: VaccineRouter/algorithms/Tarjan.cpp.obj
@@ -556,6 +386,7 @@ VaccineRouter/algorithms/Tarjan.obj: VaccineRouter/algorithms/Tarjan.cpp.obj
 # target to build an object file
 VaccineRouter/algorithms/Tarjan.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.obj
 .PHONY : VaccineRouter/algorithms/Tarjan.cpp.obj
 
 VaccineRouter/algorithms/Tarjan.i: VaccineRouter/algorithms/Tarjan.cpp.i
@@ -565,6 +396,7 @@ VaccineRouter/algorithms/Tarjan.i: VaccineRouter/algorithms/Tarjan.cpp.i
 # target to preprocess a source file
 VaccineRouter/algorithms/Tarjan.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.i
 .PHONY : VaccineRouter/algorithms/Tarjan.cpp.i
 
 VaccineRouter/algorithms/Tarjan.s: VaccineRouter/algorithms/Tarjan.cpp.s
@@ -574,6 +406,7 @@ VaccineRouter/algorithms/Tarjan.s: VaccineRouter/algorithms/Tarjan.cpp.s
 # target to generate assembly for a file
 VaccineRouter/algorithms/Tarjan.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Tarjan.cpp.s
 .PHONY : VaccineRouter/algorithms/Tarjan.cpp.s
 
 VaccineRouter/graph/Graph.obj: VaccineRouter/graph/Graph.cpp.obj
@@ -583,6 +416,7 @@ VaccineRouter/graph/Graph.obj: VaccineRouter/graph/Graph.cpp.obj
 # target to build an object file
 VaccineRouter/graph/Graph.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/Graph.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.obj
 .PHONY : VaccineRouter/graph/Graph.cpp.obj
 
 VaccineRouter/graph/Graph.i: VaccineRouter/graph/Graph.cpp.i
@@ -592,6 +426,7 @@ VaccineRouter/graph/Graph.i: VaccineRouter/graph/Graph.cpp.i
 # target to preprocess a source file
 VaccineRouter/graph/Graph.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/Graph.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.i
 .PHONY : VaccineRouter/graph/Graph.cpp.i
 
 VaccineRouter/graph/Graph.s: VaccineRouter/graph/Graph.cpp.s
@@ -601,6 +436,7 @@ VaccineRouter/graph/Graph.s: VaccineRouter/graph/Graph.cpp.s
 # target to generate assembly for a file
 VaccineRouter/graph/Graph.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/Graph.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/Graph.cpp.s
 .PHONY : VaccineRouter/graph/Graph.cpp.s
 
 VaccineRouter/graph/GraphProcessor.obj: VaccineRouter/graph/GraphProcessor.cpp.obj
@@ -610,6 +446,7 @@ VaccineRouter/graph/GraphProcessor.obj: VaccineRouter/graph/GraphProcessor.cpp.o
 # target to build an object file
 VaccineRouter/graph/GraphProcessor.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/GraphProcessor.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.obj
 .PHONY : VaccineRouter/graph/GraphProcessor.cpp.obj
 
 VaccineRouter/graph/GraphProcessor.i: VaccineRouter/graph/GraphProcessor.cpp.i
@@ -619,6 +456,7 @@ VaccineRouter/graph/GraphProcessor.i: VaccineRouter/graph/GraphProcessor.cpp.i
 # target to preprocess a source file
 VaccineRouter/graph/GraphProcessor.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/GraphProcessor.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.i
 .PHONY : VaccineRouter/graph/GraphProcessor.cpp.i
 
 VaccineRouter/graph/GraphProcessor.s: VaccineRouter/graph/GraphProcessor.cpp.s
@@ -628,6 +466,7 @@ VaccineRouter/graph/GraphProcessor.s: VaccineRouter/graph/GraphProcessor.cpp.s
 # target to generate assembly for a file
 VaccineRouter/graph/GraphProcessor.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/GraphProcessor.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/GraphProcessor.cpp.s
 .PHONY : VaccineRouter/graph/GraphProcessor.cpp.s
 
 VaccineRouter/graph/edge/Edge.obj: VaccineRouter/graph/edge/Edge.cpp.obj
@@ -637,6 +476,7 @@ VaccineRouter/graph/edge/Edge.obj: VaccineRouter/graph/edge/Edge.cpp.obj
 # target to build an object file
 VaccineRouter/graph/edge/Edge.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/edge/Edge.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.obj
 .PHONY : VaccineRouter/graph/edge/Edge.cpp.obj
 
 VaccineRouter/graph/edge/Edge.i: VaccineRouter/graph/edge/Edge.cpp.i
@@ -646,6 +486,7 @@ VaccineRouter/graph/edge/Edge.i: VaccineRouter/graph/edge/Edge.cpp.i
 # target to preprocess a source file
 VaccineRouter/graph/edge/Edge.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/edge/Edge.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.i
 .PHONY : VaccineRouter/graph/edge/Edge.cpp.i
 
 VaccineRouter/graph/edge/Edge.s: VaccineRouter/graph/edge/Edge.cpp.s
@@ -655,6 +496,7 @@ VaccineRouter/graph/edge/Edge.s: VaccineRouter/graph/edge/Edge.cpp.s
 # target to generate assembly for a file
 VaccineRouter/graph/edge/Edge.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/edge/Edge.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/edge/Edge.cpp.s
 .PHONY : VaccineRouter/graph/edge/Edge.cpp.s
 
 VaccineRouter/graph/node/Node.obj: VaccineRouter/graph/node/Node.cpp.obj
@@ -664,6 +506,7 @@ VaccineRouter/graph/node/Node.obj: VaccineRouter/graph/node/Node.cpp.obj
 # target to build an object file
 VaccineRouter/graph/node/Node.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/Node.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj
 .PHONY : VaccineRouter/graph/node/Node.cpp.obj
 
 VaccineRouter/graph/node/Node.i: VaccineRouter/graph/node/Node.cpp.i
@@ -673,6 +516,7 @@ VaccineRouter/graph/node/Node.i: VaccineRouter/graph/node/Node.cpp.i
 # target to preprocess a source file
 VaccineRouter/graph/node/Node.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/Node.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.i
 .PHONY : VaccineRouter/graph/node/Node.cpp.i
 
 VaccineRouter/graph/node/Node.s: VaccineRouter/graph/node/Node.cpp.s
@@ -682,61 +526,38 @@ VaccineRouter/graph/node/Node.s: VaccineRouter/graph/node/Node.cpp.s
 # target to generate assembly for a file
 VaccineRouter/graph/node/Node.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/Node.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.s
 .PHONY : VaccineRouter/graph/node/Node.cpp.s
 
-VaccineRouter/graph/node/NodeA.obj: VaccineRouter/graph/node/NodeA.cpp.obj
+VaccineRouter/main.obj: VaccineRouter/main.cpp.obj
 
-.PHONY : VaccineRouter/graph/node/NodeA.obj
-
-# target to build an object file
-VaccineRouter/graph/node/NodeA.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/NodeA.cpp.obj
-.PHONY : VaccineRouter/graph/node/NodeA.cpp.obj
-
-VaccineRouter/graph/node/NodeA.i: VaccineRouter/graph/node/NodeA.cpp.i
-
-.PHONY : VaccineRouter/graph/node/NodeA.i
-
-# target to preprocess a source file
-VaccineRouter/graph/node/NodeA.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/NodeA.cpp.i
-.PHONY : VaccineRouter/graph/node/NodeA.cpp.i
-
-VaccineRouter/graph/node/NodeA.s: VaccineRouter/graph/node/NodeA.cpp.s
-
-.PHONY : VaccineRouter/graph/node/NodeA.s
-
-# target to generate assembly for a file
-VaccineRouter/graph/node/NodeA.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/NodeA.cpp.s
-.PHONY : VaccineRouter/graph/node/NodeA.cpp.s
-
-VaccineRouter/graph/node/NodeD.obj: VaccineRouter/graph/node/NodeD.cpp.obj
-
-.PHONY : VaccineRouter/graph/node/NodeD.obj
+.PHONY : VaccineRouter/main.obj
 
 # target to build an object file
-VaccineRouter/graph/node/NodeD.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/NodeD.cpp.obj
-.PHONY : VaccineRouter/graph/node/NodeD.cpp.obj
+VaccineRouter/main.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj
+.PHONY : VaccineRouter/main.cpp.obj
 
-VaccineRouter/graph/node/NodeD.i: VaccineRouter/graph/node/NodeD.cpp.i
+VaccineRouter/main.i: VaccineRouter/main.cpp.i
 
-.PHONY : VaccineRouter/graph/node/NodeD.i
+.PHONY : VaccineRouter/main.i
 
 # target to preprocess a source file
-VaccineRouter/graph/node/NodeD.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/NodeD.cpp.i
-.PHONY : VaccineRouter/graph/node/NodeD.cpp.i
+VaccineRouter/main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.i
+.PHONY : VaccineRouter/main.cpp.i
 
-VaccineRouter/graph/node/NodeD.s: VaccineRouter/graph/node/NodeD.cpp.s
+VaccineRouter/main.s: VaccineRouter/main.cpp.s
 
-.PHONY : VaccineRouter/graph/node/NodeD.s
+.PHONY : VaccineRouter/main.s
 
 # target to generate assembly for a file
-VaccineRouter/graph/node/NodeD.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/graph/node/NodeD.cpp.s
-.PHONY : VaccineRouter/graph/node/NodeD.cpp.s
+VaccineRouter/main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.s
+.PHONY : VaccineRouter/main.cpp.s
 
 VaccineRouter/model/ApplicationCenter.obj: VaccineRouter/model/ApplicationCenter.cpp.obj
 
@@ -745,6 +566,7 @@ VaccineRouter/model/ApplicationCenter.obj: VaccineRouter/model/ApplicationCenter
 # target to build an object file
 VaccineRouter/model/ApplicationCenter.cpp.obj:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/ApplicationCenter.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj
 .PHONY : VaccineRouter/model/ApplicationCenter.cpp.obj
 
 VaccineRouter/model/ApplicationCenter.i: VaccineRouter/model/ApplicationCenter.cpp.i
@@ -754,6 +576,7 @@ VaccineRouter/model/ApplicationCenter.i: VaccineRouter/model/ApplicationCenter.c
 # target to preprocess a source file
 VaccineRouter/model/ApplicationCenter.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/ApplicationCenter.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.i
 .PHONY : VaccineRouter/model/ApplicationCenter.cpp.i
 
 VaccineRouter/model/ApplicationCenter.s: VaccineRouter/model/ApplicationCenter.cpp.s
@@ -763,20 +586,17 @@ VaccineRouter/model/ApplicationCenter.s: VaccineRouter/model/ApplicationCenter.c
 # target to generate assembly for a file
 VaccineRouter/model/ApplicationCenter.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/ApplicationCenter.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.s
 .PHONY : VaccineRouter/model/ApplicationCenter.cpp.s
 
 VaccineRouter/model/StorageCenter.obj: VaccineRouter/model/StorageCenter.cpp.obj
 
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 .PHONY : VaccineRouter/model/StorageCenter.obj
 
 # target to build an object file
 VaccineRouter/model/StorageCenter.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/StorageCenter.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj
 .PHONY : VaccineRouter/model/StorageCenter.cpp.obj
 
 VaccineRouter/model/StorageCenter.i: VaccineRouter/model/StorageCenter.cpp.i
@@ -785,11 +605,8 @@ VaccineRouter/model/StorageCenter.i: VaccineRouter/model/StorageCenter.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/model/StorageCenter.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/StorageCenter.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.i
 .PHONY : VaccineRouter/model/StorageCenter.cpp.i
 
 VaccineRouter/model/StorageCenter.s: VaccineRouter/model/StorageCenter.cpp.s
@@ -798,11 +615,8 @@ VaccineRouter/model/StorageCenter.s: VaccineRouter/model/StorageCenter.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/model/StorageCenter.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/StorageCenter.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.s
 .PHONY : VaccineRouter/model/StorageCenter.cpp.s
 
 VaccineRouter/model/VaccineRouter.obj: VaccineRouter/model/VaccineRouter.cpp.obj
@@ -811,11 +625,8 @@ VaccineRouter/model/VaccineRouter.obj: VaccineRouter/model/VaccineRouter.cpp.obj
 
 # target to build an object file
 VaccineRouter/model/VaccineRouter.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/VaccineRouter.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj
 .PHONY : VaccineRouter/model/VaccineRouter.cpp.obj
 
 VaccineRouter/model/VaccineRouter.i: VaccineRouter/model/VaccineRouter.cpp.i
@@ -824,11 +635,8 @@ VaccineRouter/model/VaccineRouter.i: VaccineRouter/model/VaccineRouter.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/model/VaccineRouter.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/VaccineRouter.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.i
 .PHONY : VaccineRouter/model/VaccineRouter.cpp.i
 
 VaccineRouter/model/VaccineRouter.s: VaccineRouter/model/VaccineRouter.cpp.s
@@ -837,11 +645,8 @@ VaccineRouter/model/VaccineRouter.s: VaccineRouter/model/VaccineRouter.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/model/VaccineRouter.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/VaccineRouter.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.s
 .PHONY : VaccineRouter/model/VaccineRouter.cpp.s
 
 VaccineRouter/model/Vehicle.obj: VaccineRouter/model/Vehicle.cpp.obj
@@ -850,11 +655,8 @@ VaccineRouter/model/Vehicle.obj: VaccineRouter/model/Vehicle.cpp.obj
 
 # target to build an object file
 VaccineRouter/model/Vehicle.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj
 .PHONY : VaccineRouter/model/Vehicle.cpp.obj
 
 VaccineRouter/model/Vehicle.i: VaccineRouter/model/Vehicle.cpp.i
@@ -863,11 +665,8 @@ VaccineRouter/model/Vehicle.i: VaccineRouter/model/Vehicle.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/model/Vehicle.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.i
 .PHONY : VaccineRouter/model/Vehicle.cpp.i
 
 VaccineRouter/model/Vehicle.s: VaccineRouter/model/Vehicle.cpp.s
@@ -876,11 +675,8 @@ VaccineRouter/model/Vehicle.s: VaccineRouter/model/Vehicle.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/model/Vehicle.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.s
 .PHONY : VaccineRouter/model/Vehicle.cpp.s
 
 VaccineRouter/ui/Interface.obj: VaccineRouter/ui/Interface.cpp.obj
@@ -889,11 +685,8 @@ VaccineRouter/ui/Interface.obj: VaccineRouter/ui/Interface.cpp.obj
 
 # target to build an object file
 VaccineRouter/ui/Interface.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj
 .PHONY : VaccineRouter/ui/Interface.cpp.obj
 
 VaccineRouter/ui/Interface.i: VaccineRouter/ui/Interface.cpp.i
@@ -902,11 +695,8 @@ VaccineRouter/ui/Interface.i: VaccineRouter/ui/Interface.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/ui/Interface.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.i
 .PHONY : VaccineRouter/ui/Interface.cpp.i
 
 VaccineRouter/ui/Interface.s: VaccineRouter/ui/Interface.cpp.s
@@ -915,11 +705,8 @@ VaccineRouter/ui/Interface.s: VaccineRouter/ui/Interface.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/ui/Interface.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.s
 .PHONY : VaccineRouter/ui/Interface.cpp.s
 
 VaccineRouter/utilities/Coordinates.obj: VaccineRouter/utilities/Coordinates.cpp.obj
@@ -928,11 +715,8 @@ VaccineRouter/utilities/Coordinates.obj: VaccineRouter/utilities/Coordinates.cpp
 
 # target to build an object file
 VaccineRouter/utilities/Coordinates.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.obj
 .PHONY : VaccineRouter/utilities/Coordinates.cpp.obj
 
 VaccineRouter/utilities/Coordinates.i: VaccineRouter/utilities/Coordinates.cpp.i
@@ -941,11 +725,8 @@ VaccineRouter/utilities/Coordinates.i: VaccineRouter/utilities/Coordinates.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/utilities/Coordinates.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.i
 .PHONY : VaccineRouter/utilities/Coordinates.cpp.i
 
 VaccineRouter/utilities/Coordinates.s: VaccineRouter/utilities/Coordinates.cpp.s
@@ -954,11 +735,8 @@ VaccineRouter/utilities/Coordinates.s: VaccineRouter/utilities/Coordinates.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/utilities/Coordinates.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Coordinates.cpp.s
 .PHONY : VaccineRouter/utilities/Coordinates.cpp.s
 
 VaccineRouter/utilities/MutablePriorityQueue.obj: VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
@@ -967,11 +745,8 @@ VaccineRouter/utilities/MutablePriorityQueue.obj: VaccineRouter/utilities/Mutabl
 
 # target to build an object file
 VaccineRouter/utilities/MutablePriorityQueue.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
 .PHONY : VaccineRouter/utilities/MutablePriorityQueue.cpp.obj
 
 VaccineRouter/utilities/MutablePriorityQueue.i: VaccineRouter/utilities/MutablePriorityQueue.cpp.i
@@ -980,11 +755,8 @@ VaccineRouter/utilities/MutablePriorityQueue.i: VaccineRouter/utilities/MutableP
 
 # target to preprocess a source file
 VaccineRouter/utilities/MutablePriorityQueue.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.i
 .PHONY : VaccineRouter/utilities/MutablePriorityQueue.cpp.i
 
 VaccineRouter/utilities/MutablePriorityQueue.s: VaccineRouter/utilities/MutablePriorityQueue.cpp.s
@@ -993,11 +765,8 @@ VaccineRouter/utilities/MutablePriorityQueue.s: VaccineRouter/utilities/MutableP
 
 # target to generate assembly for a file
 VaccineRouter/utilities/MutablePriorityQueue.cpp.s:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.s
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/MutablePriorityQueue.cpp.s
 .PHONY : VaccineRouter/utilities/MutablePriorityQueue.cpp.s
 
 VaccineRouter/utilities/Time.obj: VaccineRouter/utilities/Time.cpp.obj
@@ -1006,11 +775,8 @@ VaccineRouter/utilities/Time.obj: VaccineRouter/utilities/Time.cpp.obj
 
 # target to build an object file
 VaccineRouter/utilities/Time.cpp.obj:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Time.cpp.obj
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.obj
 .PHONY : VaccineRouter/utilities/Time.cpp.obj
 
 VaccineRouter/utilities/Time.i: VaccineRouter/utilities/Time.cpp.i
@@ -1019,11 +785,8 @@ VaccineRouter/utilities/Time.i: VaccineRouter/utilities/Time.cpp.i
 
 # target to preprocess a source file
 VaccineRouter/utilities/Time.cpp.i:
-<<<<<<< HEAD
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.i
-=======
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Time.cpp.i
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.i
 .PHONY : VaccineRouter/utilities/Time.cpp.i
 
 VaccineRouter/utilities/Time.s: VaccineRouter/utilities/Time.cpp.s
@@ -1032,40 +795,9 @@ VaccineRouter/utilities/Time.s: VaccineRouter/utilities/Time.cpp.s
 
 # target to generate assembly for a file
 VaccineRouter/utilities/Time.cpp.s:
-<<<<<<< HEAD
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Time.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\VaccineRouter.dir\build.make CMakeFiles/VaccineRouter.dir/VaccineRouter/utilities/Time.cpp.s
 .PHONY : VaccineRouter/utilities/Time.cpp.s
-=======
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/VaccineRouter/utilities/Time.cpp.s
-.PHONY : VaccineRouter/utilities/Time.cpp.s
-
-main.obj: main.cpp.obj
-
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\src.dir\build.make CMakeFiles/src.dir/main.cpp.s
-.PHONY : main.cpp.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 
 # Help Target
 help:
@@ -1079,7 +811,6 @@ help:
 	@echo ... install/strip
 	@echo ... list_install_components
 	@echo ... rebuild_cache
-<<<<<<< HEAD
 	@echo ... VaccineRouter
 	@echo ... graphviewer
 	@echo ... sfml-audio
@@ -1088,24 +819,19 @@ help:
 	@echo ... sfml-network
 	@echo ... sfml-system
 	@echo ... sfml-window
+	@echo ... src
 	@echo ... VaccineRouter/GraphViewer/graphViewer.obj
 	@echo ... VaccineRouter/GraphViewer/graphViewer.i
 	@echo ... VaccineRouter/GraphViewer/graphViewer.s
-=======
-	@echo ... src
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 	@echo ... VaccineRouter/algorithms/AStar.obj
 	@echo ... VaccineRouter/algorithms/AStar.i
 	@echo ... VaccineRouter/algorithms/AStar.s
 	@echo ... VaccineRouter/algorithms/Dijkstra.obj
 	@echo ... VaccineRouter/algorithms/Dijkstra.i
 	@echo ... VaccineRouter/algorithms/Dijkstra.s
-<<<<<<< HEAD
-=======
 	@echo ... VaccineRouter/algorithms/Tarjan.obj
 	@echo ... VaccineRouter/algorithms/Tarjan.i
 	@echo ... VaccineRouter/algorithms/Tarjan.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 	@echo ... VaccineRouter/graph/Graph.obj
 	@echo ... VaccineRouter/graph/Graph.i
 	@echo ... VaccineRouter/graph/Graph.s
@@ -1118,18 +844,9 @@ help:
 	@echo ... VaccineRouter/graph/node/Node.obj
 	@echo ... VaccineRouter/graph/node/Node.i
 	@echo ... VaccineRouter/graph/node/Node.s
-<<<<<<< HEAD
 	@echo ... VaccineRouter/main.obj
 	@echo ... VaccineRouter/main.i
 	@echo ... VaccineRouter/main.s
-=======
-	@echo ... VaccineRouter/graph/node/NodeA.obj
-	@echo ... VaccineRouter/graph/node/NodeA.i
-	@echo ... VaccineRouter/graph/node/NodeA.s
-	@echo ... VaccineRouter/graph/node/NodeD.obj
-	@echo ... VaccineRouter/graph/node/NodeD.i
-	@echo ... VaccineRouter/graph/node/NodeD.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 	@echo ... VaccineRouter/model/ApplicationCenter.obj
 	@echo ... VaccineRouter/model/ApplicationCenter.i
 	@echo ... VaccineRouter/model/ApplicationCenter.s
@@ -1154,12 +871,6 @@ help:
 	@echo ... VaccineRouter/utilities/Time.obj
 	@echo ... VaccineRouter/utilities/Time.i
 	@echo ... VaccineRouter/utilities/Time.s
-<<<<<<< HEAD
-=======
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
->>>>>>> 94760f31974e891f177ce4374e0d8a7c5b09a03f
 .PHONY : help
 
 

@@ -22,7 +22,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 **Bia**    
 - [x] GraphViewer             
 - [x] Vehicle                 
-- [ ] VaccineRouter           
+- [x] VaccineRouter           
 - [ ] A*                      
 - [x] Djistrka    
 - [x] Coords (necessary operators)

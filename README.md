@@ -23,7 +23,8 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] GraphViewer             
 - [x] Vehicle                 
 - [x] VaccineRouter           
-- [ ] A*                      
+- [ ] A*   
+- [ ] Djistrka return value                  
 - [x] Djistrka    
 - [x] Coords (necessary operators)
 - [x] Time (necessary operators)          

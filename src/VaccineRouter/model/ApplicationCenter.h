@@ -8,9 +8,7 @@ private:
     unsigned int vaccinesToReceive;
 public:
     ApplicationCenter(unsigned int locationNodeId);
-
     unsigned int getLocationNodeId() const;
-
     unsigned int getVaccinesToReceive() const;
     void setVaccinesToReceive(unsigned int order);
 };

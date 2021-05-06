@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML
+# Install script for directory: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,14 +32,19 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/objdump.exe")
+endif()
+
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/System/cmake_install.cmake")
-  include("C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Main/cmake_install.cmake")
-  include("C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Window/cmake_install.cmake")
-  include("C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Network/cmake_install.cmake")
-  include("C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Graphics/cmake_install.cmake")
-  include("C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Audio/cmake_install.cmake")
+  include("C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/System/cmake_install.cmake")
+  include("C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Main/cmake_install.cmake")
+  include("C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Window/cmake_install.cmake")
+  include("C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Network/cmake_install.cmake")
+  include("C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Graphics/cmake_install.cmake")
+  include("C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/src/SFML/Audio/cmake_install.cmake")
 
 endif()
 

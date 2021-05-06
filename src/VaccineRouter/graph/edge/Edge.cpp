@@ -11,11 +11,11 @@ Edge::Edge(Node *dest, double weight) :
         dest(dest),
         weight(weight) {}
 
-Node *Edge::getOrig() const{
+Node *Edge::getOrig() const {
     return this->orig;
 }
 
-Node *Edge::getDest() const{
+Node *Edge::getDest() const {
     return this->dest;
 }
 
@@ -23,11 +23,11 @@ double Edge::getWeight() const {
     return this->weight;
 }
 
-double Edge::getCapacity() const{
+double Edge::getCapacity() const {
     return this->capacity;
 }
 
-double Edge::getFlow() const{
+double Edge::getFlow() const {
     return this->flow;
 }
 

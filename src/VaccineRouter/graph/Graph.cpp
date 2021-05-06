@@ -10,7 +10,7 @@ Node *Graph::getNode(unsigned int id) {
     return nullptr;
 }
 
-std::vector<Node *> Graph::getNodeSet(){
+std::vector<Node *> Graph::getNodeSet() {
     return this->nodeSet;
 }
 
@@ -44,11 +44,11 @@ bool Graph::removeEdge(unsigned int sourceID, unsigned int destID) {
 }
 
 void Graph::_dfs(Node *node, std::vector<Node *> &res) const {
-if (!node->wasVisited()) {
-res.push_back(node);
-node->setVisited();
-for (auto &edge : node->getAdj()) _dfs(edge->getDest(), res);
-}
+    if (!node->wasVisited()) {
+        res.push_back(node);
+        node->setVisited();
+        for (auto &edge : node->getAdj()) _dfs(edge->getDest(), res);
+    }
     if (!node->wasVisited()) {
         res.push_back(node);
         node->setVisited();
@@ -104,10 +104,11 @@ std::vector<Node *> Graph::bfs(unsigned int sourceID) {
 
     return res;
 }
-Node* Graph::findNode(Node * nO) {
-  for(Node *n: nodeSet){
-    if (n == nO)
-        return n;
-  }
-  return nullptr;
+
+Node *Graph::findNode(Node *nO) {
+    for (Node *n: nodeSet) {
+        if (n == nO)
+            return n;
+    }
+    return nullptr;
 }

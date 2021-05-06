@@ -65,8 +65,14 @@ CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/model/V
 CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/model/Vehicle.h
 CMakeFiles/src.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
+CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/graph/Graph.h
+CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/model/VaccineRouter.h
 CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/ui/Interface.cpp
 CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/ui/Interface.h
+CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
+CMakeFiles/src.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/utilities/Time.h
 
 CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.obj: ../VaccineRouter/utilities/Coordinates.cpp
 CMakeFiles/src.dir/VaccineRouter/utilities/Coordinates.cpp.obj: ../VaccineRouter/utilities/Coordinates.h

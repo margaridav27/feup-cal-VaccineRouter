@@ -1,8 +1,15 @@
 #include "VaccineRouter.h"
 
 
+VaccineRouter::VaccineRouter() :
+        vaccineLifeTime("03:00:00") {} // comback: maybe change this default value?
+
 VaccineRouter::VaccineRouter(Time vaccineLifeTime) :
         vaccineLifeTime(vaccineLifeTime) {}
+
+const std::hash<std::string> &VaccineRouter::getMapsHashName() const {
+    return this->mapsHashName;
+}
 
 //TODO
 void VaccineRouter::loadMap(std::string MapFileName) {
@@ -68,3 +75,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
+
+
+
+

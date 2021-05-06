@@ -8,10 +8,11 @@ class VaccineRouter {
 private:
     Graph *graph;
     Time vaccineLifeTime;
-    std::hash<std::string> MapsHashName;
+    std::hash<std::string> mapsHashName;
 public:
     VaccineRouter();
     VaccineRouter(Time vaccineLifeTime);
+    const std::hash<std::string> &getMapsHashName() const;
     void loadMap(std::string MapFileName);
     void setUpGraph(std::string MapFileName);
     void selectGraph(std::string MapFileName);

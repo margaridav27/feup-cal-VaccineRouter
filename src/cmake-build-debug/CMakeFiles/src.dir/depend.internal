@@ -4,6 +4,10 @@
 CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/AStar.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/AStar.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+ C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.cpp
  C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.h

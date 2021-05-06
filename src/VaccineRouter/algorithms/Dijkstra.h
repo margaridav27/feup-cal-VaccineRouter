@@ -5,7 +5,7 @@
 #include "../graph/Graph.h"
 
 
-void dijkstra(Graph graph, Node* o);
-bool relax(Node *n, Node *w, Edge *e, double residual, double cost);
+std::vector<Node*> dijkstra(Graph graph, Node* o);
+std::vector<Node *> getPath(Graph graph, Node *origin, Node *dest);
 
 #endif//VACCINEROUTER_DIJKSTRA_H

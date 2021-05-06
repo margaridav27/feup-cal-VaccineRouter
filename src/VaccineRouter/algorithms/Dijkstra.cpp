@@ -1,42 +1,45 @@
 #include "Dijkstra.h"
 #include "../utilities/MutablePriorityQueue.h"
 
-void dijkstra(Graph graph, Node* o) {
-    for(Node* n : graph.getNodeSet()) {
-        n->setDist(DOUBLE_MAX);
-    }
-    o->setDist(0);
-    MutablePriorityQueue q;
-    q.insert(o);
-    while( ! q.empty() ) {
-        auto n = q.extractMin();
-        for (auto e : n->getOutgoing()) {
-            auto oldDist = e->getDest()->getDist();
-            if (relax(n, e->getDest(), e, e->getCapacity() - e->getFlow(), e->getCost())){
-                if (oldDist==DOUBLE_MAX)
-                    q.insert(e->getDest());
-                else
-                    q.decreaseKey(e->getDest());
-            }
+
+std::vector<Node *> dijkstraShortestPath(Graph graph, Node* orig, Node* dest) {
+  for (Node *n: graph.getNodeSet()) {
+    n->setPath(nullptr);
+    n->setDist(DOUBLE_MAX);
+  }
+
+  MutablePriorityQueue minQueue;
+
+  Node* aux = graph.findNode(orig);
+  aux->setDist(0);
+
+  minQueue.insert(aux);
+
+  while(!minQueue.empty()){
+    aux = minQueue.extractMin();
+    for (Edge* edge: aux->getAdj()){
+      if (edge->getDest()->getDist() > (aux->getDist() + edge->getWeight())){
+        edge->getDest()->setDist(aux->getDist() + edge->getWeight());
+        edge->getDest()->setPath(aux);
+        if(edge->getDest()->getQueueIndex())
+          minQueue.decreaseKey(edge->getDest());
+        else {
+          minQueue.insert(edge->getDest());
         }
-        for (auto e : n->getIncoming()) {
-            auto oldDist = e->getOrig()->getDist();
-            if (relax(n, e->getOrig(), e, e->getFlow(), -e->getCost())) {
-                if (oldDist == DOUBLE_MAX)
-                    q.insert(e->getOrig());
-                else
-                    q.decreaseKey(e->getOrig());
-            }
-        }
+      }
     }
+  }
+  return getPath(graph,orig,dest);
 }
 
-bool relax(Node *n, Node *w, Edge *e, double residual, double cost) {
-    if (residual > 0 && n->getDist() + cost < w->getDist()) {
-        w->setDist(n->getDist() + cost);
-        w->setPath(e);
-        return true;
-    }
-    else
-        return false;
+std::vector<Node *> getPath(Graph graph, Node *origin, Node
+                                                                 *dest) {
+  std::vector<Node*> res;
+  Node* aux = graph.findNode(dest);
+
+  while(aux != nullptr){
+    res.insert(res.begin(),aux);
+    aux = aux->getPath();
+  }
+  return res;
 }

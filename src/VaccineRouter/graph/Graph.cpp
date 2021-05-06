@@ -104,3 +104,10 @@ std::vector<Node *> Graph::bfs(unsigned int sourceID) {
 
     return res;
 }
+Node* Graph::findNode(Node * nO) {
+  for(Node *n: nodeSet){
+    if (n == nO)
+        return n;
+  }
+  return nullptr;
+}

@@ -3,6 +3,10 @@
 
 CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/algorithms/AStar.cpp
 CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/algorithms/AStar.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/graph/Graph.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/algorithms/Dijkstra.cpp
 CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/algorithms/Dijkstra.h

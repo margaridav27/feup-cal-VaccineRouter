@@ -16,8 +16,9 @@ private:
     std::vector<Edge *> incoming;
     bool visited;
     double dist;
-    Edge *path;
+    Node *path;
     double euclidianDist;
+    double cost;
     int queueIndex = 0;
 
 public:
@@ -32,8 +33,13 @@ public:
     unsigned int getId() const;
     double getDist() const;
     int getQueueIndex() const;
+    Node* getPath() const;
+    Coordinates getCoords() const;
+    double getCost() const;
+    double getEuclidianDist() const;
 
-    const Coordinates &getCoordinates() const;
+
+  const Coordinates &getCoordinates() const;
     void setCoordinates(const Coordinates &coordinates);
 
     const std::vector<Edge *> &getAdj() const;
@@ -41,9 +47,11 @@ public:
     std::vector<Edge *> getIncoming();
 
     void setAdj(const std::vector<Edge *> &adj);
-    void setPath(Edge * n);
+    void setPath(Node * n);
     void setDist(double dist);
+    void setEuclidianDist(double eDist);
     void setQueueIndex(int index);
+    void setCost (double cost);
 
     void setUnvisited();
     void setVisited();
@@ -51,8 +59,10 @@ public:
 
     void addEdge(Node *dest, double weight);
     bool removeNodeTo(Node *node);
+    double calculateDist(Node *n);
 
     bool operator<(Node &n) const;
+    bool operator==(Node &n) const;
 };
 
 

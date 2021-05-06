@@ -27,6 +27,8 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsR
         // invalid input error
         if (std::cin.fail() || !checkInRange(optionsRange, input)) {
             std::cout << "Invalid input. Please choose again.\n\n";
+            std::cin.clear();
+            std::cin.ignore(100000, '\n');
             return std::vector<int>();
         }
 
@@ -34,6 +36,8 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsR
         if (!multiple && std::cin.peek() != std::cin.eof()) {
             std::cout << "You chose more than one Application Center.\n"
                          "Please make sure to choose only one.\n\n";
+            std::cin.clear();
+            std::cin.ignore(100000, '\n');
             return std::vector<int>();
         }
 

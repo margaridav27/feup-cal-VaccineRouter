@@ -3,7 +3,6 @@
 
 #include "../graph/Graph.h"
 #include "../graph/edge/Edge.h"
-#include "../graph/Graph.h"
 
 std::vector<Node *> AStar(Graph graph, Node *orig, Node *dest);
 

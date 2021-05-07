@@ -18,6 +18,10 @@ CMakeFiles/src.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/u
 
 CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/algorithms/Tarjan.cpp
 CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/algorithms/Tarjan.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/graph/Graph.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/src.dir/VaccineRouter/algorithms/Tarjan.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/src.dir/VaccineRouter/graph/Graph.cpp.obj: ../VaccineRouter/graph/Graph.cpp
 CMakeFiles/src.dir/VaccineRouter/graph/Graph.cpp.obj: ../VaccineRouter/graph/Graph.h

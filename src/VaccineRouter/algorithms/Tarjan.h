@@ -2,9 +2,9 @@
 #define VACCINEROUTER_TARJAN_H
 
 
-class Tarjan {
+#include "../graph/Graph.h"
 
-};
+void tarjan(Graph *graph);
 
 
 #endif //SRC_TARJAN_H

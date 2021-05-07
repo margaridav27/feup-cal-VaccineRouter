@@ -3,7 +3,6 @@
 
 #include "../graph/Graph.h"
 #include "../graph/edge/Edge.h"
-#include "../graph/Graph.h"
 
 std::vector<Node *> dijkstra(Graph graph, Node *o);
 

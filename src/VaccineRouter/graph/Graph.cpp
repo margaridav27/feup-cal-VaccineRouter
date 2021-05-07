@@ -43,68 +43,6 @@ bool Graph::removeEdge(unsigned int sourceID, unsigned int destID) {
     return false;
 }
 
-void Graph::_dfs(Node *node, std::vector<Node *> &res) const {
-    if (!node->wasVisited()) {
-        res.push_back(node);
-        node->setVisited();
-        for (auto &edge : node->getAdj()) _dfs(edge->getDest(), res);
-    }
-    if (!node->wasVisited()) {
-        res.push_back(node);
-        node->setVisited();
-        for (auto &edge : node->getAdj()) _dfs(edge->getDest(), res);
-    }
-}
-
-std::vector<Node *> Graph::dfs() {
-    std::vector<Node *> res;
-
-    Node *node = nodeSet[0];
-    bool notAllVisited = true;
-
-    while (notAllVisited) {
-        _dfs(node, res);
-
-        notAllVisited = false;
-
-        for (auto n : nodeSet) {
-            if (!n->wasVisited()) {
-                notAllVisited = true;
-                n = node; // COMBACK for some reason node is not being used
-                break;
-            }
-        }
-    }
-
-    for (auto node : nodeSet) node->setUnvisited();
-
-    return res;
-}
-
-std::vector<Node *> Graph::bfs(unsigned int sourceID) {
-    std::vector<Node *> res;
-
-    Node *node = getNode(sourceID);
-    if (node == nullptr) return res;
-
-    std::queue<Node *> toVisit;
-    toVisit.push(node);
-
-    while (!toVisit.empty()) {
-        node = toVisit.front();
-        toVisit.pop();
-        if (!node->wasVisited()) {
-            res.push_back(node);
-            node->setVisited();
-            for (auto edge : node->getAdj()) toVisit.push(edge->getDest());
-        }
-    }
-
-    for (auto node : nodeSet) node->setUnvisited();
-
-    return res;
-}
-
 Node *Graph::findNode(Node *nO) {
     for (Node *n: nodeSet) {
         if (n == nO)

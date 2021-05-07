@@ -11,6 +11,8 @@ class Edge;
 class Node {
 private:
     unsigned int id;
+    unsigned int lowlink; //to use with tarjan's algorithm
+    bool onStack; //to use with tarjan's algorithm
     Coordinates coordinates;
     std::vector<Edge *> adj;
     std::vector<Edge *> outgoing;
@@ -30,6 +32,8 @@ public:
     Node(unsigned int id, const Coordinates &coordinates, std::vector<Edge *> adj);
     Node(const Node *node, double euclidianDist);
     unsigned int getId() const;
+    unsigned int getLowlink() const;
+    bool isOnStack() const;
     double getDist() const;
     int getQueueIndex() const;
     Node *getPath() const;
@@ -38,8 +42,8 @@ public:
     double getEuclidianDist() const;
     const Coordinates &getCoordinates() const;
     const std::vector<Edge *> &getAdj() const;
-    std::vector<Edge *> getOutgoing();
-    std::vector<Edge *> getIncoming();
+    std::vector<Edge *> getOutgoing() const;
+    std::vector<Edge *> getIncoming() const;
     void setCoordinates(const Coordinates &coordinates);
     void setAdj(const std::vector<Edge *> &adj);
     void setPath(Node *n);
@@ -47,8 +51,11 @@ public:
     void setEuclidianDist(double eDist);
     void setQueueIndex(int index);
     void setCost(double cost);
+    void setLowlink(unsigned int lowlink);
     void setUnvisited();
     void setVisited();
+    void pushToStack();
+    void popFromStack();
     bool wasVisited() const;
     void addEdge(Node *dest, double weight);
     bool removeNodeTo(Node *node);

@@ -123,7 +123,12 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRo
 CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/GraphViewer/graphViewer.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/algorithms/Tarjan.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/graph/Graph.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/graph/node/Node.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/main.cpp
+CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: ../VaccineRouter/model/ApplicationCenter.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj: ../VaccineRouter/model/ApplicationCenter.h

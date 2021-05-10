@@ -1,11 +1,14 @@
 #include <stack>
-#include <set>
+#include <unordered_set>
 #include "Tarjan.h"
 
-std::set<Node *> tarjan(Graph *graph, Node *node) {
-    for (Node *node : graph->getNodeSet()) node->setUnvisited();
+std::vector<Node *> tarjan(Graph *graph, Node *node) {
+    for (Node *n : graph->getNodeSet()) n->setUnvisited();
+    return tarjanRecursive(graph, node);
+}
 
-    std::set<Node *> scc;
+std::vector<Node  *> tarjanRecursive(Graph *graph, Node *node) {
+    std::vector<Node *> scc;
     std::stack<Node *> s;
 
     s.push(node);
@@ -13,12 +16,10 @@ std::set<Node *> tarjan(Graph *graph, Node *node) {
 
     for (Edge *e : node->getAdj()) {
         Node *successor = e->getDest();
-
         // successor has not yet been visited, recurse on it
         if (!successor->wasVisited()) {
-            tarjan(graph, successor);
+            tarjanRecursive(graph, successor);
             node->setLowlink(std::min(node->getLowlink(), successor->getLowlink()));
-
         // successor is in stack s and hence in the current scc
         // if successor is not on stack, then e is an edge pointing to another scc and must be ignored
         } else if (successor->isOnStack()) {
@@ -32,9 +33,7 @@ std::set<Node *> tarjan(Graph *graph, Node *node) {
         do {
             n = s.top();
             s.pop();
-
-            scc.insert(n);
-
+            scc.push_back(n);
             // reset lowlink and onStack node attributes
             n->setLowlink(n->getId());
             n->popFromStack();

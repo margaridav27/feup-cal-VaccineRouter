@@ -124,7 +124,12 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/graph/node/Node.cpp.obj
  C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/main.cpp.obj
  C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.h
+ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.h
+ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
  C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/main.cpp
+ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/ApplicationCenter.cpp.obj
  C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.cpp
  C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.h

@@ -116,7 +116,7 @@ void Node::popFromStack() { this->onStack = false; }
 
 bool Node::wasVisited() const { return visited; }
 
-void Node::addEdge(Node *dest, double weight) { adj.push_back(new Edge(dest, weight)); }
+void Node::addEdge(Node *dest, double weight) { adj.push_back(new Edge(this, dest, weight)); }
 
 bool Node::removeNodeTo(Node *node) {
     for (auto iter = adj.begin(); iter != adj.end(); iter++) {

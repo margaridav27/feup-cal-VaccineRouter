@@ -4,10 +4,12 @@
 
 
 Edge::Edge() :
+        orig(nullptr),
         dest(nullptr),
         weight(DOUBLE_MAX) {}
 
-Edge::Edge(Node *dest, double weight) :
+Edge::Edge(Node *source, Node *dest, double weight) :
+        orig(source),
         dest(dest),
         weight(weight) {}
 

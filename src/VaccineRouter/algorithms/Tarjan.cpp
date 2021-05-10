@@ -12,14 +12,15 @@ std::vector<Node *> tarjan(Graph *graph, Node *node) {
 
     tarjanRecursive(graph, node, SCCs, s);
 
+    // extracting only the SCC that matters
     std::vector<Node *> importantSCC;
-    for (auto it = SCCs.begin(); it != SCCs.end(); it++) {
-        if (*it == nullptr) {
-            for (Node *n : importantSCC) {
-                if (n == node) return importantSCC;
+    for (Node *v : SCCs) {
+        if (v == nullptr) {
+            for (Node *w : importantSCC) {
+                if (w == node) return importantSCC;
             }
             importantSCC.clear();
-        } else importantSCC.push_back(*it);
+        } else importantSCC.push_back(v);
     }
     return importantSCC;
 }

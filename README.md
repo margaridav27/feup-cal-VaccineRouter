@@ -16,7 +16,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] Mutable priority queue
 - [x] StorageCenter           
 - [x] ApplicationCenter
-- [ ] Tarjan                  
+- [x] Tarjan                  
 - [x] begin interface         
  
 **Bia**    

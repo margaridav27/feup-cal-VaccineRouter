@@ -7,14 +7,16 @@
 #IncludeRegexTransform: 
 
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.cpp
-stack
--
-unordered_set
+algorithm
 -
 Tarjan.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.h
 
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.h
+stack
+-
+unordered_set
+-
 ../graph/Graph.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
 

@@ -83,6 +83,10 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/GraphViewer/graphViewer.cpp.obj: ../l
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/algorithms/AStar.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/algorithms/AStar.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/graph/Graph.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/graph/node/Node.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/AStar.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/algorithms/Dijkstra.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/algorithms/Dijkstra.cpp.obj: ../VaccineRouter/algorithms/Dijkstra.h
@@ -127,11 +131,19 @@ CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../Vacci
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/model/Vehicle.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/StorageCenter.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/graph/Graph.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/graph/node/Node.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/model/VaccineRouter.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/model/VaccineRouter.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/VaccineRouter.cpp.obj: ../VaccineRouter/utilities/Time.h
 
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/graph/edge/Edge.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/graph/node/Node.h
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/model/Vehicle.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/model/Vehicle.h
+CMakeFiles/VaccineRouter.dir/VaccineRouter/model/Vehicle.cpp.obj: ../VaccineRouter/utilities/Coordinates.h
 
 CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/ui/Interface.cpp
 CMakeFiles/VaccineRouter.dir/VaccineRouter/ui/Interface.cpp.obj: ../VaccineRouter/ui/Interface.h

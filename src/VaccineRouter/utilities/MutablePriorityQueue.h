@@ -22,6 +22,7 @@ private:
     void heapifyUp(unsigned i);
     void heapifyDown(unsigned i);
     inline void set(unsigned i, Node *x);
+
 public:
     MutablePriorityQueue();
     void insert(Node *x);

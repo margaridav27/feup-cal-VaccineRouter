@@ -13,13 +13,10 @@ private:
 public:
     StorageCenter();
     StorageCenter(unsigned int locationNodeId);
-
     unsigned int getLocationNodeId() const;
-
     const std::vector<Node> &getAssignedAc() const;
     unsigned int getVaccinesToDeliver() const;
     void setVaccinesToDeliver(unsigned int vaccinesToDeliver);
-
     const std::vector<Vehicle> &getFleet() const;
     void addVehicle(Vehicle vehicle);
     bool removeVehicle(Vehicle vehicle);

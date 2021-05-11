@@ -1,5 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\tests\TarjanAlgorithmTest"
--- Found Python: C:/Users/Margarida Viera/AppData/Local/Programs/Python/Python37/python.exe (found version "3.7.4") found components: Interpreter 
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/tests/TarjanAlgorithmTest/cmake-build-debug

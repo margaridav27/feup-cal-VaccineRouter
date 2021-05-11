@@ -5,6 +5,7 @@
 #include "../node/Node.h"
 
 class Node;
+
 constexpr auto DOUBLE_MAX = std::numeric_limits<double>::max();
 
 class Edge {
@@ -17,8 +18,7 @@ private:
     double flow;
 public:
     Edge();
-    Edge(Node *dest, double weight);
-
+    Edge(Node *source, Node *dest, double weight);
     double getWeight() const;
     Node *getOrig() const;
     Node *getDest() const;

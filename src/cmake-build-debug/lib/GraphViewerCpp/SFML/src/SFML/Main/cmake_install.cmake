@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Main
+# Install script for directory: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Main
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -32,7 +32,12 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
+# Set default install directory permissions.
+if(NOT DEFINED CMAKE_OBJDUMP)
+  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/objdump.exe")
+endif()
+
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xdevelx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-main-d.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-main-d.a")
 endif()
 

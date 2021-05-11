@@ -2,7 +2,7 @@
 #include <vector>
 
 #include "StorageCenter.h"
-/*
+
 StorageCenter::StorageCenter() :
         locationNodeID(-1),
         vaccinesToDeliver(-1) {}
@@ -40,4 +40,4 @@ bool StorageCenter::removeVehicle(Vehicle vehicle) {
     if (iter == this->fleet.end()) return false;
     this->fleet.erase(iter);
     return true;
-}*/
+}

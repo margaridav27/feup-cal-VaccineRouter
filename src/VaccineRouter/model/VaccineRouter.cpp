@@ -1,71 +1,81 @@
 #include "VaccineRouter.h"
 
 
-VaccineRouter::VaccineRouter(Time vaccineLifeTime):
-    vaccineLifeTime(vaccineLifeTime){}
+VaccineRouter::VaccineRouter() :
+        vaccineLifeTime("03:00:00") {} // comback: maybe change this default value?
+
+VaccineRouter::VaccineRouter(Time vaccineLifeTime) :
+        vaccineLifeTime(vaccineLifeTime) {}
+
+const std::hash<std::string> &VaccineRouter::getMapsHashName() const {
+    return this->mapsHashName;
+}
 
 //TODO
-void VaccineRouter::loadMap(std::string MapFileName){
+void VaccineRouter::loadMap(std::string MapFileName) {
 
 }
 
 //TODO
-
-void VaccineRouter::setUpGraph(std::string MapFileName){
-
-}
-
-//TODO
-void VaccineRouter::selectGraph(std::string MapFileName){
+void VaccineRouter::setUpGraph(std::string MapFileName) {
 
 }
 
 //TODO
-void VaccineRouter::processGraph(){
+void VaccineRouter::selectGraph(std::string MapFileName) {
 
 }
 
 //TODO
-void VaccineRouter::processOrders(){
+void VaccineRouter::processGraph() {
 
 }
 
 //TODO
-void VaccineRouter::checkTWOverdue(){
+void VaccineRouter::processOrders() {
 
 }
 
 //TODO
-void VaccineRouter::findNearestSC(){
+void VaccineRouter::checkTWOverdue() {
 
 }
 
 //TODO
-void VaccineRouter::findSC(){
+void VaccineRouter::findNearestSC() {
 
 }
 
 //TODO
-Time VaccineRouter::getVaccineLifeTime() const{
+void VaccineRouter::findSC() {
 
 }
 
 //TODO
-void VaccineRouter::calculateRouteSingleSCSingleAC(){
+Time VaccineRouter::getVaccineLifeTime() const {
 
 }
 
 //TODO
-void VaccineRouter::calculateRouteSingleSCMultipleAC(){
+void VaccineRouter::calculateRouteSingleSCSingleAC() {
 
 }
 
 //TODO
-void VaccineRouter::calculateRouteSingleSCMultipleACWithTW(){
+void VaccineRouter::calculateRouteSingleSCMultipleAC() {
 
 }
 
 //TODO
-void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW(){
+void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 
 }
+
+//TODO
+void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
+
+}
+
+
+
+

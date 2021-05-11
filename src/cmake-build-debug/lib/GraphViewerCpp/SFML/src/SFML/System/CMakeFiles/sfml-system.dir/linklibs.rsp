@@ -1,1 +1,1 @@
-  -L"C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/lib"  -lwinmm -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+  -L"C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/lib"  -lwinmm -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

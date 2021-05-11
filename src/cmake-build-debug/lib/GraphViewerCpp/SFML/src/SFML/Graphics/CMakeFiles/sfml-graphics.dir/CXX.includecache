@@ -602,27 +602,27 @@ android/asset_manager.h
 string
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/BlendMode.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/BlendMode.cpp
 SFML/Graphics/BlendMode.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/CircleShape.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/CircleShape.cpp
 SFML/Graphics/CircleShape.hpp
 -
 cmath
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Color.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Color.cpp
 SFML/Graphics/Color.hpp
 -
 algorithm
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/ConvexShape.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/ConvexShape.cpp
 SFML/Graphics/ConvexShape.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Font.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Font.cpp
 SFML/Graphics/Font.hpp
 -
 SFML/Graphics/GLCheck.hpp
@@ -640,7 +640,7 @@ cstdlib
 cstring
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/GLCheck.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/GLCheck.cpp
 SFML/Graphics/GLCheck.hpp
 -
 SFML/System/Err.hpp
@@ -648,7 +648,7 @@ SFML/System/Err.hpp
 string
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/GLExtensions.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/GLExtensions.cpp
 SFML/Graphics/GLExtensions.hpp
 -
 SFML/Window/Context.hpp
@@ -656,19 +656,19 @@ SFML/Window/Context.hpp
 SFML/System/Err.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/GLLoader.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/GLLoader.cpp
 SFML/Graphics/GLLoader.hpp
 -
 SFML/Window/Context.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Glsl.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Glsl.cpp
 SFML/Graphics/Glsl.hpp
 -
 algorithm
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Image.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Image.cpp
 SFML/Graphics/Image.hpp
 -
 SFML/Graphics/ImageLoader.hpp
@@ -682,7 +682,7 @@ algorithm
 cstring
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/ImageLoader.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/ImageLoader.cpp
 SFML/Graphics/ImageLoader.hpp
 -
 SFML/System/InputStream.hpp
@@ -696,19 +696,19 @@ stb_image_write.h
 cctype
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RectangleShape.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RectangleShape.cpp
 SFML/Graphics/RectangleShape.hpp
 -
 cmath
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderStates.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderStates.cpp
 SFML/Graphics/RenderStates.hpp
 -
 cstddef
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTarget.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTarget.cpp
 SFML/Graphics/RenderTarget.hpp
 -
 SFML/Graphics/Drawable.hpp
@@ -740,7 +740,7 @@ algorithm
 map
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTexture.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTexture.cpp
 SFML/Graphics/RenderTexture.hpp
 -
 SFML/Graphics/RenderTextureImplFBO.hpp
@@ -750,11 +750,11 @@ SFML/Graphics/RenderTextureImplDefault.hpp
 SFML/System/Err.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTextureImpl.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTextureImpl.cpp
 SFML/Graphics/RenderTextureImpl.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTextureImplDefault.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTextureImplDefault.cpp
 SFML/Graphics/RenderTextureImplDefault.hpp
 -
 SFML/Graphics/GLCheck.hpp
@@ -766,7 +766,7 @@ SFML/Window/Context.hpp
 SFML/System/Err.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTextureImplFBO.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderTextureImplFBO.cpp
 SFML/Graphics/RenderTextureImplFBO.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -784,7 +784,7 @@ utility
 set
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderWindow.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/RenderWindow.cpp
 SFML/Graphics/RenderWindow.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -794,7 +794,7 @@ SFML/Graphics/GLCheck.hpp
 SFML/Graphics/RenderTextureImplFBO.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Shader.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Shader.cpp
 SFML/Graphics/Shader.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -820,7 +820,7 @@ fstream
 vector
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Shape.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Shape.cpp
 SFML/Graphics/Shape.hpp
 -
 SFML/Graphics/RenderTarget.hpp
@@ -832,7 +832,7 @@ SFML/System/Err.hpp
 cmath
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Sprite.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Sprite.cpp
 SFML/Graphics/Sprite.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -842,7 +842,7 @@ SFML/Graphics/RenderTarget.hpp
 cstdlib
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Text.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Text.cpp
 SFML/Graphics/Text.hpp
 -
 SFML/Graphics/Texture.hpp
@@ -852,7 +852,7 @@ SFML/Graphics/RenderTarget.hpp
 cmath
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Texture.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Texture.cpp
 SFML/Graphics/Texture.hpp
 -
 SFML/Graphics/Image.hpp
@@ -876,33 +876,33 @@ cassert
 cstring
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/TextureSaver.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/TextureSaver.cpp
 SFML/Graphics/TextureSaver.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Transform.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Transform.cpp
 SFML/Graphics/Transform.hpp
 -
 cmath
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Transformable.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Transformable.cpp
 SFML/Graphics/Transformable.hpp
 -
 cmath
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Vertex.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/Vertex.cpp
 SFML/Graphics/Vertex.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/VertexArray.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/VertexArray.cpp
 SFML/Graphics/VertexArray.hpp
 -
 SFML/Graphics/RenderTarget.hpp
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/VertexBuffer.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/VertexBuffer.cpp
 SFML/Graphics/VertexBuffer.hpp
 -
 SFML/Graphics/RenderTarget.hpp
@@ -920,7 +920,7 @@ SFML/System/Err.hpp
 cstring
 -
 
-C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/View.cpp
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/src/SFML/Graphics/View.cpp
 SFML/Graphics/View.hpp
 -
 cmath

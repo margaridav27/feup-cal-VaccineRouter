@@ -4,7 +4,7 @@ if("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" LESS 2.5)
    message(FATAL_ERROR "CMake >= 2.6.0 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.6)
+cmake_policy(VERSION 2.6...3.17)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -49,21 +49,21 @@ unset(_expectedTargets)
 add_library(sfml-system SHARED IMPORTED)
 
 set_target_properties(sfml-system PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
 )
 
 # Create imported target sfml-main
 add_library(sfml-main STATIC IMPORTED)
 
 set_target_properties(sfml-main PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
 )
 
 # Create imported target sfml-window
 add_library(sfml-window SHARED IMPORTED)
 
 set_target_properties(sfml-window PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
   INTERFACE_LINK_LIBRARIES "sfml-system"
 )
 
@@ -78,7 +78,7 @@ set_target_properties(OpenGL PROPERTIES
 add_library(sfml-network SHARED IMPORTED)
 
 set_target_properties(sfml-network PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
   INTERFACE_LINK_LIBRARIES "sfml-system"
 )
 
@@ -86,7 +86,7 @@ set_target_properties(sfml-network PROPERTIES
 add_library(sfml-graphics SHARED IMPORTED)
 
 set_target_properties(sfml-graphics PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
   INTERFACE_LINK_LIBRARIES "sfml-window"
 )
 
@@ -94,16 +94,16 @@ set_target_properties(sfml-graphics PROPERTIES
 add_library(Freetype INTERFACE IMPORTED)
 
 set_target_properties(Freetype PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers/freetype2"
-  INTERFACE_LINK_LIBRARIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libfreetype.a"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers/freetype2"
+  INTERFACE_LINK_LIBRARIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libfreetype.a"
 )
 
 # Create imported target OpenAL
 add_library(OpenAL INTERFACE IMPORTED)
 
 set_target_properties(OpenAL PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers/AL"
-  INTERFACE_LINK_LIBRARIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libopenal32.a"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers/AL"
+  INTERFACE_LINK_LIBRARIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libopenal32.a"
 )
 
 # Create imported target Vorbis
@@ -111,8 +111,8 @@ add_library(Vorbis INTERFACE IMPORTED)
 
 set_target_properties(Vorbis PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "OV_EXCLUDE_STATIC_CALLBACKS"
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers;C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers"
-  INTERFACE_LINK_LIBRARIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libvorbisenc.a;C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libvorbisfile.a;C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libvorbis.a;C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libogg.a"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers"
+  INTERFACE_LINK_LIBRARIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libvorbisenc.a;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libvorbisfile.a;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libvorbis.a;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libogg.a"
 )
 
 # Create imported target FLAC
@@ -120,58 +120,58 @@ add_library(FLAC INTERFACE IMPORTED)
 
 set_target_properties(FLAC PROPERTIES
   INTERFACE_COMPILE_DEFINITIONS "FLAC__NO_DLL"
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers"
-  INTERFACE_LINK_LIBRARIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x86/libFLAC.a"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/headers"
+  INTERFACE_LINK_LIBRARIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libFLAC.a"
 )
 
 # Create imported target sfml-audio
 add_library(sfml-audio SHARED IMPORTED)
 
 set_target_properties(sfml-audio PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
+  INTERFACE_INCLUDE_DIRECTORIES "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/include"
   INTERFACE_LINK_LIBRARIES "sfml-system"
 )
 
 # Import target "sfml-system" for configuration "Debug"
 set_property(TARGET sfml-system APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(sfml-system PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a"
-  IMPORTED_LOCATION_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-system-d-2.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-system-d.a"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-system-d-2.dll"
   )
 
 # Import target "sfml-main" for configuration "Debug"
 set_property(TARGET sfml-main APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(sfml-main PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_DEBUG "CXX"
-  IMPORTED_LOCATION_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-main-d.a"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-main-d.a"
   )
 
 # Import target "sfml-window" for configuration "Debug"
 set_property(TARGET sfml-window APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(sfml-window PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-window-d.a"
-  IMPORTED_LOCATION_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-window-d-2.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-window-d.a"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-window-d-2.dll"
   )
 
 # Import target "sfml-network" for configuration "Debug"
 set_property(TARGET sfml-network APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(sfml-network PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-network-d.a"
-  IMPORTED_LOCATION_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-network-d-2.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-network-d.a"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-network-d-2.dll"
   )
 
 # Import target "sfml-graphics" for configuration "Debug"
 set_property(TARGET sfml-graphics APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(sfml-graphics PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-graphics-d.a"
-  IMPORTED_LOCATION_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-graphics-d-2.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-graphics-d.a"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-graphics-d-2.dll"
   )
 
 # Import target "sfml-audio" for configuration "Debug"
 set_property(TARGET sfml-audio APPEND PROPERTY IMPORTED_CONFIGURATIONS DEBUG)
 set_target_properties(sfml-audio PROPERTIES
-  IMPORTED_IMPLIB_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-audio-d.a"
-  IMPORTED_LOCATION_DEBUG "C:/Users/Beatriz Aguiar/Desktop/uni/current/CAL/feup-cal/Projects/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-audio-d-2.dll"
+  IMPORTED_IMPLIB_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/lib/GraphViewerCpp/SFML/lib/libsfml-audio-d.a"
+  IMPORTED_LOCATION_DEBUG "C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug/sfml-audio-d-2.dll"
   )
 
 # This file does not depend on other imported targets which have

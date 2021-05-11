@@ -13,11 +13,11 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] Node
 - [x] Edge
 - [x] Graph
-- [ ] Mutable priority queue
-- [ ] StorageCenter           
+- [x] Mutable priority queue
+- [x] StorageCenter           
 - [x] ApplicationCenter
-- [ ] Tarjan                  
-- [ ] begin interface         
+- [x] Tarjan                  
+- [x] begin interface         
  
 **Bia**    
 - [x] GraphViewer             

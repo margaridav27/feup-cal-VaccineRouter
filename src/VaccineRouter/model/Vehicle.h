@@ -7,15 +7,16 @@
 
 class Vehicle {
 private:
-  std::queue<Node *> qPath;
-  std::vector<Node *> vPath;
-  double speed = 70;
+    std::queue<Node *> qPath;
+    std::vector<Node *> vPath;
+    double speed = 70;
 public:
-  std::queue<Node *> getPath();
-  Node *getNextNode();
-  void addToPath(Node *n);
-  void setSpeed(double speed);
-
+    Vehicle();
+    std::queue<Node *> getPath();
+    Node *getNextNode();
+    void addToPath(Node *n);
+    void setSpeed(double speed);
+    bool operator==(const Vehicle &rhs) const;
 };
 
 

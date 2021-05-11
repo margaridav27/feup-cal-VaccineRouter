@@ -17,8 +17,8 @@ public:
   void setTime(unsigned int hour, unsigned  int minute, unsigned int second);
   void setTime(std::string timeStr);
 
-  Time *operator+(Time t);
-  std::ostream &operator<<(std::ostream &o);
+  Time *operator+(Time t) const;
+  std::ostream &operator<<(std::ostream &o) const;
 
 
 };

@@ -33,6 +33,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 
 - [ ] REUNITE, THINK AND REGISTER
 - [ ] Divide tasks
+- [ ] Parse files
 - [ ] Vehicle                 
 - [ ] VaccineRouter           
 - [ ] StorageCenter           

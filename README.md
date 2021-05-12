@@ -31,13 +31,12 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 ### Sprint 2 - Implement classes and interligations
 #### 14 May
 
-- [ ] REUNITE, THINK AND REGISTER
-- [ ] Divide tasks
-- [ ] Parse files
-- [ ] Vehicle                 
-- [ ] VaccineRouter           
-- [ ] StorageCenter           
-- [ ] ApplicationCenter       
+- [x] REUNITE, THINK AND REGISTER
+- [x] Divide tasks
+- [ ] Parse files - Maggy
+- [ ] Display graph @GraphViewer - Bia
+- [ ] VaccineRouter - Both bitches          
+     
 
 ### Sprint 3 - hardcore testing
 #### 19 May tops

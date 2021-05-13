@@ -5,7 +5,4 @@
 #include "graph/GraphProcessor.h"
 
 int main() {
-    Graph *graph = processGraph("penafiel");
-
-    if (graph == nullptr) return 1;
 }

@@ -2,20 +2,20 @@
 #include <iostream>
 #include "GraphProcessor.h"
 
-Graph *processGraph(std::string chosenCity) {
+Graph *processGraph(const std::string& chosenCity) {
     Graph *graph = new Graph();
 
     if (chosenCity != "espinho" && chosenCity != "porto" && chosenCity != "penafiel") return nullptr;
 
-    processNodes(graph, chosenCity);
-    processEdges(graph, chosenCity);
-
+    if (!processNodes(graph, chosenCity) ||
+        !processEdges(graph, chosenCity))
+        return nullptr;
     return graph;
 }
 
-bool processNodes(Graph *graph, std::string chosenCity) {
-    std::ifstream istream("cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
-    if (istream.is_open()) {
+bool processNodes(Graph *graph, const std::string& chosenCity) {
+    std::ifstream istream("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
+    if (!istream.is_open()) {
         std::cerr << "Edges file opening failed.\n";
         return false;
     }
@@ -25,9 +25,9 @@ bool processNodes(Graph *graph, std::string chosenCity) {
     double x, y;
     char dummy;
 
-    std::cin >> numNodes;
+    istream >> numNodes;
     for (int i = 0; i < numNodes; ++i) {
-        std::cin >> dummy >> id >> dummy >> x >> dummy >> y >> dummy;
+        istream >> dummy >> id >> dummy >> x >> dummy >> y >> dummy;
         graph->addNode(id, Coordinates(x, y));
     }
 
@@ -35,9 +35,9 @@ bool processNodes(Graph *graph, std::string chosenCity) {
     return true;
 }
 
-bool processEdges(Graph *graph, std::string chosenCity) {
-    std::ifstream istream("cityMaps/" + chosenCity + "/" + chosenCity + "_strong_edges.txt");
-    if (istream.is_open()) {
+bool processEdges(Graph *graph, const std::string& chosenCity) {
+    std::ifstream istream("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_edges.txt");
+    if (!istream.is_open()) {
         std::cerr << "Edges file opening failed.\n";
         return false;
     }
@@ -47,9 +47,9 @@ bool processEdges(Graph *graph, std::string chosenCity) {
     double weight;
     char dummy;
 
-    std::cin >> numEdges;
+    istream >> numEdges;
     for (int i = 0; i < numEdges; ++i) {
-        std::cin >> dummy >> src >> dummy >> dest >> dummy;
+        istream >> dummy >> src >> dummy >> dest >> dummy;
         Node *s = graph->getNode(src);
         Node *d = graph->getNode(dest);
         if (s == nullptr || d == nullptr) return false; // COMBACK: error message

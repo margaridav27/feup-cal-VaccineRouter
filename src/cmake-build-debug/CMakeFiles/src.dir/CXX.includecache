@@ -6,6 +6,36 @@
 
 #IncludeRegexTransform: 
 
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/AStar.cpp
+AStar.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/AStar.h
+queue
+-
+vector
+-
+algorithm
+-
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/AStar.h
+../graph/Graph.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+../graph/edge/Edge.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.cpp
+Dijkstra.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.h
+../utilities/MutablePriorityQueue.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Dijkstra.h
+../graph/Graph.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+../graph/edge/Edge.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.cpp
 algorithm
 -
@@ -20,6 +50,14 @@ unordered_set
 ../graph/Graph.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
 
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.cpp
+algorithm
+-
+queue
+-
+Graph.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
 vector
 -
@@ -30,10 +68,30 @@ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/Vaccin
 ../utilities/Coordinates.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/GraphProcessor.cpp
+GraphProcessor.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/GraphProcessor.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/GraphProcessor.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.cpp
+limits
+-
+Edge.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
+
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/edge/Edge.h
 limits
 -
 ../node/Node.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.cpp
+limits
+-
+utility
+-
+Node.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
 
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
@@ -46,5 +104,95 @@ C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/Vaccin
 ../../utilities/Coordinates.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
 
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/main.cpp
+iostream
+-
+set
+-
+unordered_set
+-
+GraphViewer/graphViewer.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/GraphViewer/graphViewer.h
+graph/Graph.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+algorithms/Tarjan.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/algorithms/Tarjan.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.cpp
+ApplicationCenter.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/ApplicationCenter.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/StorageCenter.cpp
+algorithm
+-
+vector
+-
+StorageCenter.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/StorageCenter.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/StorageCenter.h
+Vehicle.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/Vehicle.h
+../graph/node/Node.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.cpp
+VaccineRouter.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.h
+../graph/Graph.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/Graph.h
+../utilities/Time.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/Vehicle.cpp
+Vehicle.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/Vehicle.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/Vehicle.h
+queue
+-
+vector
+-
+../graph/node/Node.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/ui/Interface.cpp
+Interface.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/ui/Interface.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/ui/Interface.h
+../model/VaccineRouter.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/model/VaccineRouter.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.cpp
+Coordinates.h
 C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+math.h
+-
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Coordinates.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.cpp
+MutablePriorityQueue.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/MutablePriorityQueue.h
+vector
+-
+../graph/node/Node.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/graph/node/Node.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.cpp
+Time.h
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.h
+
+C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/VaccineRouter/utilities/Time.h
+string
+-
+iostream
+-
 

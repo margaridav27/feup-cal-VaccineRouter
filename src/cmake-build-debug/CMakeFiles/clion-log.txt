@@ -1,4 +1,7 @@
 "C:\Program Files\JetBrains\CLion 2020.2.4\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\Margarida Viera\Desktop\FEUP 2Y2S\CAL\feup-cal-VaccineRouter\src"
+-- Found OpenAL: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libopenal32.a  
+-- Found VORBIS: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libvorbisenc.a;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libvorbisfile.a;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libvorbis.a;C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libogg.a  
+-- Found FLAC: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/lib/GraphViewerCpp/SFML/extlibs/libs-mingw/x64/libFLAC.a  
 -- Configuring done
 -- Generating done
 -- Build files have been written to: C:/Users/Margarida Viera/Desktop/FEUP 2Y2S/CAL/feup-cal-VaccineRouter/src/cmake-build-debug

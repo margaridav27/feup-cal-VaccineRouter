@@ -2,8 +2,10 @@
 #include <iostream>
 #include "GraphProcessor.h"
 
-Graph * processGraph(std::string chosenCity) {
+Graph *processGraph(std::string chosenCity) {
     Graph *graph = new Graph();
+
+    if (chosenCity != "espinho" && chosenCity != "porto" && chosenCity != "penafiel") return nullptr;
 
     processNodes(graph, chosenCity);
     processEdges(graph, chosenCity);
@@ -11,12 +13,31 @@ Graph * processGraph(std::string chosenCity) {
     return graph;
 }
 
-bool processEdges(Graph *graph, std::string chosenCity) {
-    std::string edgesPath = R"(..\..\..\cityMaps\)" + chosenCity + R"("\")" + chosenCity + "_strong_edges.txt";
+bool processNodes(Graph *graph, std::string chosenCity) {
+    std::ifstream istream("cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
+    if (istream.is_open()) {
+        std::cerr << "Edges file opening failed.\n";
+        return false;
+    }
 
-    std::ifstream ifstr;
-    ifstr.open(edgesPath);
-    if (ifstr.fail()) {
+    unsigned int numNodes;
+    unsigned int id;
+    double x, y;
+    char dummy;
+
+    std::cin >> numNodes;
+    for (int i = 0; i < numNodes; ++i) {
+        std::cin >> dummy >> id >> dummy >> x >> dummy >> y >> dummy;
+        graph->addNode(id, Coordinates(x, y));
+    }
+
+    istream.close();
+    return true;
+}
+
+bool processEdges(Graph *graph, std::string chosenCity) {
+    std::ifstream istream("cityMaps/" + chosenCity + "/" + chosenCity + "_strong_edges.txt");
+    if (istream.is_open()) {
         std::cerr << "Edges file opening failed.\n";
         return false;
     }
@@ -36,31 +57,6 @@ bool processEdges(Graph *graph, std::string chosenCity) {
         graph->addEdge(src, dest, weight);
     }
 
-    ifstr.close();
-    return true;
-}
-
-bool processNodes(Graph *graph, std::string chosenCity) {
-    std::string nodesPath = R"(..\..\..\cityMaps\)" + chosenCity + R"("\")" + chosenCity + "_strong_nodes_xy.txt";
-
-    std::ifstream ifstr;
-    ifstr.open(nodesPath);
-    if (ifstr.fail()) {
-        std::cerr << "Nodes file opening failed.\n";
-        return false;
-    }
-
-    unsigned int numNodes;
-    unsigned int id;
-    double x, y;
-    char dummy;
-
-    std::cin >> numNodes;
-    for (int i = 0; i < numNodes; ++i) {
-        std::cin >> dummy >> id >> dummy >> x >> dummy >> y >> dummy;
-        graph->addNode(id, Coordinates(x, y));
-    }
-
-    ifstr.close();
+    istream.close();
     return true;
 }

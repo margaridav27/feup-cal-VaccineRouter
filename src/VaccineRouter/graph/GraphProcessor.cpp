@@ -1,3 +1,5 @@
+#include <fstream>
+#include <iostream>
 #include "GraphProcessor.h"
 
 Graph * processGraph(std::string chosenCity) {
@@ -9,11 +11,56 @@ Graph * processGraph(std::string chosenCity) {
     return graph;
 }
 
-void processEdges(Graph *graph, std::string chosenCity) {
-    std::string nodesPath = R"(..\..\..\cityMaps\)" + chosenCity + R"("\")" + chosenCity + "_strong_nodes_xy.txt";
-}
-
-void processNodes(Graph *graph, std::string chosenCity) {
+bool processEdges(Graph *graph, std::string chosenCity) {
     std::string edgesPath = R"(..\..\..\cityMaps\)" + chosenCity + R"("\")" + chosenCity + "_strong_edges.txt";
 
+    std::ifstream ifstr;
+    ifstr.open(edgesPath);
+    if (ifstr.fail()) {
+        std::cerr << "Edges file opening failed.\n";
+        return false;
+    }
+
+    unsigned int numEdges;
+    unsigned int src, dest;
+    double weight;
+    char dummy;
+
+    std::cin >> numEdges;
+    for (int i = 0; i < numEdges; ++i) {
+        std::cin >> dummy >> src >> dummy >> dest >> dummy;
+        Node *s = graph->getNode(src);
+        Node *d = graph->getNode(dest);
+        if (s == nullptr || d == nullptr) return false; // COMBACK: error message
+        weight = s->calculateDist(d);
+        graph->addEdge(src, dest, weight);
+    }
+
+    ifstr.close();
+    return true;
+}
+
+bool processNodes(Graph *graph, std::string chosenCity) {
+    std::string nodesPath = R"(..\..\..\cityMaps\)" + chosenCity + R"("\")" + chosenCity + "_strong_nodes_xy.txt";
+
+    std::ifstream ifstr;
+    ifstr.open(nodesPath);
+    if (ifstr.fail()) {
+        std::cerr << "Nodes file opening failed.\n";
+        return false;
+    }
+
+    unsigned int numNodes;
+    unsigned int id;
+    double x, y;
+    char dummy;
+
+    std::cin >> numNodes;
+    for (int i = 0; i < numNodes; ++i) {
+        std::cin >> dummy >> id >> dummy >> x >> dummy >> y >> dummy;
+        graph->addNode(id, Coordinates(x, y));
+    }
+
+    ifstr.close();
+    return true;
 }

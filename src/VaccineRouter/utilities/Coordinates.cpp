@@ -29,5 +29,5 @@ void Coordinates::setCoordinates(double x, double y) {
 }
 
 double Coordinates::calculateEuclidianDistance(Coordinates c) {
-    return pow(std::sqrt(pow((this->x - c.getY()), 2) + pow((this->y - c.getY()), 2)), 2);
+    return pow(std::sqrt(pow((this->x - c.getX()), 2) + pow((this->y - c.getY()), 2)), 2);
 }

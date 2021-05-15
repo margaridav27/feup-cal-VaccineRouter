@@ -13,6 +13,10 @@ const std::vector<StorageCenter> &VaccineRouter::getSCs() const { return this->S
 
 const std::vector<ApplicationCenter> &VaccineRouter::getACs() const { return this->ACs; }
 
+void VaccineRouter::addStorageCenter(const StorageCenter& sc) { this->SCs.push_back(sc); }
+
+void VaccineRouter::addApplicationCenter(const ApplicationCenter& ac) { this->ACs.push_back(ac); }
+
 void VaccineRouter::selectMap(const std::string& mapFilename) {
     this->graph = processGraph(mapFilename);
     setUpSCs(mapFilename);
@@ -20,12 +24,18 @@ void VaccineRouter::selectMap(const std::string& mapFilename) {
 
 bool VaccineRouter::setUpSCs(const std::string& mapFilename) {
     std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_SCs.txt");
+
     if (!istream.is_open()) {
         std::cerr << "File does not exist or could not be open.\n\n";
         return false;
     }
 
-    //TODO: ler o respetivo ficheiro e adicionar ao vetor
+    unsigned int id;
+    std::string name;
+    while(istream >> id >> name) {
+        StorageCenter newSC(id, name);
+        addStorageCenter(newSC);
+    }
 
     istream.close();
     return true;
@@ -76,13 +86,7 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
 
-void VaccineRouter::addStorageCenter(unsigned int id) {
 
-}
-
-void VaccineRouter::addApplicationCenter(unsigned int id) {
-
-}
 
 
 

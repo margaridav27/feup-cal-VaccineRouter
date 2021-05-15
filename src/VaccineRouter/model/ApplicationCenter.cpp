@@ -4,8 +4,13 @@
 
 ApplicationCenter::ApplicationCenter(unsigned int locationNodeId, std::string name) :
         locationNodeID(locationNodeId),
-        name(name),
+        name(std::move(name)),
         vaccinesToReceive(0) {}
+
+ApplicationCenter::ApplicationCenter(const ApplicationCenter &ac) :
+        locationNodeID(ac.getLocationNodeId()),
+        name(ac.getName()),
+        vaccinesToReceive(ac.getVaccinesToReceive()) {}
 
 unsigned int ApplicationCenter::getLocationNodeId() const {
     return this->locationNodeID;
@@ -27,3 +32,5 @@ bool ApplicationCenter::operator==(const ApplicationCenter &rhs) const {
     return locationNodeID == rhs.locationNodeID &&
            name == rhs.name;
 }
+
+

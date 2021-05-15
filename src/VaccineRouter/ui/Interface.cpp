@@ -5,8 +5,9 @@ bool Interface::checkInRange(int optionsRange, int input) {
     return (input >= 1 && input <= optionsRange);
 }
 
-bool Interface::checkFilenameValidity(const std::string& filename) {
-    std::ifstream istream("../../cityMaps/" + filename + "/" + filename + "_strong_edges.txt"); // comback
+// comback
+bool Interface::checkFilenameValidity(const std::string &filename) {
+    std::ifstream istream("../../cityMaps/" + filename + "/" + filename + "_strong_edges.txt");
     if (!istream.is_open()) {
         std::cerr << "File does not exist or could not be open.\n\n";
         return false;
@@ -60,11 +61,6 @@ Interface::Interface() { this->vaccineRouter = new VaccineRouter(); }
 
 void Interface::initInterface() { initialMenu(); }
 
-// todo: this method will be responsible to actually run VaccineRouter given the previous selections
-void Interface::initApplication() {
-
-}
-
 void Interface::initialMenu() {
     int input;
     do {
@@ -75,10 +71,7 @@ void Interface::initialMenu() {
         std::cout << "\n\n";
     } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
-    switch (input) { //comback
-        case 1: runProgramMenu();
-        default: return;
-    }
+    if (input == 1) runProgramMenu();
 }
 
 void Interface::runProgramMenu() {
@@ -92,38 +85,49 @@ void Interface::runProgramMenu() {
     } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
     switch (input) {
-        case 1: selectMapMenu();
-        case 2: initialMenu();
-        default: return;
+        case 1:
+            selectMapMenu();
+        case 2:
+            initialMenu();
+        default:
+            return;
     }
 }
 
-// todo: allow more options!!
-// todo: fazer load para um array dos mapas existentes e depois percorrer
 void Interface::selectMapMenu() {
     int input;
-    int option = 1;
+    int optionCounter = 1;
+    std::vector<std::string> options;
     do {
-        std::cout << "1. Porto\n"
-                     "2. Espinho\n"
-                     "3. Penafiel\n"
-                     "4. Exit\n\n"
-                     "Please select your option: ";
+        // file containing the names of the available cities
+        std::ifstream istream("../../cityMaps/availableCities.txt");
+
+        if (!istream.is_open()) {
+            std::cerr << "File containing the available cities could not be open.\n\n";
+            return;
+        }
+
+        std::string cityName;
+        while (istream >> cityName) {
+            std::cout << optionCounter << ". " << cityName << '\n';
+            options.push_back(cityName);
+            optionCounter++;
+        }
+
+        istream.close();
+
+        std::cout << optionCounter << ". " << "Go Back\n\n"
+                                              "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!checkGeneralInputValidity(4, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
 
-    switch (input) {
-        case 1: this->vaccineRouter->selectMap("porto");
-        case 2: this->vaccineRouter->selectMap("espinho");
-        case 3: this->vaccineRouter->selectMap("penafiel");
-        case 4: return;
-    }
-
-    selectSingleOrMultipleACMenu();
+    if (input == optionCounter) runProgramMenu(); // user chose to go back
+    this->vaccineRouter->selectMap(options[optionCounter]);
+    selectSingleOrMultipleACMenu(options[optionCounter]);
 }
 
-void Interface::selectSingleOrMultipleACMenu() {
+void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
     int input;
     do {
         std::cout << "1. Single Application Center\n"
@@ -136,9 +140,9 @@ void Interface::selectSingleOrMultipleACMenu() {
 
     switch (input) {
         case 1:
-            selectSingleACMenu();
+            selectSingleACMenu(mapFilename);
         case 2:
-            selectMultipleACMenu();
+            selectMultipleACMenu(mapFilename);
         case 3:
             selectMapMenu();
         default:
@@ -146,50 +150,80 @@ void Interface::selectSingleOrMultipleACMenu() {
     }
 }
 
-// todo
-void Interface::selectSingleACMenu() {
+void Interface::displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options) {
+    std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_ACs.txt");
+
+    if (!istream.is_open()) {
+        std::cerr << "File does not exist or could not be open.\n\n";
+        return;
+    }
+
+    unsigned int id;
+    std::string name;
+    while (istream >> id >> name) {
+        ApplicationCenter newAC(id, name);
+        options.push_back(newAC);
+    }
+
+    // displaying the different options
+    for (int i = 0; i < options.size(); ++i) std::cout << i << ". " << options[i].getName() << '\n';
+
+    istream.close();
+}
+
+void Interface::selectSingleACMenu(const std::string &mapFilename) {
     std::vector<int> input;
-    bool invalidInput;
+    bool invalidInput = false;
+    std::vector<ApplicationCenter> options;
 
     do {
-        // todo: display all available application centers
+        displayAndGetAvailableACs(mapFilename, options);
         std::cout << "Please select the Application Center from the above list [usage: >2]: ";
-        input = checkACSelectionValidity(false, 0); // todo: fix optionsRange
-
+        input = checkACSelectionValidity(false, options.size());
         invalidInput = input.empty();
-        if (invalidInput) continue;
-
-        // todo: finish
-
     } while (invalidInput);
 
-    orderVaccinesMenu(input);
+    orderVaccinesMenu(input, options);
+    singleAC();
 }
 
-// todo
-void Interface::selectMultipleACMenu() {
+void Interface::selectMultipleACMenu(const std::string &mapFilename) {
     std::vector<int> input;
-    bool invalidInput;
+    bool invalidInput = false;
+    std::vector<ApplicationCenter> options;
 
     do {
-        // todo: display all available application centers
+        displayAndGetAvailableACs(mapFilename, options);
         std::cout << "Please select the Application Center from the above list [usage: >2]: ";
-        input = checkACSelectionValidity(true, 0); // todo: fix optionsRange
-
+        input = checkACSelectionValidity(true, options.size());
         invalidInput = input.empty();
-        if (invalidInput) continue;
-
-        // todo: finish
-
     } while (invalidInput);
 
-    orderVaccinesMenu(input);
+    orderVaccinesMenu(input, options);
+    multipleAC();
 }
 
-// todo
-void Interface::orderVaccinesMenu(const std::vector<int> &selected) {
-    initApplication();
+void Interface::orderVaccinesMenu(const std::vector<int> &selected, const std::vector<ApplicationCenter> &options) {
+    int order;
+    for (int i : selected) {
+        std::cout << "Vaccine's order for " << options[i].getName() << ": ";
+        std::cin >> order;
+
+        ApplicationCenter ac(options[i]);
+        ac.setVaccinesToReceive(order);
+        this->vaccineRouter->addApplicationCenter(ac);
+    }
 }
+
+void Interface::singleAC() {
+
+}
+
+void Interface::multipleAC() {
+
+}
+
+
 
 
 

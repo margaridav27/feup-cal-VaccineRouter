@@ -11,6 +11,7 @@ private:
     unsigned int vaccinesToReceive;
 public:
     ApplicationCenter(unsigned int locationNodeId, std::string name);
+    ApplicationCenter(const ApplicationCenter &ac);
     unsigned int getLocationNodeId() const;
     const std::string &getName() const;
     unsigned int getVaccinesToReceive() const;

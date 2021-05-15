@@ -41,3 +41,8 @@ bool StorageCenter::removeVehicle(Vehicle vehicle) {
     this->fleet.erase(iter);
     return true;
 }
+
+bool StorageCenter::operator==(const StorageCenter &rhs) const {
+    return locationNodeID == rhs.locationNodeID;
+}
+

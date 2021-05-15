@@ -2,6 +2,8 @@
 #define VACCINEROUTER_APPLICATIONCENTER_H
 
 
+#include <string>
+
 class ApplicationCenter {
 private:
     unsigned int locationNodeID;
@@ -11,6 +13,7 @@ public:
     unsigned int getLocationNodeId() const;
     unsigned int getVaccinesToReceive() const;
     void setVaccinesToReceive(unsigned int order);
+    bool operator==(const ApplicationCenter &rhs) const;
 };
 
 

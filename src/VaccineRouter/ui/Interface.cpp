@@ -1,16 +1,27 @@
+#include <fstream>
 #include "Interface.h"
 
 bool Interface::checkInRange(int optionsRange, int input) {
     return (input >= 1 && input <= optionsRange);
 }
 
-bool Interface::checkInputValidity(int optionsRange, int input) {
+bool Interface::checkFilenameValidity(const std::string& filename) {
+    std::ifstream istream("../../cityMaps/" + filename + "/" + filename + "_strong_edges.txt"); // comback
+    if (!istream.is_open()) {
+        std::cerr << "File does not exist or could not be open.\n\n";
+        return false;
+    }
+    istream.close();
+    return true;
+}
+
+bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
     if (checkInRange(optionsRange, input)) return true;
 
     std::cin.clear();
     std::cin.ignore(100000, '\n');
 
-    std::cout << "Invalid input. Please choose again.\n\n";
+    std::cerr << "Invalid input. Please choose again.\n\n";
     return false;
 }
 
@@ -23,7 +34,7 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsR
 
         // invalid input error
         if (std::cin.fail() || !checkInRange(optionsRange, input)) {
-            std::cout << "Invalid input. Please choose again.\n\n";
+            std::cerr << "Invalid input. Please choose again.\n\n";
             std::cin.clear();
             std::cin.ignore(100000, '\n');
             return std::vector<int>();
@@ -31,7 +42,7 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsR
 
         // multiple inputs when only single was permitted error
         if (!multiple && std::cin.peek() != std::cin.eof()) {
-            std::cout << "You chose more than one Application Center.\n"
+            std::cerr << "You chose more than one Application Center.\n"
                          "Please make sure to choose only one.\n\n";
             std::cin.clear();
             std::cin.ignore(100000, '\n');
@@ -57,32 +68,17 @@ void Interface::initApplication() {
 void Interface::initialMenu() {
     int input;
     do {
-        std::cout << "1. Load Map\n"
-                     "2. Run Program\n"
-                     "3. Exit\n\n"
+        std::cout << "1. Run Program\n"
+                     "2. Exit\n\n"
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (checkInputValidity(3, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
-    switch (input) {
-        case 1:
-            loadMapMenu();
-        case 2:
-            runProgramMenu();
-        default:
-            return;
+    switch (input) { //comback
+        case 1: runProgramMenu();
+        default: return;
     }
-}
-
-// todo
-void Interface::loadMapMenu() {
-    int input;
-    do {
-        std::cout << "Map's text file path (CTRL-C to go back): ";
-        std::cin >> input;
-        std::cout << "\n\n";
-    } while (1);
 }
 
 void Interface::runProgramMenu() {
@@ -93,27 +89,36 @@ void Interface::runProgramMenu() {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (checkInputValidity(2, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
     switch (input) {
-        case 1:
-            selectMapMenu();
-        case 2:
-            initialMenu();
-        default:
-            return;
+        case 1: selectMapMenu();
+        case 2: initialMenu();
+        default: return;
     }
 }
 
-// todo
+// todo: allow more options!!
+// todo: fazer load para um array dos mapas existentes e depois percorrer
 void Interface::selectMapMenu() {
     int input;
+    int option = 1;
     do {
-        // todo: display all available map options
-        std::cout << "Please select your option: ";
+        std::cout << "1. Porto\n"
+                     "2. Espinho\n"
+                     "3. Penafiel\n"
+                     "4. Exit\n\n"
+                     "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (checkInputValidity(3, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(4, input) && std::cin.fail());
+
+    switch (input) {
+        case 1: this->vaccineRouter->selectMap("porto");
+        case 2: this->vaccineRouter->selectMap("espinho");
+        case 3: this->vaccineRouter->selectMap("penafiel");
+        case 4: return;
+    }
 
     selectSingleOrMultipleACMenu();
 }
@@ -127,7 +132,7 @@ void Interface::selectSingleOrMultipleACMenu() {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (checkInputValidity(3, input) && std::cin.fail());
+    } while (checkGeneralInputValidity(3, input) && std::cin.fail());
 
     switch (input) {
         case 1:
@@ -185,6 +190,8 @@ void Interface::selectMultipleACMenu() {
 void Interface::orderVaccinesMenu(const std::vector<int> &selected) {
     initApplication();
 }
+
+
 
 
 

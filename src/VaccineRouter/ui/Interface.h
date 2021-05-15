@@ -9,9 +9,9 @@ private:
     VaccineRouter *vaccineRouter;
 
     bool checkInRange(int optionsRange, int input);
-    bool checkInputValidity(int optionsRange, int input);
+    bool checkGeneralInputValidity(int optionsRange, int input);
+    bool checkFilenameValidity(const std::string& filename);
     std::vector<int> checkACSelectionValidity(bool multiple, int optionsRange);
-
 public:
     Interface();
     void initInterface();

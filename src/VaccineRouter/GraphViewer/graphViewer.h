@@ -10,7 +10,8 @@
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
 
-GVNode getNodeID(std::map<Node *,GVNode> GVNodes, Node * n);
+GVNode getNodeID(std::map<Node *, GVNode> GVNodes, Node *n);
+
 void displayGraph(Graph graph);
 
 

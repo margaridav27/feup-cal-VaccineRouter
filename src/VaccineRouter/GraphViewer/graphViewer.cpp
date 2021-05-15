@@ -20,7 +20,7 @@ void displayGraph(Graph graph){
 
   for (Node * n: graph.getNodeSet()){
     GVNode node = gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX
-                                                    (),n->getCoords().getY()));
+                                                    (),n->getCoordinates().getY() ));
     GVnodes.insert(std::pair<Node*,GVNode >(n,node));
   }
 

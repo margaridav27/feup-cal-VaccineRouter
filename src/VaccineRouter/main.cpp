@@ -1,8 +1,13 @@
+#include "GraphViewer/graphViewer.h"
+#include "graph/Graph.h"
+#include "graph/GraphProcessor.h"
 #include <iostream>
 #include <set>
 #include <unordered_set>
-#include "graph/Graph.h"
-#include "graph/GraphProcessor.h"
+
 
 int main() {
+  Graph g = CreateTestGraph();
+  displayGraph(g);
+
 }

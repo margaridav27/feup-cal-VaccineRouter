@@ -1,6 +1,7 @@
 #include "VaccineRouter.h"
 #include "../algorithms/Dijkstra.h"
 #include "../graph/GraphProcessor.h"
+#include "../GraphViewer/graphViewer.h"
 #include <fstream>
 
 VaccineRouter::VaccineRouter() :
@@ -69,6 +70,8 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
   StorageCenter nearestSC = findNearestSC(AC);
 
   dijkstra(*graph, nearestSC.getNode(), AC.getNode(), vehicle);
+
+  displayVehiclePath(*vehicle);
 }
 
 //TODO

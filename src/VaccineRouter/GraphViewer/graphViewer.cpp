@@ -8,6 +8,13 @@ GVNode getNodeID(std::map<Node *, GVNode> GVNodes, Node *n) {
         return itr->second;
 }
 
+GVNode getNodeID(std::vector<GVNode> GVNodes, int index) {
+  for(GVNode gvNode: GVNodes){
+    if (gvNode.getId() == index)
+      return gvNode;
+  }
+}
+
 void displayGraph(Graph graph) {
     std::map<Node *, GVNode> GVnodes;
     int idEdge = 0;
@@ -32,5 +39,27 @@ void displayGraph(Graph graph) {
     }
 
     gv.join();
+
+}
+
+void displayVehiclePath(Vehicle vehicle){
+  int idNode = 0;
+  int idEdge = 0;
+  std::vector<GVNode> GVnodes;
+  Node *n;
+
+  GraphViewer gv;
+  gv.setCenter(sf::Vector2f(300, 300));
+  gv.createWindow(600, 600);
+
+  while((n = vehicle.getNextNode()) != nullptr)
+    GVNode node = gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(), n->getCoordinates().getY()));
+
+  for (int i = 0; i < idNode - 1; i++){
+    GVNode ixOrig = getNodeID(GVnodes,i);
+    GVNode ixDest =  getNodeID(GVnodes,i+1);
+    gv.addEdge(idEdge++, ixOrig,ixDest,
+               GraphViewer::Edge::EdgeType::DIRECTED);
+  }
 
 }

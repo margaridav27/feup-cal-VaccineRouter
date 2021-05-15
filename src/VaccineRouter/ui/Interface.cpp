@@ -6,7 +6,7 @@ bool Interface::checkInRange(int optionsRange, int input) {
 }
 
 bool Interface::checkFilenameValidity(const std::string& filename) {
-    std::ifstream istream("../../cityMaps/" + filename + "/" + filename + "_strong_edges.txt");
+    std::ifstream istream("../../cityMaps/" + filename + "/" + filename + "_strong_edges.txt"); // comback
     if (!istream.is_open()) {
         std::cerr << "File does not exist or could not be open.\n\n";
         return false;
@@ -68,32 +68,17 @@ void Interface::initApplication() {
 void Interface::initialMenu() {
     int input;
     do {
-        std::cout << "1. Load Map\n"
-                     "2. Run Program\n"
-                     "3. Exit\n\n"
+        std::cout << "1. Run Program\n"
+                     "2. Exit\n\n"
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!checkGeneralInputValidity(3, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
-    switch (input) {
-        case 1: loadMapMenu();
-        case 2: runProgramMenu();
+    switch (input) { //comback
+        case 1: runProgramMenu();
         default: return;
     }
-}
-
-void Interface::loadMapMenu() {
-    std::string input;
-    do {
-        std::cout << "Map's text file path: ";
-        std::cin >> input;
-        std::cout << "\n\n";
-    } while (!checkFilenameValidity(input));
-
-    this->vaccineRouter->loadMap(input);
-    std::cout << "Map successfully loaded.\n\n";
-    initialMenu();
 }
 
 void Interface::runProgramMenu() {
@@ -113,9 +98,11 @@ void Interface::runProgramMenu() {
     }
 }
 
-// todo
+// todo: allow more options!!
+// todo: fazer load para um array dos mapas existentes e depois percorrer
 void Interface::selectMapMenu() {
     int input;
+    int option = 1;
     do {
         std::cout << "1. Porto\n"
                      "2. Espinho\n"

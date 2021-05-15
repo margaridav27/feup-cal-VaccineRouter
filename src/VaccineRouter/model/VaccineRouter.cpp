@@ -1,4 +1,6 @@
+#include <fstream>
 #include "VaccineRouter.h"
+#include "../graph/GraphProcessor.h"
 
 
 VaccineRouter::VaccineRouter() :
@@ -7,28 +9,26 @@ VaccineRouter::VaccineRouter() :
 VaccineRouter::VaccineRouter(Time vaccineLifeTime) :
         vaccineLifeTime(vaccineLifeTime) {}
 
-const std::hash<std::string> &VaccineRouter::getMapsHashName() const {
-    return this->mapsHashName;
+const std::vector<StorageCenter> &VaccineRouter::getSCs() const { return this->SCs; }
+
+const std::vector<ApplicationCenter> &VaccineRouter::getACs() const { return this->ACs; }
+
+void VaccineRouter::selectMap(const std::string& mapFilename) {
+    this->graph = processGraph(mapFilename);
+    setUpSCs(mapFilename);
 }
 
-//TODO
-void VaccineRouter::loadMap(std::string MapFileName) {
+bool VaccineRouter::setUpSCs(const std::string& mapFilename) {
+    std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_SCs.txt");
+    if (!istream.is_open()) {
+        std::cerr << "File does not exist or could not be open.\n\n";
+        return false;
+    }
 
-}
+    //TODO: ler o respetivo ficheiro e adicionar ao vetor
 
-//TODO
-void VaccineRouter::setUpGraph(std::string MapFileName) {
-
-}
-
-//TODO
-void VaccineRouter::selectMap(std::string MapFileName) {
-
-}
-
-//TODO
-void VaccineRouter::processGraph() {
-
+    istream.close();
+    return true;
 }
 
 //TODO
@@ -75,6 +75,8 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
+
+
 
 
 

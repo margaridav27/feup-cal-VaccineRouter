@@ -1,5 +1,7 @@
 #include "ApplicationCenter.h"
 
+#include <utility>
+
 ApplicationCenter::ApplicationCenter(unsigned int locationNodeId) :
         locationNodeID(locationNodeId),
         vaccinesToReceive(0) {}

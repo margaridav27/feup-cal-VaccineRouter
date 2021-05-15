@@ -3,20 +3,23 @@
 
 #include "../graph/Graph.h"
 #include "../utilities/Time.h"
+#include "../utilities/StringsHashTable.h"
+#include "StorageCenter.h"
+#include "ApplicationCenter.h"
 
 class VaccineRouter {
 private:
     Graph *graph;
     Time vaccineLifeTime;
-    std::hash<std::string> mapsHashName;
+    std::vector<StorageCenter> SCs;
+    std::vector<ApplicationCenter> ACs;
 public:
     VaccineRouter();
     VaccineRouter(Time vaccineLifeTime);
-    const std::hash<std::string> &getMapsHashName() const;
-    void loadMap(std::string MapFileName);
-    void selectMap(std::string MapFileName);
-    void setUpGraph(std::string MapFileName);
-    void processGraph();
+    const std::vector<StorageCenter> &getSCs() const;
+    const std::vector<ApplicationCenter> &getACs() const;
+    void selectMap(const std::string& mapFilename);
+    bool setUpSCs(const std::string& mapFilename);
     void processOrders();
     void checkTWOverdue();
     void findNearestSC();
@@ -27,6 +30,8 @@ public:
     void calculateRouteSingleSCMultipleACWithTW();
     void calculateRouteMultipleSCMultipleACWithTW();
 };
+
+
 
 
 #endif //VACCINEROUTER_VACCINEROUTER_H

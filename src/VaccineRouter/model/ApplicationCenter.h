@@ -7,10 +7,12 @@
 class ApplicationCenter {
 private:
     unsigned int locationNodeID;
+    std::string name;
     unsigned int vaccinesToReceive;
 public:
-    ApplicationCenter(unsigned int locationNodeId);
+    ApplicationCenter(unsigned int locationNodeId, std::string name);
     unsigned int getLocationNodeId() const;
+    const std::string &getName() const;
     unsigned int getVaccinesToReceive() const;
     void setVaccinesToReceive(unsigned int order);
     bool operator==(const ApplicationCenter &rhs) const;

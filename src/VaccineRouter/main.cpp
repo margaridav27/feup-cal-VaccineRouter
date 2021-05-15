@@ -7,7 +7,5 @@
 
 
 int main() {
-  Graph g = CreateTestGraph();
-  displayGraph(g);
 
 }

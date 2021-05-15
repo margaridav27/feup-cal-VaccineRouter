@@ -1,18 +1,20 @@
 #include <algorithm>
+#include <utility>
 #include <vector>
 
 #include "StorageCenter.h"
 
-StorageCenter::StorageCenter() :
-        locationNodeID(-1),
-        vaccinesToDeliver(-1) {}
-
-StorageCenter::StorageCenter(unsigned int locationNodeId) :
+StorageCenter::StorageCenter(unsigned int locationNodeId, std::string name) :
         locationNodeID(locationNodeId),
+        name(std::move(name)),
         vaccinesToDeliver(-1) {}
 
 unsigned int StorageCenter::getLocationNodeId() const {
     return this->locationNodeID;
+}
+
+const std::string &StorageCenter::getName() const {
+    return this->name;
 }
 
 const std::vector<Node> &StorageCenter::getAssignedAc() const {
@@ -43,6 +45,7 @@ bool StorageCenter::removeVehicle(Vehicle vehicle) {
 }
 
 bool StorageCenter::operator==(const StorageCenter &rhs) const {
-    return locationNodeID == rhs.locationNodeID;
+    return locationNodeID == rhs.locationNodeID &&
+           name == rhs.name;
 }
 

@@ -4,13 +4,13 @@
 
 #include "StorageCenter.h"
 
-StorageCenter::StorageCenter(unsigned int locationNodeId, std::string name) :
-        locationNodeID(locationNodeId),
+StorageCenter::StorageCenter(Node *node, std::string name) :
+        node(node),
         name(std::move(name)),
         vaccinesToDeliver(-1) {}
 
-unsigned int StorageCenter::getLocationNodeId() const {
-    return this->locationNodeID;
+Node *StorageCenter::getNode() const {
+    return this->node;
 }
 
 const std::string &StorageCenter::getName() const {
@@ -45,7 +45,6 @@ bool StorageCenter::removeVehicle(Vehicle vehicle) {
 }
 
 bool StorageCenter::operator==(const StorageCenter &rhs) const {
-    return locationNodeID == rhs.locationNodeID &&
+    return this->node->getId() == rhs.getNode()->getId() &&
            name == rhs.name;
 }
-

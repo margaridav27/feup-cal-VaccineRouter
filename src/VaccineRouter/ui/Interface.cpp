@@ -188,17 +188,9 @@ void Interface::selectMultipleACMenu() {
 
 // todo
 void Interface::orderVaccinesMenu(const std::vector<int> &selected) {
-    initApplication();
+    singleAC();
 }
 
-
-
-
-
-
-
-
-
-
-
-
+void Interface::singleAC(){
+  vaccineRouter->calculateRouteSingleSCSingleAC();
+}

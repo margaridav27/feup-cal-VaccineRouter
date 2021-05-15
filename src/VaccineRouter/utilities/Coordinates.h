@@ -11,7 +11,7 @@ public:
     double getX() const;
     double getY() const;
     void setCoordinates(double x, double y);
-    double calculateEuclidianDistance(Coordinates c);
+    double calculateEuclidianDistance(Coordinates c) const;
 };
 
 

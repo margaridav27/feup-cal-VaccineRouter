@@ -2,12 +2,12 @@
 
 Vehicle::Vehicle() {}
 
-std::queue<Node *> Vehicle::getPath() {
+std::stack<Node *> Vehicle::getPath() {
     return this->qPath;
 }
 
 Node *Vehicle::getNextNode() {
-    Node *n = this->qPath.front();
+    Node *n = this->qPath.top();
     this->qPath.pop();
     return n;
 }
@@ -28,3 +28,20 @@ bool Vehicle::operator==(const Vehicle &rhs) const {
     return this->speed == rhs.speed;
 }
 
+void Vehicle::setVehicleRouteDest(Graph graph, Node *dest) {
+  Node *aux = graph.findNode(dest);
+
+  while (aux != nullptr) {
+    this->addToPath(aux);
+    aux = aux->getPath();
+  }
+}
+
+void Vehicle::setVehicleRouteOrig(Graph graph, Node *orig) {
+  Node *aux = graph.findNode(orig);
+
+  while (aux != nullptr) {
+    this->addToPath(aux);
+    aux = aux->getPath();
+  }
+}

@@ -18,7 +18,9 @@ public:
     bool addNode(unsigned int id, Coordinates coords);
     bool removeNode(unsigned int id);
     Node *findNode(Node *n);
-    bool addEdge(unsigned int sourceID, unsigned int destID, double weigth);
+    Node *findNode(int id);
+    bool addEdge(unsigned int sourceID,
+                 unsigned int destID, double weigth);
     bool removeEdge(unsigned int sourceID, unsigned int destID);
 };
 

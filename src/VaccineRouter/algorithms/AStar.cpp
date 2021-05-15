@@ -1,14 +1,15 @@
 #include "AStar.h"
+#include "../model/Vehicle.h"
 
+#include <algorithm>
 #include <queue>
 #include <vector>
-#include <algorithm>
 
 //TESTS TO SEE IF STORING IN A VECTOR IS BETTER THAN GOING THROUGH AUXILIARY
 // QUEUE
 //TODO
 
-std::vector<Node *> AStar(Graph graph, Node *orig, Node *dest) {
+void AStar(Graph graph, Node *orig, Node *dest, Vehicle *vehicle) {
     std::queue<Node *> openQueue;
     std::queue<Node *> closedQueue;
     std::vector<Node *> closedAux;
@@ -46,16 +47,5 @@ std::vector<Node *> AStar(Graph graph, Node *orig, Node *dest) {
             openAux.push_back(next);
         }
     }
-    return getPath(graph, orig);
-}
-
-std::vector<Node *> getPath(Graph graph, Node *n) {
-    std::vector<Node *> res;
-    Node *aux = graph.findNode(n);
-
-    while (aux != nullptr) {
-        res.insert(res.begin(), aux);
-        aux = aux->getPath();
-    }
-    return res;
+  vehicle->setVehicleRouteOrig(graph, orig);
 }

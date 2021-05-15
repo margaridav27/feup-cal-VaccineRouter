@@ -24,8 +24,8 @@ public:
     bool setUpSCs(const std::string& mapFilename);
     void processOrders();
     void checkTWOverdue();
-    void findNearestSC();
-    void findSC();
+    StorageCenter findNearestSC(ApplicationCenter applicationCenter);
+    Node *findXCenter();
     Time getVaccineLifeTime() const;
     void calculateRouteSingleSCSingleAC();
     void calculateRouteSingleSCMultipleAC();

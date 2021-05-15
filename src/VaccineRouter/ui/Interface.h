@@ -24,7 +24,8 @@ public:
     void selectSingleACMenu();
     void selectMultipleACMenu();
     void orderVaccinesMenu(const std::vector<int> &selected);
-};
+    void singleAC();
+  };
 
 
 #endif //SRC_INTERFACE_H

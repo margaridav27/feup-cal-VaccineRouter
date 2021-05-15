@@ -22,7 +22,7 @@ void VaccineRouter::setUpGraph(std::string MapFileName) {
 }
 
 //TODO
-void VaccineRouter::selectGraph(std::string MapFileName) {
+void VaccineRouter::selectMap(std::string MapFileName) {
 
 }
 

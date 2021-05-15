@@ -1,12 +1,12 @@
 #include <fstream>
 #include "Interface.h"
 
-bool Interface::_checkInRange(int optionsRange, int input) {
+bool Interface::checkInRange(int optionsRange, int input) {
     return (input >= 1 && input <= optionsRange);
 }
 
-bool Interface::_checkGeneralInputValidity(int optionsRange, int input) {
-    if (_checkInRange(optionsRange, input)) return true;
+bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
+    if (checkInRange(optionsRange, input)) return true;
 
     std::cin.clear();
     std::cin.ignore(100000, '\n');
@@ -15,7 +15,7 @@ bool Interface::_checkGeneralInputValidity(int optionsRange, int input) {
     return false;
 }
 
-std::vector<int> Interface::_checkACSelectionValidity(bool multiple, int optionsRange) {
+std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsRange) {
     int input;
     std::vector<int> selected;
 
@@ -23,7 +23,7 @@ std::vector<int> Interface::_checkACSelectionValidity(bool multiple, int options
         std::cin >> input;
 
         // invalid input error
-        if (std::cin.fail() || !_checkInRange(optionsRange, input)) {
+        if (std::cin.fail() || !checkInRange(optionsRange, input)) {
             std::cerr << "Invalid input. Please choose again.\n\n";
             std::cin.clear();
             std::cin.ignore(100000, '\n');
@@ -46,7 +46,7 @@ std::vector<int> Interface::_checkACSelectionValidity(bool multiple, int options
     return selected;
 }
 
-void Interface::_displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options) {
+void Interface::displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options) {
     std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_ACs.txt");
 
     if (!istream.is_open()) {
@@ -79,7 +79,7 @@ void Interface::initialMenu() {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!_checkGeneralInputValidity(2, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
     if (input == 1) runProgramMenu();
 }
@@ -92,7 +92,7 @@ void Interface::runProgramMenu() {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!_checkGeneralInputValidity(2, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
 
     switch (input) {
         case 1:
@@ -130,7 +130,7 @@ void Interface::selectMapMenu() {
                                               "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!_checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
+    } while (!checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
 
     if (input == optionCounter) runProgramMenu(); // user chose to go back
     this->vaccineRouter->selectMap(options[optionCounter]);
@@ -146,7 +146,7 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (_checkGeneralInputValidity(3, input) && std::cin.fail());
+    } while (checkGeneralInputValidity(3, input) && std::cin.fail());
 
     switch (input) {
         case 1:
@@ -166,9 +166,9 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
     std::vector<ApplicationCenter> options;
 
     do {
-        _displayAndGetAvailableACs(mapFilename, options);
+        displayAndGetAvailableACs(mapFilename, options);
         std::cout << "Please select the Application Center from the above list [usage: >2]: ";
-        input = _checkACSelectionValidity(false, options.size());
+        input = checkACSelectionValidity(false, options.size());
         invalidInput = input.empty();
     } while (invalidInput);
 
@@ -182,9 +182,9 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
     std::vector<ApplicationCenter> options;
 
     do {
-        _displayAndGetAvailableACs(mapFilename, options);
+        displayAndGetAvailableACs(mapFilename, options);
         std::cout << "Please select the Application Center from the above list [usage: >2]: ";
-        input = _checkACSelectionValidity(true, options.size());
+        input = checkACSelectionValidity(true, options.size());
         invalidInput = input.empty();
     } while (invalidInput);
 

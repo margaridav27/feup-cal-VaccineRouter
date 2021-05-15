@@ -8,14 +8,10 @@ class Interface {
 private:
     VaccineRouter *vaccineRouter;
 
-    bool _checkInRange(int optionsRange, int input);
-    bool _checkGeneralInputValidity(int optionsRange, int input);
-    std::vector<int> _checkACSelectionValidity(bool multiple, int optionsRange);
-    void _displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options);
-
-public:
-    Interface();
-    void initInterface();
+    bool checkInRange(int optionsRange, int input);
+    bool checkGeneralInputValidity(int optionsRange, int input);
+    std::vector<int> checkACSelectionValidity(bool multiple, int optionsRange);
+    void displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options);
     void initialMenu();
     void runProgramMenu();
     void selectMapMenu();
@@ -25,6 +21,9 @@ public:
     void orderVaccinesMenu(const std::vector<int> &selected, const std::vector<ApplicationCenter>& options);
     void singleAC();
     void multipleAC();
+public:
+    Interface();
+    void initInterface();
 };
 
 

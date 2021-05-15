@@ -1,23 +1,12 @@
 #include <fstream>
 #include "Interface.h"
 
-bool Interface::checkInRange(int optionsRange, int input) {
+bool Interface::_checkInRange(int optionsRange, int input) {
     return (input >= 1 && input <= optionsRange);
 }
 
-// comback
-bool Interface::checkFilenameValidity(const std::string &filename) {
-    std::ifstream istream("../../cityMaps/" + filename + "/" + filename + "_strong_edges.txt");
-    if (!istream.is_open()) {
-        std::cerr << "File does not exist or could not be open.\n\n";
-        return false;
-    }
-    istream.close();
-    return true;
-}
-
-bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
-    if (checkInRange(optionsRange, input)) return true;
+bool Interface::_checkGeneralInputValidity(int optionsRange, int input) {
+    if (_checkInRange(optionsRange, input)) return true;
 
     std::cin.clear();
     std::cin.ignore(100000, '\n');
@@ -26,7 +15,7 @@ bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
     return false;
 }
 
-std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsRange) {
+std::vector<int> Interface::_checkACSelectionValidity(bool multiple, int optionsRange) {
     int input;
     std::vector<int> selected;
 
@@ -34,7 +23,7 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsR
         std::cin >> input;
 
         // invalid input error
-        if (std::cin.fail() || !checkInRange(optionsRange, input)) {
+        if (std::cin.fail() || !_checkInRange(optionsRange, input)) {
             std::cerr << "Invalid input. Please choose again.\n\n";
             std::cin.clear();
             std::cin.ignore(100000, '\n');
@@ -57,6 +46,27 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple, int optionsR
     return selected;
 }
 
+void Interface::_displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options) {
+    std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_ACs.txt");
+
+    if (!istream.is_open()) {
+        std::cerr << "File does not exist or could not be open.\n\n";
+        return;
+    }
+
+    unsigned int id;
+    std::string name;
+    while (istream >> id >> name) {
+        ApplicationCenter newAC(id, name);
+        options.push_back(newAC);
+    }
+
+    // displaying the different options
+    for (int i = 0; i < options.size(); ++i) std::cout << i << ". " << options[i].getName() << '\n';
+
+    istream.close();
+}
+
 Interface::Interface() { this->vaccineRouter = new VaccineRouter(); }
 
 void Interface::initInterface() { initialMenu(); }
@@ -69,7 +79,7 @@ void Interface::initialMenu() {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
+    } while (!_checkGeneralInputValidity(2, input) && std::cin.fail());
 
     if (input == 1) runProgramMenu();
 }
@@ -82,7 +92,7 @@ void Interface::runProgramMenu() {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!checkGeneralInputValidity(2, input) && std::cin.fail());
+    } while (!_checkGeneralInputValidity(2, input) && std::cin.fail());
 
     switch (input) {
         case 1:
@@ -120,7 +130,7 @@ void Interface::selectMapMenu() {
                                               "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (!checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
+    } while (!_checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
 
     if (input == optionCounter) runProgramMenu(); // user chose to go back
     this->vaccineRouter->selectMap(options[optionCounter]);
@@ -136,7 +146,7 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
                      "Please select your option: ";
         std::cin >> input;
         std::cout << "\n\n";
-    } while (checkGeneralInputValidity(3, input) && std::cin.fail());
+    } while (_checkGeneralInputValidity(3, input) && std::cin.fail());
 
     switch (input) {
         case 1:
@@ -150,36 +160,15 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
     }
 }
 
-void Interface::displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options) {
-    std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_ACs.txt");
-
-    if (!istream.is_open()) {
-        std::cerr << "File does not exist or could not be open.\n\n";
-        return;
-    }
-
-    unsigned int id;
-    std::string name;
-    while (istream >> id >> name) {
-        ApplicationCenter newAC(id, name);
-        options.push_back(newAC);
-    }
-
-    // displaying the different options
-    for (int i = 0; i < options.size(); ++i) std::cout << i << ". " << options[i].getName() << '\n';
-
-    istream.close();
-}
-
 void Interface::selectSingleACMenu(const std::string &mapFilename) {
     std::vector<int> input;
     bool invalidInput = false;
     std::vector<ApplicationCenter> options;
 
     do {
-        displayAndGetAvailableACs(mapFilename, options);
+        _displayAndGetAvailableACs(mapFilename, options);
         std::cout << "Please select the Application Center from the above list [usage: >2]: ";
-        input = checkACSelectionValidity(false, options.size());
+        input = _checkACSelectionValidity(false, options.size());
         invalidInput = input.empty();
     } while (invalidInput);
 
@@ -193,9 +182,9 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
     std::vector<ApplicationCenter> options;
 
     do {
-        displayAndGetAvailableACs(mapFilename, options);
+        _displayAndGetAvailableACs(mapFilename, options);
         std::cout << "Please select the Application Center from the above list [usage: >2]: ";
-        input = checkACSelectionValidity(true, options.size());
+        input = _checkACSelectionValidity(true, options.size());
         invalidInput = input.empty();
     } while (invalidInput);
 
@@ -215,10 +204,12 @@ void Interface::orderVaccinesMenu(const std::vector<int> &selected, const std::v
     }
 }
 
+// TODO
 void Interface::singleAC() {
 
 }
 
+// TODO
 void Interface::multipleAC() {
 
 }

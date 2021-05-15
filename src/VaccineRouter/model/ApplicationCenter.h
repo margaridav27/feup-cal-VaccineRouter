@@ -10,10 +10,10 @@ private:
     unsigned int vaccinesToReceive;
 public:
     ApplicationCenter(unsigned int locationNodeId);
-    const std::string &getName() const;
     unsigned int getLocationNodeId() const;
     unsigned int getVaccinesToReceive() const;
     void setVaccinesToReceive(unsigned int order);
+    bool operator==(const ApplicationCenter &rhs) const;
 };
 
 

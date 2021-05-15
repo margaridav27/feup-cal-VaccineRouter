@@ -18,6 +18,8 @@ public:
     VaccineRouter(Time vaccineLifeTime);
     const std::vector<StorageCenter> &getSCs() const;
     const std::vector<ApplicationCenter> &getACs() const;
+    void addStorageCenter(unsigned int id);
+    void addApplicationCenter(unsigned int id);
     void selectMap(const std::string& mapFilename);
     bool setUpSCs(const std::string& mapFilename);
     void processOrders();

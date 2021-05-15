@@ -76,6 +76,14 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
 
+void VaccineRouter::addStorageCenter(unsigned int id) {
+
+}
+
+void VaccineRouter::addApplicationCenter(unsigned int id) {
+
+}
+
 
 
 

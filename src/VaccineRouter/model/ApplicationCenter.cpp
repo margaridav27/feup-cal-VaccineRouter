@@ -17,3 +17,7 @@ unsigned int ApplicationCenter::getVaccinesToReceive() const {
 void ApplicationCenter::setVaccinesToReceive(unsigned int order) {
     this->vaccinesToReceive = order;
 }
+
+bool ApplicationCenter::operator==(const ApplicationCenter &rhs) const {
+    return locationNodeID == rhs.locationNodeID;
+}

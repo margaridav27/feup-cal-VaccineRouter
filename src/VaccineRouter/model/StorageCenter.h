@@ -20,6 +20,7 @@ public:
     const std::vector<Vehicle> &getFleet() const;
     void addVehicle(Vehicle vehicle);
     bool removeVehicle(Vehicle vehicle);
+    bool operator==(const StorageCenter &rhs) const;
 };
 
 

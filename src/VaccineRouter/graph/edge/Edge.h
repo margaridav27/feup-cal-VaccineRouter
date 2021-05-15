@@ -18,12 +18,19 @@ private:
     double flow;
 public:
     Edge();
+
     Edge(Node *source, Node *dest, double weight);
+
     double getWeight() const;
+
     Node *getOrig() const;
+
     Node *getDest() const;
+
     double getCapacity() const;
+
     double getFlow() const;
+
     double getCost() const;
 };
 

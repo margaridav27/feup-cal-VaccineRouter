@@ -66,21 +66,33 @@ unsigned int Node::getId() const { return this->id; }
 
 unsigned int Node::getLowlink() const { return this->lowlink; }
 
-bool Node::isOnStack() const { return this->onStack; }
+void Node::setLowlink(unsigned int lowlink) { this->lowlink = lowlink; }
 
 double Node::getDist() const { return this->dist; }
 
+void Node::setDist(double dist) { this->dist = dist; }
+
 int Node::getQueueIndex() const { return this->queueIndex; }
+
+void Node::setQueueIndex(int index) { this->queueIndex = index; }
 
 Node *Node::getPath() const { return this->path; }
 
-Coordinates Node::getCoords() const { return this->coordinates; }
+void Node::setPath(Node *path) { this->path = path; }
 
 double Node::getCost() const { return this->cost; }
 
+void Node::setCost(double cost) { this->cost = cost; }
+
 double Node::getEuclidianDist() const { return this->euclidianDist; }
 
+void Node::setEuclidianDist(double eDist) { this->euclidianDist = eDist; }
+
 const Coordinates &Node::getCoordinates() const { return coordinates; }
+
+void Node::setCoordinates(const Coordinates &coordinates) {
+    this->coordinates = coordinates;
+}
 
 std::vector<Edge *> Node::getOutgoing() const { return this->outgoing; }
 
@@ -88,33 +100,19 @@ std::vector<Edge *> Node::getIncoming() const { return this->incoming; }
 
 const std::vector<Edge *> &Node::getAdj() const { return adj; }
 
-void Node::setCoordinates(const Coordinates &coordinates) {
-    this->coordinates = coordinates;
-}
-
 void Node::setAdj(const std::vector<Edge *> &adj) { this->adj = adj; }
 
-void Node::setLowlink(unsigned int lowlink) { this->lowlink = lowlink; }
+bool Node::wasVisited() const { return visited; }
 
 void Node::setVisited() { visited = true; }
 
 void Node::setUnvisited() { visited = false; }
 
-void Node::setDist(double dist) { this->dist = dist; }
-
-void Node::setEuclidianDist(double eDist) { this->euclidianDist = eDist; }
-
-void Node::setPath(Node *path) { this->path = path; }
-
-void Node::setQueueIndex(int index) { this->queueIndex = index; }
-
-void Node::setCost(double cost) { this->cost = cost; }
+bool Node::isOnStack() const { return this->onStack; }
 
 void Node::pushToStack() { this->onStack = true; }
 
 void Node::popFromStack() { this->onStack = false; }
-
-bool Node::wasVisited() const { return visited; }
 
 void Node::addEdge(Node *dest, double weight) { adj.push_back(new Edge(this, dest, weight)); }
 

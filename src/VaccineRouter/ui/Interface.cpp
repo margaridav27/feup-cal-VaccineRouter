@@ -1,10 +1,7 @@
 #include "Interface.h"
 
 bool Interface::checkInRange(int optionsRange, int input) {
-    for (int i = 1; i <= optionsRange; ++i) {
-        if (input == i) return true;
-    }
-    return false;
+    return (input >= 1 && input <= optionsRange);
 }
 
 bool Interface::checkInputValidity(int optionsRange, int input) {

@@ -1,7 +1,9 @@
 #include <fstream>
 #include "VaccineRouter.h"
+#include "../algorithms/Dijkstra.h"
 #include "../graph/GraphProcessor.h"
-
+#include "../GraphViewer/graphViewer.h"
+#include <fstream>
 
 VaccineRouter::VaccineRouter() :
         vaccineLifeTime("03:00:00") {} // comback: maybe change this default value?
@@ -51,24 +53,35 @@ void VaccineRouter::checkTWOverdue() {
 
 }
 
-//TODO
-void VaccineRouter::findNearestSC() {
+StorageCenter VaccineRouter::findNearestSC(ApplicationCenter
+                                               applicationCenter) {
+  double minDist = DOUBLE_MAX;
+  double dist = 0;
+  StorageCenter *nearest = nullptr;
 
+  Coordinates ACCoords = applicationCenter.getNode()->getCoordinates();
+
+  for (StorageCenter sc: this->SCs){
+    Coordinates SCCoords = sc.getNode()->getCoordinates();
+    dist = SCCoords.calculateEuclidianDistance(ACCoords);
+    if (dist < minDist){
+      minDist = dist;
+      nearest = &sc;
+    }
+  }
+  return *nearest;
 }
 
-//TODO
-void VaccineRouter::findSC() {
+Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
-}
-
-//TODO
-Time VaccineRouter::getVaccineLifeTime() const {
-
-}
-
-//TODO
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
+  Vehicle *vehicle;
+  ApplicationCenter AC = ACs[0];
+  StorageCenter nearestSC = findNearestSC(AC);
 
+  dijkstra(*graph, nearestSC.getNode(), AC.getNode(), vehicle);
+
+  displayVehiclesPath(SCs);
 }
 
 //TODO
@@ -86,7 +99,13 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
 
+void VaccineRouter::addStorageCenter(unsigned int id) {
 
+}
+
+void VaccineRouter::addApplicationCenter(unsigned int id) {
+
+}
 
 
 

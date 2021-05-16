@@ -2,18 +2,13 @@
 
 #include <utility>
 
-ApplicationCenter::ApplicationCenter(unsigned int locationNodeId, std::string name) :
-        locationNodeID(locationNodeId),
-        name(std::move(name)),
+ApplicationCenter::ApplicationCenter(Node *node, std::string name) :
+        node(node),
+        name(name),
         vaccinesToReceive(0) {}
 
-ApplicationCenter::ApplicationCenter(const ApplicationCenter &ac) :
-        locationNodeID(ac.getLocationNodeId()),
-        name(ac.getName()),
-        vaccinesToReceive(ac.getVaccinesToReceive()) {}
-
-unsigned int ApplicationCenter::getLocationNodeId() const {
-    return this->locationNodeID;
+Node *ApplicationCenter::getNode() const {
+    return this->node;
 }
 
 const std::string &ApplicationCenter::getName() const {
@@ -29,8 +24,6 @@ void ApplicationCenter::setVaccinesToReceive(unsigned int order) {
 }
 
 bool ApplicationCenter::operator==(const ApplicationCenter &rhs) const {
-    return locationNodeID == rhs.locationNodeID &&
+    return this->node->getId() == rhs.getNode()->getId() &&
            name == rhs.name;
 }
-
-

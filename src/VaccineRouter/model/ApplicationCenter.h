@@ -1,18 +1,17 @@
 #ifndef VACCINEROUTER_APPLICATIONCENTER_H
 #define VACCINEROUTER_APPLICATIONCENTER_H
 
-
+#include "../graph/node/Node.h"
 #include <string>
 
 class ApplicationCenter {
 private:
-    unsigned int locationNodeID;
+    Node *node;
     std::string name;
     unsigned int vaccinesToReceive;
 public:
-    ApplicationCenter(unsigned int locationNodeId, std::string name);
-    ApplicationCenter(const ApplicationCenter &ac);
-    unsigned int getLocationNodeId() const;
+    ApplicationCenter(Node *node, std::string name);
+    Node *getNode() const;
     const std::string &getName() const;
     unsigned int getVaccinesToReceive() const;
     void setVaccinesToReceive(unsigned int order);

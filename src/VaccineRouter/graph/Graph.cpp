@@ -50,3 +50,11 @@ Node *Graph::findNode(Node *nO) {
     }
     return nullptr;
 }
+
+Node *Graph::findNode(int id) {
+  for (Node *n: nodeSet) {
+    if (n->getId() == id)
+      return n;
+  }
+  return nullptr;
+}

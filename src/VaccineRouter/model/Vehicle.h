@@ -1,21 +1,25 @@
 #ifndef SRC_VEHICLE_H
 #define SRC_VEHICLE_H
 
-#include <queue>
-#include <vector>
+#include "../graph/Graph.h"
 #include "../graph/node/Node.h"
+#include <stack>
+#include <vector>
 
 class Vehicle {
 private:
-    std::queue<Node *> qPath;
+    std::stack<Node *> qPath;
     std::vector<Node *> vPath;
     double speed = 70;
+
+    void addToPath(Node *n);
 public:
     Vehicle();
-    std::queue<Node *> getPath();
+    std::stack<Node *> getPath();
     Node *getNextNode();
-    void addToPath(Node *n);
     void setSpeed(double speed);
+    void setVehicleRouteDest(Graph graph, Node *dest);
+    void setVehicleRouteOrig(Graph graph, Node *origin);
     bool operator==(const Vehicle &rhs) const;
 };
 

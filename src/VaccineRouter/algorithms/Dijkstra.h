@@ -3,9 +3,8 @@
 
 #include "../graph/Graph.h"
 #include "../graph/edge/Edge.h"
+#include "../model/Vehicle.h"
 
-std::vector<Node *> dijkstra(Graph graph, Node *o);
-
-std::vector<Node *> getPath(Graph graph, Node *origin, Node *dest);
+void dijkstra(Graph graph, Node *o, Node *d, Vehicle *vehicle);
 
 #endif//VACCINEROUTER_DIJKSTRA_H

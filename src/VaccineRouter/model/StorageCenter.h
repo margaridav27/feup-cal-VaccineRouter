@@ -7,21 +7,21 @@
 
 class StorageCenter {
 private:
-    unsigned int locationNodeID;
+    Node *node;
     std::string name;
     unsigned int vaccinesToDeliver;
     std::vector<Node> assignedAC; // COMBACK maybe make this std::vector<unsigned int> or a std::queue<Vechicle>/std::queue<unsigned int>
-    std::vector<Vehicle> fleet;
+    std::vector<Vehicle*> fleet;
 public:
-    StorageCenter(unsigned int locationNodeId, std::string name);
-    unsigned int getLocationNodeId() const;
+    StorageCenter(Node *Node, std::string name);
+    Node *getNode() const;
     const std::string &getName() const;
     const std::vector<Node> &getAssignedAc() const;
     unsigned int getVaccinesToDeliver() const;
+    const std::vector<Vehicle*> &getFleet();
     void setVaccinesToDeliver(unsigned int vaccinesToDeliver);
-    const std::vector<Vehicle> &getFleet() const;
-    void addVehicle(Vehicle vehicle);
-    bool removeVehicle(Vehicle vehicle);
+    void addVehicle(Vehicle *vehicle);
+    bool removeVehicle(Vehicle *vehicle);
     bool operator==(const StorageCenter &rhs) const;
 };
 

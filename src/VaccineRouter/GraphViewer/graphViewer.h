@@ -6,6 +6,8 @@
 #include "../graph/edge/Edge.h"
 #include "../graph/node/Node.h"
 #include "../model/Vehicle.h"
+#include "../model/StorageCenter.h"
+
 
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
@@ -16,7 +18,7 @@ GVNode getNodeID(std::vector<GVNode> GVNodes, int index);
 
 void displayGraph(Graph graph);
 
-void displayVehiclePath(Vehicle vehicle);
+void displayVehiclesPath(std::vector<StorageCenter> SCs);
 
 
 #endif //VACCINEROUTER_GRAPHVIEWER_H

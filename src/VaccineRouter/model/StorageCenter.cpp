@@ -29,15 +29,15 @@ void StorageCenter::setVaccinesToDeliver(unsigned int order) {
     this->vaccinesToDeliver = order;
 }
 
-const std::vector<Vehicle> &StorageCenter::getFleet() const {
+const std::vector<Vehicle*> &StorageCenter::getFleet() {
     return this->fleet;
 }
 
-void StorageCenter::addVehicle(Vehicle vehicle) {
+void StorageCenter::addVehicle(Vehicle *vehicle) {
     this->fleet.push_back(vehicle);
 }
 
-bool StorageCenter::removeVehicle(Vehicle vehicle) {
+bool StorageCenter::removeVehicle(Vehicle *vehicle) {
     auto iter = std::find(this->fleet.begin(), this->fleet.end(), vehicle);
     if (iter == this->fleet.end()) return false;
     this->fleet.erase(iter);

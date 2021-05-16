@@ -63,7 +63,6 @@ StorageCenter VaccineRouter::findNearestSC(ApplicationCenter
 
 Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
-//TODO
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
   Vehicle *vehicle;
   ApplicationCenter AC = ACs[0];
@@ -71,7 +70,7 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
 
   dijkstra(*graph, nearestSC.getNode(), AC.getNode(), vehicle);
 
-  displayVehiclePath(*vehicle);
+  displayVehiclesPath(SCs);
 }
 
 //TODO

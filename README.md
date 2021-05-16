@@ -29,16 +29,18 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] Time (necessary operators)          
 
 ### Sprint 2 - Implement classes and interligations
-#### 14 May
+#### 19 May
 
 - [x] REUNITE, THINK AND REGISTER
 - [x] Divide tasks
-- [ ] Parse files - Maggy
-- [ ] Display graph @GraphViewer - Bia
-- [ ] VaccineRouter - Both bitches          
-     
+- [x] Parse files 
+- [x] Display graph @GraphViewer 
+- [x] SingleSCSingleAC
+- [ ] SingleSCMultipleAC - 17 maio
+- [ ] SingleSCMultipleACWithTW - 17/18 maio
+- [ ] MultipleSCMultipleACWithTW - 19 maio
 
 ### Sprint 3 - hardcore testing
-#### 19 May tops
+#### 21 May 
 - [ ] test hardcore bia
 - [ ] test chillada maggy (true)

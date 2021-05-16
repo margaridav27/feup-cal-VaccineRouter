@@ -6,10 +6,12 @@
 #include <fstream>
 
 VaccineRouter::VaccineRouter() :
-        vaccineLifeTime("03:00:00") {} // comback: maybe change this default value?
+        vaccineLifeTime("03:00:00"),  // comback: maybe change this default value?
+        graph(new Graph()) {}
 
 VaccineRouter::VaccineRouter(Time vaccineLifeTime) :
-        vaccineLifeTime(vaccineLifeTime) {}
+        vaccineLifeTime(vaccineLifeTime),
+        graph(new Graph()) {}
 
 Graph *VaccineRouter::getGraph() const { return this->graph; }
 

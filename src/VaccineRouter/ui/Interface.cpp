@@ -62,7 +62,8 @@ void Interface::displayAndGetAvailableACs(const std::string &mapFilename, std::v
     }
 
     // displaying the different options
-    for (int i = 0; i < options.size(); ++i) std::cout << i << ". " << options[i].getName() << '\n';
+    if (options.empty()) std::cout << "There are no available Application Centers.\n";
+    else for (int i = 0; i < options.size(); ++i) std::cout << i << ". " << options[i].getName() << '\n';
 
     istream.close();
 }
@@ -117,6 +118,7 @@ void Interface::selectMapMenu() {
             return;
         }
 
+        std::cout << "Available Cities\n";
         std::string cityName;
         while (istream >> cityName) {
             std::cout << optionCounter << ". " << cityName << '\n';
@@ -133,8 +135,8 @@ void Interface::selectMapMenu() {
     } while (!checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
 
     if (input == optionCounter) runProgramMenu(); // user chose to go back
-    this->vaccineRouter->selectMap(options[optionCounter]);
-    selectSingleOrMultipleACMenu(options[optionCounter]);
+    this->vaccineRouter->selectMap(options[input - 1]);
+    selectSingleOrMultipleACMenu(options[input - 1]);
 }
 
 void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {

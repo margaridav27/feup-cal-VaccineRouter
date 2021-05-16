@@ -2,7 +2,7 @@
 #include "../utilities/MutablePriorityQueue.h"
 
 void dijkstra(Graph graph, Node *orig, Node *dest,
- Vehicle *vehicle) {
+              Vehicle *vehicle) {
     for (Node *n: graph.getNodeSet()) {
         n->setPath(nullptr);
         n->setDist(DOUBLE_MAX);

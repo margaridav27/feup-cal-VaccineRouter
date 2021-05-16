@@ -25,7 +25,7 @@ std::vector<Node *> tarjan(Graph *graph, Node *node) {
     return importantSCC;
 }
 
-void tarjanRecursive(Graph *graph, Node *node, std::vector<Node *>& SCCs, std::stack<Node *>& s) {
+void tarjanRecursive(Graph *graph, Node *node, std::vector<Node *> &SCCs, std::stack<Node *> &s) {
     node->setVisited();
     node->pushToStack();
     s.push(node);
@@ -36,8 +36,8 @@ void tarjanRecursive(Graph *graph, Node *node, std::vector<Node *>& SCCs, std::s
         if (!successor->wasVisited()) {
             tarjanRecursive(graph, successor, SCCs, s);
             node->setLowlink(std::min(node->getLowlink(), successor->getLowlink()));
-        // successor is in stack s and hence in the current SCC
-        // if successor is not on stack, then e is an edge pointing to another SCC and must be ignored
+            // successor is in stack s and hence in the current SCC
+            // if successor is not on stack, then e is an edge pointing to another SCC and must be ignored
         } else if (successor->isOnStack()) {
             node->setLowlink(std::min(node->getLowlink(), successor->getId()));
         }

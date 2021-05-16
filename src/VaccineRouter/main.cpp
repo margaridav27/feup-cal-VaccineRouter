@@ -1,4 +1,6 @@
 #include "GraphViewer/graphViewer.h"
+#include "algorithms/AStar.h"
+#include "algorithms/Dijkstra.h"
 #include "graph/Graph.h"
 #include "graph/GraphProcessor.h"
 #include "ui/Interface.h"

@@ -45,7 +45,7 @@ bool Graph::removeEdge(unsigned int sourceID, unsigned int destID) {
 
 Node *Graph::findNode(Node *nO) {
     for (Node *n: nodeSet) {
-        if (n == nO)
+        if (*n == *nO)
             return n;
     }
     return nullptr;

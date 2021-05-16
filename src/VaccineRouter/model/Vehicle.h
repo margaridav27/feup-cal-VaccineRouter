@@ -18,8 +18,7 @@ public:
     std::stack<Node *> getPath();
     Node *getNextNode();
     void setSpeed(double speed);
-    void setVehicleRouteDest(Graph graph, Node *dest);
-    void setVehicleRouteOrig(Graph graph, Node *origin);
+    void setVehicleRoute(Graph graph, Node *dest);
     bool operator==(const Vehicle &rhs) const;
 };
 

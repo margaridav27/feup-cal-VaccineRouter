@@ -30,5 +30,5 @@ void dijkstra(Graph graph, Node *orig, Node *dest,
         }
     }
 
-    vehicle->setVehicleRouteDest(graph, dest);
+    vehicle->setVehicleRoute(graph, dest);
 }

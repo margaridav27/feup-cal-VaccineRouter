@@ -16,6 +16,7 @@ private:
 public:
     VaccineRouter();
     VaccineRouter(Time vaccineLifeTime);
+    Graph *getGraph() const;
     const std::vector<StorageCenter> &getSCs() const;
     const std::vector<ApplicationCenter> &getACs() const;
     void addStorageCenter(const StorageCenter& sc);

@@ -9,10 +9,10 @@ GVNode getNodeID(std::map<Node *, GVNode> GVNodes, Node *n) {
 }
 
 GVNode getNodeID(std::vector<GVNode> GVNodes, int index) {
-  for(GVNode gvNode: GVNodes){
-    if (gvNode.getId() == index)
-      return gvNode;
-  }
+    for (GVNode gvNode: GVNodes) {
+        if (gvNode.getId() == index)
+            return gvNode;
+    }
 }
 
 void displayGraph(Graph graph) {
@@ -42,28 +42,29 @@ void displayGraph(Graph graph) {
 
 }
 
-void displayVehiclesPath(std::vector<StorageCenter> SCs){
-  GraphViewer gv;
-  gv.setCenter(sf::Vector2f(300, 300));
-  gv.createWindow(600, 600);
+void displayVehiclesPath(std::vector<StorageCenter> SCs) {
+    GraphViewer gv;
+    gv.setCenter(sf::Vector2f(300, 300));
+    gv.createWindow(600, 600);
 
-  for (StorageCenter sc: SCs){
-    for (Vehicle *v: sc.getFleet()){
-      int idNode = 0;
-      int idEdge = 0;
-      std::vector<GVNode> GVnodes;
-      Node *n;
+    for (StorageCenter sc: SCs) {
+        for (Vehicle *v: sc.getFleet()) {
+            int idNode = 0;
+            int idEdge = 0;
+            std::vector<GVNode> GVnodes;
+            Node *n;
 
-      while((n = v->getNextNode()) != nullptr)
-        GVNode node = gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(), n->getCoordinates().getY()));
+            while ((n = v->getNextNode()) != nullptr)
+                GVNode node = gv.addNode(idNode++,
+                                         sf::Vector2f(n->getCoordinates().getX(), n->getCoordinates().getY()));
 
-      for (int i = 0; i < idNode - 1; i++){
-        GVNode ixOrig = getNodeID(GVnodes,i);
-        GVNode ixDest =  getNodeID(GVnodes,i+1);
-        gv.addEdge(idEdge++, ixOrig,ixDest,
-                   GraphViewer::Edge::EdgeType::DIRECTED);
-      }
-      gv.join();
+            for (int i = 0; i < idNode - 1; i++) {
+                GVNode ixOrig = getNodeID(GVnodes, i);
+                GVNode ixDest = getNodeID(GVnodes, i + 1);
+                gv.addEdge(idEdge++, ixOrig, ixDest,
+                           GraphViewer::Edge::EdgeType::DIRECTED);
+            }
+            gv.join();
+        }
     }
-  }
 }

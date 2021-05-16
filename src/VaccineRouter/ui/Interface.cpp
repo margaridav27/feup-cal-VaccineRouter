@@ -57,7 +57,7 @@ void Interface::displayAndGetAvailableACs(const std::string &mapFilename, std::v
     unsigned int id;
     std::string name;
     while (istream >> id >> name) {
-        ApplicationCenter newAC(id, name);
+        ApplicationCenter newAC(this->vaccineRouter->getGraph()->getNode(id), name);
         options.push_back(newAC);
     }
 

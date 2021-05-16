@@ -11,20 +11,22 @@ VaccineRouter::VaccineRouter() :
 VaccineRouter::VaccineRouter(Time vaccineLifeTime) :
         vaccineLifeTime(vaccineLifeTime) {}
 
+Graph *VaccineRouter::getGraph() const { return this->graph; }
+
 const std::vector<StorageCenter> &VaccineRouter::getSCs() const { return this->SCs; }
 
 const std::vector<ApplicationCenter> &VaccineRouter::getACs() const { return this->ACs; }
 
-void VaccineRouter::addStorageCenter(const StorageCenter& sc) { this->SCs.push_back(sc); }
+void VaccineRouter::addStorageCenter(const StorageCenter &sc) { this->SCs.push_back(sc); }
 
-void VaccineRouter::addApplicationCenter(const ApplicationCenter& ac) { this->ACs.push_back(ac); }
+void VaccineRouter::addApplicationCenter(const ApplicationCenter &ac) { this->ACs.push_back(ac); }
 
-void VaccineRouter::selectMap(const std::string& mapFilename) {
+void VaccineRouter::selectMap(const std::string &mapFilename) {
     this->graph = processGraph(mapFilename);
     setUpSCs(mapFilename);
 }
 
-bool VaccineRouter::setUpSCs(const std::string& mapFilename) {
+bool VaccineRouter::setUpSCs(const std::string &mapFilename) {
     std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_SCs.txt");
 
     if (!istream.is_open()) {
@@ -34,8 +36,8 @@ bool VaccineRouter::setUpSCs(const std::string& mapFilename) {
 
     unsigned int id;
     std::string name;
-    while(istream >> id >> name) {
-        StorageCenter newSC(id, name);
+    while (istream >> id >> name) {
+        StorageCenter newSC(this->graph->getNode(id), name);
         addStorageCenter(newSC);
     }
 
@@ -54,34 +56,34 @@ void VaccineRouter::checkTWOverdue() {
 }
 
 StorageCenter VaccineRouter::findNearestSC(ApplicationCenter
-                                               applicationCenter) {
-  double minDist = DOUBLE_MAX;
-  double dist = 0;
-  StorageCenter *nearest = nullptr;
+                                           applicationCenter) {
+    double minDist = DOUBLE_MAX;
+    double dist = 0;
+    StorageCenter *nearest = nullptr;
 
-  Coordinates ACCoords = applicationCenter.getNode()->getCoordinates();
+    Coordinates ACCoords = applicationCenter.getNode()->getCoordinates();
 
-  for (StorageCenter sc: this->SCs){
-    Coordinates SCCoords = sc.getNode()->getCoordinates();
-    dist = SCCoords.calculateEuclidianDistance(ACCoords);
-    if (dist < minDist){
-      minDist = dist;
-      nearest = &sc;
+    for (StorageCenter sc: this->SCs) {
+        Coordinates SCCoords = sc.getNode()->getCoordinates();
+        dist = SCCoords.calculateEuclidianDistance(ACCoords);
+        if (dist < minDist) {
+            minDist = dist;
+            nearest = &sc;
+        }
     }
-  }
-  return *nearest;
+    return *nearest;
 }
 
 Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
-  Vehicle *vehicle;
-  ApplicationCenter AC = ACs[0];
-  StorageCenter nearestSC = findNearestSC(AC);
+    Vehicle *vehicle;
+    ApplicationCenter AC = ACs[0];
+    StorageCenter nearestSC = findNearestSC(AC);
 
-  dijkstra(*graph, nearestSC.getNode(), AC.getNode(), vehicle);
+    dijkstra(*graph, nearestSC.getNode(), AC.getNode(), vehicle);
 
-  displayVehiclesPath(SCs);
+    displayVehiclesPath(SCs);
 }
 
 //TODO
@@ -98,17 +100,3 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
-
-void VaccineRouter::addStorageCenter(unsigned int id) {
-
-}
-
-void VaccineRouter::addApplicationCenter(unsigned int id) {
-
-}
-
-
-
-
-
-

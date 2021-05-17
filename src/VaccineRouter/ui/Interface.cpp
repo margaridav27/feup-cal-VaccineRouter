@@ -202,7 +202,7 @@ void Interface::orderVaccinesMenu(const std::vector<int> &selected, const std::v
 
         ApplicationCenter ac(options[i]);
         ac.setVaccinesToReceive(order);
-        this->vaccineRouter->addApplicationCenter(ac);
+        this->vaccineRouter->addApplicationCenter(&ac);
     }
 }
 

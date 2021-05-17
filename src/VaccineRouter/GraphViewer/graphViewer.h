@@ -18,7 +18,7 @@ GVNode getNodeID(std::vector<GVNode> GVNodes, int index);
 
 void displayGraph(Graph graph);
 
-void displayVehiclesPath(std::vector<StorageCenter> SCs);
+void displayVehiclesPath(std::vector<StorageCenter *> SCs);
 
 
 #endif //VACCINEROUTER_GRAPHVIEWER_H

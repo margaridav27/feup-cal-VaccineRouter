@@ -2,20 +2,18 @@
 #define VACCINEROUTER_APPLICATIONCENTER_H
 
 #include "../graph/node/Node.h"
+#include "Center.h"
 #include <string>
 
-class ApplicationCenter {
+class ApplicationCenter : public Center {
 private:
-    Node *node;
-    std::string name;
     unsigned int vaccinesToReceive;
 public:
-    ApplicationCenter(Node *node, std::string name);
-    Node *getNode() const;
-    const std::string &getName() const;
+    ApplicationCenter();
+    ApplicationCenter(Node *node, const std::string& name);
     unsigned int getVaccinesToReceive() const;
     void setVaccinesToReceive(unsigned int order);
-    bool operator==(const ApplicationCenter &rhs) const;
+    bool operator==(const ApplicationCenter *rhs) const;
 };
 
 

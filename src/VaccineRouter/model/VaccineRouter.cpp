@@ -15,13 +15,15 @@ VaccineRouter::VaccineRouter(Time vaccineLifeTime) :
 
 Graph *VaccineRouter::getGraph() const { return this->graph; }
 
-const std::vector<StorageCenter> &VaccineRouter::getSCs() const { return this->SCs; }
+void VaccineRouter::setGraph(Graph *graph) { this->graph = graph; }
 
-const std::vector<ApplicationCenter> &VaccineRouter::getACs() const { return this->ACs; }
+const std::vector<StorageCenter *> &VaccineRouter::getSCs() const { return this->SCs; }
 
-void VaccineRouter::addStorageCenter(const StorageCenter &sc) { this->SCs.push_back(sc); }
+const std::vector<ApplicationCenter *> &VaccineRouter::getACs() const { return this->ACs; }
 
-void VaccineRouter::addApplicationCenter(const ApplicationCenter &ac) { this->ACs.push_back(ac); }
+void VaccineRouter::addStorageCenter(StorageCenter *sc) { this->SCs.push_back(sc); }
+
+void VaccineRouter::addApplicationCenter(ApplicationCenter *ac) { this->ACs.push_back(ac); }
 
 void VaccineRouter::selectMap(const std::string &mapFilename) {
     this->graph = processGraph(mapFilename);
@@ -39,7 +41,7 @@ bool VaccineRouter::setUpSCs(const std::string &mapFilename) {
     unsigned int id;
     std::string name;
     while (istream >> id >> name) {
-        StorageCenter newSC(this->graph->getNode(id), name);
+        auto *newSC = new StorageCenter(this->graph->getNode(id), name);
         addStorageCenter(newSC);
     }
 
@@ -57,40 +59,90 @@ void VaccineRouter::checkTWOverdue() {
 
 }
 
-StorageCenter VaccineRouter::findNearestSC(ApplicationCenter
-                                           applicationCenter) {
+StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter) {
     double minDist = DOUBLE_MAX;
     double dist = 0;
-    StorageCenter *nearest = nullptr;
+    auto *nearest = new StorageCenter();
 
-    Coordinates ACCoords = applicationCenter.getNode()->getCoordinates();
+    Coordinates ACCoords = applicationCenter->getNode()->getCoordinates();
 
-    for (StorageCenter sc: this->SCs) {
-        Coordinates SCCoords = sc.getNode()->getCoordinates();
+    for (StorageCenter *sc: this->SCs) {
+        Coordinates SCCoords = sc->getNode()->getCoordinates();
         dist = SCCoords.calculateEuclidianDistance(ACCoords);
         if (dist < minDist) {
             minDist = dist;
-            nearest = &sc;
+            nearest = sc;
         }
     }
-    return *nearest;
+
+    return nearest;
+}
+
+StorageCenter *VaccineRouter::findNearestSC() {
+    auto cmp = [](const std::pair<StorageCenter *, double> &a, const std::pair<StorageCenter *, double> &b) {
+        return a.second > b.second;
+    };
+    std::priority_queue<std::pair<StorageCenter *, double>,
+            std::vector<std::pair<StorageCenter *, double>>,
+            decltype(cmp)> dists(cmp);
+
+    for (ApplicationCenter *ac : this->ACs) {
+        StorageCenter *nearestSC = findNearestSC(ac);
+        double dist = nearestSC->getNode()->calculateDist(ac->getNode());
+        std::pair<StorageCenter *, double> nearestSCDist(nearestSC, dist);
+        dists.push(nearestSCDist);
+    }
+
+    return dists.top().first;
+}
+
+ApplicationCenter *VaccineRouter::findNextNearestAC(Center *startingPoint) {
+    auto cmp = [](const std::pair<ApplicationCenter *, double> &a, const std::pair<ApplicationCenter *, double> &b) {
+        return a.second < b.second;
+    };
+    std::priority_queue<std::pair<ApplicationCenter *, double>,
+            std::vector<std::pair<ApplicationCenter *, double>>,
+            decltype(cmp)> dists(cmp);
+
+    for (ApplicationCenter *ac : this->ACs) {
+        if (!ac->isVisited()) {
+            double dist = ac->getNode()->calculateDist(ac->getNode());
+            std::pair<ApplicationCenter *, double> nearestACDist(ac, dist);
+            dists.push(nearestACDist);
+        }
+    }
+
+    return dists.top().first;
+}
+
+bool VaccineRouter::checkACsVisited() {
+    return std::all_of(ACs.begin(),
+                       ACs.end(),
+                       [](const ApplicationCenter *ac) { return ac->isVisited(); });
 }
 
 Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
-    Vehicle *vehicle;
-    ApplicationCenter AC = ACs[0];
-    StorageCenter nearestSC = findNearestSC(AC);
+    auto *vehicle = new Vehicle();
+    ApplicationCenter *AC = ACs[0];
+    StorageCenter *nearestSC = findNearestSC(AC);
 
-    dijkstra(*graph, nearestSC.getNode(), AC.getNode(), vehicle);
+    dijkstra(*graph, nearestSC->getNode(), AC->getNode(), vehicle);
 
     displayVehiclesPath(SCs);
 }
 
-//TODO
 void VaccineRouter::calculateRouteSingleSCMultipleAC() {
+    auto *vehicle = new Vehicle();
+    Center *startingPoint = findNearestSC();
 
+    while (!checkACsVisited()) {
+        dijkstra(*graph, startingPoint->getNode(), startingPoint->getNode(), vehicle);
+        startingPoint->setVisited();
+        startingPoint = findNextNearestAC(startingPoint);
+    }
+    displayVehiclesPath(SCs);
 }
 
 //TODO
@@ -102,3 +154,13 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
+
+
+
+
+
+
+
+
+
+

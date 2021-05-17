@@ -42,13 +42,13 @@ void displayGraph(Graph graph) {
 
 }
 
-void displayVehiclesPath(std::vector<StorageCenter> SCs) {
+void displayVehiclesPath(std::vector<StorageCenter *> SCs) {
     GraphViewer gv;
     gv.setCenter(sf::Vector2f(300, 300));
     gv.createWindow(600, 600);
 
-    for (StorageCenter sc: SCs) {
-        for (Vehicle *v: sc.getFleet()) {
+    for (StorageCenter *sc: SCs) {
+        for (Vehicle *v: sc->getFleet()) {
             int idNode = 0;
             int idEdge = 0;
             std::vector<GVNode> GVnodes;

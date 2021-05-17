@@ -2,17 +2,12 @@
 
 #include <utility>
 
-ApplicationCenter::ApplicationCenter(Node *node, std::string name) :
-        node(node),
-        name(name),
-        vaccinesToReceive(0) {}
-
-Node *ApplicationCenter::getNode() const {
-    return this->node;
+ApplicationCenter::ApplicationCenter() : Center() {
+    this->vaccinesToReceive = 0;
 }
 
-const std::string &ApplicationCenter::getName() const {
-    return this->name;
+ApplicationCenter::ApplicationCenter(Node *node, const std::string &name) : Center(node, name) {
+    this->vaccinesToReceive = 0;
 }
 
 unsigned int ApplicationCenter::getVaccinesToReceive() const {
@@ -23,7 +18,7 @@ void ApplicationCenter::setVaccinesToReceive(unsigned int order) {
     this->vaccinesToReceive = order;
 }
 
-bool ApplicationCenter::operator==(const ApplicationCenter &rhs) const {
-    return this->node->getId() == rhs.getNode()->getId() &&
-           name == rhs.name;
+bool ApplicationCenter::operator==(const ApplicationCenter *rhs) const {
+    return this->node->getId() == rhs->getNode()->getId() &&
+           name == rhs->getName();
 }

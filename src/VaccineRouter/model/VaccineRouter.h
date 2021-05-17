@@ -11,30 +11,31 @@ class VaccineRouter {
 private:
     Graph *graph;
     Time vaccineLifeTime;
-    std::vector<StorageCenter> SCs;
-    std::vector<ApplicationCenter> ACs;
+    std::vector<StorageCenter *> SCs;
+    std::vector<ApplicationCenter *> ACs;
 public:
     VaccineRouter();
     VaccineRouter(Time vaccineLifeTime);
     Graph *getGraph() const;
-    const std::vector<StorageCenter> &getSCs() const;
-    const std::vector<ApplicationCenter> &getACs() const;
-    void addStorageCenter(const StorageCenter& sc);
-    void addApplicationCenter(const ApplicationCenter& ac);
-    void selectMap(const std::string& mapFilename);
-    bool setUpSCs(const std::string& mapFilename);
+    void setGraph(Graph *graph);
+    const std::vector<StorageCenter *> &getSCs() const;
+    const std::vector<ApplicationCenter *> &getACs() const;
+    void addStorageCenter(StorageCenter *sc);
+    void addApplicationCenter(ApplicationCenter *ac);
+    void selectMap(const std::string &mapFilename);
+    bool setUpSCs(const std::string &mapFilename);
     void processOrders();
     void checkTWOverdue();
-    StorageCenter findNearestSC(ApplicationCenter applicationCenter);
-    Node *findXCenter();
+    StorageCenter *findNearestSC(ApplicationCenter *applicationCenter);
+    StorageCenter *findNearestSC();
+    ApplicationCenter *findNextNearestAC(Center *startingPoint);
+    bool checkACsVisited();
     Time getVaccineLifeTime() const;
     void calculateRouteSingleSCSingleAC();
     void calculateRouteSingleSCMultipleAC();
     void calculateRouteSingleSCMultipleACWithTW();
     void calculateRouteMultipleSCMultipleACWithTW();
 };
-
-
 
 
 #endif //VACCINEROUTER_VACCINEROUTER_H

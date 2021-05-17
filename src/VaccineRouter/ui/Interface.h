@@ -1,17 +1,15 @@
 #ifndef SRC_INTERFACE_H
 #define SRC_INTERFACE_H
 
-
 #include "../model/VaccineRouter.h"
 
 class Interface {
 private:
     VaccineRouter *vaccineRouter;
-
     bool checkInRange(int optionsRange, int input);
     bool checkGeneralInputValidity(int optionsRange, int input);
     std::vector<int> checkACSelectionValidity(bool multiple, int optionsRange);
-    void displayAndGetAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options);
+    void getAndDisplayAvailableACs(const std::string &mapFilename, std::vector<ApplicationCenter> &options);
     void initialMenu();
     void runProgramMenu();
     void selectMapMenu();

@@ -1,4 +1,5 @@
 #include "Vehicle.h"
+#include <algorithm>
 
 Vehicle::Vehicle() {
   this->vPath = std::vector<Node *>();
@@ -33,10 +34,24 @@ bool Vehicle::operator==(const Vehicle &rhs) const {
 }
 
 void Vehicle::setVehicleRoute(Graph graph, Node *dest) {
+  int index = this->vPath.size();
   Node *aux = graph.findNode(dest);
 
   while (aux != nullptr) {
+    if (std::find(this->vPath.begin(), this->vPath.end(), aux) != this->vPath
+                                                                      .end()){
+      aux = aux->getPath();
+      continue;
+    }
+    this->vPath.insert(this->vPath.begin() + index, aux);
     this->addToPath(aux);
     aux = aux->getPath();
+  }
+}
+
+
+void Vehicle::emptyPath() {
+  while(!this->qPath.empty()){
+    qPath.pop();
   }
 }

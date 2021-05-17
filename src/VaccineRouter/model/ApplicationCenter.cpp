@@ -1,8 +1,9 @@
 #include "ApplicationCenter.h"
+#include "Center.h"
 
 #include <utility>
 
-ApplicationCenter::ApplicationCenter() : Center() {
+ApplicationCenter::ApplicationCenter() :  Center() {
     this->vaccinesToReceive = 0;
 }
 

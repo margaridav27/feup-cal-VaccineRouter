@@ -105,13 +105,14 @@ ApplicationCenter *VaccineRouter::findNextNearestAC(Center *startingPoint) {
             decltype(cmp)> dists(cmp);
 
     for (ApplicationCenter *ac : this->ACs) {
-        if (!ac->isVisited()) {
+        if (!ac->isVisited() && (ac != startingPoint)) {
             double dist = ac->getNode()->calculateDist(ac->getNode());
             std::pair<ApplicationCenter *, double> nearestACDist(ac, dist);
             dists.push(nearestACDist);
         }
     }
 
+    if (dists.empty()) return nullptr;
     return dists.top().first;
 }
 
@@ -136,13 +137,16 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
 void VaccineRouter::calculateRouteSingleSCMultipleAC() {
     auto *vehicle = new Vehicle();
     Center *startingPoint = findNearestSC();
+    Center *nextPoint = findNextNearestAC(startingPoint);
 
-    while (!checkACsVisited()) {
-        dijkstra(*graph, startingPoint->getNode(), startingPoint->getNode(), vehicle);
-        startingPoint->setVisited();
-        startingPoint = findNextNearestAC(startingPoint);
-    }
-    displayVehiclesPath(SCs);
+  while(!checkACsVisited() && (nextPoint != nullptr)){
+    startingPoint->setVisited();
+    dijkstra(*graph, startingPoint->getNode(), nextPoint->getNode(), vehicle);
+    startingPoint = nextPoint;
+    nextPoint = findNextNearestAC(startingPoint);
+  }
+
+  displayVehiclesPath(SCs);
 }
 
 //TODO
@@ -154,13 +158,3 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
 }
-
-
-
-
-
-
-
-
-
-

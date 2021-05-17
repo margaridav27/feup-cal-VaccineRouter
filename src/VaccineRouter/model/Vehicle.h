@@ -19,6 +19,7 @@ public:
     Node *getNextNode();
     void setSpeed(double speed);
     void setVehicleRoute(Graph graph, Node *dest);
+    void emptyPath();
     bool operator==(const Vehicle &rhs) const;
 };
 

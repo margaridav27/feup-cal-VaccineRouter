@@ -18,6 +18,8 @@ public:
   void setTime(std::string timeStr);
 
   Time *operator+(Time t) const;
+  void operator+=(Time t);
+
   std::ostream &operator<<(std::ostream &o) const;
 
 

@@ -25,7 +25,7 @@ public:
     void selectMap(const std::string &mapFilename);
     bool setUpSCs(const std::string &mapFilename);
     void processOrders();
-    void checkTWOverdue();
+    bool checkTWOverdue(Vehicle *vehicle) const;
     StorageCenter *findNearestSC(ApplicationCenter *applicationCenter);
     StorageCenter *findNearestSC();
     ApplicationCenter *findNextNearestAC(Center *startingPoint);

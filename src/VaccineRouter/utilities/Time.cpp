@@ -39,6 +39,19 @@ Time *Time::operator+(Time t) const {
     return new Time(hour, minute, second);
 }
 
+void Time::operator+=(Time t)  {
+  unsigned int hour, minute, second;
+  second = this->second + t.second;
+  minute = this->minute + t.minute + (second / 60);
+  hour = this->hour + t.hour + (minute / 60);
+  minute %= 60;
+  second %= 60;
+
+  this->hour = hour;
+  this->minute = minute;
+  this->second = second;
+}
+
 std::ostream &Time::operator<<(std::ostream &o) const {
     o << this->hour << ":" << this->minute << ":" << this->second << std::endl;
     return o;

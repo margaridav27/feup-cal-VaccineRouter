@@ -55,7 +55,7 @@ void VaccineRouter::processOrders() {
 }
 
 //TODO
-void VaccineRouter::checkTWOverdue() {
+bool VaccineRouter::checkTWOverdue(Vehicle *vehicle) const{
 
 }
 
@@ -151,6 +151,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
 
 //TODO
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
+
 
 }
 

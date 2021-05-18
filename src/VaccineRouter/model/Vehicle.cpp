@@ -1,10 +1,11 @@
 #include "Vehicle.h"
 #include <algorithm>
 
-Vehicle::Vehicle() {
+Vehicle::Vehicle(Time maxPathDuration) {
   this->vPath = std::vector<Node *>();
   this->qPath = std::stack<Node *>();
   this->pathDuration = Time(0,0,0);
+  this->maxPathDuration = maxPathDuration;
 }
 
 std::stack<Node *> Vehicle::getPath() { return this->qPath; }
@@ -45,8 +46,11 @@ bool Vehicle::addToPath(Node *n) {
   double dist = c1.calculateEuclidianDistance(c2);
 
   Time checkOverdueTime = this->pathDuration + Time(dist * speed);
-  this->pathDuration += Time(dist * speed);
-  reu
+  if (checkOverdueTime > maxPathDuration)
+    return false;
+
+  this->pathDuration = checkOverdueTime;
+  return true;
 }
 
 void Vehicle::setSpeed(double speed) { this->speed = speed; }

@@ -14,10 +14,11 @@ private:
     std::vector<Node *> vPath;
     double speed = 70;
     Time pathDuration;
+    Time maxPathDuration;
 
     void addToPath(Node *n);
 public:
-    Vehicle();
+    Vehicle(Time maxPathDuration);
     std::stack<Node *> getPath();
     Node *getNextNode();
     Time getPathDuration();

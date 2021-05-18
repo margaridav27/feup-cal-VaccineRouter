@@ -20,8 +20,8 @@ Time::Time(double hours) {
     this->second = totalSeconds % 60;
 }
 
-Time *Time::getTime() {
-    return this;
+Time Time::getTime() {
+    return *this;
 }
 
 void Time::setTime(unsigned int hour, unsigned int minute, unsigned int second) {
@@ -36,7 +36,7 @@ void Time::setTime(std::string timeStr) {
     this->second = std::stoi(timeStr.substr(7, 9));
 }
 
-Time *Time::operator+(Time t) const {
+Time Time::operator+(Time t) const {
     unsigned int hour, minute, second;
     second = this->second + t.second;
     minute = this->minute + t.minute + (second / 60);
@@ -44,7 +44,7 @@ Time *Time::operator+(Time t) const {
     minute %= 60;
     second %= 60;
 
-    return new Time(hour, minute, second);
+    return Time(hour, minute, second);
 }
 
 void Time::operator+=(Time t)  {

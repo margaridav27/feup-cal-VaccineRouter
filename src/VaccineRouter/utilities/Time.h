@@ -13,10 +13,11 @@ public:
     Time(unsigned int hour, unsigned int minute, unsigned int second);
     Time(std::string timeStr);
     Time(double hours);
-    Time *getTime();
+    Time getTime();
     void setTime(unsigned int hour, unsigned int minute, unsigned int second);
     void setTime(std::string timeStr);
-    Time *operator+(Time t) const;
+    Time operator+(Time t) const;
+    void operator+=(Time t);
     std::ostream &operator<<(std::ostream &o) const;
 };
 

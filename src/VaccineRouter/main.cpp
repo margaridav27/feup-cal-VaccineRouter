@@ -36,6 +36,7 @@ Graph* CreateTestGraph() {
     return myGraph;
 }
 int main() {
+
     VaccineRouter vaccineRouter;
     vaccineRouter.setGraph(CreateTestGraph());
 
@@ -55,8 +56,6 @@ int main() {
     vaccineRouter.addApplicationCenter(&ap4);
 
     vaccineRouter.calculateRouteSingleSCMultipleAC();
-
-
 
     //Interface ui;
     //ui.initInterface();

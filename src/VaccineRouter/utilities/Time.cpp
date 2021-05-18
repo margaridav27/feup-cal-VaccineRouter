@@ -1,3 +1,4 @@
+#include <cmath>
 #include "Time.h"
 
 Time::Time(unsigned int hour, unsigned int minute, unsigned int second) :
@@ -10,6 +11,13 @@ Time::Time(std::string timeStr) {
     this->hour = std::stoi(timeStr.substr(0, 2));
     this->minute = std::stoi(timeStr.substr(4, 6));
     this->second = std::stoi(timeStr.substr(7, 9));
+}
+
+Time::Time(double hours) {
+    int totalSeconds = (int) (hours * 3600.0);
+    this->hour = totalSeconds / 3600;
+    this->minute = (totalSeconds / 60) % 60;
+    this->second = totalSeconds % 60;
 }
 
 Time *Time::getTime() {

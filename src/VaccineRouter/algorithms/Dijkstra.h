@@ -5,6 +5,8 @@
 #include "../graph/edge/Edge.h"
 #include "../model/Vehicle.h"
 
-void dijkstra(Graph graph, Node *o, Node *d, Vehicle *vehicle);
+std::vector<Node *> dijkstra(Graph *graph, Node *o, Node *d);
+
+std::vector<Node *> getPath(Graph *graph, Node *d);
 
 #endif//VACCINEROUTER_DIJKSTRA_H

@@ -16,14 +16,14 @@ private:
     Time pathDuration;
     Time maxPathDuration;
 
-    void addToPath(Node *n);
+    void addToPath(std::vector<Node *> path);
+    Time getPathDuration(std::vector<Node *> path) const;
 public:
     Vehicle(Time maxPathDuration);
     std::stack<Node *> getPath();
     Node *getNextNode();
-    Time getPathDuration();
     void setSpeed(double speed);
-    void setVehicleRoute(Graph graph, Node *dest);
+    bool setVehicleRoute(const std::vector<Node *>& path, bool checkTW);
     bool hasEmptyPath() const;
     bool operator==(const Vehicle &rhs) const;
 };

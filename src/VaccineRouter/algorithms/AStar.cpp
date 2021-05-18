@@ -8,7 +8,7 @@
 // QUEUE
 //TODO
 
-void AStar(Graph graph, Node *orig, Node *dest, Vehicle *vehicle) {
+std::vector<Node*> AStar(Graph *graph, Node *orig, Node *dest) {
     for (Node *n : graph.getNodeSet()) {
         n->setUnvisited();
         n->setDist(INT_MAX);
@@ -46,5 +46,16 @@ void AStar(Graph graph, Node *orig, Node *dest, Vehicle *vehicle) {
             queue.decreaseKey(next);
         }
     }
-    vehicle->setVehicleRoute(graph, dest);
+    return getPath(graph, dest);
+}
+
+std::vector<Node *> getPath(Graph *graph, Node *d){
+  Node *aux = graph->findNode(d);
+  std::vector<Node *> path;
+
+  while (aux != nullptr) {
+    path.insert(path.begin(), aux);
+    aux = aux->getPath();
+  }
+  return path;
 }

@@ -125,23 +125,27 @@ bool VaccineRouter::checkACsVisited() {
 Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
-    auto *vehicle = new Vehicle();
+    auto *vehicle = new Vehicle(this->vaccineLifeTime);
     ApplicationCenter *AC = ACs[0];
     StorageCenter *nearestSC = findNearestSC(AC);
 
-    dijkstra(*graph, nearestSC->getNode(), AC->getNode(), vehicle);
+    std::vector<Node *> path = dijkstra(graph, nearestSC->getNode(), AC->getNode
+                                                                  ());
+    vehicle->setVehicleRoute(path, false);
 
     displayVehiclesPath(SCs);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleAC() {
-    auto *vehicle = new Vehicle();
+    auto *vehicle = new Vehicle(this->vaccineLifeTime);
     Center *startingPoint = findNearestSC();
     Center *nextPoint = findNextNearestAC(startingPoint);
 
   while(!checkACsVisited() && (nextPoint != nullptr)){
     startingPoint->setVisited();
-    dijkstra(*graph, startingPoint->getNode(), nextPoint->getNode(), vehicle);
+    std::vector<Node *> path = dijkstra(graph, startingPoint->getNode(),
+                            nextPoint->getNode());
+    vehicle->setVehicleRoute(path, false);
     startingPoint = nextPoint;
     nextPoint = findNextNearestAC(startingPoint);
   }

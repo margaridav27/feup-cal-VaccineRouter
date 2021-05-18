@@ -18,13 +18,10 @@ Node *Vehicle::getNextNode() {
   return n;
 }
 
-Time Vehicle::getPathDuration() {
-  if (this->hasEmptyPath())
-    return {0, 0, 0};
-
+Time Vehicle::getPathDuration(std::vector<Node *> path) const {
   Time duration(0,0,0);
 
-  for (auto it = vPath.begin(); it != vPath.end(); it++){
+  for (auto it = path.begin(); it != path.end(); it++){
     Node* node1 = *it;
     Node* node2 = *it++;
     Coordinates coord1 = node1->getCoordinates();
@@ -35,40 +32,20 @@ Time Vehicle::getPathDuration() {
   return duration;
 }
 
-bool Vehicle::addToPath(Node *n) {
-  if (hasEmptyPath()){
-    this->qPath.push(n);
-    return true;
-  }
-
-  Coordinates c1 = this->vPath[this->vPath.size()-1]->getCoordinates();
-  Coordinates c2 = n->getCoordinates();
-  double dist = c1.calculateEuclidianDistance(c2);
-
-  Time checkOverdueTime = this->pathDuration + Time(dist * speed);
-  if (checkOverdueTime > maxPathDuration)
-    return false;
-
-  this->pathDuration = checkOverdueTime;
-  return true;
+void Vehicle::addToPath(std::vector<Node *> path) {
+  this->vPath.insert(this->vPath.end(),path.begin(), path.end());
 }
 
 void Vehicle::setSpeed(double speed) { this->speed = speed; }
 
-void Vehicle::setVehicleRoute(Graph graph, Node *dest) {
-  int index = this->vPath.size();
-  Node *aux = graph.findNode(dest);
-
-  while (aux != nullptr) {
-    if (std::find(this->vPath.begin(), this->vPath.end(), aux) !=
-        this->vPath.end()) {
-      aux = aux->getPath();
-      continue;
+bool Vehicle::setVehicleRoute(const std::vector<Node *>& path, bool checkTW){
+  Time duration = getPathDuration(path);
+  if (checkTW){
+      if(this->pathDuration + duration > this->maxPathDuration) {
+      return false;
     }
-    this->vPath.insert(this->vPath.begin() + index, aux);
-    this->addToPath(aux);
-    aux = aux->getPath();
   }
+  this->addToPath(path);
 }
 
 bool Vehicle::hasEmptyPath() const{

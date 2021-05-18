@@ -5,6 +5,8 @@
 #include "../graph/edge/Edge.h"
 #include "../model/Vehicle.h"
 
-void AStar(Graph graph, Node *orig, Node *dest, Vehicle *vehicle);
+std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest, Vehicle
+                                                                   *vehicle);
+std::vector<Node *> getPath(Graph* graph, Node *d);
 
 #endif //VACCINEROUTER_ASTAR_H

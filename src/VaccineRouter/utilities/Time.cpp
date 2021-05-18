@@ -47,17 +47,27 @@ Time Time::operator+(Time t) const {
     return Time(hour, minute, second);
 }
 
-void Time::operator+=(Time t)  {
-  unsigned int hour, minute, second;
-  second = this->second + t.second;
-  minute = this->minute + t.minute + (second / 60);
-  hour = this->hour + t.hour + (minute / 60);
-  minute %= 60;
-  second %= 60;
+void Time::operator+=(Time t) {
+    unsigned int hour, minute, second;
+    second = this->second + t.second;
+    minute = this->minute + t.minute + (second / 60);
+    hour = this->hour + t.hour + (minute / 60);
+    minute %= 60;
+    second %= 60;
 
-  this->hour = hour;
-  this->minute = minute;
-  this->second = second;
+    this->hour = hour;
+    this->minute = minute;
+    this->second = second;
+}
+
+bool Time::operator>(Time t) const {
+    if (this->hour == t.hour) {
+        if (this->minute == t.minute) {
+            return this->second > t.second;
+        }
+        return this->minute > t.minute;
+    }
+    return this->hour > t.hour;
 }
 
 std::ostream &Time::operator<<(std::ostream &o) const {

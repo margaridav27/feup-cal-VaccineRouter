@@ -53,10 +53,14 @@ void displayVehiclesPath(std::vector<StorageCenter *> SCs) {
             int idEdge = 0;
             std::vector<GVNode> GVnodes;
             Node *n;
+            std::vector<Node *> path = v->getPath();
 
-            while ((n = v->getNextNode()) != nullptr)
-                GVNode node = gv.addNode(idNode++,
-                                         sf::Vector2f(n->getCoordinates().getX(), n->getCoordinates().getY()));
+            for(Node *n: path){
+              GVNode node = gv.addNode(
+                  idNode++, sf::Vector2f(n->getCoordinates().getX(),
+                                         n->getCoordinates().getY()));
+              GVnodes.push_back(node);
+            }
 
             for (int i = 0; i < idNode - 1; i++) {
                 GVNode ixOrig = getNodeID(GVnodes, i);

@@ -16,9 +16,10 @@ public:
     StorageCenter(Node *Node, const std::string& name);
     const std::vector<Node> &getAssignedAc() const;
     unsigned int getVaccinesToDeliver() const;
+    Vehicle* getAvailableVehicle() const;
     const std::vector<Vehicle *> &getFleet();
     void setVaccinesToDeliver(unsigned int vaccinesToDeliver);
-    void addVehicle(Vehicle *vehicle);
+    void addVehicle();
     bool removeVehicle(Vehicle *vehicle);
     bool operator==(const StorageCenter *rhs) const;
 };

@@ -20,7 +20,7 @@ private:
     Time getPathDuration(std::vector<Node *> path) const;
 public:
     Vehicle(Time maxPathDuration);
-    std::stack<Node *> getPath();
+    std::vector<Node *> getPath();
     Node *getNextNode();
     void setSpeed(double speed);
     bool setVehicleRoute(const std::vector<Node *>& path, bool checkTW);

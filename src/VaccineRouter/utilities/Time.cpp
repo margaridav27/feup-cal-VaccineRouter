@@ -1,6 +1,12 @@
 #include <cmath>
 #include "Time.h"
 
+Time::Time() {
+  this->hour = 0;
+  this->minute = 0;
+  this->second = 0;
+}
+
 Time::Time(unsigned int hour, unsigned int minute, unsigned int second) :
         hour(hour),
         minute(minute),
@@ -36,7 +42,7 @@ void Time::setTime(std::string timeStr) {
     this->second = std::stoi(timeStr.substr(7, 9));
 }
 
-Time Time::operator+(Time t) const {
+Time Time::operator+(Time &t) const {
     unsigned int hour, minute, second;
     second = this->second + t.second;
     minute = this->minute + t.minute + (second / 60);
@@ -47,7 +53,17 @@ Time Time::operator+(Time t) const {
     return Time(hour, minute, second);
 }
 
-void Time::operator+=(Time t) {
+bool Time::operator>(Time t) const {
+  if (this->hour == t.hour) {
+    if (this->minute == t.minute) {
+      return this->second > t.second;
+    }
+    return this->minute > t.minute;
+  }
+  return this->hour > t.hour;
+}
+
+Time &Time::operator+=(const Time &t) {
     unsigned int hour, minute, second;
     second = this->second + t.second;
     minute = this->minute + t.minute + (second / 60);
@@ -58,16 +74,15 @@ void Time::operator+=(Time t) {
     this->hour = hour;
     this->minute = minute;
     this->second = second;
+    return *this;
 }
 
-bool Time::operator>(Time t) const {
-    if (this->hour == t.hour) {
-        if (this->minute == t.minute) {
-            return this->second > t.second;
-        }
-        return this->minute > t.minute;
-    }
-    return this->hour > t.hour;
+Time &Time::operator=(Time t) {
+  if (this == &t) return *this;
+  this->hour = t.hour;
+  this->minute = t.minute;
+  this->second = t.second;
+  return *this;
 }
 
 std::ostream &Time::operator<<(std::ostream &o) const {

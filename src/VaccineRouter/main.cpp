@@ -31,7 +31,7 @@ Graph* CreateTestGraph() {
     myGraph->addEdge(5, 4, 4);
     myGraph->addEdge(5, 7, 2);
     myGraph->addEdge(6, 7, 3);
-    myGraph->addEdge(7, 6, 4);
+    myGraph->addEdge(7, 4, 4);
 
     return myGraph;
 }
@@ -55,7 +55,8 @@ int main() {
     vaccineRouter.addApplicationCenter(&ap3);
     vaccineRouter.addApplicationCenter(&ap4);
 
-    vaccineRouter.calculateRouteSingleSCMultipleAC();
+    //vaccineRouter.calculateRouteSingleSCMultipleAC();
+    vaccineRouter.calculateRouteSingleSCMultipleACWithTW();
 
     //Interface ui;
     //ui.initInterface();

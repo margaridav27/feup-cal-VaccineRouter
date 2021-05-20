@@ -9,7 +9,7 @@ std::vector<Node *> dijkstra(Graph *graph, Node *orig, Node *dest) {
 
   MutablePriorityQueue minQueue;
 
-  Node *aux = graph.findNode(orig);
+  Node *aux = graph->findNode(orig);
   aux->setDist(0);
 
   minQueue.insert(aux);
@@ -28,14 +28,14 @@ std::vector<Node *> dijkstra(Graph *graph, Node *orig, Node *dest) {
       }
     }
   }
-  return getPath(graph, dest);
+  return getPath(graph, orig, dest);
 }
 
-std::vector<Node *> getPath(Graph *graph, Node *d) {
+std::vector<Node *> getPath(Graph *graph,Node *o, Node *d) {
   Node *aux = graph->findNode(d);
   std::vector<Node *> path;
 
-  while (aux != nullptr) {
+  while (!(aux == o->getPath())) {
     path.insert(path.begin(), aux);
     aux = aux->getPath();
   }

@@ -7,6 +7,6 @@
 
 std::vector<Node *> dijkstra(Graph *graph, Node *o, Node *d);
 
-std::vector<Node *> getPath(Graph *graph, Node *d);
+std::vector<Node *> getPath(Graph *graph, Node *o, Node *d);
 
 #endif//VACCINEROUTER_DIJKSTRA_H

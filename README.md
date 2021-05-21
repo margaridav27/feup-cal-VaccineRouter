@@ -36,11 +36,18 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] Parse files 
 - [x] Display graph @GraphViewer 
 - [x] SingleSCSingleAC
-- [ ] SingleSCMultipleAC - 17 maio
-- [ ] SingleSCMultipleACWithTW - 17/18 maio
-- [ ] MultipleSCMultipleACWithTW - 19 maio
+- [x] SingleSCMultipleAC - 17 maio
+- [x] SingleSCMultipleACWithTW - 17/18 maio
+- [x] MultipleSCMultipleACWithTW - 19 maio
 
 ### Sprint 3 - hardcore testing
 #### 21 May 
-- [ ] test hardcore bia
-- [ ] test chillada maggy (true)
+- [ ] Test hardcore bia
+- [ ] Test chillada maggy (true)
+- [ ] Pre processamento
+- [ ] Improve display
+- [ ] From file -> graph
+- [ ] Pre process graph -- erase unatainable
+- [ ] User sets vaccines to deliver -> assign vaccines
+- [ ] Showing the output of the algorithm
+

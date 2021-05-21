@@ -13,11 +13,14 @@ protected:
 public:
     Center();
     Center(Node *node, std::string name);
+
     Node *getNode() const;
     const std::string &getName() const;
+
     bool isVisited() const;
     void setVisited();
     void setUnvisited();
+
     bool operator==(const Center &rhs) const;
 };
 

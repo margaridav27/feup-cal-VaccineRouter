@@ -16,21 +16,9 @@ Graph *VaccineRouter::getGraph() const { return this->graph; }
 
 void VaccineRouter::setGraph(Graph *graph) { this->graph = graph; }
 
-const std::vector<StorageCenter *> &VaccineRouter::getSCs() const {
-    return this->SCs;
-}
+void VaccineRouter::addStorageCenter(StorageCenter *sc) { this->SCs.push_back(sc); }
 
-const std::vector<ApplicationCenter *> &VaccineRouter::getACs() const {
-    return this->ACs;
-}
-
-void VaccineRouter::addStorageCenter(StorageCenter *sc) {
-    this->SCs.push_back(sc);
-}
-
-void VaccineRouter::addApplicationCenter(ApplicationCenter *ac) {
-    this->ACs.push_back(ac);
-}
+void VaccineRouter::addApplicationCenter(ApplicationCenter *ac) { this->ACs.push_back(ac); }
 
 void VaccineRouter::selectMap(const std::string &mapFilename) {
     this->graph = processGraph(mapFilename);
@@ -38,8 +26,7 @@ void VaccineRouter::selectMap(const std::string &mapFilename) {
 }
 
 bool VaccineRouter::setUpSCs(const std::string &mapFilename) {
-    std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename +
-                          "_SCs.txt");
+    std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_SCs.txt");
 
     if (!istream.is_open()) {
         std::cerr << "File does not exist or could not be open.\n\n";
@@ -60,47 +47,11 @@ bool VaccineRouter::setUpSCs(const std::string &mapFilename) {
 // TODO
 void VaccineRouter::processOrders() {}
 
-// TODO
-bool VaccineRouter::checkTWOverdue(Vehicle *vehicle) const {}
+Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
-StorageCenter *
-VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter) {
-    double minDist = DOUBLE_MAX;
-    double dist = 0;
-    auto *nearest = new StorageCenter();
+// ----------------------------------------------------------------------------------------------
 
-    Coordinates ACCoords = applicationCenter->getNode()->getCoordinates();
-
-    for (StorageCenter *sc : this->SCs) {
-        Coordinates SCCoords = sc->getNode()->getCoordinates();
-        dist = SCCoords.calculateEuclidianDistance(ACCoords);
-        if (dist < minDist) {
-            minDist = dist;
-            nearest = sc;
-        }
-    }
-    return nearest;
-}
-
-StorageCenter *
-VaccineRouter::findNextNearestSC(ApplicationCenter *applicationCenter) {
-    double minDist = DOUBLE_MAX;
-    double dist = 0;
-    auto *nearest = new StorageCenter();
-
-    Coordinates ACCoords = applicationCenter->getNode()->getCoordinates();
-
-    for (StorageCenter *sc : this->SCs) {
-        Coordinates SCCoords = sc->getNode()->getCoordinates();
-        dist = SCCoords.calculateEuclidianDistance(ACCoords);
-        if (dist < minDist && !sc->isOptimalState()) {
-            minDist = dist;
-            nearest = sc;
-        }
-    }
-    return nearest;
-}
-
+// finds nearest SC considering all ACs
 StorageCenter *VaccineRouter::findNearestSC() {
     auto cmp = [](const std::pair<StorageCenter *, double> &a,
                   const std::pair<StorageCenter *, double> &b) {
@@ -118,91 +69,28 @@ StorageCenter *VaccineRouter::findNearestSC() {
         dists.push(nearestSCDist);
     }
 
+    if (dists.empty()) return nullptr;
     return dists.top().first;
 }
 
-ApplicationCenter *VaccineRouter::findNextNearestAC(Center *startingPoint) {
-    auto cmp = [](const std::pair<ApplicationCenter *, double> &a,
-                  const std::pair<ApplicationCenter *, double> &b) {
-        return a.second < b.second;
-    };
-    std::priority_queue<std::pair<ApplicationCenter *, double>,
-            std::vector<std::pair<ApplicationCenter *, double>>,
-            decltype(cmp)>
-            dists(cmp);
+// does not take into account whether the SC is in optimal state or not -> will return always the same if given the same AC
+StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter) {
+    double minDist = DOUBLE_MAX;
+    double dist = 0;
+    auto *nearest = new StorageCenter();
 
-    for (ApplicationCenter *ac : this->ACs) {
-        if (!ac->isVisited() && (ac != startingPoint)) {
-            double dist = ac->getNode()->calculateDist(ac->getNode());
-            std::pair<ApplicationCenter *, double> nearestACDist(ac, dist);
-            dists.push(nearestACDist);
+    Coordinates ACCoords = applicationCenter->getNode()->getCoordinates();
+
+    for (StorageCenter *sc : this->SCs) {
+        Coordinates SCCoords = sc->getNode()->getCoordinates();
+        dist = SCCoords.calculateEuclidianDistance(ACCoords);
+        if (dist < minDist) {
+            minDist = dist;
+            nearest = sc;
         }
     }
 
-    if (dists.empty())
-        return nullptr;
-    return dists.top().first;
-}
-
-bool VaccineRouter::checkACsVisited() {
-    return std::all_of(ACs.begin(), ACs.end(), [](const ApplicationCenter *ac) {
-        return ac->isVisited();
-    });
-}
-
-Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
-
-void VaccineRouter::calculateRouteSingleSCSingleAC() {
-    ApplicationCenter *AC = ACs[0];
-    StorageCenter *nearestSC = findNearestSC(AC);
-
-    Vehicle *vehicle = nearestSC->getAvailableVehicle();
-
-    std::vector<Node *> path =
-            dijkstra(graph, nearestSC->getNode(), AC->getNode());
-    vehicle->setVehicleRoute(path, false);
-
-    displayVehiclesPath(SCs);
-}
-
-void VaccineRouter::calculateRouteSingleSCMultipleAC() {
-    StorageCenter *sc = findNearestSC();
-    Center *nextPoint = findNextNearestAC(sc);
-    Center *startingPoint = sc;
-    Vehicle *vehicle = sc->getAvailableVehicle();
-
-    while (!checkACsVisited() && (nextPoint != nullptr)) {
-        startingPoint->setVisited();
-        std::vector<Node *> path =
-                dijkstra(graph, startingPoint->getNode(), nextPoint->getNode());
-        vehicle->setVehicleRoute(path, false);
-        startingPoint = nextPoint;
-        nextPoint = findNextNearestAC(startingPoint);
-    }
-    displayVehiclesPath(SCs);
-}
-
-//TODO check ACSVISITED == check acs assigned NOT VACCINE ROUTER ACS
-void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
-    StorageCenter *sc = findNearestSC();
-    Center *nextPoint = findNextNearestAC(sc);
-    Center *startingPoint = sc;
-    Vehicle *vehicle = nullptr;
-
-    while (!checkACsVisited() && (nextPoint != nullptr)) {
-        vehicle = sc->getAvailableVehicle();
-        startingPoint->setVisited();
-        std::vector<Node *> path =
-                dijkstra(graph, startingPoint->getNode(), nextPoint->getNode());
-
-        if (vehicle->setVehicleRoute(path, true)) {
-            startingPoint = nextPoint;
-            nextPoint = findNextNearestAC(startingPoint);
-        } else {
-            sc->addVehicle();
-        }
-    }
-    displayVehiclesPath(SCs);
+    return nearest;
 }
 
 bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
@@ -213,23 +101,19 @@ bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
 
     while (!sc->isOptimalState() && nextPoint != nullptr) {
         startingPoint->setVisited();
-        std::vector<Node *> path =
-                dijkstra(graph, startingPoint->getNode(), nextPoint->getNode());
+
+        std::vector<Node *> path = dijkstra(graph, startingPoint->getNode(), nextPoint->getNode());
 
         if (vehicle->setVehicleRoute(path, true)) {
             startingPoint = nextPoint;
-            nextPoint = findNextNearestAC(startingPoint);
+            nextPoint = sc->findNextNearestAC(startingPoint);
             visited++;
-        } else {
-            sc->setOptimalState();
-        }
-        //displayVehiclesPath(SCs);
+        } else sc->setOptimalState();
     }
-    return visited == sc->getAssignedAc().size();
+
+    return (visited == sc->getAssignedAC().size());
 }
 
-//TODO remove ACS from Vaccine Router
-//TODO oldPath = originalPath
 void VaccineRouter::handleACsNotVisited() {
     auto cmp = [](const std::pair<StorageCenter *, double> &a,
                   const std::pair<StorageCenter *, double> &b) {
@@ -237,52 +121,125 @@ void VaccineRouter::handleACsNotVisited() {
     };
 
     bool allocatedAC = false;
-    StorageCenter *sc;
+    StorageCenter *viableSC;
 
     for (ApplicationCenter *ac: this->ACs) {
         std::priority_queue<std::pair<StorageCenter *, double>,
                 std::vector<std::pair<StorageCenter *, double>>,
                 decltype(cmp)>
                 viableNextSCOptions(cmp);
+
+        // this step will generate a priority queue containing the viable options,
+        // ordered by the distance to the AC being handled in the current iteration
         for (StorageCenter *sc: this->SCs) {
-            if (!sc->isOptimalState())
-                viableNextSCOptions.push(
-                        std::pair<StorageCenter *, double>(sc, sc->getNode()->calculateDist(ac->getNode())));
+            if (!sc->isOptimalState()) { // if a SC is not in optimal state, maybe the AC can fit in its route
+                double dist = sc->getNode()->calculateDist(ac->getNode());
+                viableNextSCOptions.push(std::pair<StorageCenter *, double>(sc, dist));
+            }
         }
 
         do {
-            sc = viableNextSCOptions.top().first;
-            std::vector<Node *> originalPath = sc->getAvailableVehicle()->getPath();
-            sc->assignAC(ac);
-            allocatedAC = calculateSCRoute(sc);
-            if (allocatedAC) {
-                break;
-            }
-            sc->reset();
-            sc->resetPath(originalPath);
+            viableSC = viableNextSCOptions.top().first;
+            std::vector<Node *> originalPath = viableSC->getAvailableVehicle()->getPath();
+            viableSC->assignAC(ac);
+
+            // computes the route, now with the newly assigned AC, to check if it fits
+            allocatedAC = calculateSCRoute(viableSC);
+
+            if (allocatedAC) break;
+
+            // in case the AC could not be allocated, one needs to reset originalPath and cancel the assignment
+            viableSC->reset();
+            viableSC->resetPath(originalPath);
+
+            // tries again with the next viable option in the priority queue
             viableNextSCOptions.pop();
         } while (!viableNextSCOptions.empty());
+
+        // has not been allocated yet but there are no more SCs to try
         if (viableNextSCOptions.empty() && !allocatedAC) {
-            sc = findNearestSC(ac);
-            sc->addVehicle();
-            calculateSCRoute(sc);
+            viableSC = findNearestSC(ac); // viableSC is now the SC to which the AC was originally assigned
+            viableSC->addVehicle();
+            calculateSCRoute(viableSC);
         }
+
         allocatedAC = false;
     }
 }
 
+// ----------------------------------------------------------------------------------------------
+
+void VaccineRouter::calculateRouteSingleSCSingleAC() {
+    ApplicationCenter *AC = ACs[0]; // single AC -> we can assume it corresponds to index 0
+    StorageCenter *nearestSC = findNearestSC(AC);
+    Vehicle *vehicle = nearestSC->getAvailableVehicle();
+
+    std::vector<Node *> path = dijkstra(graph, nearestSC->getNode(), AC->getNode());
+
+    vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
+    // no need to handle the case in which the function returns false since that would only happen if checkTW was set
+
+    displayVehiclesPath(SCs);
+}
+
+void VaccineRouter::calculateRouteSingleSCMultipleAC() {
+    StorageCenter *sc = findNearestSC();
+    Center *nextPoint = sc->findNextNearestAC(sc);
+    Center *startingPoint = sc;
+
+    for (ApplicationCenter *ac : this->ACs)
+        sc->assignAC(ac); // single/multiple -> all ACs will be assign to best SC option
+    Vehicle *vehicle = sc->getAvailableVehicle();
+
+    while (!sc->checkACsVisited() && (nextPoint != nullptr)) {
+        startingPoint->setVisited();
+
+        std::vector<Node *> path = dijkstra(graph, startingPoint->getNode(), nextPoint->getNode());
+
+        vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
+        // no need to handle the case in which the function returns false since that would only happen if checkTW was set
+
+        startingPoint = nextPoint;
+        nextPoint = sc->findNextNearestAC(startingPoint);
+    }
+
+    displayVehiclesPath(SCs);
+}
+
+void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
+    StorageCenter *sc = findNearestSC();
+    Center *nextPoint = sc->findNextNearestAC(sc);
+    Center *startingPoint = sc;
+
+    for (ApplicationCenter *ac : this->ACs)
+        sc->assignAC(ac); // single/multiple -> all ACs will be assign to best SC option
+    Vehicle *vehicle = nullptr;
+
+    while (!sc->checkACsVisited() && (nextPoint != nullptr)) {
+        vehicle = sc->getAvailableVehicle();
+        startingPoint->setVisited();
+
+        std::vector<Node *> path = dijkstra(graph, startingPoint->getNode(), nextPoint->getNode());
+
+        if (vehicle->setVehicleRoute(path, true)) {
+            startingPoint = nextPoint;
+            nextPoint = sc->findNextNearestAC(startingPoint);
+        } else sc->addVehicle();
+    }
+    displayVehiclesPath(SCs);
+}
+
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     std::list<std::thread *> threadList;
-    //assign acs to scs
+    // assign ACs to SCs
     for (ApplicationCenter *ac : this->ACs) {
         StorageCenter *sc = findNearestSC(ac);
         sc->assignAC(ac);
     }
-    //iterate over scs to calculate its route -- multi-threaded func
+
+    // iterate over SCs to calculate its optimal route -> multi-threaded function
     for (StorageCenter *sc : this->SCs) {
-        if (sc->getAssignedAc().empty()) {
-            continue;
-        }
+        if (sc->getAssignedAC().empty()) continue;
         std::thread thread([&]() {
             calculateSCRoute(sc);
             threadList.push_back(&thread);
@@ -292,5 +249,7 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
         threadList.back()->join();
         threadList.pop_back();
     }
+
+    // handles the ACs that could not fit in its optimally assigned SC route
     handleACsNotVisited();
 }

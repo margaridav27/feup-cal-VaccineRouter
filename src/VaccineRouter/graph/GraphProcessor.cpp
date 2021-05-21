@@ -2,7 +2,7 @@
 #include <iostream>
 #include "GraphProcessor.h"
 
-Graph *processGraph(const std::string& chosenCity) {
+Graph *processGraph(const std::string &chosenCity) {
     Graph *graph = new Graph();
 
     if (chosenCity != "espinho" && chosenCity != "porto" && chosenCity != "penafiel") return nullptr;
@@ -13,7 +13,7 @@ Graph *processGraph(const std::string& chosenCity) {
     return graph;
 }
 
-bool processNodes(Graph *graph, const std::string& chosenCity) {
+bool processNodes(Graph *graph, const std::string &chosenCity) {
     std::ifstream istream("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
     if (!istream.is_open()) {
         std::cerr << "Edges file opening failed.\n";
@@ -35,7 +35,7 @@ bool processNodes(Graph *graph, const std::string& chosenCity) {
     return true;
 }
 
-bool processEdges(Graph *graph, const std::string& chosenCity) {
+bool processEdges(Graph *graph, const std::string &chosenCity) {
     std::ifstream istream("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_edges.txt");
     if (!istream.is_open()) {
         std::cerr << "Edges file opening failed.\n";
@@ -52,7 +52,7 @@ bool processEdges(Graph *graph, const std::string& chosenCity) {
         istream >> dummy >> src >> dummy >> dest >> dummy;
         Node *s = graph->getNode(src);
         Node *d = graph->getNode(dest);
-        if (s == nullptr || d == nullptr) return false; // COMBACK: error message
+        if (s == nullptr || d == nullptr) return false; // COMBACK: error message ?
         weight = s->calculateDist(d);
         graph->addEdge(src, dest, weight);
     }

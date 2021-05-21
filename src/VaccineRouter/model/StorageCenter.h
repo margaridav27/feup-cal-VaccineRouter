@@ -16,26 +16,29 @@ private:
 public:
     StorageCenter();
     StorageCenter(Node *Node, const std::string& name);
-    const std::vector<ApplicationCenter *> &getAssignedAc() const;
-    unsigned int getVaccinesToDeliver() const;
-    Vehicle* getAvailableVehicle() const;
-    const std::vector<Vehicle *> &getFleet();
-    void assignAC(ApplicationCenter *ac);
-    void setVaccinesToDeliver(unsigned int vaccinesToDeliver);
-    void resetPath(std::vector<Node*> oldPath);
-    void reset();
+
     void addVehicle();
     bool removeVehicle(Vehicle *vehicle);
-    bool operator==(const StorageCenter *rhs) const;
-    bool isOptimalState() const;
-    void setOptimalState(bool optimalState);
+    Vehicle* getAvailableVehicle() const;
+    const std::vector<Vehicle *> &getFleet();
+
+    const std::vector<ApplicationCenter *> &getAssignedAC() const;
+    void assignAC(ApplicationCenter *ac);
     bool checkACsVisited();
 
-    ApplicationCenter *findNextNearestAC(Center *startingPoint);
+    unsigned int getVaccinesToDeliver() const;
+    void setVaccinesToDeliver(unsigned int vaccinesToDeliver);
 
+    bool isOptimalState() const;
     void unsetOptimalState();
-
     void setOptimalState();
+
+    void resetPath(std::vector<Node*> originalPath) const;
+    void reset();
+
+    ApplicationCenter *findNextNearestAC(Center *startingPoint) const;
+
+    bool operator==(const StorageCenter *rhs) const;
 };
 
 

@@ -18,20 +18,6 @@ StorageCenter::StorageCenter(Node *Node, const std::string &name)
     this->optimalState = false;
 }
 
-const std::vector<ApplicationCenter *> &StorageCenter::getAssignedAc() const { return this->assignedAC; }
-
-unsigned int StorageCenter::getVaccinesToDeliver() const {
-    return this->vaccinesToDeliver;
-}
-
-void StorageCenter::setVaccinesToDeliver(unsigned int order) {
-    this->vaccinesToDeliver = order;
-}
-
-const std::vector<Vehicle *> &StorageCenter::getFleet() { return this->fleet; }
-
-void StorageCenter::assignAC(ApplicationCenter *ac) { this->assignedAC.push_back(ac); }
-
 void StorageCenter::addVehicle() {
     this->fleet.push_back(new Vehicle(Time(3, 0, 0)));
 }
@@ -44,11 +30,15 @@ bool StorageCenter::removeVehicle(Vehicle *vehicle) {
     return true;
 }
 
-bool StorageCenter::isOptimalState() const { return this->optimalState; }
+const std::vector<Vehicle *> &StorageCenter::getFleet() { return this->fleet; }
 
-void StorageCenter::setOptimalState() { this->optimalState = true; }
+Vehicle *StorageCenter::getAvailableVehicle() const {
+    return this->fleet[this->fleet.size() - 1];
+}
 
-void StorageCenter::unsetOptimalState() { this->optimalState = false; }
+const std::vector<ApplicationCenter *> &StorageCenter::getAssignedAC() const { return this->assignedAC; }
+
+void StorageCenter::assignAC(ApplicationCenter *ac) { this->assignedAC.push_back(ac); }
 
 bool StorageCenter::checkACsVisited() {
     return std::all_of(assignedAC.begin(), assignedAC.end(), [](const ApplicationCenter *ac) {
@@ -56,16 +46,26 @@ bool StorageCenter::checkACsVisited() {
     });
 }
 
-bool StorageCenter::operator==(const StorageCenter *rhs) const {
-    return this->node->getId() == rhs->getNode()->getId() &&
-           name == rhs->getName();
+unsigned int StorageCenter::getVaccinesToDeliver() const { return this->vaccinesToDeliver; }
+
+void StorageCenter::setVaccinesToDeliver(unsigned int order) { this->vaccinesToDeliver = order; }
+
+bool StorageCenter::isOptimalState() const { return this->optimalState; }
+
+void StorageCenter::setOptimalState() { this->optimalState = true; }
+
+void StorageCenter::unsetOptimalState() { this->optimalState = false; }
+
+void StorageCenter::resetPath(std::vector<Node *> originalPath) const {
+    this->getAvailableVehicle()->setPath(std::move(originalPath));
 }
 
-Vehicle *StorageCenter::getAvailableVehicle() const {
-    return this->fleet[this->fleet.size() - 1];
+void StorageCenter::reset() {
+    this->unsetOptimalState();
+    this->assignedAC.pop_back();
 }
 
-ApplicationCenter *StorageCenter::findNextNearestAC(Center *startingPoint) {
+ApplicationCenter *StorageCenter::findNextNearestAC(Center *startingPoint) const {
     auto cmp = [](const std::pair<ApplicationCenter *, double> &a,
                   const std::pair<ApplicationCenter *, double> &b) {
         return a.second < b.second;
@@ -75,22 +75,19 @@ ApplicationCenter *StorageCenter::findNextNearestAC(Center *startingPoint) {
             decltype(cmp)>
             dists(cmp);
 
-    for (ApplicationCenter *ac : this->assignedAC) {
+    for (ApplicationCenter *ac : this->getAssignedAC()) {
         if (!ac->isVisited() && (ac != startingPoint)) {
             double dist = ac->getNode()->calculateDist(ac->getNode());
             std::pair<ApplicationCenter *, double> nearestACDist(ac, dist);
             dists.push(nearestACDist);
         }
     }
+
+    if (dists.empty()) return nullptr;
+    return dists.top().first;
 }
 
-void StorageCenter::resetPath(std::vector<Node *> oldPath) {
-    this->getAvailableVehicle()->setPath(oldPath);
-
+bool StorageCenter::operator==(const StorageCenter *rhs) const {
+    return this->node->getId() == rhs->getNode()->getId() &&
+           name == rhs->getName();
 }
-
-void StorageCenter::reset() {
-    this->unsetOptimalState();
-    this->assignedAC.pop_back();
-}
-

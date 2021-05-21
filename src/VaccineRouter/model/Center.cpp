@@ -26,8 +26,3 @@ bool Center::operator==(const Center &rhs) const {
     return node == rhs.node &&
            name == rhs.name;
 }
-
-
-
-
-

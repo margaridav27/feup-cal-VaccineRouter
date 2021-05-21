@@ -24,6 +24,7 @@ public:
     Node *getNextNode();
     void setSpeed(double speed);
     bool setVehicleRoute(const std::vector<Node *>& path, bool checkTW);
+    void setPath(std::vector<Node *> oldPath);
     bool hasEmptyPath() const;
     bool operator==(const Vehicle &rhs) const;
 };

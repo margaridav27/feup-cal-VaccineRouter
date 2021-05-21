@@ -65,3 +65,7 @@ bool Vehicle::operator==(const Vehicle &rhs) const {
   }
   return this->speed == rhs.speed;
 }
+
+void Vehicle::setPath(std::vector<Node *> oldPath) {
+    this->vPath.swap(oldPath);
+}

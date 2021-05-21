@@ -35,6 +35,11 @@ public:
     void calculateRouteSingleSCMultipleAC();
     void calculateRouteSingleSCMultipleACWithTW();
     void calculateRouteMultipleSCMultipleACWithTW();
+    bool calculateSCRoute(StorageCenter *sc);
+
+    void handleACsNotVisited();
+
+    StorageCenter *findNextNearestSC(ApplicationCenter *applicationCenter);
 };
 
 

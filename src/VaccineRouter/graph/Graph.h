@@ -20,7 +20,7 @@ public:
     
     bool addNode(unsigned int id, Coordinates coords);
     bool removeNode(unsigned int id);
-    Node *findNode(int id);
+    Node *findNode(unsigned int id);
     
     bool addEdge(unsigned int sourceID, unsigned int destID, double weight);
     bool removeEdge(unsigned int sourceID, unsigned int destID);

@@ -22,8 +22,7 @@ private:
     void selectSingleOrMultipleACMenu(const std::string &mapFilename);
     void selectSingleACMenu(const std::string &mapFilename);
     void selectMultipleACMenu(const std::string &mapFilename);
-    void orderVaccinesMenu(const std::vector<int> &selected, const
-                           std::vector<ApplicationCenter*>& options);
+    void orderVaccinesMenu(std::vector<std::pair<int, std::string>> &options, const std::vector<int> &selected);
     void setupACs(std::vector<std::pair<int, std::string>> selectedACs,
                   std::vector<int> vector1);
     void singleAC();

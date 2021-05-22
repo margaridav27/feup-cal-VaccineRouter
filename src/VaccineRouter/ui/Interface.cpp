@@ -355,7 +355,7 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
 }
 
 void Interface::selectSingleACMenu(const std::string &mapFilename) {
-    std::vector<int> input;
+    std::vector<int> selected;
     bool invalidInput = false;
     std::vector<std::pair<int, std::string>> availableACs;
 
@@ -365,19 +365,16 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2]: ";
-        input = checkACSelectionValidity(false, availableACs.size());
-        invalidInput = input.empty();
+        selected = checkACSelectionValidity(false, availableACs.size());
+        invalidInput = selected.empty();
     } while (invalidInput);
 
-    // COMBACK
-    //orderVaccinesMenu(input, availableACs);
-    setupACs(availableACs, input);
-
+    orderVaccinesMenu(availableACs, selected);
     singleAC();
 }
 
 void Interface::selectMultipleACMenu(const std::string &mapFilename) {
-    std::vector<int> input;
+    std::vector<int> selected;
     bool invalidInput = false;
     std::vector<std::pair<int, std::string>> availableACs;
 
@@ -387,38 +384,25 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2 3 4]: ";
-        input = checkACSelectionValidity(true, availableACs.size());
-        invalidInput = input.empty();
+        selected = checkACSelectionValidity(true, availableACs.size());
+        invalidInput = selected.empty();
     } while (invalidInput);
 
-    // COMBACK
-    //orderVaccinesMenu(input, availableACs);
-    setupACs(availableACs, input);
-
+    orderVaccinesMenu(availableACs, selected);
     multipleAC();
 }
 
-// TODO
-void Interface::orderVaccinesMenu(
-        const std::vector<int> &selected,
-        const std::vector<ApplicationCenter *> &options) {
+void Interface::orderVaccinesMenu(std::vector<std::pair<int, std::string>> &options, const std::vector<int> &selected) {
     int order;
     std::cout << "----- ORDER VACCINES MENU -----\n";
     for (int i : selected) {
-        std::cout << "Vaccine's order for " << options[i]->getName() << ": ";
+        std::cout << "Vaccine's order for " << options[i].second << ": ";
         std::cin >> order;
 
-        ApplicationCenter *ac = options[i];
-        ac->setVaccinesToReceive(order);
-        this->vaccineRouter->addApplicationCenter(ac);
-    }
-}
-
-void Interface::setupACs(std::vector<std::pair<int, std::string>> selectedACs, std::vector<int> index) {
-    for (int ix : index) {
-        Node *acNode = this->vaccineRouter->getGraph()->getNode(selectedACs[ix].first);
-        std::string acName = selectedACs[ix].second;
+        Node *acNode = this->vaccineRouter->getGraph()->getNode(options[i].first);
+        std::string acName = options[i].second;
         auto *newAC = new ApplicationCenter(acNode, acName);
+        newAC->setVaccinesToReceive(order);
         this->vaccineRouter->addApplicationCenter(newAC);
     }
 }

@@ -23,9 +23,6 @@ public:
     Node();
     Node(unsigned int id);
     Node(unsigned int id, const Coordinates &coordinates);
-    Node(unsigned int id, std::vector<Edge *> adj);
-    Node(unsigned int id, const Coordinates &coordinates, std::vector<Edge *> adj);
-    Node(const Node *node, double euclidianDist);
 
     unsigned int getId() const;
 

@@ -26,30 +26,6 @@ Node::Node(unsigned int id, const Coordinates &coordinates) :
         dist(DOUBLE_MAX),
         path(nullptr) {}
 
-Node::Node(unsigned int id, std::vector<Edge *> adj) :
-        id(id),
-        coordinates(Coordinates(DOUBLE_MAX, DOUBLE_MAX)),
-        adj(std::move(adj)),
-        visited(false),
-        dist(DOUBLE_MAX), path(nullptr) {}
-
-Node::Node(unsigned int id, const Coordinates &coordinates, std::vector<Edge *> adj) :
-        id(id),
-        coordinates(coordinates),
-        adj(std::move(adj)),
-        visited(false),
-        dist(DOUBLE_MAX),
-        path(nullptr) {}
-
-Node::Node(const Node *node, double euclidianDist) :
-        id(node->id),
-        coordinates(node->coordinates),
-        adj(node->adj),
-        visited(false),
-        euclidianDist(euclidianDist),
-        dist(DOUBLE_MAX),
-        path(nullptr) {}
-
 unsigned int Node::getId() const { return this->id; }
 
 double Node::getDist() const { return this->dist; }

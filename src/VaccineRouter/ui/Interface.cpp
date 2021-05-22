@@ -48,7 +48,7 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple,
         selected.push_back(input);
     }
 
-    return selected;
+  return selected;
 }
 
 void Interface::getAndDisplayAvailableACs(
@@ -313,10 +313,11 @@ void Interface::selectMapMenu() {
         std::cout << "\n";
     } while (!checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
 
-    if (input == optionCounter)
-        runProgramMenu(); // user chose to go back
-    this->vaccineRouter->selectMap(options[input - 1]);
-    selectSingleOrMultipleACMenu(options[input - 1]);
+  if (input == optionCounter)
+    runProgramMenu(); // user chose to go back
+  this->vaccineRouter->selectMap(options[input - 1]);
+  this->vaccineRouter->setCityName(options[input - 1]);
+  selectSingleOrMultipleACMenu(options[input - 1]);
 }
 
 void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {

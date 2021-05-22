@@ -31,6 +31,7 @@ public:
     void initInterface();
     void setupACs(std::vector<ApplicationCenter*> vector,
                   std::vector<int> vector1);
+    void multipleACWithTW();
 };
 
 

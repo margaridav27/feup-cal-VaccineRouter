@@ -4,10 +4,11 @@
 #include "../graph/GraphProcessor.h"
 #include <fstream>
 #include <list>
+#include <utility>
 
 VaccineRouter::VaccineRouter()
         : vaccineLifeTime("03:00:00"), // comback: maybe change this default value?
-          graph(new Graph()) {}
+          graph(new Graph()){}
 
 VaccineRouter::VaccineRouter(Time vaccineLifeTime)
         : vaccineLifeTime(vaccineLifeTime), graph(new Graph()) {}
@@ -15,6 +16,10 @@ VaccineRouter::VaccineRouter(Time vaccineLifeTime)
 Graph *VaccineRouter::getGraph() const { return this->graph; }
 
 void VaccineRouter::setGraph(Graph *graph) { this->graph = graph; }
+
+void VaccineRouter::setCityName(std::string cityName) { this->cityName =
+      std::move(cityName);
+}
 
 void VaccineRouter::addStorageCenter(StorageCenter *sc) { this->SCs.push_back(sc); }
 
@@ -174,16 +179,19 @@ void VaccineRouter::handleACsNotVisited() {
 // ----------------------------------------------------------------------------------------------
 
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
-    ApplicationCenter *AC = ACs[0]; // single AC -> we can assume it corresponds to index 0
-    StorageCenter *nearestSC = findNearestSC(AC);
+    ApplicationCenter *ac = ACs[0]; // single AC -> we can assume it
+                                   // corresponds to index 0
+    StorageCenter *nearestSC = findNearestSC(ac);
     Vehicle *vehicle = nearestSC->getAvailableVehicle();
+    nearestSC->assignAC(ac);
 
-    std::vector<Node *> path = dijkstra(graph, nearestSC->getNode(), AC->getNode());
+    std::vector<Node *> path = dijkstra(graph, nearestSC->getNode(),
+                                        ac->getNode());
 
     vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
     // no need to handle the case in which the function returns false since that would only happen if checkTW was set
 
-    displayVehiclesPath(SCs);
+    displayVehiclesPath(SCs, this->cityName);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleAC() {
@@ -207,7 +215,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
         nextPoint = sc->findNextNearestAC(startingPoint);
     }
 
-    displayVehiclesPath(SCs);
+    displayVehiclesPath(SCs, this->cityName);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
@@ -230,7 +238,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
             nextPoint = sc->findNextNearestAC(startingPoint);
         } else sc->addVehicle();
     }
-    displayVehiclesPath(SCs);
+    displayVehiclesPath(SCs,this->cityName);
 }
 
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
@@ -244,7 +252,6 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     // iterate over SCs to calculate its optimal route -> multi-threaded function
     for (StorageCenter *sc : this->SCs) {
         if (sc->getAssignedAC().empty()) continue;
-        std::cout<<"oi";
        // std::thread thread([&]() {
             calculateSCRoute(sc);
         //    threadList.push_back(&thread);
@@ -260,9 +267,7 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     update();
     handleACsNotVisited();
 }
-bool VaccineRouter::operator()(StorageCenter *sc) {
-  return calculateSCRoute(sc);
-}
+
 void VaccineRouter::update() {
   auto it = this->ACs.begin();
   while(it != this->ACs.end()){
@@ -272,3 +277,9 @@ void VaccineRouter::update() {
       it++;
   }
 }
+
+/*
+void VaccineRouter::displayOutput() {
+  displayGraph(*graph);
+}
+*/

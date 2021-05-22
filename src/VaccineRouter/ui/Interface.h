@@ -9,10 +9,10 @@ private:
     bool checkInRange(int optionsRange, int input);
     bool checkGeneralInputValidity(int optionsRange, int input);
     std::vector<int> checkACSelectionValidity(bool multiple, int optionsRange);
-    void getAndDisplayAvailableACs(const std::string &mapFilename,
-                                   std::vector<std::pair<int, std::string>> &options);
-    void getAndDisplayAvailableSCs(const std::string &mapFilename,
-                                   std::vector<std::pair<int, std::string>> &options);
+    std::vector<std::pair<int, std::string>> getAvailableACs(const std::string &mapFilename);
+    std::vector<std::pair<int, std::string>> getAvailableSCs(const std::string &mapFilename);
+    void displayAvailableACs(std::vector<std::pair<int, std::string>> &options);
+    void displayAvailableSCs(std::vector<std::pair<int, std::string>> &options);
     void initialMenu();
     void runProgramMenu();
     void modifyDataMenu();
@@ -24,15 +24,14 @@ private:
     void selectMultipleACMenu(const std::string &mapFilename);
     void orderVaccinesMenu(const std::vector<int> &selected, const
                            std::vector<ApplicationCenter*>& options);
-
-public:
-    Interface();
-    void initInterface();
-    void setupACs(std::vector<ApplicationCenter*> vector,
+    void setupACs(std::vector<std::pair<int, std::string>> selectedACs,
                   std::vector<int> vector1);
     void singleAC();
     void multipleACWithTW();
     void multipleAC();
+public:
+    Interface();
+    void initInterface();
 };
 
 

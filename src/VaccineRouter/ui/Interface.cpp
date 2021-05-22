@@ -51,15 +51,16 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple,
     return selected;
 }
 
-void Interface::getAndDisplayAvailableACs(
-        const std::string &mapFilename, std::vector<std::pair<int, std::string>> &options) {
+std::vector<std::pair<int, std::string>> Interface::getAvailableACs(const std::string &mapFilename) {
     std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename +
                           "_ACs.txt");
 
     if (!istream.is_open()) {
         std::cerr << "File does not exist or could not be open.\n\n";
-        return;
+        std::vector<std::pair<int, std::string>>();
     }
+
+    std::vector<std::pair<int, std::string>> options;
 
     unsigned int id;
     std::string name;
@@ -70,43 +71,50 @@ void Interface::getAndDisplayAvailableACs(
         options.push_back(acData);
     }
 
-    // displaying the different options
-    if (options.empty())
-        std::cout << "There are no available Application Centers.\n";
-    else
-        for (int i = 0; i < options.size(); ++i)
-            std::cout << i + 1 << ". " << options[i].second << '\n';
-
     istream.close();
+    return options;
 }
 
-void Interface::getAndDisplayAvailableSCs(
-        const std::string &mapFilename, std::vector<std::pair<int, std::string>> &options) {
+std::vector<std::pair<int, std::string>> Interface::getAvailableSCs(const std::string &mapFilename) {
     std::ifstream istream("../../cityMaps/" + mapFilename + "/" + mapFilename +
                           "_ACs.txt");
 
     if (!istream.is_open()) {
         std::cerr << "File does not exist or could not be open.\n\n";
-        return;
+        std::vector<std::pair<int, std::string>>();
     }
+
+    std::vector<std::pair<int, std::string>> options;
 
     unsigned int id;
     std::string name;
     while (istream >> id) {
         istream.ignore();
         std::getline(istream, name);
-        std::pair<int, std::string> scData(id, name);
-        options.push_back(scData);
+        std::pair<int, std::string> acData(id, name);
+        options.push_back(acData);
     }
 
-    // displaying the different options
+    istream.close();
+    return options;
+}
+
+void Interface::displayAvailableSCs(std::vector<std::pair<int, std::string>> &options) {
     if (options.empty())
         std::cout << "There are no available Storage Centers.\n";
-    else
+    else {
         for (int i = 0; i < options.size(); ++i)
             std::cout << i << ". " << options[i].second << '\n';
+    }
+}
 
-    istream.close();
+void Interface::displayAvailableACs(std::vector<std::pair<int, std::string>> &options) {
+    if (options.empty())
+        std::cout << "There are no available Storage Centers.\n";
+    else {
+        for (int i = 0; i < options.size(); ++i)
+            std::cout << i << ". " << options[i].second << '\n';
+    }
 }
 
 Interface::Interface() { this->vaccineRouter = new VaccineRouter(); }
@@ -231,7 +239,8 @@ void Interface::removeCenterMenu(bool sc, const std::string &mapFilename) {
     // sc variable controls whether the user is about to remove a SC or not
     if (sc) {
         do {
-            getAndDisplayAvailableSCs(mapFilename, options);
+            options = getAvailableSCs(mapFilename);
+            displayAvailableSCs(options);
             std::cout << options.size() << ". Go Back\n\n"
                                            "Select one of the following Storage Centers to remove: ";
             std::cin >> input;
@@ -255,7 +264,8 @@ void Interface::removeCenterMenu(bool sc, const std::string &mapFilename) {
         std::cout << "Storage Center successfully removed!\n\n";
     } else {
         do {
-            getAndDisplayAvailableACs(mapFilename, options);
+            options = getAvailableACs(mapFilename);
+            displayAvailableACs(options);
             std::cout << options.size() << ". Go Back\n\n"
                                            "Select one of the following Application Centers to remove: ";
             std::cin >> input;
@@ -350,8 +360,9 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
     std::vector<std::pair<int, std::string>> availableACs;
 
     do {
+        availableACs = getAvailableACs(mapFilename);
         std::cout << "----- SINGLE APPLICATION CENTER -----\n";
-        getAndDisplayAvailableACs(mapFilename, availableACs);
+        displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2]: ";
         input = checkACSelectionValidity(false, availableACs.size());
@@ -360,7 +371,7 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
 
     // COMBACK
     //orderVaccinesMenu(input, availableACs);
-    //setupACs(availableACs, input);
+    setupACs(availableACs, input);
 
     singleAC();
 }
@@ -371,8 +382,9 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
     std::vector<std::pair<int, std::string>> availableACs;
 
     do {
+        availableACs = getAvailableACs(mapFilename);
         std::cout << "----- MULTIPLE APPLICATION CENTERS -----\n";
-        getAndDisplayAvailableACs(mapFilename, availableACs);
+        displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2 3 4]: ";
         input = checkACSelectionValidity(true, availableACs.size());
@@ -381,11 +393,12 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
 
     // COMBACK
     //orderVaccinesMenu(input, availableACs);
-    //setupACs(availableACs, input);
+    setupACs(availableACs, input);
 
     multipleAC();
 }
 
+// TODO
 void Interface::orderVaccinesMenu(
         const std::vector<int> &selected,
         const std::vector<ApplicationCenter *> &options) {
@@ -398,6 +411,15 @@ void Interface::orderVaccinesMenu(
         ApplicationCenter *ac = options[i];
         ac->setVaccinesToReceive(order);
         this->vaccineRouter->addApplicationCenter(ac);
+    }
+}
+
+void Interface::setupACs(std::vector<std::pair<int, std::string>> selectedACs, std::vector<int> index) {
+    for (int ix : index) {
+        Node *acNode = this->vaccineRouter->getGraph()->getNode(selectedACs[ix].first);
+        std::string acName = selectedACs[ix].second;
+        auto *newAC = new ApplicationCenter(acNode, acName);
+        this->vaccineRouter->addApplicationCenter(newAC);
     }
 }
 
@@ -415,11 +437,4 @@ void Interface::multipleAC() {
 void Interface::multipleACWithTW() {
     vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
     vaccineRouter->calculateRouteMultipleSCMultipleACWithTW();
-}
-
-void Interface::setupACs(std::vector<ApplicationCenter *> selectedACs,
-                         std::vector<int> index) {
-    for (int ix : index) {
-        this->vaccineRouter->addApplicationCenter(selectedACs[ix]);
-    }
 }

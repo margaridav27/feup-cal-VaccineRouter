@@ -19,8 +19,10 @@ private:
     void initialMenu();
     void runProgramMenu();
     void modifyDataMenu();
-    void addCenterMenu(bool sc, const std::string &mapFilename);
-    void removeCenterMenu(bool sc, const std::string &mapFilename);
+    void addSCMenu(const std::string &mapFilename);
+    void addACMenu(const std::string &mapFilename);
+    void removeSCMenu(const std::string &mapFilename);
+    void removeACMenu(const std::string &mapFilename);
     void selectMapMenu();
     void selectSingleOrMultipleACMenu(const std::string &mapFilename);
     void selectSingleACMenu(const std::string &mapFilename);

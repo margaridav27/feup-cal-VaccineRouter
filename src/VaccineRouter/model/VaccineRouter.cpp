@@ -41,7 +41,7 @@ bool VaccineRouter::setUpSCs(const std::string &mapFilename) {
     unsigned int id;
     std::string name;
     while (istream >> id >> name) {
-        auto *newSC = new StorageCenter(this->graph->getNode(id), name);
+        auto *newSC = new StorageCenter(this->graph->findNode(id), name);
         addStorageCenter(newSC);
     }
 

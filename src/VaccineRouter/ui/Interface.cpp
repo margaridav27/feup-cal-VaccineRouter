@@ -490,7 +490,7 @@ void Interface::orderVaccinesMenu(std::vector<std::pair<int, std::string>> &opti
         std::cin >> order;
 
         // constructing order and setting up AC
-        Node *acNode = this->vaccineRouter->getGraph()->getNode(options[i].first);
+        Node *acNode = this->vaccineRouter->getGraph()->findNode(options[i].first);
         std::string acName = options[i].second;
         auto *newAC = new ApplicationCenter(acNode, acName);
         newAC->setVaccinesToReceive(order);

@@ -48,8 +48,8 @@ bool processEdges(Graph *graph, const std::string &chosenCity) {
     istream >> numEdges;
     for (int i = 0; i < numEdges; ++i) {
         istream >> dummy >> src >> dummy >> dest >> dummy;
-        Node *s = graph->getNode(src);
-        Node *d = graph->getNode(dest);
+        Node *s = graph->findNode(src);
+        Node *d = graph->findNode(dest);
         if (s == nullptr || d == nullptr) return false;
         weight = s->calculateDist(d);
         graph->addEdge(src, dest, weight);

@@ -43,8 +43,6 @@ add_executable(src VaccineRouter/main.cpp
         VaccineRouter/model/StorageCenter.h
         VaccineRouter/model/Vehicle.cpp
         VaccineRouter/model/Vehicle.h
-        VaccineRouter/algorithms/Tarjan.cpp
-        VaccineRouter/algorithms/Tarjan.h
         VaccineRouter/algorithms/Dijkstra.cpp
         VaccineRouter/algorithms/Dijkstra.h
         VaccineRouter/utilities/StringsHashTable.h VaccineRouter/model/Center.cpp VaccineRouter/model/Center.h)

@@ -15,7 +15,7 @@ using GVEdge = GraphViewer::Edge;
 
 GVNode getNodeID(Node *n);
 
-GVNode getNodeID( int index);
+GVNode getNodeID(int index);
 
 void displayGraph(VaccineRouter *vaccineRouter, int
                                                                         &idNode,

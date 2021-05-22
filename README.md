@@ -24,7 +24,7 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 - [x] Vehicle                 
 - [x] VaccineRouter           
 - [x] A*                      
-- [x] Djistrka    
+- [x] Dijkstra    
 - [x] Coords (necessary operators)
 - [x] Time (necessary operators)          
 
@@ -44,10 +44,9 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 #### 21 May 
 - [ ] Test hardcore bia
 - [ ] Test chillada maggy (true)
-- [ ] Pre processamento
 - [ ] Improve display
-- [ ] From file -> graph
-- [ ] Pre process graph -- erase unatainable
-- [ ] User sets vaccines to deliver -> assign vaccines
+- [x] From file -> graph
+- [x] User sets vaccines to deliver -> assign vaccines
+- [ ] Pre process graph -> erase unatainable
 - [ ] Showing the output of the algorithm
 

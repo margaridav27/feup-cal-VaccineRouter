@@ -18,10 +18,11 @@ bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
 
 std::vector<int> Interface::checkACSelectionValidity(bool multiple,
                                                      int optionsRange) {
-  int input;
+  int input = 0;
+  bool read = false;
   std::vector<int> selected;
 
-  while (std::cin.peek() != std::cin.eof()) {
+  while (!read || !checkInRange(optionsRange,input)) {
     std::cin >> input;
 
     // invalid input error
@@ -32,13 +33,17 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple,
       return std::vector<int>();
     }
 
+
+
     // multiple inputs when only single was permitted error
-    if (!multiple && std::cin.peek() != std::cin.eof()) {
+    if (!multiple &&  std::cin.eof()) {
       std::cerr << "You chose more than one Application Center.\n"
                    "Please make sure to choose only one.\n\n";
       std::cin.clear();
       std::cin.ignore(100000, '\n');
       return std::vector<int>();
+    } else {
+      read = true;
     }
 
     // updates return vector with selected option

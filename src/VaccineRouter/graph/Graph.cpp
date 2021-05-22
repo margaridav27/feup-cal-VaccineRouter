@@ -37,11 +37,6 @@ bool Graph::removeEdge(unsigned int sourceID, unsigned int destID) {
     return false;
 }
 
-Node *Graph::findNode(Node *node) {
-    auto it = std::find(nodeSet.begin(), nodeSet.end(), node);
-    return it == nodeSet.end() ? nullptr : *it;
-}
-
 Node *Graph::findNode(int id) {
     auto it = nodeHashMap.find(id);
     return it == nodeHashMap.end() ? nullptr : it->second;

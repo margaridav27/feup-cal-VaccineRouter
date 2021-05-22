@@ -16,8 +16,8 @@ std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest) {
         n->setCost(0);
     }
 
-    orig = graph->findNode(orig);
-    dest = graph->findNode(dest);
+    orig = graph->findNode(orig->getId());
+    dest = graph->findNode(dest->getId());
 
     MutablePriorityQueue queue;
     queue.insert(orig);

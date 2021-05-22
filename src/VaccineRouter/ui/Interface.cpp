@@ -242,7 +242,6 @@ void Interface::orderVaccinesMenu(
 // TODO Apply method and display
 void Interface::singleAC() {
   vaccineRouter->calculateRouteSingleSCSingleAC();
-  vaccineRouter->displayOutput();
 }
 
 // TODO Apply both methods and display

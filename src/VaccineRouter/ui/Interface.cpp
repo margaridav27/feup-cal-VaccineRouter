@@ -48,7 +48,7 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple,
         selected.push_back(input);
     }
 
-  return selected;
+    return selected;
 }
 
 void Interface::getAndDisplayAvailableACs(
@@ -233,7 +233,7 @@ void Interface::removeCenterMenu(bool sc, const std::string &mapFilename) {
         do {
             getAndDisplayAvailableSCs(mapFilename, options);
             std::cout << options.size() << ". Go Back\n\n"
-                                             "Select one of the following Storage Centers to remove: ";
+                                           "Select one of the following Storage Centers to remove: ";
             std::cin >> input;
         } while (checkInRange(options.size(), input) && std::cin.fail());
 
@@ -250,14 +250,14 @@ void Interface::removeCenterMenu(bool sc, const std::string &mapFilename) {
         }
 
         // outputting remaining options to the file
-        for (const std::pair<int, std::string>& op : options) ostream << op.first << ' ' << op.second << '\n';
+        for (const std::pair<int, std::string> &op : options) ostream << op.first << ' ' << op.second << '\n';
 
         std::cout << "Storage Center successfully removed!\n\n";
     } else {
         do {
             getAndDisplayAvailableACs(mapFilename, options);
             std::cout << options.size() << ". Go Back\n\n"
-                                             "Select one of the following Application Centers to remove: ";
+                                           "Select one of the following Application Centers to remove: ";
             std::cin >> input;
         } while (checkInRange(options.size(), input) && std::cin.fail());
 
@@ -273,7 +273,7 @@ void Interface::removeCenterMenu(bool sc, const std::string &mapFilename) {
         }
 
         // outputting remaining options to the file
-        for (const std::pair<int, std::string>& op : options) ostream << op.first << ' ' << op.second << '\n';
+        for (const std::pair<int, std::string> &op : options) ostream << op.first << ' ' << op.second << '\n';
 
         std::cout << "Application Center successfully removed!\n\n";
     }
@@ -313,11 +313,11 @@ void Interface::selectMapMenu() {
         std::cout << "\n";
     } while (!checkGeneralInputValidity(optionCounter, input) && std::cin.fail());
 
-  if (input == optionCounter)
-    runProgramMenu(); // user chose to go back
-  this->vaccineRouter->selectMap(options[input - 1]);
-  this->vaccineRouter->setCityName(options[input - 1]);
-  selectSingleOrMultipleACMenu(options[input - 1]);
+    if (input == optionCounter)
+        runProgramMenu(); // user chose to go back
+    this->vaccineRouter->selectMap(options[input - 1]);
+    this->vaccineRouter->setCityName(options[input - 1]);
+    selectSingleOrMultipleACMenu(options[input - 1]);
 }
 
 void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
@@ -402,10 +402,20 @@ void Interface::orderVaccinesMenu(
 }
 
 // TODO Apply method and display
-void Interface::singleAC() {}
+void Interface::singleAC() {
+    vaccineRouter->calculateRouteSingleSCSingleAC();
+    //vaccineRouter->displayOutput();
+}
 
 // TODO Apply both methods and display
-void Interface::multipleAC() {}
+void Interface::multipleAC() {
+    vaccineRouter->calculateRouteSingleSCMultipleAC();
+}
+
+void Interface::multipleACWithTW() {
+    vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
+    vaccineRouter->calculateRouteMultipleSCMultipleACWithTW();
+}
 
 void Interface::setupACs(std::vector<ApplicationCenter *> selectedACs,
                          std::vector<int> index) {

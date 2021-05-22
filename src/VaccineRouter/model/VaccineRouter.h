@@ -38,6 +38,9 @@ public:
     void calculateRouteSingleSCMultipleAC();
     void calculateRouteSingleSCMultipleACWithTW();
     void calculateRouteMultipleSCMultipleACWithTW();
+
+    bool operator()(StorageCenter *sc);
+    void update();
 };
 
 

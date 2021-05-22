@@ -14,12 +14,12 @@ StorageCenter::StorageCenter() : Center() {
 StorageCenter::StorageCenter(Node *Node, const std::string &name)
         : Center(Node, name) {
     this->vaccinesToDeliver = 0;
-    this->fleet.push_back(new Vehicle(Time(25, 0, 0)));
+    this->fleet.push_back(new Vehicle(Time(8, 0, 0)));
     this->optimalState = false;
 }
 
 void StorageCenter::addVehicle() {
-    this->fleet.push_back(new Vehicle(Time(3, 0, 0)));
+    this->fleet.push_back(new Vehicle(Time(8, 0, 0)));
 }
 
 bool StorageCenter::removeVehicle(Vehicle *vehicle) {

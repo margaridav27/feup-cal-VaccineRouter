@@ -93,6 +93,7 @@ StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter
     return nearest;
 }
 
+//TODO what if path is empty? There isn't a possible route?
 bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
     Center *startingPoint = sc;
     Center *nextPoint = sc->findNextNearestAC(sc);
@@ -108,7 +109,10 @@ bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
             startingPoint = nextPoint;
             nextPoint = sc->findNextNearestAC(startingPoint);
             visited++;
-        } else sc->setOptimalState();
+        } else{
+          if (!vehicle->hasEmptyPath())
+            sc->setOptimalState();
+        }
     }
 
     return (visited == sc->getAssignedAC().size());
@@ -240,16 +244,31 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     // iterate over SCs to calculate its optimal route -> multi-threaded function
     for (StorageCenter *sc : this->SCs) {
         if (sc->getAssignedAC().empty()) continue;
-        std::thread thread([&]() {
+        std::cout<<"oi";
+       // std::thread thread([&]() {
             calculateSCRoute(sc);
-            threadList.push_back(&thread);
-        });
+        //    threadList.push_back(&thread);
+        //    thread.join();
+        //});
     }
-    while (!threadList.empty()) {
+   /* while (!threadList.empty()) {
         threadList.back()->join();
         threadList.pop_back();
-    }
+    }*/
 
     // handles the ACs that could not fit in its optimally assigned SC route
+    update();
     handleACsNotVisited();
+}
+bool VaccineRouter::operator()(StorageCenter *sc) {
+  return calculateSCRoute(sc);
+}
+void VaccineRouter::update() {
+  auto it = this->ACs.begin();
+  while(it != this->ACs.end()){
+    if ((*it)->isVisited())
+      it = this->ACs.erase(it);
+    else
+      it++;
+  }
 }

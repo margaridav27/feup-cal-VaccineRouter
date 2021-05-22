@@ -39,6 +39,7 @@ public:
     ApplicationCenter *findNextNearestAC(Center *startingPoint) const;
 
     bool operator==(const StorageCenter *rhs) const;
+    bool calculateSCRoute(Graph *graph);
 };
 
 

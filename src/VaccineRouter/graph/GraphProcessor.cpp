@@ -3,9 +3,7 @@
 #include "GraphProcessor.h"
 
 Graph *processGraph(const std::string &chosenCity) {
-    Graph *graph = new Graph();
-
-    if (chosenCity != "espinho" && chosenCity != "porto" && chosenCity != "penafiel") return nullptr;
+    auto *graph = new Graph();
 
     if (!processNodes(graph, chosenCity) ||
         !processEdges(graph, chosenCity))
@@ -52,7 +50,7 @@ bool processEdges(Graph *graph, const std::string &chosenCity) {
         istream >> dummy >> src >> dummy >> dest >> dummy;
         Node *s = graph->getNode(src);
         Node *d = graph->getNode(dest);
-        if (s == nullptr || d == nullptr) return false; // COMBACK: error message ?
+        if (s == nullptr || d == nullptr) return false;
         weight = s->calculateDist(d);
         graph->addEdge(src, dest, weight);
     }

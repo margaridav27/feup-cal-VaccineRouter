@@ -1,4 +1,5 @@
 #include "../../lib/GraphViewerCpp/include/graphviewer.h"
+#include "../graph/node/Node.h"
 #include "../model/StorageCenter.h"
 #include "graphViewer.h"
 
@@ -6,65 +7,98 @@ std::map<Node *, GVNode> GVNodes;
 std::map<Edge *, GVEdge> GVEdges;
 
 GVNode getNodeID(Node *n) {
-    auto itr = GVNodes.find(n);
-    if (itr != GVNodes.end())
-        return itr->second;
+  auto itr = GVNodes.find(n);
+  if (itr != GVNodes.end())
+    return itr->second;
 }
 
 GVEdge getEdge(Node *from, Node *to) {
-    for (auto e : GVEdges) {
-        if (*e.first->getOrig() == *from && e.first->getDest() == to)
-            return e.second;
-    }
+  for (auto e : GVEdges) {
+    if (*e.first->getOrig() == *from && e.first->getDest() == to)
+      return e.second;
+  }
 }
 
-void displayGraph(GraphViewer *gv, VaccineRouter *vaccineRouter, int &idNode, int
-&idEdge) {
-    for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
-        GVNode &node =
-                gv->addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(),
-                                                   n->getCoordinates().getY()));
-        //node.setColor(graphviewer::DARK_GRAY);
-        GVNodes.insert(std::pair<Node *, GVNode>(n, node));
-    }
+void displayGraph( VaccineRouter *vaccineRouter) {
+  GVNodes.clear();
+  GVEdges.clear();
+  int idNode = 0;
+  int idEdge = 0;
+  GraphViewer gv;
+  gv.createWindow();
 
-    for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
-        for (Edge *e : n->getAdj()) {
-            GVNode ixOrig = getNodeID(e->getOrig());
-            GVNode ixDest = getNodeID(e->getDest());
-            GVEdge &edge = gv->addEdge(idEdge++, ixOrig, ixDest,
-                                       GraphViewer::Edge::EdgeType::UNDIRECTED);
-            GVEdges.insert(std::pair<Edge *, GVEdge>(e, edge));
-            // edge.setColor(graphviewer::WHITE);
-        }
+  for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
+    GVNode &node =
+        gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(),
+                                           n->getCoordinates().getY()));
+    // node.setColor(graphviewer::DARK_GRAY);
+    GVNodes.insert(std::pair<Node *, GVNode>(n, node));
+  }
+
+  for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
+    for (Edge *e : n->getAdj()) {
+      GVNode ixOrig = getNodeID(e->getOrig());
+      GVNode ixDest = getNodeID(e->getDest());
+      GVEdge &edge = gv.addEdge(idEdge++, ixOrig, ixDest,
+                                 GraphViewer::Edge::EdgeType::UNDIRECTED);
+      GVEdges.insert(std::pair<Edge *, GVEdge>(e, edge));
+      // edge.setColor(graphviewer::WHITE);
     }
+  }
+  gv.join();
 }
 
-void displayVehiclesPath(GraphViewer *gv, VaccineRouter *vaccineRouter) {
-    int idNode = 0;
-    int idEdge = 0;
-    displayGraph(gv, vaccineRouter, idNode, idEdge);
+void displayVehiclesPath(VaccineRouter *vaccineRouter) {
+  GVNodes.clear();
+  GVEdges.clear();
+  int idNode = 0;
+  int idEdge = 0;
+  GraphViewer gv;
+  gv.createWindow();
 
-    for (StorageCenter *sc : vaccineRouter->getSCs()) {
-        for (Vehicle *v : sc->getFleet()) {
-            std::map<Node *, GVNode> GVnodes;
-            Node *n;
-            std::vector<Node *> path = v->getPath();
-            for (Node *n : path) {
-                GVNode node = getNodeID(n);
-                node.setColor(GraphViewer::YELLOW);
-                node.setLabel(vaccineRouter->getCenter(n)->getName());
-            }
+  for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
+    GVNode &node =
+        gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(),
+                                          n->getCoordinates().getY()));
+    // node.setColor(graphviewer::DARK_GRAY);
+    GVNodes.insert(std::pair<Node *, GVNode>(n, node));
+  }
 
-            for (int i = idEdge; i < idNode - 1; i++) {
-                GVNode ixOrig = getNodeID(path[i]);
-                GVNode ixDest = getNodeID(path[i + 1]);
-                GVEdge edge = getEdge(path[i], path[i + 1]);
-                edge.setColor(GraphViewer::YELLOW);
-                edge.setEdgeType(GraphViewer::Edge::EdgeType::DIRECTED);
-            }
-        }
+  for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
+    for (Edge *e : n->getAdj()) {
+      GVNode ixOrig = getNodeID(e->getOrig());
+      GVNode ixDest = getNodeID(e->getDest());
+      GVEdge &edge = gv.addEdge(idEdge++, ixOrig, ixDest,
+                                GraphViewer::Edge::EdgeType::UNDIRECTED);
+      GVEdges.insert(std::pair<Edge *, GVEdge>(e, edge));
+      // edge.setColor(graphviewer::WHITE);
     }
+  }
+
+  for (StorageCenter *sc : vaccineRouter->getSCs()) {
+    for (Vehicle *v : sc->getFleet()) {
+      std::map<Node *, GVNode> GVnodes;
+      Node *n;
+      std::vector<Node *> path = v->getPath();
+      for (Node *n : path) {
+        GVNode node = getNodeID(n);
+        gv.getNode(node.getId()).setColor(GraphViewer::YELLOW);
+        Center *center = vaccineRouter->getCenter(n);
+        if (center != nullptr)
+          gv.getNode(node.getId()).setLabel(center->getName());
+      }
+
+      for (int i = 0; i < idNode - 1; i++) {
+        GVNode ixOrig = getNodeID(path[i]);
+        GVNode ixDest = getNodeID(path[i + 1]);
+        GVEdge edge = getEdge(path[i], path[i + 1]);
+        gv.getEdge(edge.getId()).setColor(GraphViewer::YELLOW);
+        gv.getEdge(edge.getId()).setEdgeType(GraphViewer::Edge::EdgeType::DIRECTED);
+      }
+    }
+  }
+
+  gv.join();
 }
 
 /*
@@ -124,9 +158,8 @@ void displayVehiclesPath(std::vector<StorageCenter *> SCs, std::string city) {
             for (Node *n : path) {
 
                 GVNode node =
-                        gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX() -
-                                                          1644 / 2,
-                                                          n->getCoordinates().getY()
+                        gv.addNode(idNode++,
+sf::Vector2f(n->getCoordinates().getX() - 1644 / 2, n->getCoordinates().getY()
                                                           - 941 / 2));
                 //node.setLabel(n.ge)
                 //TODO add labels how??

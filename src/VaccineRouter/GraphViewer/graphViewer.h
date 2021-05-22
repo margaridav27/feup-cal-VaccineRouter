@@ -17,9 +17,11 @@ GVNode getNodeID(Node *n);
 
 GVNode getNodeID( int index);
 
-void displayGraph(GraphViewer *gv, VaccineRouter *vaccineRouter, int &idNode, int &idEdge);
+void displayGraph(VaccineRouter *vaccineRouter, int
+                                                                        &idNode,
+               int &idEdge);
 
-void displayVehiclesPath(GraphViewer *gv, VaccineRouter *vaccineRouter);
+void displayVehiclesPath(VaccineRouter *vaccineRouter);
 
 
 #endif //VACCINEROUTER_GRAPHVIEWER_H

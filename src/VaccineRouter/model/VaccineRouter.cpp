@@ -190,9 +190,7 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
 
     vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
     // no need to handle the case in which the function returns false since that would only happen if checkTW was set
-
-    GraphViewer *gv;
-    displayVehiclesPath(gv, this);
+    displayVehiclesPath(this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleAC() {
@@ -216,8 +214,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
         nextPoint = sc->findNextNearestAC(startingPoint);
     }
 
-    GraphViewer *gv;
-    displayVehiclesPath(gv, this);
+  displayVehiclesPath(this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
@@ -241,8 +238,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
         } else sc->addVehicle();
     }
 
-    GraphViewer *gv;
-    displayVehiclesPath(gv, this);
+  displayVehiclesPath(this);
 }
 
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {

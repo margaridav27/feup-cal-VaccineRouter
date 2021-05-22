@@ -26,7 +26,7 @@ void VaccineRouter::addStorageCenter(StorageCenter *sc) { this->SCs.push_back(sc
 void VaccineRouter::addApplicationCenter(ApplicationCenter *ac) { this->ACs.push_back(ac); }
 
 void VaccineRouter::selectMap(const std::string &mapFilename) {
-    this->graph = processGraph(mapFilename);
+    this->graph = processGraph(mapFilename, true);
     setUpSCs(mapFilename);
 }
 

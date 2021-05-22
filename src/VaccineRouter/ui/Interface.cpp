@@ -129,10 +129,11 @@ void Interface::initialMenu() {
         std::cout << "\n----- INITIAL MENU -----\n"
                      "1. Run Program\n"
                      "2. Modify Data\n"
-                     "3. Exit\n\n"
+                     "3. Analyse Connectivity\n"
+                     "4. Exit\n\n"
                      "Please select your option: ";
         std::cin >> initialMenuInput;
-    } while (!checkCinFail() || !checkGeneralInputValidity(3, initialMenuInput));
+    } while (!checkCinFail() || !checkGeneralInputValidity(4, initialMenuInput));
 
     switch (initialMenuInput) {
         case 1: runProgramMenu();

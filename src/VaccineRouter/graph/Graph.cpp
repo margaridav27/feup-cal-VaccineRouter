@@ -11,6 +11,7 @@ std::vector<Node *> Graph::getNodeSet() {
 bool Graph::addNode(unsigned int id, Coordinates coords) {
     if (findNode(id) != nullptr) return false;
     nodeSet.push_back(new Node(id, coords));
+    nodeHashMap.insert(std::pair<int, Node *> (id, new Node(id, coords)));
     return true;
 }
 
@@ -18,7 +19,8 @@ bool Graph::removeNode(unsigned int id) {
     Node *toRemove = findNode(id);
     if (toRemove == nullptr) return false;
     for (Node *node : nodeSet) node->removeNodeTo(toRemove);
-    nodeSet.erase(std::find(nodeSet.begin(), nodeSet.end(), toRemove));
+    nodeSet.erase(std::find(nodeSet.begin(), nodeSet.end(), *toRemove));
+    nodeHashMap.erase(nodeHashMap.find(id));
     return true;
 }
 
@@ -37,7 +39,7 @@ bool Graph::removeEdge(unsigned int sourceID, unsigned int destID) {
     return false;
 }
 
-Node *Graph::findNode(int id) {
+Node *Graph::findNode(unsigned int id) {
     auto it = nodeHashMap.find(id);
     return it == nodeHashMap.end() ? nullptr : it->second;
 }

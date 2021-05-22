@@ -12,10 +12,19 @@ Graph *processGraph(const std::string &chosenCity) {
 }
 
 bool processNodes(Graph *graph, const std::string &chosenCity) {
-    std::ifstream istream("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
+    std::ifstream istream;
+    bool needsProcessing = false;
+
+    // tries to open the strongly connected graph
+    istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
     if (!istream.is_open()) {
-        std::cerr << "Edges file opening failed.\n";
-        return false;
+
+        // if such graph does not exist, tries to open the weakly connected
+        istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_full_nodes_xy.txt");
+        if (!istream.is_open()) {
+            std::cerr << "Edges file opening failed.\n";
+            return false;
+        } else needsProcessing = true;
     }
 
     unsigned int numNodes;

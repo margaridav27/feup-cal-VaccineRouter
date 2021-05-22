@@ -86,6 +86,7 @@ Interface::Interface() { this->vaccineRouter = new VaccineRouter(); }
 
 void Interface::initInterface() { initialMenu(); }
 
+//TODO 2. Modify Data  1. Add AC 2. Remove AC 3. Add SC 4. Remove SC
 void Interface::initialMenu() {
   int input;
   do {
@@ -237,11 +238,12 @@ void Interface::orderVaccinesMenu(
   }
 }
 
-// TODO
+// TODO Apply method and display
 void Interface::singleAC() {}
 
-// TODO
+// TODO Apply both methods and display
 void Interface::multipleAC() {}
+
 void Interface::setupACs(std::vector<ApplicationCenter *> selectedACs,
                          std::vector<int> index) {
   for (int ix : index) {

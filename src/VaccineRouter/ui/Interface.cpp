@@ -159,6 +159,7 @@ void Interface::selectMapMenu() {
   if (input == optionCounter)
     runProgramMenu(); // user chose to go back
   this->vaccineRouter->selectMap(options[input - 1]);
+  this->vaccineRouter->setCityName(options[input - 1]);
   selectSingleOrMultipleACMenu(options[input - 1]);
 }
 
@@ -239,10 +240,21 @@ void Interface::orderVaccinesMenu(
 }
 
 // TODO Apply method and display
-void Interface::singleAC() {}
+void Interface::singleAC() {
+  vaccineRouter->calculateRouteSingleSCSingleAC();
+  vaccineRouter->displayOutput();
+}
 
 // TODO Apply both methods and display
-void Interface::multipleAC() {}
+void Interface::multipleACWithTW() {
+  vaccineRouter->calculateRouteSingleSCMultipleAC();
+}
+
+
+void Interface::multipleAC() {
+  vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
+  vaccineRouter->calculateRouteMultipleSCMultipleACWithTW();
+}
 
 void Interface::setupACs(std::vector<ApplicationCenter *> selectedACs,
                          std::vector<int> index) {

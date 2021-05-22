@@ -11,6 +11,7 @@ class VaccineRouter {
 private:
     Graph *graph;
     Time vaccineLifeTime;
+    std::string cityName;
     std::vector<StorageCenter *> SCs;
     std::vector<ApplicationCenter *> ACs;
 
@@ -24,6 +25,7 @@ public:
 
     Graph *getGraph() const;
     void setGraph(Graph *graph);
+    void setCityName(std::string cityName);
 
     void addStorageCenter(StorageCenter *sc);
     void addApplicationCenter(ApplicationCenter *ac);
@@ -41,6 +43,7 @@ public:
 
     bool operator()(StorageCenter *sc);
     void update();
+    void displayOutput();
 };
 
 

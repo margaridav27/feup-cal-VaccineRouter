@@ -19,7 +19,7 @@ bool Graph::removeNode(unsigned int id) {
     Node *toRemove = findNode(id);
     if (toRemove == nullptr) return false;
     for (Node *node : nodeSet) node->removeNodeTo(toRemove);
-    nodeSet.erase(std::find(nodeSet.begin(), nodeSet.end(), *toRemove));
+    nodeSet.erase(std::find(nodeSet.begin(), nodeSet.end(), toRemove));
     nodeHashMap.erase(nodeHashMap.find(id));
     return true;
 }

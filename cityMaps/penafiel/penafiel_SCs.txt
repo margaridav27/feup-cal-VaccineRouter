@@ -1,2 +1,5 @@
-318 "Hospital Padre Americo"
-4657 "Arrifana"
+318 SC_A
+4657 SC_B
+6648 SC_C
+1380 SC_D
+10006 SC_E

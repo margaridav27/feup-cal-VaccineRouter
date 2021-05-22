@@ -1,6 +1,15 @@
 #include "Interface.h"
 #include <fstream>
 
+bool Interface::checkCinFail() {
+    if (std::cin.fail()) {
+        std::cin.clear();
+        std::cin.ignore(100000, '\n');
+        return false;
+    }
+    return true;
+}
+
 bool Interface::checkInRange(int optionsRange, int input) {
     return (input >= 1 && input <= optionsRange);
 }
@@ -9,10 +18,7 @@ bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
     if (checkInRange(optionsRange, input))
         return true;
 
-    std::cin.ignore(100000, '\n');
-    std::cin.clear();
-
-    std::cout << "[VaccineRouter] Invalid input. Please choose again.\n\n";
+    std::cout << "[VaccineRouter] Invalid input. Please choose again.";
     return false;
 }
 
@@ -26,8 +32,8 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple,
         std::cin >> input;
 
         // invalid input error
-        if (std::cin.fail() || !checkInRange(optionsRange, input)) {
-            std::cout << "[VaccineRouter] Invalid input. Please choose again.\n\n";
+        if (!checkCinFail() || !checkInRange(optionsRange, input)) {
+            std::cout << "[VaccineRouter] Invalid input. Please choose again.";
             std::cin.clear();
             std::cin.ignore(100000, '\n');
             return std::vector<int>();
@@ -54,7 +60,7 @@ std::vector<std::pair<int, std::string>> Interface::getAvailableACs(const std::s
                           "_ACs.txt");
 
     if (!istream.is_open()) {
-        std::cout << "[VaccineRouter] File does not exist or could not be open.\n\n";
+        std::cout << "[VaccineRouter] File does not exist or could not be open.";
         std::vector<std::pair<int, std::string>>();
     }
 
@@ -77,7 +83,7 @@ std::vector<std::pair<int, std::string>> Interface::getAvailableSCs(const std::s
                           "_ACs.txt");
 
     if (!istream.is_open()) {
-        std::cout << "[VaccineRouter] File does not exist or could not be open.\n\n";
+        std::cout << "[VaccineRouter] File does not exist or could not be open.";
         std::vector<std::pair<int, std::string>>();
     }
 
@@ -97,7 +103,7 @@ std::vector<std::pair<int, std::string>> Interface::getAvailableSCs(const std::s
 
 void Interface::displayAvailableSCs(std::vector<std::pair<int, std::string>> &options) {
     if (options.empty())
-        std::cout << "[VaccineRouter] There are no available Storage Centers.\n";
+        std::cout << "[VaccineRouter] There are no available Storage Centers.";
     else {
         for (int i = 0; i < options.size(); ++i)
             std::cout << i + 1 << ". " << options[i].second << '\n';
@@ -106,7 +112,7 @@ void Interface::displayAvailableSCs(std::vector<std::pair<int, std::string>> &op
 
 void Interface::displayAvailableACs(std::vector<std::pair<int, std::string>> &options) {
     if (options.empty())
-        std::cout << "[VaccineRouter] There are no available Storage Centers.\n";
+        std::cout << "[VaccineRouter] There are no available Storage Centers.";
     else {
         for (int i = 0; i < options.size(); ++i)
             std::cout << i + 1 << ". " << options[i].second << '\n';
@@ -120,41 +126,35 @@ void Interface::initInterface() { initialMenu(); }
 void Interface::initialMenu() {
     int initialMenuInput = 0;
     do {
-        std::cout << "----- INITIAL MENU -----\n"
+        std::cout << "\n----- INITIAL MENU -----\n"
                      "1. Run Program\n"
                      "2. Modify Data\n"
                      "3. Exit\n\n"
                      "Please select your option: ";
         std::cin >> initialMenuInput;
-    } while (!checkGeneralInputValidity(3, initialMenuInput) || std::cin.fail());
+    } while (!checkCinFail() || !checkGeneralInputValidity(3, initialMenuInput));
 
     switch (initialMenuInput) {
-        case 1:
-            runProgramMenu();
-        case 2:
-            modifyDataMenu();
-        default:
-            return;
+        case 1: runProgramMenu();
+        case 2: modifyDataMenu();
+        default: return;
     }
 }
 
 void Interface::runProgramMenu() {
     int runProgramMenuInput = 0;
     do {
-        std::cout << "----- RUN PROGRAM MENU -----\n"
+        std::cout << "\n----- RUN PROGRAM MENU -----\n"
                      "1. Select Map\n"
                      "2. Go Back\n\n"
                      "Please select your option: ";
         std::cin >> runProgramMenuInput;
-    } while (!checkGeneralInputValidity(2, runProgramMenuInput) || std::cin.fail());
+    } while (!checkCinFail() || !checkGeneralInputValidity(2, runProgramMenuInput));
 
     switch (runProgramMenuInput) {
-        case 1:
-            selectMapMenu();
-        case 2:
-            initialMenu();
-        default:
-            return;
+        case 1: selectMapMenu();
+        case 2: initialMenu();
+        default: return;
     }
 }
 
@@ -168,11 +168,11 @@ void Interface::modifyDataMenu() {
         std::ifstream istream("../../cityMaps/availableCities.txt");
 
         if (!istream.is_open()) {
-            std::cout << "[VaccineRouter] File containing the available cities could not be open.\n\n";
+            std::cout << "[VaccineRouter] File containing the available cities could not be open.";
             return;
         }
 
-        std::cout << "----- MODIFY DATA MENU - MAP SELECTION -----\n";
+        std::cout << "\n----- MODIFY DATA MENU - MAP SELECTION -----\n";
         cityOptions.clear();
         optionCounter = 1;
         std::string cityName;
@@ -187,14 +187,14 @@ void Interface::modifyDataMenu() {
         std::cout << optionCounter << ". Go Back\n\n"
                                       "Please select your option: ";
         std::cin >> chosenCityIx;
-    } while (!checkGeneralInputValidity(optionCounter, chosenCityIx) || std::cin.fail());
+    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, chosenCityIx));
 
     if (chosenCityIx == optionCounter) initialMenu(); // chose to go back
     std::string chosenCityStr = cityOptions[chosenCityIx - 1];
 
     int modifyDataMenuInput = 0;
     do {
-        std::cout << "----- MODIFY DATA MENU -----\n"
+        std::cout << "\n----- MODIFY DATA MENU -----\n"
                      "1. Add Application Center\n"
                      "2. Add Storage Center\n"
                      "3. Remove Application Center\n"
@@ -202,21 +202,15 @@ void Interface::modifyDataMenu() {
                      "5. Go Back\n\n"
                      "Please select your option: ";
         std::cin >> modifyDataMenuInput;
-    } while (!checkGeneralInputValidity(5, modifyDataMenuInput) || std::cin.fail());
+    } while (!checkCinFail() || !checkGeneralInputValidity(5, modifyDataMenuInput));
 
     switch (modifyDataMenuInput) {
-        case 1:
-            addACMenu(chosenCityStr);
-        case 2:
-            addSCMenu(chosenCityStr);
-        case 3:
-            removeACMenu(chosenCityStr);
-        case 4:
-            removeSCMenu(chosenCityStr);
-        case 5:
-            modifyDataMenu();
-        default:
-            return;
+        case 1: addACMenu(chosenCityStr);
+        case 2: addSCMenu(chosenCityStr);
+        case 3: removeACMenu(chosenCityStr);
+        case 4: removeSCMenu(chosenCityStr);
+        case 5: modifyDataMenu();
+        default: return;
     }
 }
 
@@ -224,11 +218,12 @@ void Interface::addSCMenu(const std::string &mapFilename) {
     bool alreadyExists = false;
     int newID;
     std::string newName;
+
     std::vector<std::pair<int, std::string>> availableACs;
     std::vector<std::pair<int, std::string>> availableSCs;
 
     do {
-        std::cout << "----- ADD STORAGE CENTER MENU -----\n"
+        std::cout << "\n----- ADD STORAGE CENTER MENU -----\n"
                      "Introduce the ID of the node about to become a Storage Center: ";
         std::cin >> newID;
         std::cin.ignore();
@@ -236,18 +231,20 @@ void Interface::addSCMenu(const std::string &mapFilename) {
         availableACs = getAvailableACs(mapFilename);
         availableSCs = getAvailableSCs(mapFilename);
 
+        // checking the existent ACs
         for (const std::pair<int, std::string>& op : availableACs) {
             if (newID == op.first) {
                 alreadyExists = true;
-                std::cout << "[VaccineRouter] The given node ID already corresponds to an Application Center.\n";
+                std::cout << "[VaccineRouter] The given node ID already corresponds to an Application Center.";
                 break;
             }
         }
 
+        // checking the existent SCs
         for (const std::pair<int, std::string>& op : availableSCs) {
             if (newID == op.first) {
                 alreadyExists = true;
-                std::cout << "[VaccineRouter] The given node ID already corresponds to a Storage Center.\n";
+                std::cout << "[VaccineRouter] The given node ID already corresponds to a Storage Center.";
                 break;
             }
         }
@@ -256,17 +253,17 @@ void Interface::addSCMenu(const std::string &mapFilename) {
             std::cout << "Introduce a name for the Storage Center: ";
             std::getline(std::cin, newName);
 
-            std::cout << "[VaccineRouter] Your option is being processed...\n\n";
+            std::cout << "[VaccineRouter] Your option is being processed...";
 
             std::ofstream ostream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_SCs.txt", std::fstream::app);
             if (!ostream.is_open()) {
-                std::cout << "[VaccineRouter] File does not exist or could not be open.\n\n";
+                std::cout << "[VaccineRouter] File does not exist or could not be open.";
                 return;
             }
             ostream << newID << ' ' << newName << '\n';
             ostream.close();
 
-            std::cout << "[VaccineRouter] Storage Center successfully added!\n\n";
+            std::cout << "[VaccineRouter] Storage Center successfully added!";
             break;
         }
     } while (true);
@@ -282,7 +279,7 @@ void Interface::addACMenu(const std::string &mapFilename) {
     std::vector<std::pair<int, std::string>> availableSCs;
 
     do {
-        std::cout << "----- ADD APPLICATION CENTER MENU -----\n"
+        std::cout << "\n----- ADD APPLICATION CENTER MENU -----\n"
                      "Introduce the ID of the node about to become an Application Center: ";
         std::cin >> newID;
         std::cin.ignore();
@@ -293,7 +290,7 @@ void Interface::addACMenu(const std::string &mapFilename) {
         for (const std::pair<int, std::string>& op : availableACs) {
             if (newID == op.first) {
                 alreadyExists = true;
-                std::cout << "[VaccineRouter] The given node ID already corresponds to an Application Center.\n";
+                std::cout << "[VaccineRouter] The given node ID already corresponds to an Application Center.";
                 break;
             }
         }
@@ -301,7 +298,7 @@ void Interface::addACMenu(const std::string &mapFilename) {
         for (const std::pair<int, std::string>& op : availableSCs) {
             if (newID == op.first) {
                 alreadyExists = true;
-                std::cout << "[VaccineRouter] The given node ID already corresponds to a Storage Center.\n";
+                std::cout << "[VaccineRouter] The given node ID already corresponds to a Storage Center.";
                 break;
             }
         }
@@ -310,17 +307,17 @@ void Interface::addACMenu(const std::string &mapFilename) {
             std::cout << "Introduce a name for the Application Center: ";
             std::getline(std::cin, newName);
 
-            std::cout << "[VaccineRouter] Your option is being processed...\n\n";
+            std::cout << "[VaccineRouter] Your option is being processed...";
 
             std::ofstream ostream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_ACs.txt", std::fstream::app);
             if (!ostream.is_open()) {
-                std::cout << "[VaccineRouter] File does not exist or could not be open.\n\n";
+                std::cout << "[VaccineRouter] File does not exist or could not be open.";
                 return;
             }
             ostream << newID << ' ' << newName << '\n';
             ostream.close();
 
-            std::cout << "[VaccineRouter] Application Center successfully added!\n\n";
+            std::cout << "[VaccineRouter] Application Center successfully added!";
             break;
         }
     } while (true);
@@ -333,29 +330,29 @@ void Interface::removeSCMenu(const std::string &mapFilename) {
     std::vector<std::pair<int, std::string>> options;
 
     do {
-        std::cout << "----- REMOVE STORAGE CENTER MENU -----\n";
+        std::cout << "\n----- REMOVE STORAGE CENTER MENU -----\n";
         options = getAvailableSCs(mapFilename);
         displayAvailableSCs(options);
         std::cout << options.size() + 1 << ". Go Back\n\n"
                                        "Select one of the following Storage Centers to remove: ";
         std::cin >> removeSCMenuInput;
-    } while (!checkInRange(options.size() + 1, removeSCMenuInput) || std::cin.fail());
+    } while (checkCinFail() || !checkInRange(options.size() + 1, removeSCMenuInput));
 
     if (removeSCMenuInput == options.size() + 1) modifyDataMenu();
 
-    std::cout << "[VaccineRouter] Your option is being processed...\n\n";
+    std::cout << "[VaccineRouter] Your option is being processed...";
 
     options.erase(options.begin() + removeSCMenuInput - 1);
     std::ofstream ostream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_SCs.txt", std::fstream::trunc);
     if (!ostream.is_open()) {
-        std::cout << "[VaccineRouter] File does not exist or could not be open.\n\n";
+        std::cout << "[VaccineRouter] File does not exist or could not be open.";
         return;
     }
     // outputting remaining options to the file
     for (const std::pair<int, std::string> &op : options) ostream << op.first << ' ' << op.second << '\n';
     ostream.close();
 
-    std::cout << "[VaccineRouter] Storage Center successfully removed!\n\n";
+    std::cout << "[VaccineRouter] Storage Center successfully removed!";
 
     modifyDataMenu();
 }
@@ -365,29 +362,29 @@ void Interface::removeACMenu(const std::string &mapFilename) {
     std::vector<std::pair<int, std::string>> options;
 
     do {
-        std::cout << "----- REMOVE APPLICATION CENTER MENU -----\n";
+        std::cout << "\n----- REMOVE APPLICATION CENTER MENU -----\n";
         options = getAvailableACs(mapFilename);
         displayAvailableACs(options);
         std::cout << options.size() + 1 << ". Go Back\n\n"
                                        "Select one of the following Application Centers to remove: ";
         std::cin >> removeACMenuInput;
-    } while (!checkInRange(options.size() + 1, removeACMenuInput) || std::cin.fail());
+    } while (!checkCinFail() || !checkInRange(options.size() + 1, removeACMenuInput));
 
     if (removeACMenuInput == options.size() + 1) modifyDataMenu();
 
-    std::cout << "[VaccineRouter] Your option is being processed...\n\n";
+    std::cout << "[VaccineRouter] Your option is being processed...";
 
     options.erase(options.begin() + removeACMenuInput - 1);
     std::ofstream ostream("../../cityMaps/" + mapFilename + "/" + mapFilename + "_ACs.txt", std::fstream::trunc);
     if (!ostream.is_open()) {
-        std::cout << "[VaccineRouter] File does not exist or could not be open.\n\n";
+        std::cout << "[VaccineRouter] File does not exist or could not be open.";
         return;
     }
     // outputting remaining options to the file
     for (const std::pair<int, std::string> &op : options) ostream << op.first << ' ' << op.second << '\n';
     ostream.close();
 
-    std::cout << "[VaccineRouter] Application Center successfully removed!\n\n";
+    std::cout << "[VaccineRouter] Application Center successfully removed!";
     modifyDataMenu();
 }
 
@@ -400,11 +397,11 @@ void Interface::selectMapMenu() {
         std::ifstream istream("../../cityMaps/availableCities.txt");
 
         if (!istream.is_open()) {
-            std::cout << "[VaccineRouter] File containing the available cities could not be open.\n\n";
+            std::cout << "[VaccineRouter] File containing the available cities could not be open.";
             return;
         }
 
-        std::cout << "----- AVAILABLE CITIES -----\n";
+        std::cout << "\n----- AVAILABLE CITIES -----\n";
         std::string cityName;
 
         std::cin.ignore(100000, '\n');
@@ -420,7 +417,7 @@ void Interface::selectMapMenu() {
                                       "Please select your option: ";
         std::cin >> selectMapMenuInput;
         std::cout << "\n";
-    } while (!checkGeneralInputValidity(optionCounter, selectMapMenuInput) && std::cin.fail());
+    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, selectMapMenuInput));
 
     if (selectMapMenuInput == optionCounter) runProgramMenu(); // user chose to go back
     this->vaccineRouter->selectMap(options[selectMapMenuInput - 1]);
@@ -431,23 +428,19 @@ void Interface::selectMapMenu() {
 void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
     int selectSingleOrMultipleACMenuInput = 0;
     do {
-        std::cout << "----- SINGLE OR MULTIPLE APPLICATION CENTER SELECTION -----\n"
+        std::cout << "\n----- SINGLE OR MULTIPLE APPLICATION CENTER SELECTION -----\n"
                      "1. Single Application Center\n"
                      "2. Multiple Application Centers\n"
                      "3. Go Back\n\n"
                      "Please select your option: ";
         std::cin >> selectSingleOrMultipleACMenuInput;
-    } while (!checkGeneralInputValidity(3, selectSingleOrMultipleACMenuInput) || std::cin.fail());
+    } while (!checkCinFail() || !checkGeneralInputValidity(3, selectSingleOrMultipleACMenuInput));
 
     switch (selectSingleOrMultipleACMenuInput) {
-        case 1:
-            selectSingleACMenu(mapFilename);
-        case 2:
-            selectMultipleACMenu(mapFilename);
-        case 3:
-            selectMapMenu();
-        default:
-            return;
+        case 1: selectSingleACMenu(mapFilename);
+        case 2: selectMultipleACMenu(mapFilename);
+        case 3: selectMapMenu();
+        default: return;
     }
 }
 
@@ -458,7 +451,7 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
 
     do {
         availableACs = getAvailableACs(mapFilename);
-        std::cout << "----- SINGLE APPLICATION CENTER -----\n";
+        std::cout << "\n----- SINGLE APPLICATION CENTER -----\n";
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2]: ";
@@ -477,7 +470,7 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
 
     do {
         availableACs = getAvailableACs(mapFilename);
-        std::cout << "----- MULTIPLE APPLICATION CENTERS -----\n";
+        std::cout << "\n----- MULTIPLE APPLICATION CENTERS -----\n";
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2 3 4]: ";
@@ -491,7 +484,7 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
 
 void Interface::orderVaccinesMenu(std::vector<std::pair<int, std::string>> &options, const std::vector<int> &selected) {
     int order;
-    std::cout << "----- ORDER VACCINES MENU -----\n";
+    std::cout << "\n----- ORDER VACCINES MENU -----\n";
     for (int i : selected) {
         std::cout << "Vaccine's order for " << options[i].second << ": ";
         std::cin >> order;

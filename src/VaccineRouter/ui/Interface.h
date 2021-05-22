@@ -6,6 +6,7 @@
 class Interface {
 private:
     VaccineRouter *vaccineRouter;
+    bool checkCinFail();
     bool checkInRange(int optionsRange, int input);
     bool checkGeneralInputValidity(int optionsRange, int input);
     std::vector<int> checkACSelectionValidity(bool multiple, int optionsRange);

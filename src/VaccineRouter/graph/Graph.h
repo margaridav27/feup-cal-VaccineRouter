@@ -11,7 +11,6 @@
 class Graph {
 private:
     std::vector<Node *> nodeSet;
-
 public:
     Node *getNode(unsigned int id);
     std::vector<Node *> getNodeSet();

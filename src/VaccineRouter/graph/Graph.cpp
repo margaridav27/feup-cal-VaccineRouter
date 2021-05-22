@@ -11,7 +11,7 @@ std::vector<Node *> Graph::getNodeSet() {
 bool Graph::addNode(unsigned int id, Coordinates coords) {
     if (findNode(id) != nullptr) return false;
     nodeSet.push_back(new Node(id, coords));
-    nodeHashMap.insert(std::pair<int, Node *> (id, new Node(id, coords)));
+    nodeHashMap.insert(std::pair<unsigned int, Node *>(id, new Node(id, coords)));
     return true;
 }
 
@@ -60,21 +60,21 @@ void Graph::removeUnvisitedNodes() {
     std::unordered_set<Node *, NodeHash, NodeHash> removed;
 
     // remove nodes
-    for (auto it = this->nodeSet.begin(); it != this->nodeSet.end(); it++) {
-        if (!(*it)->wasVisited()) {
-            removed.insert((*it));
-            removeNode((*it)->getId());
-            it--;
+    for (auto itNode = this->nodeSet.begin(); itNode != this->nodeSet.end(); itNode++) {
+        if (!(*itNode)->wasVisited()) {
+            removed.insert((*itNode));
+            removeNode((*itNode)->getId());
+            itNode--;
         }
     }
 
     // remove edges
     for (Node *node : this->nodeSet) {
-        for (auto it = node->getAdj().begin(); it != node->getAdj().end(); it++) {
-            if (removed.find((*it)->getDest()) != removed.end()) {
-                removeEdge(node->getId(), (*it)->getDest()->getId());
-                removeNode((*it)->getDest()->getId());
-                it--;
+        for (auto itEdge = node->getAdj().begin(); itEdge != node->getAdj().end(); itEdge++) {
+            if (removed.find((*itEdge)->getDest()) != removed.end()) {
+                removeEdge(node->getId(), (*itEdge)->getDest()->getId());
+                removeNode((*itEdge)->getDest()->getId());
+                itEdge--;
             }
         }
     }

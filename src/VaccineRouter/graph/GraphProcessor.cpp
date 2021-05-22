@@ -4,27 +4,39 @@
 
 Graph *processGraph(const std::string &chosenCity) {
     auto *graph = new Graph();
+    bool strong = true;
 
-    if (!processNodes(graph, chosenCity) ||
-        !processEdges(graph, chosenCity))
+    std::ifstream istream;
+    // tries to open the strong connected graph data file
+    istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
+    if (!istream.is_open()) {
+        // if such does not exist, tries to open the weakly connected graph data file
+        istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_full_nodes_xy.txt");
+        if (!istream.is_open()) {
+            std::cout << "[GraphProcessor] Failed to open the files that contain the graph data.\n";
+            return nullptr;
+        } else strong = false;
+    }
+    istream.close();
+
+    if (!processNodes(graph, chosenCity, strong) ||
+        !processEdges(graph, chosenCity, strong))
         return nullptr;
+
+    if (!strong) {
+        graph->DFSConnectivity(graph->getNodeSet()[0]);
+        graph->removeUnvisitedNodes();
+    }
     return graph;
 }
 
-bool processNodes(Graph *graph, const std::string &chosenCity) {
+bool processNodes(Graph *graph, const std::string &chosenCity, bool strong) {
     std::ifstream istream;
-    bool needsProcessing = false;
-
-    // tries to open the strongly connected graph
-    istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
+    if (strong) istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
+    else istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_full_nodes_xy.txt");
     if (!istream.is_open()) {
-
-        // if such graph does not exist, tries to open the weakly connected
-        istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_full_nodes_xy.txt");
-        if (!istream.is_open()) {
-            std::cerr << "Edges file opening failed.\n";
-            return false;
-        } else needsProcessing = true;
+        std::cout << "Nodes file opening failed.\n";
+        return false;
     }
 
     unsigned int numNodes;
@@ -42,10 +54,12 @@ bool processNodes(Graph *graph, const std::string &chosenCity) {
     return true;
 }
 
-bool processEdges(Graph *graph, const std::string &chosenCity) {
-    std::ifstream istream("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_edges.txt");
+bool processEdges(Graph *graph, const std::string &chosenCity, bool strong) {
+    std::ifstream istream;
+    if (strong) istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_edges.txt");
+    else istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_full_edges.txt");
     if (!istream.is_open()) {
-        std::cerr << "Edges file opening failed.\n";
+        std::cout << "Edges file opening failed.\n";
         return false;
     }
 

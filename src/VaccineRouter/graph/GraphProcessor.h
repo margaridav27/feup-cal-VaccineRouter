@@ -6,8 +6,8 @@
 
 Graph * processGraph(const std::string& chosenCity);
 
-bool processEdges(Graph *graph, const std::string& chosenCity);
+bool processEdges(Graph *graph, const std::string& chosenCity, bool strong);
 
-bool processNodes(Graph *graph, const std::string& chosenCity);
+bool processNodes(Graph *graph, const std::string& chosenCity, bool strong);
 
 #endif //VACCINEROUTER_GRAPHPROCESSOR_H

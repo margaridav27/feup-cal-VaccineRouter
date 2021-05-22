@@ -12,7 +12,7 @@
 class Graph {
 private:
     std::vector<Node *> nodeSet;
-    std::unordered_map<int, Node *> nodeHashMap;
+    std::unordered_map<unsigned int, Node *> nodeHashMap;
 
     void DFSRecursive(Node *start);
 public:

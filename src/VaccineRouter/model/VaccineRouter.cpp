@@ -191,7 +191,8 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
     vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
     // no need to handle the case in which the function returns false since that would only happen if checkTW was set
 
-    displayVehiclesPath(SCs, this->cityName);
+    GraphViewer *gv;
+    displayVehiclesPath(gv, this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleAC() {
@@ -215,7 +216,8 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
         nextPoint = sc->findNextNearestAC(startingPoint);
     }
 
-    displayVehiclesPath(SCs, this->cityName);
+    GraphViewer *gv;
+    displayVehiclesPath(gv, this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
@@ -238,7 +240,9 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
             nextPoint = sc->findNextNearestAC(startingPoint);
         } else sc->addVehicle();
     }
-    displayVehiclesPath(SCs,this->cityName);
+
+    GraphViewer *gv;
+    displayVehiclesPath(gv, this);
 }
 
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
@@ -277,6 +281,30 @@ void VaccineRouter::update() {
       it++;
   }
 }
+
+const std::vector<StorageCenter *> &VaccineRouter::getSCs() const {
+    return this->SCs;
+}
+
+const std::vector<ApplicationCenter *> &VaccineRouter::getACs() const {
+    return this->ACs;
+}
+
+Center *VaccineRouter::getCenter(Node *node) {
+    for(StorageCenter *sc: this->SCs){
+        if (sc->getNode() == node){
+            return dynamic_cast<Center *>(sc);
+        }
+    }
+    for(ApplicationCenter *ac: this->ACs){
+        if (ac->getNode() == node){
+            return dynamic_cast<Center *>(ac);
+        }
+    }
+    return nullptr;
+}
+
+
 
 /*
 void VaccineRouter::displayOutput() {

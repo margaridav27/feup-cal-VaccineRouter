@@ -27,6 +27,10 @@ public:
     void setGraph(Graph *graph);
     void setCityName(std::string cityName);
 
+    Center *getCenter(Node *node);
+    const std::vector<StorageCenter *> &getSCs() const;
+    const std::vector<ApplicationCenter *> &getACs() const;
+
     void addStorageCenter(StorageCenter *sc);
     void addApplicationCenter(ApplicationCenter *ac);
 
@@ -44,6 +48,8 @@ public:
     bool operator()(StorageCenter *sc);
     void update();
     void displayOutput();
+
+
 };
 
 

@@ -7,18 +7,19 @@
 #include "../graph/node/Node.h"
 #include "../model/Vehicle.h"
 #include "../model/StorageCenter.h"
+#include "../model/VaccineRouter.h"
 
 
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
 
-GVNode getNodeID(std::map<Node *, GVNode> GVNodes, Node *n);
+GVNode getNodeID(Node *n);
 
-GVNode getNodeID(std::vector<GVNode> GVNodes, int index);
+GVNode getNodeID( int index);
 
-void displayGraph(Graph graph);
+void displayGraph(GraphViewer *gv, VaccineRouter *vaccineRouter, int &idNode, int &idEdge);
 
-void displayVehiclesPath(std::vector<StorageCenter *> SCs, std::string city);
+void displayVehiclesPath(GraphViewer *gv, VaccineRouter *vaccineRouter);
 
 
 #endif //VACCINEROUTER_GRAPHVIEWER_H

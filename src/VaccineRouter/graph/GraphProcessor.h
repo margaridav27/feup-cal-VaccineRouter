@@ -4,7 +4,7 @@
 #include <string>
 #include "Graph.h"
 
-Graph * processGraph(const std::string& chosenCity);
+Graph * processGraph(const std::string& chosenCity, bool strong);
 
 bool processEdges(Graph *graph, const std::string& chosenCity, bool strong);
 

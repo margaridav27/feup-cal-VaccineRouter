@@ -10,8 +10,9 @@ std::vector<Node *> Graph::getNodeSet() {
 
 bool Graph::addNode(unsigned int id, Coordinates coords) {
     if (findNode(id) != nullptr) return false;
-    nodeSet.push_back(new Node(id, coords));
-    nodeHashMap.insert(std::pair<unsigned int, Node *>(id, new Node(id, coords)));
+    Node *newNode = new Node(id, coords);
+    nodeSet.push_back(newNode);
+    nodeHashMap.insert(std::pair<unsigned int, Node *>(id, newNode));
     return true;
 }
 

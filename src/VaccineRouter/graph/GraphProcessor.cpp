@@ -2,31 +2,12 @@
 #include <iostream>
 #include "GraphProcessor.h"
 
-Graph *processGraph(const std::string &chosenCity) {
+Graph *processGraph(const std::string &chosenCity, bool strong) {
     auto *graph = new Graph();
-    bool strong = true;
 
-    std::ifstream istream;
-    // tries to open the strong connected graph data file
-    istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_strong_nodes_xy.txt");
-    if (!istream.is_open()) {
-        // if such does not exist, tries to open the weakly connected graph data file
-        istream.open("../../cityMaps/" + chosenCity + "/" + chosenCity + "_full_nodes_xy.txt");
-        if (!istream.is_open()) {
-            std::cout << "[GraphProcessor] Failed to open the files that contain the graph data.\n";
-            return nullptr;
-        } else strong = false;
-    }
-    istream.close();
+    if (!processNodes(graph, chosenCity, strong)) return nullptr;
+    if (!processEdges(graph, chosenCity, strong)) return nullptr;
 
-    if (!processNodes(graph, chosenCity, strong) ||
-        !processEdges(graph, chosenCity, strong))
-        return nullptr;
-
-    if (!strong) {
-        graph->DFSConnectivity(graph->getNodeSet()[0]);
-        graph->removeUnvisitedNodes();
-    }
     return graph;
 }
 

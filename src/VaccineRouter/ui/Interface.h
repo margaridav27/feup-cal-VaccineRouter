@@ -33,6 +33,7 @@ private:
     void selectSingleACMenu(const std::string &mapFilename);
     void selectMultipleACMenu(const std::string &mapFilename);
     void orderVaccinesMenu(std::map<int, std::pair<unsigned int, std::string>> &options, const std::vector<int> &selected);
+    void setTimeWindowMenu();
 
     void singleAC();
     void multipleACWithTW();

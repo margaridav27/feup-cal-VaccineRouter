@@ -141,7 +141,7 @@ FAQ
   * I get strange linker error about std::string and other STL types. What should I do?
 
     This probably means you're compiling your project against a different
-    implementation of the STL than the one used by SFML. You can update your
+    implementation of the STL than the one used by SFML. You can deleteDispatchedACs your
     project build settings to match the settings used to compile SFML; more
     specifically the Compiler for C/C++/Objective-C, the C++ language Dialect
     and the C++ Standard Library.

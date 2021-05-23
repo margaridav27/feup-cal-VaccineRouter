@@ -53,14 +53,14 @@ public:
         sf::Vector2f position;                      ///< @brief Node position.
         float size = 10.0;                          ///< @brief Node size.
         std::string label = "";                     ///< @brief Node label.
-        sf::Color color = sf::Color::Red;           ///< @brief Node color.
+        sf::Color color = sf::Color::White;           ///< @brief Node color.
         sf::Texture icon;                           ///< @brief Node icon.
         bool isIcon = false;                        ///< @brief True if node is icon, false otherwise.
         float outlineThickness = 1.0;               ///< @brief Node outline thickness.
         sf::Color outlineColor = sf::Color::Black;  ///< @brief Node outline color.
         sf::Shape *shape = nullptr;                 ///< @brief Node shape.
         sf::Text text;                              ///< @brief Node text.
-        
+
         std::set<Edge*> edges;
 
         /**
@@ -75,90 +75,90 @@ public:
         Node();
         /**
          * @brief Construct a new Node object with ID and position
-         * 
+         *
          * @param id        Unique node ID
          * @param position  Node position in the window, in pixels
          */
         Node(id_t id, const sf::Vector2f &position);
-    
+
     public:
         /**
          * @brief Get node ID.
-         * 
+         *
          * @return id_t     Node ID
          */
         id_t getId() const;
-        
+
         /**
          * @brief Set node position.
-         * 
+         *
          * @param position  Position, in pixels
          */
         void setPosition(const sf::Vector2f &position);
         /**
          * @brief Get node position;
-         * 
+         *
          * @return const sf::Vector2f&  Position, in pixels
          */
         const sf::Vector2f& getPosition() const;
-        
+
         /**
          * @brief Set node size.
-         * 
+         *
          * In the case it is not an icon, it is the diameter of the node;
          * if it is an icon, it is the width of the node.
-         * 
+         *
          * @param size  Node size, in pixels
          */
         void setSize(float size = 10.0);
         /**
          * @brief Get node size.
-         * 
+         *
          * @return int Node size, in pixels
          */
         float getSize() const;
-        
+
         /**
          * @brief Set node label.
-         * 
+         *
          * @param label     Node label
          */
         void setLabel(const std::string &label = "");
         /**
          * @brief Get node label.
-         * 
+         *
          * @return std::string  Node label
          */
         std::string getLabel() const;
-        
+
         /**
          * @brief Set node color.
-         * 
+         *
          * @param color Node color
          */
         void setColor(const sf::Color &color = sf::Color::Red);
         /**
          * @brief Get node color.
-         * 
+         *
          * @return const sf::Color&     Node color
          */
         const sf::Color& getColor() const;
-        
+
         /**
          * @brief Set node icon.
-         * 
+         *
          * @param path  Path of file to be used as icon
          */
         void setIcon(const std::string &path);
         /**
          * @brief Get node icon texture.
-         * 
+         *
          * @return const sf::Texture& Icon texture
          */
         const sf::Texture& getIcon() const;
         /**
          * @brief Check if node is an icon.
-         * 
+         *
          * @return true     When it is an icon
          * @return false    Otherwise
          */
@@ -166,41 +166,41 @@ public:
 
         /**
          * @brief Set node outline thickness.
-         * 
+         *
          * @param outlineThickness  Outline thickness, in pixels
          */
         void setOutlineThickness(float outlineThickness = 1.0);
         /**
          * @brief Get node outline thickness.
-         * 
+         *
          * @return float    Outline thickness, in pixels
          */
         float getOutlineThickness() const;
-        
+
         /**
          * @brief Set node outline color.
-         * 
+         *
          * @param outlineColor  Outline color
          */
         void setOutlineColor(const sf::Color &outlineColor = sf::Color::Black);
         /**
          * @brief Get outline color.
-         * 
+         *
          * @return const sf::Color&     Outline color
          */
         const sf::Color& getOutlineColor() const;
-        
+
         /**
          * @brief Get shape that represents the node.
-         * 
+         *
          * @return const sf::Shape*     Pointer to node shape
          */
         const sf::Shape* getShape() const;
-        
+
         /**
          * @brief Get node text.
-         * 
-         * @return const sf::Text&  Node text 
+         *
+         * @return const sf::Text&  Node text
          */
         const sf::Text& getText() const;
     };
@@ -225,7 +225,7 @@ public:
         Node *v = nullptr;                  ///< @brief Edge destination node.
         EdgeType edge_type;                 ///< @brief Edge type.
         std::string label = "";             ///< @brief Edge label.
-        sf::Color color = sf::Color::Black; ///< @brief Edge color.
+        sf::Color color = sf::Color::White; ///< @brief Edge color.
         bool dashed = false;                ///< @brief True if edge is dashed, false if full.
         float thickness = 5.0;              ///< @brief Edge thickness, in pixels.
         float *weight = nullptr;            ///< @brief Edge weight.
@@ -246,96 +246,96 @@ public:
         /**
          * @brief Construct a new Edge object with ID, origin/destination nodes
          *        and direction.
-         * 
+         *
          * @param id            Unique edge ID
          * @param u             Pointer to origin node
          * @param v             Pointer to destination node
          * @param edge_type     Edge type (directed or undirected)
          */
         Edge(id_t id, Node &u, Node &v, EdgeType edge_type = UNDIRECTED);
-        
+
     public:
         /**
          * @brief Get edge ID
-         * 
+         *
          * @return id_t     Edge ID
          */
         id_t getId() const;
 
         /**
          * @brief Set origin node.
-         * 
+         *
          * @param u     Pointer to origin node.
          */
         void setFrom(Node *u);
         /**
          * @brief Get origin node.
-         * 
+         *
          * @return const Node*  Pointer to origin node.
          */
         const Node* getFrom() const;
 
         /**
          * @brief Set destination node.
-         * 
+         *
          * @param v     Pointer to destination node.
          */
         void setTo(Node *v);
         /**
          * @brief Get destination node.
-         * 
+         *
          * @return const Node*  Pointer to destination node.
          */
         const Node* getTo() const;
 
         /**
          * @brief Set edge type.
-         * 
+         *
          * @param edge_type     Edge type
          */
         void setEdgeType(EdgeType edge_type = UNDIRECTED);
         /**
          * @brief Get edge type.
-         * 
+         *
          * @return EdgeType     Edge type
          */
         EdgeType getEdgeType() const;
 
         /**
          * @brief Set edge label.
-         * 
+         *
          * @param label     Edge label.
          */
         void setLabel(const std::string &label = "");
         /**
          * @brief Get edge label.
-         * 
+         *
          * @return const std::string&   Edge label.
          */
         const std::string& getLabel() const;
 
         /**
          * @brief Set edge color.
-         * 
+         *
          * @param color     Edge color.
          */
         void setColor(const sf::Color &color = sf::Color::Black);
         /**
          * @brief Get edge color.
-         * 
+         *
          * @return const sf::Color&     Edge color.
          */
         const sf::Color& getColor() const;
 
         /**
          * @brief Set if the edge is dashed or not.
-         * 
+         *
          * @param dashed    True if edge is to be drawn dashed, false if full
          */
         void setDashed(bool dashed = false);
         /**
          * @brief Get if edge is dashed.
-         * 
+         *
          * @return true     If edge is dashed
          * @return false    If edge is full
          */
@@ -343,28 +343,28 @@ public:
 
         /**
          * @brief Set edge thickness.
-         * 
+         *
          * @param thickness     Edge thickness, in pixels
          */
         void setThickness(float thickness = 5.0);
         /**
          * @brief Get edge thickness.
-         * 
+         *
          * @return float        Edge thickness, in pixels
          */
         float getThickness() const;
 
         /**
          * @brief Set edge weight.
-         * 
+         *
          * Edge weight is shown in the edge label.
-         * 
+         *
          * @param weight    Edge weight
          */
         void setWeight(float weight);
         /**
          * @brief Get pointer to edge weight.
-         * 
+         *
          * @return const float*     Pointer to edge weight, or nullptr if none
          *                          was set
          */
@@ -372,15 +372,15 @@ public:
 
         /**
          * @brief Set edge flow.
-         * 
+         *
          * Edge flow is shown in the edge label.
-         * 
+         *
          * @param flow  Edge flow
          */
         void setFlow(float flow);
         /**
          * @brief Get pointer to edge flow.
-         * 
+         *
          * @return const float*     Pointer to edge flow, or nullptr if none
          *                          was set
          */
@@ -388,19 +388,19 @@ public:
 
         /**
          * @brief Get shape that represents the edge.
-         * 
+         *
          * @return const sf::VertexArray*   Pointer to edge shape
          */
         const sf::VertexArray* getShape() const;
 
         /**
          * @brief Get edge text (includes label).
-         * 
+         *
          * @return const sf::Text&  Edge text
          */
         const sf::Text& getText() const;
     };
-    
+
 public:
     /**
      * @brief Construct a new graph.
@@ -428,17 +428,17 @@ public:
 
     /**
      * @brief Add node.
-     * 
+     *
      * @param node Node to be added
      */
     Node& addNode(id_t id, const sf::Vector2f &position);
 
     /**
      * @brief Get node from ID.
-     * 
+     *
      * @param id        ID of node
      * @return Node&    Node with that ID.
-     * 
+     *
      * @throws std::out_of_range    If node with that ID does not exist.
      */
     Node& getNode(id_t id);
@@ -510,7 +510,7 @@ public:
 
     /**
      * @brief Join the window main thread.
-     * 
+     *
      * The window main thread exits when the user presses the close button in
      * the window.
      */
@@ -518,58 +518,58 @@ public:
 
     /**
      * @brief Enable node drawing.
-     * 
+     *
      * If set to false, does not draw nodes but may improve performance
      * significantly.
-     * 
+     *
      * @param b True to draw nodes, false to not draw nodes
      */
     void setEnabledNodes(bool b = true);
     /**
      * @brief Enable edge drawing.
-     * 
+     *
      * @param b Draw nodes if true, false otherwise
      */
     void setEnabledEdges(bool b = true);
     /**
      * @brief Enable node label drawing.
-     * 
+     *
      * @param b Draw node labels if true, false otherwise
      */
     void setEnabledNodesText(bool b = true);
     /**
      * @brief Enable edge label drawing.
-     * 
+     *
      * @param b Draw edge labels if true, false otherwise
      */
     void setEnabledEdgesText(bool b = true);
 
     /**
      * @brief Allow edges to be zipped.
-     * 
+     *
      * Zipping is the act of collecting all vertices that make up a set of
      * objects, and group all those vertices into a single, large vertex array.
      * This has the advantage of being a lot faster to draw than drawing each
      * object separately; performance improves by about 20 times in large
      * graphs with many edges.
-     * 
+     *
      * Please take close attention to the fact that, if edge zipping is enabled,
      * if you change an edge (or the position of a node that has edges connected
      * to it) you must afterwards call GraphViewer::setZipEdges(true) again, so
      * the zipped edges object is properly updated.
-     * 
+     *
      * @param b True to zip edges, false if not.
      */
     void setZipEdges(bool b = false);
 
     /**
      * @brief Lock access to object.
-     * 
+     *
      * This is important especially if you are editing parameters of nodes/edges
      * that are inside a GraphViewer instance for which createWindow(int, int)
      * was already called. This is because, once you run createWindow(int, int),
      * a thread is created to manage that window's events.
-     * 
+     *
      */
     void lock();
     /**
@@ -592,9 +592,9 @@ private:
     float scale = 1.0;                          ///< @brief Scale (changed with scroll).
     /**
      * @brief Scale factor.
-     * 
+     *
      * Scale is updated after a scroll of delta by calculating
-     * 
+     *
      * @code{.cpp}
      * scale = scale * pow(SCALE_DELTA, -delta);
      * @endcode
@@ -617,7 +617,7 @@ private:
 
     /**
      * @brief Class to save zipped edges.
-     * 
+     *
      * Only works properly with vertex arrays meant to be drawn as sf::Quads.
      */
     class ZipEdges {
@@ -626,13 +626,13 @@ private:
     public:
         /**
          * @brief Append vertex array.
-         * 
+         *
          * @param a Vertex array to append.
          */
         void append(const sf::VertexArray &a);
         /**
          * @brief Get vertex vector.
-         * 
+         *
          * @return const std::vector<sf::Vertex>& Vertex vector to be drawn.
          */
         const std::vector<sf::Vertex>& getVertices() const;
@@ -654,9 +654,9 @@ private:
 
     /**
      * @brief Main entry point for event processing.
-     * 
+     *
      * This function is the entry point for the window thread, and manages
-     * events and drawing. 
+     * events and drawing.
      */
     void run();
     /**
@@ -674,7 +674,7 @@ private:
     void onResize();
     /**
      * @brief Called on mouse scroll; updates scale/zoom.
-     * 
+     *
      * @param delta Scroll delta (usually +1 or -1)
      */
     void onScroll(float delta);

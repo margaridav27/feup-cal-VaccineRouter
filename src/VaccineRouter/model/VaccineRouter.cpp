@@ -286,20 +286,32 @@ const std::vector<ApplicationCenter *> &VaccineRouter::getACs() const {
     return this->ACs;
 }
 
-Center *VaccineRouter::getCenter(Node *node) {
+int VaccineRouter::getCenter(Node *node) {
     for(StorageCenter *sc: this->SCs){
-        if (sc->getNode() == node){
-            return dynamic_cast<Center *>(sc);
+        if (*sc->getNode() == *node){
+            return 0;
         }
     }
     for(ApplicationCenter *ac: this->ACs){
-        if (ac->getNode() == node){
-            return dynamic_cast<Center *>(ac);
+        if (*ac->getNode() == *node){
+            return 1;
         }
     }
-    return nullptr;
+    return -1;
 }
 
+std::string VaccineRouter::getCenterName(Node *node) {
+  for (StorageCenter *sc : this->SCs) {
+    if (sc->getNode() == node) {
+      return sc->getName();
+    }
+  }
+  for (ApplicationCenter *ac : this->ACs) {
+    if (ac->getNode() == node) {
+      return ac->getName();
+    }
+  }
+}
 
 
 /*

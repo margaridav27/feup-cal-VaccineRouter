@@ -1,4 +1,5 @@
 #include "Interface.h"
+#include "../graph/GraphProcessor.h"
 #include <fstream>
 
 bool Interface::checkCinFail() {
@@ -128,8 +129,8 @@ void Interface::initialMenu() {
     do {
         std::cout << "\n----- INITIAL MENU -----\n"
                      "1. Run Program\n"
-                     "2. Modify Data\n"
-                     "3. Analyse Connectivity\n"
+                     "2. Analyse Connectivity\n"
+                     "3. Modify Data\n"
                      "4. Exit\n\n"
                      "Please select your option: ";
         std::cin >> initialMenuInput;
@@ -157,6 +158,46 @@ void Interface::runProgramMenu() {
         case 2: initialMenu();
         default: return;
     }
+}
+
+void Interface::analyseConnectivityMenu() {
+    int analyseConnectivityMenuInput = 0;
+    int optionCounter = 1;
+    std::vector<std::string> options;
+    do {
+        // file containing the names of the available cities
+        std::ifstream istream("../../cityMaps/availableCities.txt");
+
+        if (!istream.is_open()) {
+            std::cout << "[VaccineRouter] File containing the available cities could not be open.";
+            return;
+        }
+
+        std::cout << "\n----- AVAILABLE CITIES TO ANALYSE CONNECTIVITY -----\n";
+        std::string cityName;
+
+        std::cin.ignore(100000, '\n');
+        while (getline(istream, cityName)) {
+            std::cout << optionCounter << ". " << cityName << '\n';
+            options.push_back(cityName);
+            optionCounter++;
+        }
+
+        istream.close();
+
+        std::cout << optionCounter << ". Go Back\n\n"
+                                      "Please select your option: ";
+        std::cin >> analyseConnectivityMenuInput;
+        std::cout << "\n";
+    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, analyseConnectivityMenuInput));
+
+    if (analyseConnectivityMenuInput == optionCounter) runProgramMenu(); // user chose to go back
+
+    Graph *graph = processGraph(options[analyseConnectivityMenuInput - 1], false);
+    // TODO: display graph before being processed
+    graph->DFSConnectivity(graph->getNodeSet()[0]);
+    graph->removeUnvisitedNodes();
+    // TODO: display graph after connectivity analysis
 }
 
 void Interface::modifyDataMenu() {

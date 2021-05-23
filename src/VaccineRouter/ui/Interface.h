@@ -18,8 +18,8 @@ private:
     void displayAvailableSCs(std::vector<std::pair<int, std::string>> &options);
 
     void initialMenu();
-    void analyseConnectivityMenu();
     void runProgramMenu();
+    void analyseConnectivityMenu();
     void modifyDataMenu();
     void addSCMenu(const std::string &mapFilename);
     void addACMenu(const std::string &mapFilename);

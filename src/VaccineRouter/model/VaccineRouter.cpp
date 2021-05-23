@@ -312,10 +312,3 @@ std::string VaccineRouter::getCenterName(Node *node) {
     }
   }
 }
-
-
-/*
-void VaccineRouter::displayOutput() {
-  displayGraph(*graph);
-}
-*/

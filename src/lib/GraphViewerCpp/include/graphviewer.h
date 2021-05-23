@@ -53,7 +53,7 @@ public:
         sf::Vector2f position;                      ///< @brief Node position.
         float size = 10.0;                          ///< @brief Node size.
         std::string label = "";                     ///< @brief Node label.
-        sf::Color color = sf::Color::White;           ///< @brief Node color.
+        sf::Color color = GRAY;           ///< @brief Node color.
         sf::Texture icon;                           ///< @brief Node icon.
         bool isIcon = false;                        ///< @brief True if node is icon, false otherwise.
         float outlineThickness = 1.0;               ///< @brief Node outline thickness.

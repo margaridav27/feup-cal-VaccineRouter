@@ -18,7 +18,7 @@ GraphViewer::Node::Node(GraphViewer::id_t id, const Vector2f &position):
 {
     text.setFont         (GraphViewer::FONT     );
     text.setCharacterSize(GraphViewer::FONT_SIZE);
-    text.setFillColor    (Color::Black          );
+    text.setFillColor    (Color::White          );
     update();
 }
 
@@ -56,10 +56,11 @@ void GraphViewer::Node::update(){
         shape = newShape;
     }
     shape->setOrigin(getSize()/2.0, getSize()/2.0);
-    shape->setPosition(getPosition());    
+    shape->setPosition(getPosition());
 
     FloatRect bounds = text.getLocalBounds();
-    text.setPosition(getPosition() - Vector2f(bounds.width/2.0, 0.8*bounds.height));
+    text.setPosition(getPosition() + Vector2f(bounds.width/2.0, 1.2*bounds
+                                                                          .height));
 
     for(Edge *e: edges){
         e->update();

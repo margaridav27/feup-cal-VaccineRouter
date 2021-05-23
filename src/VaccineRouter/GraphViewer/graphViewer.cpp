@@ -10,14 +10,7 @@ GVNode getNodeID(std::map<Node *, GVNode> GVNodes, Node *n) {
     return it->second;
 }
 
-GVEdge getEdge(std::map<Edge *, GVEdge> GVEdges, Node *from, Node *to) {
-  for (auto e : GVEdges) {
-    if (*(e.first->getOrig()) == *from && *(e.first->getDest()) == *to)
-      return e.second;
-  }
-}
-
-void displayGraph(VaccineRouter *vaccineRouter) {
+void displayACsVisually(VaccineRouter *vaccineRouter) {
   std::map<Node *, GVNode> GVNodes;
   std::map<Edge *, GVEdge> GVEdges;
 
@@ -30,18 +23,29 @@ void displayGraph(VaccineRouter *vaccineRouter) {
     GVNode &node =
         gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(),
                                           n->getCoordinates().getY()));
-    // node.setColor(graphviewer::DARK_GRAY);
     GVNodes.insert(std::pair<Node *, GVNode>(n, node));
-  }
+    int i = vaccineRouter->getCenter(n);
+    GVNode nodeToAlter = getNodeID(GVNodes, n);
+    if (i == 0) {
+      gv.getNode(nodeToAlter.getId()).setLabel(vaccineRouter->getCenterName(n));
+      gv.getNode(nodeToAlter.getId()).setIcon("../../icons/storage_center.png");
+      gv.getNode(nodeToAlter.getId()).setSize(20);
 
+      // gv.getNode(nodeToAlter.getId()).setColor(GraphViewer::BLUE);
+    } else if (i == 1) {
+      gv.getNode(nodeToAlter.getId()).setLabel(vaccineRouter->getCenterName(n));
+      gv.getNode(nodeToAlter.getId())
+          .setIcon("../../icons/application_center.png");
+      gv.getNode(nodeToAlter.getId()).setSize(20);
+      // gv.getNode(nodeToAlter.getId()).setColor(GraphViewer::RED);
+    }
+  }
   for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
     for (Edge *e : n->getAdj()) {
       GVNode ixOrig = getNodeID(GVNodes, e->getOrig());
       GVNode ixDest = getNodeID(GVNodes, e->getDest());
       GVEdge &edge = gv.addEdge(idEdge++, ixOrig, ixDest,
                                 GraphViewer::Edge::EdgeType::UNDIRECTED);
-      GVEdges.insert(std::pair<Edge *, GVEdge>(e, edge));
-      // edge.setColor(graphviewer::WHITE);
     }
   }
   gv.join();
@@ -56,6 +60,7 @@ void displayVehiclesPath(VaccineRouter *vaccineRouter) {
   GraphViewer gv;
   gv.createWindow();
 
+  //Display actual city graph
   for (Node *n : vaccineRouter->getGraph()->getNodeSet()) {
     GVNode &node =
         gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(),
@@ -80,6 +85,8 @@ void displayVehiclesPath(VaccineRouter *vaccineRouter) {
                                 GraphViewer::Edge::EdgeType::UNDIRECTED);
     }
   }
+
+  //Display Paths
 int lastID = idNode;
   for (StorageCenter *sc : vaccineRouter->getSCs()) {
     for (Vehicle *v : sc->getFleet()) {
@@ -102,10 +109,9 @@ int lastID = idNode;
         GVEdge &edge = gv.addEdge(idEdge++, ixOrig, ixDest,
                    GraphViewer::Edge::EdgeType::UNDIRECTED);
         edge.setThickness(15);
-        edge.setColor(GraphViewer::YELLOW);
+        edge.setColor(GraphViewer::GREEN);
       }
     }
   }
   gv.join();
-
 }

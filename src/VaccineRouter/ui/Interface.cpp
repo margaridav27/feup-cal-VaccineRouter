@@ -102,6 +102,25 @@ std::vector<std::pair<int, std::string>> Interface::getAvailableSCs(const std::s
     return options;
 }
 
+std::map<int, std::string> Interface::getAvailableCities() {
+    std::ifstream istream("../../cityMaps/availableCities.txt");
+    if (!istream.is_open()) {
+        std::cout << "[VaccineRouter] File containing the available cities could not be open.";
+        return std::map<int, std::string>();
+    }
+
+    std::map<int, std::string> availableCities;
+    std::string cityName;
+    int optionCounter = 1;
+    while (getline(istream, cityName)) {
+        availableCities.insert(std::pair<int, std::string>(optionCounter, cityName));
+        optionCounter++;
+    }
+
+    istream.close();
+    return availableCities;
+}
+
 void Interface::displayAvailableSCs(std::vector<std::pair<int, std::string>> &options) {
     if (options.empty())
         std::cout << "[VaccineRouter] There are no available Storage Centers.";
@@ -117,6 +136,12 @@ void Interface::displayAvailableACs(std::vector<std::pair<int, std::string>> &op
     else {
         for (int i = 0; i < options.size(); ++i)
             std::cout << i + 1 << ". " << options[i].second << '\n';
+    }
+}
+
+void Interface::displayAvailableCities(std::map<int, std::string> cities) {
+    for (const auto& op : cities) {
+        std::cout << op.first << ". " << op.second << '\n';
     }
 }
 
@@ -138,7 +163,8 @@ void Interface::initialMenu() {
 
     switch (initialMenuInput) {
         case 1: runProgramMenu();
-        case 2: modifyDataMenu();
+        case 2: analyseConnectivityMenu();
+        case 3: modifyDataMenu();
         default: return;
     }
 }
@@ -161,39 +187,23 @@ void Interface::runProgramMenu() {
 }
 
 void Interface::analyseConnectivityMenu() {
-    int analyseConnectivityMenuInput = 0;
-    int optionCounter = 1;
-    std::vector<std::string> options;
+    int input = 0;
+    int optionCounter;
+    std::map<int, std::string> availableCities = getAvailableCities();
     do {
-        // file containing the names of the available cities
-        std::ifstream istream("../../cityMaps/availableCities.txt");
-
-        if (!istream.is_open()) {
-            std::cout << "[VaccineRouter] File containing the available cities could not be open.";
-            return;
-        }
-
         std::cout << "\n----- AVAILABLE CITIES TO ANALYSE CONNECTIVITY -----\n";
-        std::string cityName;
-
-        std::cin.ignore(100000, '\n');
-        while (getline(istream, cityName)) {
-            std::cout << optionCounter << ". " << cityName << '\n';
-            options.push_back(cityName);
-            optionCounter++;
-        }
-
-        istream.close();
-
+        displayAvailableCities(availableCities);
+        optionCounter = availableCities.empty() ? 1 : availableCities.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
                                       "Please select your option: ";
-        std::cin >> analyseConnectivityMenuInput;
+        std::cin >> input;
         std::cout << "\n";
-    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, analyseConnectivityMenuInput));
+    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, input));
 
-    if (analyseConnectivityMenuInput == optionCounter) runProgramMenu(); // user chose to go back
+    if (input == optionCounter) initialMenu(); // user chose to go back
 
-    Graph *graph = processGraph(options[analyseConnectivityMenuInput - 1], false);
+    std::string mapFilename = availableCities.find(input)->second;
+    Graph *graph = processGraph(mapFilename, false);
     // TODO: display graph before being processed
     graph->DFSConnectivity(graph->getNodeSet()[0]);
     graph->removeUnvisitedNodes();
@@ -557,3 +567,5 @@ void Interface::multipleACWithTW() {
     vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
     vaccineRouter->calculateRouteMultipleSCMultipleACWithTW();
 }
+
+

@@ -1,6 +1,7 @@
 #ifndef SRC_INTERFACE_H
 #define SRC_INTERFACE_H
 
+#include <map>
 #include "../model/VaccineRouter.h"
 
 class Interface {
@@ -13,9 +14,11 @@ private:
 
     std::vector<std::pair<int, std::string>> getAvailableACs(const std::string &mapFilename);
     std::vector<std::pair<int, std::string>> getAvailableSCs(const std::string &mapFilename);
+    std::map<int, std::string> getAvailableCities();
 
     void displayAvailableACs(std::vector<std::pair<int, std::string>> &options);
     void displayAvailableSCs(std::vector<std::pair<int, std::string>> &options);
+    void displayAvailableCities(std::map<int, std::string> cities);
 
     void initialMenu();
     void runProgramMenu();

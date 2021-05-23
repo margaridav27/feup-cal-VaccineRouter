@@ -113,7 +113,7 @@ extern "C" {
  *   to be written.
  * - The program finishes the encoding with FLAC__stream_encoder_finish(),
  *   which causes the encoder to encode any data still in its input pipe,
- *   update the metadata with the final encoding statistics if output
+ *   deleteDispatchedACs the metadata with the final encoding statistics if output
  *   seeking is possible, and finally reset the encoder to the
  *   uninitialized state.
  * - The instance may be used again or deleted with
@@ -209,7 +209,7 @@ extern "C" {
  *
  * \note
  * If you are writing the FLAC data to a file via callbacks, make sure it
- * is open for update (e.g. mode "w+" for stdio streams).  This is because
+ * is open for deleteDispatchedACs (e.g. mode "w+" for stdio streams).  This is because
  * after the first encoding pass, the encoder will try to seek back to the
  * beginning of the stream, to the STREAMINFO block, to write some data
  * there.  (If using FLAC__stream_encoder_init*_file() or
@@ -1102,7 +1102,7 @@ FLAC_API FLAC__bool FLAC__stream_encoder_set_total_samples_estimate(FLAC__Stream
  *  A value of \c NULL, \c 0 implies no metadata; otherwise, supply an
  *  array of pointers to metadata blocks.  The array is non-const since
  *  the encoder may need to change the \a is_last flag inside them, and
- *  in some cases update seek point offsets.  Otherwise, the encoder will
+ *  in some cases deleteDispatchedACs seek point offsets.  Otherwise, the encoder will
  *  not modify or free the blocks.  It is up to the caller to free the
  *  metadata blocks after encoding finishes.
  *
@@ -1454,10 +1454,10 @@ FLAC_API FLAC__uint64 FLAC__stream_encoder_get_total_samples_estimate(const FLAC
  *                            pointer may be \c NULL if the callback is not
  *                            desired.  If the client provides a seek callback,
  *                            this function is not necessary as the encoder
- *                            will automatically seek back and update the
+ *                            will automatically seek back and deleteDispatchedACs the
  *                            STREAMINFO block.  It may also be \c NULL if the
  *                            client does not support seeking, since it will
- *                            have no way of going back to update the
+ *                            have no way of going back to deleteDispatchedACs the
  *                            STREAMINFO.  However the client can still supply
  *                            a callback if it would like to know the details
  *                            from the STREAMINFO.
@@ -1522,10 +1522,10 @@ FLAC_API FLAC__StreamEncoderInitStatus FLAC__stream_encoder_init_stream(FLAC__St
  *                            pointer may be \c NULL if the callback is not
  *                            desired.  If the client provides a seek callback,
  *                            this function is not necessary as the encoder
- *                            will automatically seek back and update the
+ *                            will automatically seek back and deleteDispatchedACs the
  *                            STREAMINFO block.  It may also be \c NULL if the
  *                            client does not support seeking, since it will
- *                            have no way of going back to update the
+ *                            have no way of going back to deleteDispatchedACs the
  *                            STREAMINFO.  However the client can still supply
  *                            a callback if it would like to know the details
  *                            from the STREAMINFO.

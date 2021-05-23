@@ -617,7 +617,7 @@ void WindowImplWin32::processEvent(UINT message, WPARAM wParam, LPARAM lParam)
                 event.size.height = m_lastSize.y;
                 pushEvent(event);
 
-                // Restore/update cursor grabbing
+                // Restore/deleteDispatchedACs cursor grabbing
                 grabCursor(m_cursorGrabbed);
             }
             break;
@@ -650,7 +650,7 @@ void WindowImplWin32::processEvent(UINT message, WPARAM wParam, LPARAM lParam)
                 pushEvent(event);
             }
 
-            // Restore/update cursor grabbing
+            // Restore/deleteDispatchedACs cursor grabbing
             grabCursor(m_cursorGrabbed);
             break;
         }
@@ -987,10 +987,10 @@ void WindowImplWin32::processEvent(UINT message, WPARAM wParam, LPARAM lParam)
         }
         case WM_DEVICECHANGE:
         {
-            // Some sort of device change has happened, update joystick connections
+            // Some sort of device change has happened, deleteDispatchedACs joystick connections
             if ((wParam == DBT_DEVICEARRIVAL) || (wParam == DBT_DEVICEREMOVECOMPLETE))
             {
-                // Some sort of device change has happened, update joystick connections if it is a device interface
+                // Some sort of device change has happened, deleteDispatchedACs joystick connections if it is a device interface
                 DEV_BROADCAST_HDR* deviceBroadcastHeader = reinterpret_cast<DEV_BROADCAST_HDR*>(lParam);
 
                 if (deviceBroadcastHeader && (deviceBroadcastHeader->dbch_devicetype == DBT_DEVTYP_DEVICEINTERFACE))

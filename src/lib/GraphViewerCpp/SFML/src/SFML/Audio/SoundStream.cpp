@@ -211,7 +211,7 @@ void SoundStream::setPlayingOffset(Time timeOffset)
     // Stop the stream
     stop();
 
-    // Let the derived class update the current position
+    // Let the derived class deleteDispatchedACs the current position
     onSeek(timeOffset);
 
     // Restart streaming

@@ -400,7 +400,7 @@ void Interface::removeSCMenu(const std::string &mapFilename) {
         displayAvailableSCs(options);
         optionCounter = options.empty() ? 1 : options.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
-                                           "Select one of the following Storage Centers to remove: ";
+                                      "Select one of the following Storage Centers to remove: ";
         std::cin >> removeSCMenuInput;
     } while (checkCinFail() || !checkInRange(optionCounter, removeSCMenuInput));
 
@@ -434,7 +434,7 @@ void Interface::removeACMenu(const std::string &mapFilename) {
         displayAvailableACs(options);
         optionCounter = options.empty() ? 1 : options.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
-                                           "Select one of the following Application Centers to remove: ";
+                                      "Select one of the following Application Centers to remove: ";
         std::cin >> removeACMenuInput;
     } while (!checkCinFail() || !checkInRange(optionCounter, removeACMenuInput));
 
@@ -509,6 +509,8 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
     do {
         availableACs = getAvailableACs(mapFilename);
         std::cout << "\n\n----- SINGLE APPLICATION CENTER -----\n";
+        std::cout << "\nPlease note that by selecting a single Application Center, you will not\n"
+                     "be given the chance of taking into account the vaccine's lifetime.\n\n";
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2]: ";
@@ -517,7 +519,7 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
     } while (invalidInput);
 
     orderVaccinesMenu(availableACs, selected);
-    singleAC();
+    singleAC(); // here we don't give the option of taking into account the vaccine's lifetime
 }
 
 void Interface::selectMultipleACMenu(const std::string &mapFilename) {
@@ -528,6 +530,8 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
     do {
         availableACs = getAvailableACs(mapFilename);
         std::cout << "\n\n----- MULTIPLE APPLICATION CENTERS -----\n";
+        std::cout << "\nAfter the selection, you will be redirected to a menu where you will\n"
+                     "be given the chance of taking into account the vaccine's lifetime.\n\n";
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2 3 4]: ";
@@ -536,10 +540,11 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
     } while (invalidInput);
 
     orderVaccinesMenu(availableACs, selected);
-    multipleAC();
+    setTimeWindowMenu(); // here we give the option of taking into account the vaccine's lifetime
 }
 
-void Interface::orderVaccinesMenu(std::map<int, std::pair<unsigned int, std::string>> &options, const std::vector<int> &selected) {
+void Interface::orderVaccinesMenu(std::map<int, std::pair<unsigned int, std::string>> &options,
+                                  const std::vector<int> &selected) {
     int order;
     std::cout << "\n\n----- ORDER VACCINES MENU -----\n";
     for (int i : selected) {
@@ -553,6 +558,20 @@ void Interface::orderVaccinesMenu(std::map<int, std::pair<unsigned int, std::str
         newAC->setVaccinesToReceive(order);
         this->vaccineRouter->addApplicationCenter(newAC);
     }
+}
+
+void Interface::setTimeWindowMenu() {
+    char answer = '\0';
+    do {
+        std::cout << "Do you want to consider the vaccine's lifetime? [y/n] ";
+        std::cin >> answer;
+    } while (!checkCinFail() || (answer != 'y'
+                                 && answer != 'Y'
+                                 && answer != 'n'
+                                 && answer != 'N'));
+
+    if (answer == 'y' || answer == 'Y') multipleACWithTW();
+    else multipleAC();
 }
 
 // TODO Apply method and display

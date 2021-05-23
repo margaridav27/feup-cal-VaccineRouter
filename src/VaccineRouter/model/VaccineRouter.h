@@ -46,7 +46,7 @@ public:
     void calculateRouteMultipleSCMultipleACWithTW();
 
     bool operator()(StorageCenter *sc);
-    void update();
+    void deleteDispatchedACs();
     void displayOutput();
 
 

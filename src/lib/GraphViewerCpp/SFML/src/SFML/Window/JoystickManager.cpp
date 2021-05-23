@@ -84,7 +84,7 @@ void JoystickManager::update()
         }
         else
         {
-            // Check if the joystick was connected since last update
+            // Check if the joystick was connected since last deleteDispatchedACs
             if (JoystickImpl::isConnected(i))
             {
                 if (item.joystick.open(i))

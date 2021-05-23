@@ -44,9 +44,9 @@ Project VaccineRouter, developded in collaboration with [Beatriz Aguiar](https:/
 #### 21 May 
 - [ ] Test hardcore bia
 - [ ] Test chillada maggy (true)
-- [ ] Improve display
+- [x] Improve display
 - [x] From file -> graph
 - [x] User sets vaccines to deliver -> assign vaccines
-- [ ] Pre process graph -> erase unatainable
-- [ ] Showing the output of the algorithm
+- [x] Pre process graph -> erase unatainable
+- [x] Showing the output of the algorithm
 

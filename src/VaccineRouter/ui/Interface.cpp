@@ -198,6 +198,8 @@ void Interface::analyseConnectivityMenu() {
     graph->DFSConnectivity(graph->getNodeSet()[0]);
     graph->removeUnvisitedNodes();
     // TODO: display graph after connectivity analysis
+
+    initialMenu();
 }
 
 void Interface::modifyDataMenu() {

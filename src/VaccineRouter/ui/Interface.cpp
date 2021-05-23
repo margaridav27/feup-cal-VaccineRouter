@@ -197,7 +197,6 @@ void Interface::analyseConnectivityMenu() {
         std::cout << optionCounter << ". Go Back\n\n"
                                       "Please select your option: ";
         std::cin >> input;
-        std::cout << "\n";
     } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, input));
 
     if (input == optionCounter) initialMenu(); // user chose to go back
@@ -213,40 +212,24 @@ void Interface::analyseConnectivityMenu() {
 }
 
 void Interface::modifyDataMenu() {
-    int chosenCityIx;
+    int input;
     int optionCounter;
-    std::vector<std::string> cityOptions;
+    std::map<int, std::string> availableCities = getAvailableCities();
 
     do {
-        // file containing the names of the available cities
-        std::ifstream istream("../../cityMaps/availableCities.txt");
-
-        if (!istream.is_open()) {
-            std::cout << "[VaccineRouter] File containing the available cities could not be open.";
-            return;
-        }
-
         std::cout << "\n----- MODIFY DATA MENU - MAP SELECTION -----\n";
-        cityOptions.clear();
-        optionCounter = 1;
-        std::string cityName;
-        while (getline(istream, cityName)) {
-            std::cout << optionCounter << ". " << cityName << '\n';
-            cityOptions.push_back(cityName);
-            optionCounter++;
-        }
-
-        istream.close();
-
+        displayAvailableCities(availableCities);
+        optionCounter = availableCities.empty() ? 1 : availableCities.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
                                       "Please select your option: ";
-        std::cin >> chosenCityIx;
-    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, chosenCityIx));
+        std::cin >> input;
+    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, input));
 
-    if (chosenCityIx == optionCounter) initialMenu(); // chose to go back
-    std::string chosenCityStr = cityOptions[chosenCityIx - 1];
+    if (input == optionCounter) initialMenu(); // user chose to go back
 
-    int modifyDataMenuInput = 0;
+    std::string chosenCity = availableCities.find(input)->second;
+    input = 0;
+
     do {
         std::cout << "\n----- MODIFY DATA MENU -----\n"
                      "1. Add Application Center\n"
@@ -255,14 +238,14 @@ void Interface::modifyDataMenu() {
                      "4. Remove Storage Center\n"
                      "5. Go Back\n\n"
                      "Please select your option: ";
-        std::cin >> modifyDataMenuInput;
-    } while (!checkCinFail() || !checkGeneralInputValidity(5, modifyDataMenuInput));
+        std::cin >> input;
+    } while (!checkCinFail() || !checkGeneralInputValidity(5, input));
 
-    switch (modifyDataMenuInput) {
-        case 1: addACMenu(chosenCityStr);
-        case 2: addSCMenu(chosenCityStr);
-        case 3: removeACMenu(chosenCityStr);
-        case 4: removeSCMenu(chosenCityStr);
+    switch (input) {
+        case 1: addACMenu(chosenCity);
+        case 2: addSCMenu(chosenCity);
+        case 3: removeACMenu(chosenCity);
+        case 4: removeSCMenu(chosenCity);
         case 5: modifyDataMenu();
         default: return;
     }

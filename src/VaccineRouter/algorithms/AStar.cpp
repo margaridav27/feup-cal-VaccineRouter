@@ -35,7 +35,7 @@ std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest) {
                 continue;
 
             double ACost = current->getCost() + e->getCost();
-            if (next->getEuclidianDist() == 0)
+            if (next->getEuclideanDist() == 0)
                 queue.insert(next);
             else if (ACost >= next->getCost())
                 continue;

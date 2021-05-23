@@ -26,7 +26,7 @@ Time Vehicle::getPathDuration(std::vector<Node *> path) const {
         Node *node2 = path[i + 1];
         Coordinates coord1 = node1->getCoordinates();
         Coordinates coord2 = node2->getCoordinates();
-        double dist = coord1.calculateEuclidianDistance(coord2);
+        double dist = coord1.calculateEuclideanDistance(coord2);
         duration += Time(dist / this->speed);
     }
     return duration;

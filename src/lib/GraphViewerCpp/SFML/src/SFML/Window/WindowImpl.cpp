@@ -161,7 +161,7 @@ void WindowImpl::pushEvent(const Event& event)
 ////////////////////////////////////////////////////////////
 void WindowImpl::processJoystickEvents()
 {
-    // First update the global joystick states
+    // First deleteDispatchedACs the global joystick states
     JoystickManager::getInstance().update();
 
     for (unsigned int i = 0; i < Joystick::Count; ++i)
@@ -232,7 +232,7 @@ void WindowImpl::processJoystickEvents()
 ////////////////////////////////////////////////////////////
 void WindowImpl::processSensorEvents()
 {
-    // First update the sensor states
+    // First deleteDispatchedACs the sensor states
     SensorManager::getInstance().update();
 
     for (unsigned int i = 0; i < Sensor::Count; ++i)

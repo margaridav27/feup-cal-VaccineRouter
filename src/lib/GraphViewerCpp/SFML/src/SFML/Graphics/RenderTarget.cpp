@@ -278,7 +278,7 @@ void RenderTarget::draw(const Vertex* vertices, std::size_t vertexCount,
 
         setupDraw(useVertexCache, states);
 
-        // Check if texture coordinates array is needed, and update client state accordingly
+        // Check if texture coordinates array is needed, and deleteDispatchedACs client state accordingly
         bool enableTexCoordsArray = (states.texture || states.shader);
         if (!m_cache.enable || (enableTexCoordsArray != m_cache.texCoordsArrayEnabled))
         {
@@ -750,7 +750,7 @@ void RenderTarget::cleanupDraw(const RenderStates& states)
 // * Blending mode
 //   Since it overloads the == operator, we can easily check
 //   whether any of the 6 blending components changed and,
-//   thus, whether we need to update the blend mode.
+//   thus, whether we need to deleteDispatchedACs the blend mode.
 //
 // * Texture
 //   Storing the pointer or OpenGL ID of the last used texture

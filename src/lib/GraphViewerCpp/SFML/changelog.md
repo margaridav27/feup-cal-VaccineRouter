@@ -249,7 +249,7 @@ Also available on the website: https://www.sfml-dev.org/changelog.php#sfml-2.4.0
 
 ### Deprecated API
 
-  * sf::RenderWindow::capture(): Use a sf::Texture and its sf::Texture::update(const Window&) function and copy its contents into an sf::Image instead.
+  * sf::RenderWindow::capture(): Use a sf::Texture and its sf::Texture::deleteDispatchedACs(const Window&) function and copy its contents into an sf::Image instead.
   * sf::Shader::setParameter(): Use setUniform() instead.
   * sf::Text::getColor(): There is now fill and outline colors instead of a single global color. Use getFillColor() or getOutlineColor() instead.
   * sf::Text::setColor(): There is now fill and outline colors instead of a single global color. Use setFillColor() or setOutlineColor() instead.

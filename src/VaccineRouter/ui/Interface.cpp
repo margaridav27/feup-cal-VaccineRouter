@@ -2,6 +2,7 @@
 #include "../graph/GraphProcessor.h"
 #include "../graphviewer/graphViewer.h"
 #include <fstream>
+#include <sstream>
 
 bool Interface::checkCinFail() {
   if (std::cin.fail()) {
@@ -27,15 +28,16 @@ bool Interface::checkGeneralInputValidity(int optionsRange, int input) {
 
 std::vector<int> Interface::checkACSelectionValidity(bool multiple,
                                                      int optionsRange) {
-  int input = 0;
-  bool read = false;
+  std::string input;
   std::vector<int> selected;
+  std::cin.ignore(1000,'\n');
+  std::getline(std::cin, input);
+  std::stringstream ss(input);
 
-  while (!read || !checkInRange(optionsRange, input)) {
-    std::cin >> input;
+  while (ss >> input || !checkInRange(optionsRange,std::stoi(input))) {
 
     // invalid input error
-    if (!checkCinFail() || !checkInRange(optionsRange, input)) {
+    if (!checkCinFail() || !checkInRange(optionsRange,std::stoi(input))) {
       std::cout << "[VaccineRouter] Invalid input. Please choose again.";
       std::cin.clear();
       std::cin.ignore(100000, '\n');
@@ -43,18 +45,17 @@ std::vector<int> Interface::checkACSelectionValidity(bool multiple,
     }
 
     // multiple inputs when only single was permitted error
-    if (!multiple && std::cin.eof()) {
+    if (!multiple && !ss.eof()) {
       std::cout
           << "[VaccineRouter] You chose more than one Application Center. "
              "Please make sure to choose only one.\n\n";
       std::cin.clear();
       std::cin.ignore(100000, '\n');
       return std::vector<int>();
-    } else
-      read = true;
+    }
 
     // updates return vector with selected option
-    selected.push_back(input);
+    selected.push_back(std::stoi(input));
   }
 
   return selected;
@@ -185,10 +186,13 @@ void Interface::initialMenu() {
   switch (initialMenuInput) {
   case 1:
     runProgramMenu();
+    break;
   case 2:
     analyseConnectivityMenu();
+    break;
   case 3:
     modifyDataMenu();
+    break;
   default:
     return;
   }
@@ -208,8 +212,10 @@ void Interface::runProgramMenu() {
   switch (runProgramMenuInput) {
   case 1:
     selectMapMenu();
+    break;
   case 2:
     initialMenu();
+    break;
   default:
     return;
   }
@@ -278,14 +284,19 @@ void Interface::modifyDataMenu() {
   switch (input) {
   case 1:
     addACMenu(chosenCity);
+    break;
   case 2:
     addSCMenu(chosenCity);
+    break;
   case 3:
     removeACMenu(chosenCity);
+    break;
   case 4:
     removeSCMenu(chosenCity);
+    break;
   case 5:
     modifyDataMenu();
+    break;
   default:
     return;
   }
@@ -308,7 +319,7 @@ void Interface::addSCMenu(const std::string &mapFilename) {
     availableACs = getAvailableACs(mapFilename);
     availableSCs = getAvailableSCs(mapFilename);
 
-    // checking the existent ACs
+    // checking the existent selectedACs
     for (auto ac : availableACs) {
       if (newID == ac.second.first) {
         alreadyExists = true;
@@ -370,7 +381,7 @@ void Interface::addACMenu(const std::string &mapFilename) {
     availableACs = getAvailableACs(mapFilename);
     availableSCs = getAvailableSCs(mapFilename);
 
-    // checking the existent ACs
+    // checking the existent selectedACs
     for (auto ac : availableACs) {
       if (newID == ac.second.first) {
         alreadyExists = true;
@@ -531,11 +542,11 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
 
   switch (selectSingleOrMultipleACMenuInput) {
   case 1:
-   displayACsVisually(this->vaccineRouter);
+    //displayACsVisually(this->vaccineRouter);
     selectSingleACMenu(mapFilename);
     break;
   case 2:
-    displayACsVisually(this->vaccineRouter);
+    //displayACsVisually(this->vaccineRouter);
     selectMultipleACMenu(mapFilename);
     break;
   case 3:
@@ -554,6 +565,10 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
   do {
     availableACs = getAvailableACs(mapFilename);
     std::cout << "\n\n----- SINGLE APPLICATION CENTER -----\n";
+    std::cout << "\nPlease note that by selecting a single Application Center, "
+                 "you will not\n"
+                 "be given the chance of taking into account the vaccine's "
+                 "lifetime.\n\n";
     displayAvailableACs(availableACs);
     std::cout << "Please select the Application Center from the above list "
                  "[usage: >2]: ";
@@ -562,7 +577,8 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
   } while (invalidInput);
 
   orderVaccinesMenu(availableACs, selected);
-  singleAC();
+  singleAC(); // here we don't give the option of taking into account the
+              // vaccine's lifetime
 }
 
 void Interface::selectMultipleACMenu(const std::string &mapFilename) {
@@ -573,6 +589,10 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
   do {
     availableACs = getAvailableACs(mapFilename);
     std::cout << "\n\n----- MULTIPLE APPLICATION CENTERS -----\n";
+    std::cout << "\nAfter the selection, you will be redirected to a menu "
+                 "where you will\n"
+                 "be given the chance of taking into account the vaccine's "
+                 "lifetime.\n\n";
     displayAvailableACs(availableACs);
     std::cout << "Please select the Application Center from the above list "
                  "[usage: >2 3 4]: ";
@@ -581,7 +601,8 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
   } while (invalidInput);
 
   orderVaccinesMenu(availableACs, selected);
-  multipleAC();
+  setTimeWindowMenu(); // here we give the option of taking into account the
+                       // vaccine's lifetime
 }
 
 void Interface::orderVaccinesMenu(
@@ -598,15 +619,26 @@ void Interface::orderVaccinesMenu(
     std::string acName = options[i].second;
     auto *newAC = new ApplicationCenter(acNode, acName);
     newAC->setVaccinesToReceive(order);
-    this->vaccineRouter->addApplicationCenter(newAC);
+    this->vaccineRouter->selectApplicationCenter(newAC);
   }
 }
 
-// TODO Apply method and display
-void Interface::singleAC() {
-  vaccineRouter->calculateRouteSingleSCSingleAC();
-  // vaccineRouter->displayOutput();
+void Interface::setTimeWindowMenu() {
+  char answer = '\0';
+  do {
+    std::cout << "Do you want to consider the vaccine's lifetime? [y/n] ";
+    std::cin >> answer;
+  } while (!checkCinFail() ||
+           (answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N'));
+
+  if (answer == 'y' || answer == 'Y')
+    multipleACWithTW();
+  else
+    multipleAC();
 }
+
+// TODO Apply method and display
+void Interface::singleAC() { vaccineRouter->calculateRouteSingleSCSingleAC(); }
 
 // TODO Apply both methods and display
 void Interface::multipleAC() {
@@ -614,6 +646,6 @@ void Interface::multipleAC() {
 }
 
 void Interface::multipleACWithTW() {
-  vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
+  //vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
   vaccineRouter->calculateRouteMultipleSCMultipleACWithTW();
 }

@@ -9,14 +9,15 @@
 #include "../model/StorageCenter.h"
 #include "../model/VaccineRouter.h"
 
-
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
 
-GVNode getNodeID(std::map<Node *, GVNode> GVNodes,
-Node *n);
+GVNode getNodeID(Node *n);
+
 
 void displayACsVisually(VaccineRouter *vaccineRouter);
+
+GVNode getNodeID(std::map<Node*, GVNode> GVNodes, Node * n);
 
 void displayVehiclesPath(VaccineRouter *vaccineRouter);
 

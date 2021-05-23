@@ -11,7 +11,7 @@
 std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest) {
     for (Node *n : graph->getNodeSet()) {
         n->setUnvisited();
-        n->setDist(INT_MAX);
+        n->setDist(DOUBLE_MAX);
         n->setPath(nullptr);
         n->setCost(0);
     }
@@ -35,7 +35,7 @@ std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest) {
                 continue;
 
             double ACost = current->getCost() + e->getCost();
-            if (next->getEuclideanDist() == 0)
+            if (next->getDist() == DOUBLE_MAX)
                 queue.insert(next);
             else if (ACost >= next->getCost())
                 continue;

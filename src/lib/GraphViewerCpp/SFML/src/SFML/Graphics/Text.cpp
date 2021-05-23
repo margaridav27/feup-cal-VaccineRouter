@@ -196,7 +196,7 @@ void Text::setFillColor(const Color& color)
     {
         m_fillColor = color;
 
-        // Change vertex colors directly, no need to update whole geometry
+        // Change vertex colors directly, no need to deleteDispatchedACs whole geometry
         // (if geometry is updated anyway, we can skip this step)
         if (!m_geometryNeedUpdate)
         {
@@ -214,7 +214,7 @@ void Text::setOutlineColor(const Color& color)
     {
         m_outlineColor = color;
 
-        // Change vertex colors directly, no need to update whole geometry
+        // Change vertex colors directly, no need to deleteDispatchedACs whole geometry
         // (if geometry is updated anyway, we can skip this step)
         if (!m_geometryNeedUpdate)
         {

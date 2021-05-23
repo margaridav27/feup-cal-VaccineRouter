@@ -98,7 +98,7 @@ namespace
 
     ConnectionCache connectionCache[sf::Joystick::Count];
 
-    // If true, will only update when WM_DEVICECHANGE message is received
+    // If true, will only deleteDispatchedACs when WM_DEVICECHANGE message is received
     bool lazyUpdates = false;
 
     // Get a system error string from an error code

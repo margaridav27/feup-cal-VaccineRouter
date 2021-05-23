@@ -77,7 +77,7 @@ ApplicationCenter *StorageCenter::findNextNearestAC(Center *startingPoint) const
 
     for (ApplicationCenter *ac : this->getAssignedAC()) {
         if (!ac->isVisited() && (ac != startingPoint)) {
-            double dist = ac->getNode()->calculateDist(ac->getNode());
+            double dist = startingPoint->getNode()->calculateDist(ac->getNode());
             std::pair<ApplicationCenter *, double> nearestACDist(ac, dist);
             dists.push(nearestACDist);
         }

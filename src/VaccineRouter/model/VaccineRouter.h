@@ -19,6 +19,7 @@ private:
     StorageCenter *findNearestSC(ApplicationCenter *applicationCenter);
     bool calculateSCRoute(StorageCenter *sc);
     void handleACsNotVisited();
+    void deleteDispatchedACs();
 public:
     VaccineRouter();
     VaccineRouter(Time vaccineLifeTime);
@@ -27,9 +28,9 @@ public:
     void setGraph(Graph *graph);
     void setCityName(std::string cityName);
 
-    int getCenter(Node *node);
     const std::vector<StorageCenter *> &getSCs() const;
     const std::vector<ApplicationCenter *> &getACs() const;
+    Center *getCenter(Node *node);
 
     void addStorageCenter(StorageCenter *sc);
     void addApplicationCenter(ApplicationCenter *ac);
@@ -37,19 +38,12 @@ public:
     void selectMap(const std::string &mapFilename);
     bool setUpSCs(const std::string &mapFilename);
 
-    void processOrders();
     Time getVaccineLifeTime() const;
 
     void calculateRouteSingleSCSingleAC();
     void calculateRouteSingleSCMultipleAC();
     void calculateRouteSingleSCMultipleACWithTW();
     void calculateRouteMultipleSCMultipleACWithTW();
-
-    bool operator()(StorageCenter *sc);
-    void deleteDispatchedACs();
-    void displayOutput();
-
-    std::string getCenterName(Node *node);
 };
 
 

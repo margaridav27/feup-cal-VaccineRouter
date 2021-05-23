@@ -28,6 +28,6 @@ void Coordinates::setCoordinates(double x, double y) {
     this->y = y;
 }
 
-double Coordinates::calculateEuclideanDistance(Coordinates c) const{
+double Coordinates::calculateEuclideanDistance(Coordinates c) const {
     return std::sqrt(pow((this->x - c.getX()), 2) + pow((this->y - c.getY()), 2));
 }

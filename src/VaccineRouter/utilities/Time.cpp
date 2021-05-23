@@ -2,9 +2,9 @@
 #include "Time.h"
 
 Time::Time() {
-  this->hour = 0;
-  this->minute = 0;
-  this->second = 0;
+    this->hour = 0;
+    this->minute = 0;
+    this->second = 0;
 }
 
 Time::Time(unsigned int hour, unsigned int minute, unsigned int second) :
@@ -54,13 +54,13 @@ Time Time::operator+(Time &t) const {
 }
 
 bool Time::operator>(Time t) const {
-  if (this->hour == t.hour) {
-    if (this->minute == t.minute) {
-      return this->second > t.second;
+    if (this->hour == t.hour) {
+        if (this->minute == t.minute) {
+            return this->second > t.second;
+        }
+        return this->minute > t.minute;
     }
-    return this->minute > t.minute;
-  }
-  return this->hour > t.hour;
+    return this->hour > t.hour;
 }
 
 Time &Time::operator+=(const Time &t) {
@@ -78,11 +78,11 @@ Time &Time::operator+=(const Time &t) {
 }
 
 Time &Time::operator=(Time t) {
-  if (this == &t) return *this;
-  this->hour = t.hour;
-  this->minute = t.minute;
-  this->second = t.second;
-  return *this;
+    if (this == &t) return *this;
+    this->hour = t.hour;
+    this->minute = t.minute;
+    this->second = t.second;
+    return *this;
 }
 
 std::ostream &Time::operator<<(std::ostream &o) const {

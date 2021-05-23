@@ -54,7 +54,10 @@ void Graph::DFSRecursive(Node *start) {
 
 void Graph::DFSConnectivity() {
     for (Node *node : this->nodeSet) node->setUnvisited();
-    for (Node *node : this->nodeSet) DFSRecursive(node);
+    for (Node *node : this->nodeSet) {
+        if (!node->wasVisited())
+            DFSRecursive(node);
+    }
 }
 
 void Graph::removeUnvisitedNodes() {

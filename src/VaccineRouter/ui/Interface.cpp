@@ -190,6 +190,7 @@ void Interface::analyseConnectivityMenu() {
     int input = 0;
     int optionCounter;
     std::map<int, std::string> availableCities = getAvailableCities();
+
     do {
         std::cout << "\n----- AVAILABLE CITIES TO ANALYSE CONNECTIVITY -----\n";
         displayAvailableCities(availableCities);
@@ -426,40 +427,25 @@ void Interface::removeACMenu(const std::string &mapFilename) {
 }
 
 void Interface::selectMapMenu() {
-    int selectMapMenuInput = 0;
-    int optionCounter = 1;
-    std::vector<std::string> options;
+    int input = 0;
+    int optionCounter;
+    std::map<int, std::string> availableCities = getAvailableCities();
+
     do {
-        // file containing the names of the available cities
-        std::ifstream istream("../../cityMaps/availableCities.txt");
-
-        if (!istream.is_open()) {
-            std::cout << "[VaccineRouter] File containing the available cities could not be open.";
-            return;
-        }
-
         std::cout << "\n----- AVAILABLE CITIES -----\n";
-        std::string cityName;
-
-        std::cin.ignore(100000, '\n');
-        while (getline(istream, cityName)) {
-            std::cout << optionCounter << ". " << cityName << '\n';
-            options.push_back(cityName);
-            optionCounter++;
-        }
-
-        istream.close();
-
+        displayAvailableCities(availableCities);
+        optionCounter = availableCities.empty() ? 1 : availableCities.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
                                       "Please select your option: ";
-        std::cin >> selectMapMenuInput;
-        std::cout << "\n";
-    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, selectMapMenuInput));
+        std::cin >> input;
+    } while (!checkCinFail() || !checkGeneralInputValidity(optionCounter, input));
 
-    if (selectMapMenuInput == optionCounter) runProgramMenu(); // user chose to go back
-    this->vaccineRouter->selectMap(options[selectMapMenuInput - 1]);
-    this->vaccineRouter->setCityName(options[selectMapMenuInput - 1]);
-    selectSingleOrMultipleACMenu(options[selectMapMenuInput - 1]);
+    if (input == optionCounter) runProgramMenu(); // user chose to go back
+
+    std::string mapFilename = availableCities.find(input)->second;
+    this->vaccineRouter->selectMap(mapFilename);
+    this->vaccineRouter->setCityName(mapFilename);
+    selectSingleOrMultipleACMenu(mapFilename);
 }
 
 void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {

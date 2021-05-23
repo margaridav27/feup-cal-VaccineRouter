@@ -224,7 +224,7 @@ void Interface::analyseConnectivityMenu() {
     std::string mapFilename = availableCities.find(input)->second;
     Graph *graph = processGraph(mapFilename, false);
     // TODO: display graph before being processed
-    graph->DFSConnectivity(graph->getNodeSet()[0]);
+    graph->DFSConnectivity();
     graph->removeUnvisitedNodes();
     // TODO: display graph after connectivity analysis
 

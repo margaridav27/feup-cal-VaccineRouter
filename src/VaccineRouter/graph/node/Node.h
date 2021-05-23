@@ -16,7 +16,7 @@ private:
     bool visited;
     double dist;
     Node *path;
-    double euclidianDist;
+    double euclideanDist;
     double cost{};
     int queueIndex = 0;
 public:
@@ -41,8 +41,8 @@ public:
     double getCost() const;
     void setCost(double cost);
 
-    double getEuclidianDist() const;
-    void setEuclidianDist(double eDist);
+    double getEuclideanDist() const;
+    void setEuclideanDist(double eDist);
 
     const std::vector<Edge *> &getAdj() const;
     void setAdj(const std::vector<Edge *> &adj);

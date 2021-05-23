@@ -25,7 +25,7 @@ public:
     bool addEdge(unsigned int sourceID, unsigned int destID, double weight);
     bool removeEdge(unsigned int sourceID, unsigned int destID);
 
-    void DFSConnectivity(Node *start);
+    void DFSConnectivity();
     void removeUnvisitedNodes();
 };
 

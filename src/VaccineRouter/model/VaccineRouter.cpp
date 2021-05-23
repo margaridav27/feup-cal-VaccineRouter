@@ -88,7 +88,7 @@ StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter
 
     for (StorageCenter *sc : this->SCs) {
         Coordinates SCCoords = sc->getNode()->getCoordinates();
-        dist = SCCoords.calculateEuclidianDistance(ACCoords);
+        dist = SCCoords.calculateEuclideanDistance(ACCoords);
         if (dist < minDist) {
             minDist = dist;
             nearest = sc;

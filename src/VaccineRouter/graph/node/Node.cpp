@@ -44,9 +44,9 @@ double Node::getCost() const { return this->cost; }
 
 void Node::setCost(double cost) { this->cost = cost; }
 
-double Node::getEuclidianDist() const { return this->euclidianDist; }
+double Node::getEuclideanDist() const { return this->euclideanDist; }
 
-void Node::setEuclidianDist(double eDist) { this->euclidianDist = eDist; }
+void Node::setEuclideanDist(double eDist) { this->euclideanDist = eDist; }
 
 const Coordinates &Node::getCoordinates() const { return coordinates; }
 
@@ -77,12 +77,12 @@ bool Node::removeNodeTo(Node *node) {
 }
 
 double Node::calculateDist(Node *n) {
-    return this->coordinates.calculateEuclidianDistance(n->getCoordinates());
+    return this->coordinates.calculateEuclideanDistance(n->getCoordinates());
 }
 
 bool Node::operator<(Node &node) const {
     if (this->dist == node.getDist())
-        return this->euclidianDist < node.euclidianDist;
+        return this->euclideanDist < node.euclideanDist;
     return this->dist < node.getDist();
 }
 

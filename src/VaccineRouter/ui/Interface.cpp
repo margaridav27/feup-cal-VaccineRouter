@@ -6,6 +6,7 @@ bool Interface::checkCinFail() {
     if (std::cin.fail()) {
         std::cin.clear();
         std::cin.ignore(100000, '\n');
+        std::cout << "[VaccineRouter] Invalid input. Please choose again.";
         return false;
     }
     return true;
@@ -163,7 +164,7 @@ void Interface::initInterface() { initialMenu(); }
 void Interface::initialMenu() {
     int initialMenuInput = 0;
     do {
-        std::cout << "\n----- INITIAL MENU -----\n"
+        std::cout << "\n\n----- INITIAL MENU -----\n"
                      "1. Run Program\n"
                      "2. Analyse Connectivity\n"
                      "3. Modify Data\n"
@@ -187,7 +188,7 @@ void Interface::initialMenu() {
 void Interface::runProgramMenu() {
     int runProgramMenuInput = 0;
     do {
-        std::cout << "\n----- RUN PROGRAM MENU -----\n"
+        std::cout << "\n\n----- RUN PROGRAM MENU -----\n"
                      "1. Select Map\n"
                      "2. Go Back\n\n"
                      "Please select your option: ";
@@ -210,7 +211,7 @@ void Interface::analyseConnectivityMenu() {
     std::map<int, std::string> availableCities = getAvailableCities();
 
     do {
-        std::cout << "\n----- AVAILABLE CITIES TO ANALYSE CONNECTIVITY -----\n";
+        std::cout << "\n\n----- AVAILABLE CITIES TO ANALYSE CONNECTIVITY -----\n";
         displayAvailableCities(availableCities);
         optionCounter = availableCities.empty() ? 1 : availableCities.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
@@ -236,7 +237,7 @@ void Interface::modifyDataMenu() {
     std::map<int, std::string> availableCities = getAvailableCities();
 
     do {
-        std::cout << "\n----- MODIFY DATA MENU - MAP SELECTION -----\n";
+        std::cout << "\n\n----- MODIFY DATA MENU - MAP SELECTION -----\n";
         displayAvailableCities(availableCities);
         optionCounter = availableCities.empty() ? 1 : availableCities.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
@@ -250,7 +251,7 @@ void Interface::modifyDataMenu() {
     input = 0;
 
     do {
-        std::cout << "\n----- MODIFY DATA MENU -----\n"
+        std::cout << "\n\n----- MODIFY DATA MENU -----\n"
                      "1. Add Application Center\n"
                      "2. Add Storage Center\n"
                      "3. Remove Application Center\n"
@@ -284,7 +285,7 @@ void Interface::addSCMenu(const std::string &mapFilename) {
     std::map<int, std::pair<unsigned int, std::string>> availableSCs;
 
     do {
-        std::cout << "\n----- ADD STORAGE CENTER MENU -----\n"
+        std::cout << "\n\n----- ADD STORAGE CENTER MENU -----\n"
                      "Introduce the ID of the node about to become a Storage Center: ";
         std::cin >> newID;
         std::cin.ignore();
@@ -340,7 +341,7 @@ void Interface::addACMenu(const std::string &mapFilename) {
     std::map<int, std::pair<unsigned int, std::string>> availableSCs;
 
     do {
-        std::cout << "\n----- ADD APPLICATION CENTER MENU -----\n"
+        std::cout << "\n\n----- ADD APPLICATION CENTER MENU -----\n"
                      "Introduce the ID of the node about to become an Application Center: ";
         std::cin >> newID;
         std::cin.ignore();
@@ -394,7 +395,7 @@ void Interface::removeSCMenu(const std::string &mapFilename) {
     std::map<int, std::pair<unsigned int, std::string>> options;
 
     do {
-        std::cout << "\n----- REMOVE STORAGE CENTER MENU -----\n";
+        std::cout << "\n\n----- REMOVE STORAGE CENTER MENU -----\n";
         options = getAvailableSCs(mapFilename);
         displayAvailableSCs(options);
         optionCounter = options.empty() ? 1 : options.size() + 1;
@@ -428,7 +429,7 @@ void Interface::removeACMenu(const std::string &mapFilename) {
     std::map<int, std::pair<unsigned int, std::string>> options;
 
     do {
-        std::cout << "\n----- REMOVE APPLICATION CENTER MENU -----\n";
+        std::cout << "\n\n----- REMOVE APPLICATION CENTER MENU -----\n";
         options = getAvailableACs(mapFilename);
         displayAvailableACs(options);
         optionCounter = options.empty() ? 1 : options.size() + 1;
@@ -461,7 +462,7 @@ void Interface::selectMapMenu() {
     std::map<int, std::string> availableCities = getAvailableCities();
 
     do {
-        std::cout << "\n----- AVAILABLE CITIES -----\n";
+        std::cout << "\n\n----- AVAILABLE CITIES -----\n";
         displayAvailableCities(availableCities);
         optionCounter = availableCities.empty() ? 1 : availableCities.size() + 1;
         std::cout << optionCounter << ". Go Back\n\n"
@@ -480,7 +481,7 @@ void Interface::selectMapMenu() {
 void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
     int selectSingleOrMultipleACMenuInput = 0;
     do {
-        std::cout << "\n----- SINGLE OR MULTIPLE APPLICATION CENTER SELECTION -----\n"
+        std::cout << "\n\n----- SINGLE OR MULTIPLE APPLICATION CENTER SELECTION -----\n"
                      "1. Single Application Center\n"
                      "2. Multiple Application Centers\n"
                      "3. Go Back\n\n"
@@ -507,7 +508,7 @@ void Interface::selectSingleACMenu(const std::string &mapFilename) {
 
     do {
         availableACs = getAvailableACs(mapFilename);
-        std::cout << "\n----- SINGLE APPLICATION CENTER -----\n";
+        std::cout << "\n\n----- SINGLE APPLICATION CENTER -----\n";
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2]: ";
@@ -526,7 +527,7 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
 
     do {
         availableACs = getAvailableACs(mapFilename);
-        std::cout << "\n----- MULTIPLE APPLICATION CENTERS -----\n";
+        std::cout << "\n\n----- MULTIPLE APPLICATION CENTERS -----\n";
         displayAvailableACs(availableACs);
         std::cout << "Please select the Application Center from the above list "
                      "[usage: >2 3 4]: ";
@@ -540,7 +541,7 @@ void Interface::selectMultipleACMenu(const std::string &mapFilename) {
 
 void Interface::orderVaccinesMenu(std::map<int, std::pair<unsigned int, std::string>> &options, const std::vector<int> &selected) {
     int order;
-    std::cout << "\n----- ORDER VACCINES MENU -----\n";
+    std::cout << "\n\n----- ORDER VACCINES MENU -----\n";
     for (int i : selected) {
         std::cout << "Vaccine's order for " << options[i].second << ": ";
         std::cin >> order;

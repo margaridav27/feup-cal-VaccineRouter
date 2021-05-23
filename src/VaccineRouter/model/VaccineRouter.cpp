@@ -8,7 +8,7 @@
 
 VaccineRouter::VaccineRouter()
         : vaccineLifeTime("03:00:00"), // comback: maybe change this default value?
-          graph(new Graph()) {}
+          graph(new Graph()){}
 
 VaccineRouter::VaccineRouter(Time vaccineLifeTime)
         : vaccineLifeTime(vaccineLifeTime), graph(new Graph()) {}
@@ -17,9 +17,8 @@ Graph *VaccineRouter::getGraph() const { return this->graph; }
 
 void VaccineRouter::setGraph(Graph *graph) { this->graph = graph; }
 
-void VaccineRouter::setCityName(std::string cityName) {
-    this->cityName =
-            std::move(cityName);
+void VaccineRouter::setCityName(std::string cityName) { this->cityName =
+      std::move(cityName);
 }
 
 void VaccineRouter::addStorageCenter(StorageCenter *sc) { this->SCs.push_back(sc); }
@@ -181,7 +180,7 @@ void VaccineRouter::handleACsNotVisited() {
 
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
     ApplicationCenter *ac = ACs[0]; // single AC -> we can assume it
-    // corresponds to index 0
+                                    // corresponds to index 0
     StorageCenter *nearestSC = findNearestSC(ac);
     Vehicle *vehicle = nearestSC->getAvailableVehicle();
     nearestSC->assignAC(ac);
@@ -257,16 +256,16 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     // iterate over SCs to calculate its optimal route -> multi-threaded function
     for (StorageCenter *sc : this->SCs) {
         if (sc->getAssignedAC().empty()) continue;
-        // std::thread thread([&]() {
-        calculateSCRoute(sc);
+       // std::thread thread([&]() {
+            calculateSCRoute(sc);
         //    threadList.push_back(&thread);
         //    thread.join();
         //});
     }
-    /* while (!threadList.empty()) {
-         threadList.back()->join();
-         threadList.pop_back();
-     }*/
+   /* while (!threadList.empty()) {
+        threadList.back()->join();
+        threadList.pop_back();
+    }*/
 
     // handles the ACs that could not fit in its optimally assigned SC route
     deleteDispatchedACs();
@@ -292,13 +291,13 @@ const std::vector<ApplicationCenter *> &VaccineRouter::getACs() const {
 }
 
 Center *VaccineRouter::getCenter(Node *node) {
-    for (StorageCenter *sc: this->SCs) {
-        if (sc->getNode() == node) {
+    for(StorageCenter *sc: this->SCs){
+        if (sc->getNode() == node){
             return dynamic_cast<Center *>(sc);
         }
     }
-    for (ApplicationCenter *ac: this->ACs) {
-        if (ac->getNode() == node) {
+    for(ApplicationCenter *ac: this->ACs){
+        if (ac->getNode() == node){
             return dynamic_cast<Center *>(ac);
         }
     }

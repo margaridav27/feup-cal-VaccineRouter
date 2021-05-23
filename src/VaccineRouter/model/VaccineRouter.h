@@ -27,7 +27,7 @@ public:
     void setGraph(Graph *graph);
     void setCityName(std::string cityName);
 
-    Center *getCenter(Node *node);
+    int getCenter(Node *node);
     const std::vector<StorageCenter *> &getSCs() const;
     const std::vector<ApplicationCenter *> &getACs() const;
 
@@ -49,7 +49,7 @@ public:
     void deleteDispatchedACs();
     void displayOutput();
 
-
+    std::string getCenterName(Node *node);
 };
 
 

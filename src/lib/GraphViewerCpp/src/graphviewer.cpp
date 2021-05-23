@@ -165,7 +165,7 @@ void GraphViewer::setBackground(const string &path, const sf::Vector2f &position
     background_sprite.setTexture(background_texture);
     background_sprite.setPosition(position);
     background_sprite.setScale(scale);
-    background_sprite.setColor(sf::Color(255, 255, 255, alpha*255.0));
+    background_sprite.setColor(sf::Color(1, 1, 1, 255));
 }
 
 void GraphViewer::clearBackground(){
@@ -270,9 +270,10 @@ void GraphViewer::run(){
 
 void GraphViewer::draw() {
     lock_guard<mutex> lock(graphMutex);
-    window->clear(Color::White);
+    window->clear(Color::Black);
 
     window->setView(*view);
+    window->draw(background_sprite);
     window->draw(background_sprite);
     if(enabledEdges){
         if(zipEdges){
@@ -315,10 +316,10 @@ void GraphViewer::draw() {
 
 void GraphViewer::drawDebug(){
     window->setView(*debug_view);
-    
+
     string debugInfo;
     debugInfo += "FPS: " + to_string(int(fps_monitor.getFPS())) + "\n";
-    
+
     if(debugInfo[debugInfo.size()-1] == '\n')
         debugInfo = debugInfo.substr(0, debugInfo.size()-1);
     debug_text.setString(debugInfo);

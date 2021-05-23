@@ -28,8 +28,8 @@ GraphViewer::Edge::Edge(
 
     text.setFont(GraphViewer::FONT);
     text.setCharacterSize(GraphViewer::FONT_SIZE);
-    text.setFillColor(Color::Black);
-    
+    text.setFillColor(YELLOW);
+
     update();
 }
 
@@ -84,5 +84,6 @@ void GraphViewer::Edge::update(){
     if(getFlow  () != nullptr) label += (label == "" ? "" : " ")+string("f: ")+to_string(int(*getFlow  ()));
     text.setString(label);
     FloatRect bounds = text.getLocalBounds();
-    text.setPosition((u->getPosition() + v->getPosition())/2.0f - Vector2f(bounds.width/2.0, 0.8*bounds.height));
+    text.setPosition((u->getPosition() + v->getPosition())/2.0f - Vector2f
+                     (bounds.width/2.0, 2*bounds.height));
 }

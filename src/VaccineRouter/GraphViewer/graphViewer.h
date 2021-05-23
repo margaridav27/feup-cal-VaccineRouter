@@ -13,13 +13,18 @@
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
 
-GVNode getNodeID(Node *n);
+GVNode getNodeID(std::map<Node *, GVNode> GVNodes,
+Node *n);
 
-GVNode getNodeID(int index);
+GVNode getNodeID(
+std::map<Edge *, GVEdge> GVEdges,
+int index);
 
-void displayGraph(GraphViewer *gv, VaccineRouter *vaccineRouter, int &idNode, int &idEdge);
+void displayGraph(VaccineRouter *vaccineRouter, int
+                                                                        &idNode,
+               int &idEdge);
 
-void displayVehiclesPath(GraphViewer *gv, VaccineRouter *vaccineRouter);
+void displayVehiclesPath(VaccineRouter *vaccineRouter);
 
 
 #endif //VACCINEROUTER_GRAPHVIEWER_H

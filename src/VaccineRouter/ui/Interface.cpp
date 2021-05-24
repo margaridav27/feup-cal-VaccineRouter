@@ -102,6 +102,7 @@ Interface::getAvailableSCs(const std::string &mapFilename) {
     std::string name;
     while (istream >> id) {
         istream.ignore();
+        std::getline(istream, name);
         options.insert(std::pair<int, std::pair<unsigned int, std::string>>(
                 optionCounter, std::pair<unsigned int, std::string>(id, name)));
         optionCounter++;
@@ -420,7 +421,7 @@ void Interface::removeSCMenu(const std::string &mapFilename) {
         std::cout << optionCounter << ". Go Back\n\n"
                                       "Select one of the following Storage Centers to remove: ";
         std::cin >> removeSCMenuInput;
-    } while (checkCinFail() || !checkInRange(optionCounter, removeSCMenuInput));
+    } while (!checkCinFail() || !checkInRange(optionCounter, removeSCMenuInput));
 
     if (removeSCMenuInput == optionCounter)
         modifyDataMenu();
@@ -580,6 +581,7 @@ void Interface::orderVaccinesMenu(
     int order;
     std::cout << "\n\n----- ORDER VACCINES MENU -----\n";
     for (int i : selected) {
+        std::cout << '\n';
         std::cout << "Vaccine's order for " << options[i].second << ": ";
         std::cin >> order;
 
@@ -596,14 +598,14 @@ void Interface::setAdditionalSpecsMenu() {
     // check if user wants to limit route duration
     char tw = '\0';
     do {
-        std::cout << "Do you want to consider the vaccine's lifetime? [y/n] ";
+        std::cout << "\nDo you want to consider the vaccine's lifetime? [y/n] ";
         std::cin >> tw;
     } while (!checkCinFail() || (tw != 'y' && tw != 'Y' && tw != 'n' && tw != 'N'));
 
     // check if user wants the deliveries to be made by a single SC
     char single = '\0';
     do {
-        std::cout << "Do you want to force the deliveries to be made by a single Storage Center? [y/n] ";
+        std::cout << "\nDo you want to force the deliveries to be made by a single Storage Center? [y/n] ";
         std::cin >> single;
     } while (!checkCinFail() || (single != 'y' && single != 'Y' && single != 'n' && single != 'N'));
 

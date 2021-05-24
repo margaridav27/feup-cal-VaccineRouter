@@ -3,7 +3,6 @@
 #include "../algorithms/AStar.h"
 #include "../graph/GraphProcessor.h"
 #include <fstream>
-#include <list>
 
 VaccineRouter::VaccineRouter()
         : vaccineLifeTime("03:00:00"),

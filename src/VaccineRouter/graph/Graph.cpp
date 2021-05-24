@@ -77,8 +77,6 @@ void Graph::removeUnvisitedNodes() {
                 removeEdge(node->getId(), (*itEdge)->getDest()->getId());
                 removeNode((*itEdge)->getDest()->getId());
                 itEdge--;
-                printf("ERASED NODE1\n");
-
             }
         }
     }

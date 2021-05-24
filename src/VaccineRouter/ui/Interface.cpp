@@ -578,10 +578,12 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
 
     switch (selectSingleOrMultipleACMenuInput) {
         case 1:
+            std::cout<<"Loading Graph so that ACs can be visualised!\n";
             displayACsVisually(this->vaccineRouter);
             selectSingleACMenu(mapFilename);
             break;
         case 2:
+            std::cout<<"Loading Graph so that ACs can be visualised!\n";
             displayACsVisually(this->vaccineRouter);
             selectMultipleACMenu(mapFilename);
             break;

@@ -5,18 +5,12 @@
 std::map<Node *, GVNode> GVNodes;
 std::map<Edge *, GVEdge> GVEdges;
 
-/**
- *
- * @param GVNodes
- * @param n
- * @return GVNode correspondant to the node n
- */
+
 GVNode getNodeID(std::map<Node *,GVNode> GVNodes, Node *n) {
   auto itr = GVNodes.find(n);
   if (itr != GVNodes.end())
     return itr->second;
 }
-
 
 void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph){
   std::map<Node *, GVNode> GVNodes;
@@ -41,7 +35,7 @@ void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph){
                                 GraphViewer::Edge::EdgeType::UNDIRECTED);
     }
   }
-  int xShift = 1000;
+  int xShift = 6000;
   for (Node *n :strongGraph->getNodeSet()) {
     GVNode &node =
         gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX() + xShift,
@@ -59,10 +53,7 @@ void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph){
 
   gv.join();
 }
-/**
- * displays the city graph and highlights the Application and Storage Centers
- * @param vaccineRouter
- */
+
 void displayACsVisually(VaccineRouter *vaccineRouter) {
   std::map<Node *, GVNode> GVNodes;
   std::map<Edge *, GVEdge> GVEdges;
@@ -103,10 +94,6 @@ void displayACsVisually(VaccineRouter *vaccineRouter) {
   gv.join();
 }
 
-/**
- * displays the calculated route visually
- * @param vaccineRouter
- */
 void displayVehiclesPath(VaccineRouter *vaccineRouter) {
   std::map<Node *, GVNode> GVNodes;
   std::map<Edge *, GVEdge> GVEdges;

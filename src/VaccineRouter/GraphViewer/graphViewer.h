@@ -12,13 +12,33 @@
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
 
-
+/**
+ * displays the city graph and highlights the Application and Storage Centers
+ * @param vaccineRouter
+ */
 void displayACsVisually(VaccineRouter *vaccineRouter);
 
+/**
+ * Displays pre-processed graph and pos-processed graph
+ * processing consists in removing all unattainable nodes from the graph,
+ * creating a strongly connected graph
+ * @param graph
+ * @param strongGraph
+ */
 void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph);
 
+/**
+ *
+ * @param GVNodes
+ * @param n
+ * @return GVNode correspondant to the node n
+ */
 GVNode getNodeID(std::map<Node*, GVNode> GVNodes, Node * n);
 
+/**
+ * displays the calculated route visually
+ * @param vaccineRouter
+ */
 void displayVehiclesPath(VaccineRouter *vaccineRouter);
 
 

@@ -14,7 +14,6 @@ using GVEdge = GraphViewer::Edge;
 
 GVNode getNodeID(Node *n);
 
-
 void displayACsVisually(VaccineRouter *vaccineRouter);
 
 GVNode getNodeID(std::map<Node*, GVNode> GVNodes, Node * n);

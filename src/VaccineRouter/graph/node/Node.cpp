@@ -46,7 +46,6 @@ void Node::setCost(double cost) { this->cost = cost; }
 
 const Coordinates &Node::getCoordinates() const { return coordinates; }
 
-
 const std::vector<Edge *> &Node::getAdj() const { return adj; }
 
 bool Node::wasVisited() const { return visited; }

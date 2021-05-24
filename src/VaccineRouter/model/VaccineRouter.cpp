@@ -221,7 +221,7 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
     Vehicle *vehicle = nearestSC->getAvailableVehicle();
     nearestSC->assignAC(ac);
 
-    std::vector<Node *> path = AStar(graph, nearestSC->getNode(),
+    std::vector<Node *> path = dijkstra(graph, nearestSC->getNode(),
                                      ac->getNode());
 
     vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
@@ -339,6 +339,8 @@ std::string VaccineRouter::getCenterName(Node *node) {
 void VaccineRouter::outputDataResults(){
 
   std::cout << "\n\n----- DATA RESULTS -----\n";
+  std::cout << "\n\n----- STORAGE CENTERS -----\n";
+
   for (StorageCenter *sc :this->SCs) {
     std::cout << sc;
 
@@ -356,6 +358,7 @@ void VaccineRouter::outputDataResults(){
     }
   }
 
+  std::cout << "\n\n----- APPLICATION CENTERS -----\n";
   for (ApplicationCenter *ac : this->selectedACs){
     std::cout << ac;
   }

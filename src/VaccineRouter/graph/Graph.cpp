@@ -67,9 +67,6 @@ void Graph::removeUnvisitedNodes() {
             removed.insert((*itNode));
             removeNode((*itNode)->getId());
             itNode--;
-            printf("NOT VISITED NODE1\n");
-        } else {
-            printf("VISITED\n");
         }
     }
 

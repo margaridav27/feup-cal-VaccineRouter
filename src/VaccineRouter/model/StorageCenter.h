@@ -120,7 +120,12 @@ public:
    * sets optimal state to false
    */
   void reset();
-
+/**
+ * used when SC can't reach AC without overdoing the vaccine lifetime
+ * removes ac from assigned ACs vector
+ * @param ac
+ */
+  void removeAC( Center *ac);
   /**
    *
    * @param startingPoint

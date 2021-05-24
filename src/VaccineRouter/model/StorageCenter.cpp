@@ -106,6 +106,13 @@ void StorageCenter::setVaccineLifetime(Time vaccineLifetime) {
     vehicle->setMaxPathDuration(vaccineLifetime);
   }
 }
+void StorageCenter::removeAC(Center *c) {
+ for (ApplicationCenter *ac : this->assignedAC){
+   if (ac->getNode() == c->getNode())
+     this->assignedAC.erase(std::find(this->assignedAC.begin(),
+                                      this->assignedAC.end(), ac));
+ }
+}
 
 std::ostream &operator<<(std::ostream &out, StorageCenter *sc) {
   out << "---------------------------------------------\n";

@@ -135,11 +135,16 @@ bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
             startingPoint->setVisited();
             nextPoint = sc->findNextNearestAC(startingPoint);
             visited++;
-        } else {
-            if (!vehicle->hasEmptyPath())
-                sc->setOptimalState();
+        } else if(vehicle->getPathDuration(path)> this->vaccineLifeTime){
+          sc->removeAC(nextPoint);
+          nextPoint = sc->findNextNearestAC(startingPoint);
         }
-    }
+          else {
+            if (!vehicle->hasEmptyPath())
+              sc->setOptimalState();
+          }
+        }
+
 
     return (visited == sc->getAssignedAC().size());
 }
@@ -258,6 +263,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
         sc->assignAC(ac); // single/multiple -> all selectedACs will be assign to best SC option
     Vehicle *vehicle = nullptr;
     Center *nextPoint = sc->findNextNearestAC(sc);
+    std::vector<Center *> unattainableAc;
 
 
     while (!sc->checkACsVisited() && (nextPoint != nullptr)) {
@@ -269,14 +275,27 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
         if (vehicle->setVehicleRoute(path, true)) {
             startingPoint = nextPoint;
             nextPoint = sc->findNextNearestAC(startingPoint);
-        } else sc->addVehicle();
+        } else if (vehicle->getPathDuration(path) > this->vaccineLifeTime){//if AC can never be reached
+          sc->removeAC(nextPoint); //remove AC from assigned SC
+          unattainableAc.push_back(nextPoint);
+          nextPoint = sc->findNextNearestAC(startingPoint);
+        }
+        else {sc->addVehicle();}
     }
 
     displayVehiclesPath(this);
+    if (!unattainableAc.empty())
+      std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
+    for (Center * c : unattainableAc){
+      std::cout<< c->getName() << " couldn't be reached without exceeding "
+                                   "vaccine's lifetime\n";
+    }
 }
 
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
-    // assign selectedACs to SCs
+  std::vector<Center *> unattainableAc;
+
+  // assign selectedACs to SCs
     for (ApplicationCenter *ac : this->selectedACs) {
         StorageCenter *sc = findNearestSC(ac);
         sc->assignAC(ac);
@@ -292,6 +311,13 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     deleteDispatchedACs();
     handleACsNotVisited();
     displayVehiclesPath(this);
+
+  if (!unattainableAc.empty())
+    std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
+  for (ApplicationCenter *ac : this->availableACs){
+    std::cout<< ac->getName() << " couldn't be reached without exceeding "
+                                "vaccine's lifetime\n";
+  }
 
 }
 

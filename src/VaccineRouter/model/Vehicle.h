@@ -25,14 +25,6 @@ private:
    */
   void addToPath(std::vector<Node *> path);
 
-  /**
-   * calculates the current path duration according to path distance and
-   * its velocity
-   * @param path
-   * @return the duration of the path
-   */
-  Time getPathDuration(std::vector<Node *> path) const;
-
 public:
   /**
    * constructor
@@ -56,6 +48,14 @@ public:
    * @return duration of the current path
    */
   Time *getPathDuration();
+
+  /**
+  * calculates the current path duration according to path distance and
+  * its velocity
+  * @param path
+  * @return the duration of the path
+  */
+  Time getPathDuration(std::vector<Node *> path) const;
 
   /**
    * attempts to insert a path in this vehicle

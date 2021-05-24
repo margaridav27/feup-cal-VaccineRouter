@@ -104,13 +104,13 @@ public:
    * returns adjacent edeges
    * @return
    */
-  const std::vector<Edge *> &getAdj() const;
+   std::vector<Edge *> &getAdj();
 
   /**
    *
    * @return true if node is visited, false otherwise
    */
-  bool wasVisited() const;
+  bool wasVisited();
 
   /**
    * sets variable visited to false

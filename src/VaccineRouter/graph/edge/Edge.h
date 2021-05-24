@@ -49,7 +49,7 @@ public:
      *
      * @return destination node
      */
-    Node *getDest() const;
+    Node *getDest();
 
 
 

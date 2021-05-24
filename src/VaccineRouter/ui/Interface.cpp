@@ -1,5 +1,6 @@
 #include "Interface.h"
 #include "../graph/GraphProcessor.h"
+#include "../graphviewer/graphViewer.h"
 #include <fstream>
 #include <sstream>
 
@@ -233,10 +234,11 @@ void Interface::analyseConnectivityMenu() {
 
     std::string mapFilename = availableCities.find(input)->second;
     Graph *graph = processGraph(mapFilename, false);
-    // TODO: display graph before being processed
+    Graph copy = *graph;
     graph->DFSConnectivity();
     graph->removeUnvisitedNodes();
-    // TODO: display graph after connectivity analysis
+
+   displayConnectivityAnalisis(&copy, graph);
 
     initialMenu();
 }

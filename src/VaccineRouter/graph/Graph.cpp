@@ -46,6 +46,7 @@ Node *Graph::findNode(unsigned int id) {
 }
 
 void Graph::DFSRecursive(Node *start) {
+  start->setVisited();
     for (Edge *edge : start->getAdj()) {
         if (!edge->getDest()->wasVisited())
             DFSRecursive(edge->getDest());

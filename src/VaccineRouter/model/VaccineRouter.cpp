@@ -216,7 +216,7 @@ void VaccineRouter::calculateRouteSingleSCSingleAC() {
     Vehicle *vehicle = nearestSC->getAvailableVehicle();
     nearestSC->assignAC(ac);
 
-    std::vector<Node *> path = dijkstra(graph, nearestSC->getNode(),
+    std::vector<Node *> path = AStar(graph, nearestSC->getNode(),
                                      ac->getNode());
 
     vehicle->setVehicleRoute(path, false); // false -> TW is not being taken into account
@@ -247,7 +247,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
         startingPoint = nextPoint;
         nextPoint = sc->findNextNearestAC(startingPoint);
     }
-    displayVehiclesPath(this);
+   // displayVehiclesPath(this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
@@ -326,6 +326,7 @@ void VaccineRouter::outputDataResults(){
 
   std::cout << "\n\n----- DATA RESULTS -----\n";
   std::cout << "\n\n----- STORAGE CENTERS -----\n";
+  int node = 0;
 
   for (StorageCenter *sc :this->SCs) {
     std::cout << sc;
@@ -339,6 +340,7 @@ void VaccineRouter::outputDataResults(){
       std::cout << "Path time duration: " << vehicle->getPathDuration() <<
           std::endl;
       for (Node *n : vehicle->getPath()) {
+        node++;
         if (getCenter(n) != -1)
           std::cout << getCenterName(n)<< " ";
         else
@@ -352,6 +354,8 @@ void VaccineRouter::outputDataResults(){
   for (ApplicationCenter *ac : this->selectedACs){
     std::cout << ac;
   }
+
+  std::cout <<"NODES : "<< node <<std::endl;
 
 }
 void VaccineRouter::setVaccineLifetime(std::string lifetime) {

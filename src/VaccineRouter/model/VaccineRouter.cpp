@@ -124,7 +124,6 @@ StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter
     return nearest;
 }
 
-//TODO what if path is empty? There isn't a possible route?
 bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
     Center *startingPoint = sc;
     Center *nextPoint = sc->findNextNearestAC(sc);
@@ -138,6 +137,7 @@ bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
 
         if (vehicle->setVehicleRoute(path, true)) {
             startingPoint = nextPoint;
+            startingPoint->setVisited();
             nextPoint = sc->findNextNearestAC(startingPoint);
             visited++;
         } else {
@@ -334,4 +334,30 @@ std::string VaccineRouter::getCenterName(Node *node) {
             return ac->getName();
         }
     }
+}
+
+void VaccineRouter::outputDataResults(){
+
+  std::cout << "\n\n----- DATA RESULTS -----\n";
+  for (StorageCenter *sc :this->SCs) {
+    std::cout << sc;
+
+    std::cout << "Path(s): \n";
+    for (Vehicle *vehicle : sc->getFleet()) {
+      if (vehicle->hasEmptyPath()) {
+        std::cout << "There were no distributions from this Center!\n";
+        break;
+      }
+      for (Node *n : vehicle->getPath()) {
+        if (getCenter(n) != -1)
+          std::cout << getCenterName(n)<< " ";
+      }
+      std::cout << "\n";
+    }
+  }
+
+  for (ApplicationCenter *ac : this->selectedACs){
+    std::cout << ac;
+  }
+
 }

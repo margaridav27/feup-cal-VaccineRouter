@@ -8,7 +8,9 @@
 #include "edge/Edge.h"
 #include "../utilities/Coordinates.h"
 
-
+/**
+ * class Graph
+ */
 class Graph {
 private:
     std::vector<Node *> nodeSet;
@@ -17,11 +19,11 @@ private:
     void DFSRecursive(Node *start);
 public:
     std::vector<Node *> getNodeSet();
-    
+
     bool addNode(unsigned int id, Coordinates coords);
     bool removeNode(unsigned int id);
     Node *findNode(unsigned int id);
-    
+
     bool addEdge(unsigned int sourceID, unsigned int destID, double weight);
     bool removeEdge(unsigned int sourceID, unsigned int destID);
 

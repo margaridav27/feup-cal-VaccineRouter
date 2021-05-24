@@ -1,5 +1,6 @@
 #include "ApplicationCenter.h"
 #include "Center.h"
+#include <fstream>
 
 #include <utility>
 
@@ -22,4 +23,11 @@ void ApplicationCenter::setVaccinesToReceive(unsigned int order) {
 bool ApplicationCenter::operator==(const ApplicationCenter *rhs) const {
     return this->node->getId() == rhs->getNode()->getId() &&
            name == rhs->getName();
+}
+std::ostream &operator<<(std::ostream &out,
+                                            ApplicationCenter * ac) {
+  out << "id : " << ac->getNode()->getId() << "  name: " << ac->getName()
+                                                                  + "  "
+                                                                    "vaccines: " << ac->getVaccinesToReceive() << std::endl;
+  return out;
 }

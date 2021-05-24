@@ -526,6 +526,8 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
         default:
             return;
     }
+
+    vaccineRouter->outputDataResults();
 }
 
 void Interface::selectSingleACMenu(const std::string &mapFilename) {

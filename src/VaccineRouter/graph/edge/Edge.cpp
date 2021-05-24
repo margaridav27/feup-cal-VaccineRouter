@@ -19,8 +19,4 @@ Node *Edge::getDest() const { return this->dest; }
 
 double Edge::getWeight() const { return this->weight; }
 
-double Edge::getCapacity() const { return this->capacity; }
-
-double Edge::getFlow() const { return this->flow; }
-
 double Edge::getCost() const { return this->cost; }

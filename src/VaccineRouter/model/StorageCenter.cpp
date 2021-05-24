@@ -3,6 +3,7 @@
 #include <vector>
 #include <queue>
 
+#include "VaccineRouter.h"
 #include "StorageCenter.h"
 
 StorageCenter::StorageCenter() : Center() {
@@ -14,20 +15,12 @@ StorageCenter::StorageCenter() : Center() {
 StorageCenter::StorageCenter(Node *Node, const std::string &name)
         : Center(Node, name) {
     this->vaccinesToDeliver = 0;
-    this->fleet.push_back(new Vehicle(Time(8, 0, 0)));
+    this->fleet.push_back(new Vehicle(Time(0, 30, 0)));
     this->optimalState = false;
 }
 
 void StorageCenter::addVehicle() {
-    this->fleet.push_back(new Vehicle(Time(8, 0, 0)));
-}
-
-bool StorageCenter::removeVehicle(Vehicle *vehicle) {
-    auto iter = std::find(this->fleet.begin(), this->fleet.end(), vehicle);
-    if (iter == this->fleet.end())
-        return false;
-    this->fleet.erase(iter);
-    return true;
+    this->fleet.push_back(new Vehicle(Time(0, 30, 0)));
 }
 
 const std::vector<Vehicle *> &StorageCenter::getFleet() { return this->fleet; }
@@ -48,7 +41,8 @@ bool StorageCenter::checkACsVisited() {
 
 unsigned int StorageCenter::getVaccinesToDeliver() const { return this->vaccinesToDeliver; }
 
-void StorageCenter::setVaccinesToDeliver(unsigned int order) { this->vaccinesToDeliver = order; }
+void StorageCenter::addVaccinesToDeliver(unsigned int order) {
+  this->vaccinesToDeliver += order; }
 
 bool StorageCenter::isOptimalState() const { return this->optimalState; }
 
@@ -90,4 +84,18 @@ ApplicationCenter *StorageCenter::findNextNearestAC(Center *startingPoint) const
 bool StorageCenter::operator==(const StorageCenter *rhs) const {
     return this->node->getId() == rhs->getNode()->getId() &&
            name == rhs->getName();
+}
+
+std::ostream &operator<<(std::ostream &out, StorageCenter *sc) {
+  out << "---------------------------------------------\n";
+  out << sc->getName() << std::endl << "Delivered " <<
+                                               sc->getVaccinesToDeliver() << std::endl;
+
+  if (!sc->getAssignedAC().empty()) {
+    out << "\n Assigned Application centers:\n";
+    for (ApplicationCenter *ac : sc->getAssignedAC()) {
+      out << "id: " << ac->getNode()->getId() << "  name: " << ac->getName()
+          << " - vaccines : " << ac->getVaccinesToReceive() << std::endl;
+    }
+  }
 }

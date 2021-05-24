@@ -1,6 +1,13 @@
 #include "Dijkstra.h"
 #include "../utilities/MutablePriorityQueue.h"
 
+/**
+ * Dijkstra algorithm
+ * @param graph to implement algorithm on
+ * @param orig starting node
+ * @param dest ending node
+ * @return the path resultant of the algorithm
+ */
 std::vector<Node *> dijkstra(Graph *graph, Node *orig, Node *dest) {
     for (Node *n : graph->getNodeSet()) {
         n->setPath(nullptr);
@@ -31,6 +38,13 @@ std::vector<Node *> dijkstra(Graph *graph, Node *orig, Node *dest) {
     return getPath(graph, orig, dest);
 }
 
+/**
+ * converts the path from o to d in the graph to a vector
+ * @param graph to find path
+ * @param o starting node
+ * @param d ending node
+ * @return vector of nodes that corresponds to the path
+ */
 std::vector<Node *> getPath(Graph *graph, Node *o, Node *d) {
     Node *aux = graph->findNode(d->getId());
     std::vector<Node *> path;

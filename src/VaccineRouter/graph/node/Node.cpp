@@ -44,19 +44,10 @@ double Node::getCost() const { return this->cost; }
 
 void Node::setCost(double cost) { this->cost = cost; }
 
-double Node::getEuclideanDist() const { return this->euclideanDist; }
-
-void Node::setEuclideanDist(double eDist) { this->euclideanDist = eDist; }
-
 const Coordinates &Node::getCoordinates() const { return coordinates; }
 
-void Node::setCoordinates(const Coordinates &coordinates) {
-    this->coordinates = coordinates;
-}
 
 const std::vector<Edge *> &Node::getAdj() const { return adj; }
-
-void Node::setAdj(const std::vector<Edge *> &adj) { this->adj = adj; }
 
 bool Node::wasVisited() const { return visited; }
 
@@ -82,9 +73,8 @@ double Node::calculateDist(Node *n) {
 
 bool Node::operator<(Node &node) const {
     if (this->dist == node.getDist())
-        return this->euclideanDist < node.euclideanDist;
+        return this->dist < node.dist;
     return this->dist < node.getDist();
 }
 
 bool Node::operator==(Node &n) const { return this->id == n.getId(); }
-

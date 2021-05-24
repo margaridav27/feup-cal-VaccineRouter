@@ -10,14 +10,6 @@ Vehicle::Vehicle(Time maxPathDuration) {
 
 std::vector<Node *> Vehicle::getPath() { return this->vPath; }
 
-Node *Vehicle::getNextNode() {
-    if (this->qPath.empty())
-        return nullptr;
-    Node *n = this->qPath.top();
-    this->qPath.pop();
-    return n;
-}
-
 Time Vehicle::getPathDuration(std::vector<Node *> path) const {
     Time duration(0, 0, 0);
 
@@ -39,8 +31,6 @@ void Vehicle::addToPath(std::vector<Node *> path) {
         this->vPath.insert(this->vPath.end(), path.begin() + 1, path.end());
 
 }
-
-void Vehicle::setSpeed(double speed) { this->speed = speed; }
 
 bool Vehicle::setVehicleRoute(const std::vector<Node *> &path, bool checkTW) {
     Time duration = getPathDuration(path);

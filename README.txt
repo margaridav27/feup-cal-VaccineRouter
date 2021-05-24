@@ -28,7 +28,9 @@ Instructions
     CLion IDE compilation advised
 
     1. Reload CMake Project
-    2. Run VaccineRouter
+    2. Run VaccineRouter*
     3. Following steps will be intuitive
 
     Consulte the report if needed - step by step instructions
+
+* DO NOT RUN WITH "src | Debug", RUN WITH "VaccineRouter | Debug"

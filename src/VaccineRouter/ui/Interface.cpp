@@ -560,12 +560,11 @@ void Interface::selectSingleOrMultipleACMenu(const std::string &mapFilename) {
 
   switch (selectSingleOrMultipleACMenuInput) {
   case 1:
-    // displayACsVisually(this->vaccineRouter);
+    displayACsVisually(this->vaccineRouter);
     selectSingleACMenu(mapFilename);
     break;
   case 2:
-    // TODO uncomment this
-    // displayACsVisually(this->vaccineRouter);
+    displayACsVisually(this->vaccineRouter);
     selectMultipleACMenu(mapFilename);
     break;
   case 3:

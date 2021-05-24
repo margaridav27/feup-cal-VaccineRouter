@@ -247,7 +247,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
         startingPoint = nextPoint;
         nextPoint = sc->findNextNearestAC(startingPoint);
     }
-   // displayVehiclesPath(this);
+   displayVehiclesPath(this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
@@ -354,8 +354,6 @@ void VaccineRouter::outputDataResults(){
   for (ApplicationCenter *ac : this->selectedACs){
     std::cout << ac;
   }
-
-  std::cout <<"NODES : "<< node <<std::endl;
 
 }
 void VaccineRouter::setVaccineLifetime(std::string lifetime) {

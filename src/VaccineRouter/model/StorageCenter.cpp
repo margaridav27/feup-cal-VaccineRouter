@@ -117,7 +117,8 @@ void StorageCenter::removeAC(Center *c) {
 std::ostream &operator<<(std::ostream &out, StorageCenter *sc) {
   out << "---------------------------------------------\n";
   out << sc->getName() << std::endl
-      << "Delivered " << sc->getVaccinesToDeliver() << std::endl;
+      << "Vaccines assigned to deliver: " << sc->getVaccinesToDeliver() <<
+      std::endl;
 
   if (!sc->getAssignedAC().empty()) {
     out << "\n Assigned Application centers:\n";

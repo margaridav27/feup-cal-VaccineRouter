@@ -314,7 +314,7 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
 
   if (!unattainableAc.empty())
     std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
-  for (ApplicationCenter *ac : this->availableACs){
+  for (ApplicationCenter *ac : this->selectedACs){
     std::cout<< ac->getName() << " couldn't be reached without exceeding "
                                 "vaccine's lifetime\n";
   }

@@ -12,7 +12,7 @@ GVNode getNodeID(std::map<Node *,GVNode> GVNodes, Node *n) {
     return itr->second;
 }
 
-void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph){
+void displayConnectivityAnalysis(Graph *graph, Graph *strongGraph){
   std::map<Node *, GVNode> GVNodes;
   std::map<Edge *, GVEdge> GVEdges;
 
@@ -35,7 +35,10 @@ void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph){
                                 GraphViewer::Edge::EdgeType::UNDIRECTED);
     }
   }
-  int xShift = 6000;
+
+  GVNodes.clear();
+  GVEdges.clear();
+  int xShift = 10000;
   for (Node *n :strongGraph->getNodeSet()) {
     GVNode &node =
         gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX() + xShift,

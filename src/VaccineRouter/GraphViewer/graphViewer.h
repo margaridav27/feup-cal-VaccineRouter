@@ -25,7 +25,7 @@ void displayACsVisually(VaccineRouter *vaccineRouter);
  * @param graph
  * @param strongGraph
  */
-void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph);
+void displayConnectivityAnalysis(Graph *graph, Graph *strongGraph);
 
 /**
  *

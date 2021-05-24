@@ -5,38 +5,37 @@
  * class Coordinates
  */
 class Coordinates {
-  double x, y;
+    double x, y;
 
 public:
-  /**
-   * constructor
-   * @param x
-   * @param y
-   */
-  Coordinates(double x, double y);
-  /**
-   * constructor
-   * @param c
-   */
-  Coordinates(Coordinates *c);
+    /**
+     * constructor
+     * @param x
+     * @param y
+     */
+    Coordinates(double x, double y);
 
-  /**
-   *
-   * @return coordinate x
-   */
-  double getX() const;
-  /**
-   *
-   * @return coordinate y
-   */
-  double getY() const;
+    /**
+     * constructor
+     * @param c
+     */
+    Coordinates(Coordinates *c);
 
-  /**
-   *
-   * @param c
-   * @return the distance between the self coordinates and the c coordinates
-   */
-  double calculateEuclideanDistance(Coordinates c) const;
+    /**
+     * @return x coordinate
+     */
+    double getX() const;
+
+    /**
+     * @return y coordinate
+     */
+    double getY() const;
+
+    /**
+     * @param c
+     * @return the distance between the self coordinates and the c coordinates
+     */
+    double calculateEuclideanDistance(Coordinates c) const;
 };
 
 #endif // SRC_COORDINATES_H

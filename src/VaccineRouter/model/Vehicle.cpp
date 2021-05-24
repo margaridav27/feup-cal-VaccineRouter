@@ -1,21 +1,25 @@
 #include "Vehicle.h"
 
 
-Vehicle::Vehicle() {
-  this->vPath = std::vector<Node *>();
-  this->qPath = std::stack<Node *>();
-  this->pathDuration = Time(0, 0, 0);
-  this->maxPathDuration = Time(3,0,0);
-}
+Vehicle::Vehicle() :
+        vPath(std::vector<Node *>()),
+        pathDuration(Time(0, 0, 0)),
+        maxPathDuration(Time(0, 0, 0)) {}
 
-Vehicle::Vehicle(Time maxPathDuration) {
-    this->vPath = std::vector<Node *>();
-    this->qPath = std::stack<Node *>();
-    this->pathDuration = Time(0, 0, 0);
-    this->maxPathDuration = maxPathDuration;
-}
+Vehicle::Vehicle(Time maxPathDuration) :
+        vPath(std::vector<Node *>()),
+        pathDuration(Time(0, 0, 0)),
+        maxPathDuration(maxPathDuration) {}
 
 std::vector<Node *> Vehicle::getPath() { return this->vPath; }
+
+void Vehicle::setPath(std::vector<Node *> oldPath) {
+    this->vPath.swap(oldPath);
+}
+
+void Vehicle::setMaxPathDuration(const Time &maxPathDuration) {
+    Vehicle::maxPathDuration = maxPathDuration;
+}
 
 Time Vehicle::getPathDuration(std::vector<Node *> path) const {
     Time duration(0, 0, 0);
@@ -26,10 +30,12 @@ Time Vehicle::getPathDuration(std::vector<Node *> path) const {
         Coordinates coord1 = node1->getCoordinates();
         Coordinates coord2 = node2->getCoordinates();
         double dist = coord1.calculateEuclideanDistance(coord2);
-        duration += Time((dist/100) / this->speed);
+        duration += Time((dist / 100) / this->speed);
     }
     return duration;
 }
+
+Time *Vehicle::getPathDuration() { return &this->pathDuration; }
 
 void Vehicle::addToPath(std::vector<Node *> path) {
     if (hasEmptyPath())
@@ -38,6 +44,8 @@ void Vehicle::addToPath(std::vector<Node *> path) {
         this->vPath.insert(this->vPath.end(), path.begin() + 1, path.end());
 
 }
+
+bool Vehicle::hasEmptyPath() const { return (this->vPath.empty()); }
 
 bool Vehicle::setVehicleRoute(const std::vector<Node *> &path, bool checkTW) {
     Time duration = getPathDuration(path);
@@ -51,8 +59,6 @@ bool Vehicle::setVehicleRoute(const std::vector<Node *> &path, bool checkTW) {
     return true;
 }
 
-bool Vehicle::hasEmptyPath() const { return (this->vPath.empty()); }
-
 bool Vehicle::operator==(const Vehicle &rhs) const {
     if (this->vPath.size() != rhs.vPath.size())
         return this->speed == rhs.speed;
@@ -62,13 +68,3 @@ bool Vehicle::operator==(const Vehicle &rhs) const {
     }
     return this->speed == rhs.speed;
 }
-
-void Vehicle::setPath(std::vector<Node *> oldPath) {
-    this->vPath.swap(oldPath);
-}
-
-void Vehicle::setMaxPathDuration(const Time &maxPathDuration) {
-  Vehicle::maxPathDuration = maxPathDuration;
-}
-
-Time *Vehicle::getPathDuration() { return &this->pathDuration; }

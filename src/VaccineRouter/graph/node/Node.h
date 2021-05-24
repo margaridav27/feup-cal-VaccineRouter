@@ -13,156 +13,58 @@ class Edge;
  */
 class Node {
 private:
-  unsigned int id;
-  Coordinates coordinates;
-  std::vector<Edge *> adj;
-  bool visited;
-  double dist;
-  Node *path;
-  double cost{};
-  int queueIndex = 0;
+    unsigned int id;
+    Coordinates coordinates;
+    std::vector<Edge *> adj;
+    bool visited;
+    double dist;
+    Node *path;
+    double cost{};
+    int queueIndex = 0;
 
 public:
-  /**
-   * constructor
-   */
-  Node();
+    Node();
+    Node(unsigned int id);
+    Node(unsigned int id, const Coordinates &coordinates);
 
-  /**
-   * constructor
-   * @param id
-   */
-  Node(unsigned int id);
+    unsigned int getId() const;
 
-  /**
-   * constructor
-   * @param id
-   * @param coordinates
-   */
-  Node(unsigned int id, const Coordinates &coordinates);
+    double getDist() const;
+    void setDist(double dist);
 
-  /**
-   *
-   * @return node's ID
-   */
-  unsigned int getId() const;
+    int getQueueIndex() const;
+    void setQueueIndex(int index);
 
-  /**
-   *
-   * @return node's distance
-   */
-  double getDist() const;
+    Node *getPath() const;
+    void setPath(Node *n);
 
-  /**
-   * sets node's distance to dist
-   * @param dist
-   */
-  void setDist(double dist);
+    const Coordinates &getCoordinates() const;
 
-  /**
-   *
-   * @return index in the mutable queue
-   */
-  int getQueueIndex() const;
+    double getCost() const;
+    void setCost(double cost);
 
-  /**
-   * sets queue index to index
-   * @param index
-   */
-  void setQueueIndex(int index);
+    std::vector<Edge *> &getAdj();
 
-  /**
-   *
-   * @return incoming node
-   */
-  Node *getPath() const;
+    bool wasVisited();
+    void setUnvisited();
+    void setVisited();
 
-  /**
-   * sets incoming node
-   * @param n
-   */
-  void setPath(Node *n);
+    void addEdge(Node *dest, double weight);
 
-  /**
-   *
-   * @return node's coordinates
-   */
-  const Coordinates &getCoordinates() const;
-  /**
-   *
-   * @return node's cost
-   */
-  double getCost() const;
+    bool removeNodeTo(Node *node);
 
-  /**
-   * sets cost value
-   * @param cost
-   */
-  void setCost(double cost);
+    double calculateDist(Node *n);
 
-  /**
-   * returns adjacent edeges
-   * @return
-   */
-   std::vector<Edge *> &getAdj();
-
-  /**
-   *
-   * @return true if node is visited, false otherwise
-   */
-  bool wasVisited();
-
-  /**
-   * sets variable visited to false
-   */
-  void setUnvisited();
-
-  /**
-   * sets variable visited to true
-   */
-  void setVisited();
-
-  /**
-   * adds new edge to the adjacent edges vector
-   * @param dest
-   * @param weight is the distance between the current node and the dest node
-   */
-  void addEdge(Node *dest, double weight);
-
-  /**
-   * removes connections to node node
-   * @param node
-   * @return
-   */
-  bool removeNodeTo(Node *node);
-
-  /**
-   * calculates distance between self and node n
-   * @param n
-   * @return
-   */
-  double calculateDist(Node *n);
-
-  /**
-   *
-   * @param n
-   * @return true if self distance is minor than n distance
-   */
-  bool operator<(Node &n) const;
-  /**
-   *
-   * @param n
-   * @return true if equal to self, false otherwise
-   */
-  bool operator==(Node &n) const;
+    bool operator<(Node &n) const;
+    bool operator==(Node &n) const;
 };
 
 struct NodeHash {
-  bool operator()(const Node *n1, const Node *n2) const {
-    return n1->getId() == n2->getId();
-  }
+    bool operator()(const Node *n1, const Node *n2) const {
+        return n1->getId() == n2->getId();
+    }
 
-  int operator()(const Node *n) const { return n->getId(); }
+    int operator()(const Node *n) const { return n->getId(); }
 };
 
 #endif // VACCINEROUTER_NODE_H

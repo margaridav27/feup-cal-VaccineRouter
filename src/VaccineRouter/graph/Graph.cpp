@@ -46,16 +46,16 @@ Node *Graph::findNode(unsigned int id) {
 }
 
 void Graph::DFSRecursive(Node *start) {
-  start->setVisited();
+    start->setVisited();
     for (Edge *edge : start->getAdj()) {
         if (!edge->getDest()->wasVisited())
             DFSRecursive(edge->getDest());
     }
 }
 
-void Graph::DFSConnectivity(Node * n) {
-  if (!n->wasVisited())
-    DFSRecursive(n);
+void Graph::DFSConnectivity(Node *start) {
+    if (!start->wasVisited())
+        DFSRecursive(start);
 }
 
 void Graph::removeUnvisitedNodes() {
@@ -68,9 +68,8 @@ void Graph::removeUnvisitedNodes() {
             removeNode((*itNode)->getId());
             itNode--;
             printf("NOT VISITED NODE1\n");
-        }
-        else {
-          printf("VISITED\n");
+        } else {
+            printf("VISITED\n");
         }
     }
 
@@ -81,7 +80,7 @@ void Graph::removeUnvisitedNodes() {
                 removeEdge(node->getId(), (*itEdge)->getDest()->getId());
                 removeNode((*itEdge)->getDest()->getId());
                 itEdge--;
-              printf("ERASED NODE1\n");
+                printf("ERASED NODE1\n");
 
             }
         }

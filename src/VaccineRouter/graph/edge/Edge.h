@@ -16,48 +16,19 @@ private:
     Node *orig;
     Node *dest;
     double weight;
-    double capacity;
     double cost;
     double flow;
 public:
-  /**
-   * constructor
-   */
     Edge();
-
-    /**
-     * constructor
-     * @param source
-     * @param dest
-     * @param weight
-     */
     Edge(Node *source, Node *dest, double weight);
 
-    /**
-     *
-     * @return edge's weight - distance between the two nodes it connects
-     */
     double getWeight() const;
 
-    /**
-     *
-     * @return origin node
-     */
+    double getCost() const;
+
     Node *getOrig() const;
 
-    /**
-     *
-     * @return destination node
-     */
     Node *getDest();
-
-
-
-    /**
-     * used in A* algorithm
-     * @return cost
-     */
-    double getCost() const;
 };
 
 

@@ -19,7 +19,7 @@ using GVEdge = GraphViewer::Edge;
 void displayACsVisually(VaccineRouter *vaccineRouter);
 
 /**
- * Displays pre-processed graph and pos-processed graph
+ * displays pre-processed graph and pos-processed graph
  * processing consists in removing all unattainable nodes from the graph,
  * creating a strongly connected graph
  * @param graph
@@ -28,12 +28,11 @@ void displayACsVisually(VaccineRouter *vaccineRouter);
 void displayConnectivityAnalysis(Graph *graph, Graph *strongGraph);
 
 /**
- *
  * @param GVNodes
  * @param n
- * @return GVNode correspondant to the node n
+ * @return GVNode correspondent to the node n
  */
-GVNode getNodeID(std::map<Node*, GVNode> GVNodes, Node * n);
+GVNode getNodeID(std::map<Node *, GVNode> GVNodes, Node *n);
 
 /**
  * displays the calculated route visually

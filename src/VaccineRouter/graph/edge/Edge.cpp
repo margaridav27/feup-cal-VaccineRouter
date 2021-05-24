@@ -15,7 +15,7 @@ Edge::Edge(Node *source, Node *dest, double weight) :
 
 Node *Edge::getOrig() const { return this->orig; }
 
-Node *Edge::getDest()  { return this->dest; }
+Node *Edge::getDest() { return this->dest; }
 
 double Edge::getWeight() const { return this->weight; }
 

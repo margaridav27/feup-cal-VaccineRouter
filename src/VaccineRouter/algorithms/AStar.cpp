@@ -4,7 +4,6 @@
 #include <algorithm>
 #include <vector>
 
-
 std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest) {
     for (Node *n : graph->getNodeSet()) {
         n->setUnvisited();

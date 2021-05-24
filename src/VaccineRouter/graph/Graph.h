@@ -17,6 +17,7 @@ private:
     std::unordered_map<unsigned int, Node *> nodeHashMap;
 
     void DFSRecursive(Node *start);
+
 public:
     std::vector<Node *> getNodeSet();
 
@@ -27,7 +28,7 @@ public:
     bool addEdge(unsigned int sourceID, unsigned int destID, double weight);
     bool removeEdge(unsigned int sourceID, unsigned int destID);
 
-    void DFSConnectivity(Node *n);
+    void DFSConnectivity(Node *start);
     void removeUnvisitedNodes();
 };
 

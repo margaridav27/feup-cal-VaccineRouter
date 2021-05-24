@@ -1,21 +1,47 @@
 #include "VaccineRouter.h"
-#include "../graphviewer/graphViewer.h"
+#include "../GraphViewer/graphViewer.h"
 #include "../algorithms/AStar.h"
 #include "../graph/GraphProcessor.h"
 #include <fstream>
 #include <list>
 
 VaccineRouter::VaccineRouter()
-        : vaccineLifeTime("03:00:00"), // comback: maybe change this default value?
+        : vaccineLifeTime("03:00:00"),
           graph(new Graph()) {}
 
+int VaccineRouter::getCenter(Node *node) {
+    for (StorageCenter *sc: this->SCs) {
+        if (*sc->getNode() == *node) {
+            return 0;
+        }
+    }
+    for (ApplicationCenter *ac: this->availableACs) {
+        if (*ac->getNode() == *node) {
+            return 1;
+        }
+    }
+    return -1;
+}
+
+std::string VaccineRouter::getCenterName(Node *node) {
+    for (StorageCenter *sc : this->SCs) {
+        if (sc->getNode() == node) {
+            return sc->getName();
+        }
+    }
+    for (ApplicationCenter *ac : this->availableACs) {
+        if (ac->getNode() == node) {
+            return ac->getName();
+        }
+    }
+    return "";
+}
 
 const std::vector<StorageCenter *> &VaccineRouter::getSCs() const { return this->SCs; }
 
 const std::vector<ApplicationCenter *> &VaccineRouter::getSelectedACs() const { return this->selectedACs; }
 
-const std::vector<ApplicationCenter *> &VaccineRouter::getAvailableACs()
-const { return this->availableACs; }
+const std::vector<ApplicationCenter *> &VaccineRouter::getAvailableACs() const { return this->availableACs; }
 
 Graph *VaccineRouter::getGraph() const { return this->graph; }
 
@@ -23,11 +49,18 @@ void VaccineRouter::setGraph(Graph *graph) { this->graph = graph; }
 
 void VaccineRouter::setCityName(std::string cityName) { this->cityName = std::move(cityName); }
 
+void VaccineRouter::setVaccineLifetime(std::string lifetime) {
+    this->vaccineLifeTime = Time(lifetime);
+    for (StorageCenter *sc : this->SCs) {
+        sc->setVaccineLifetime(this->vaccineLifeTime);
+    }
+}
+
 void VaccineRouter::addStorageCenter(StorageCenter *sc) { this->SCs.push_back(sc); }
 
-void VaccineRouter::selectApplicationCenter(ApplicationCenter *ac) { this->selectedACs.push_back(ac); }
-
 void VaccineRouter::addApplicationCenter(ApplicationCenter *ac) { this->availableACs.push_back(ac); }
+
+void VaccineRouter::selectApplicationCenter(ApplicationCenter *ac) { this->selectedACs.push_back(ac); }
 
 void VaccineRouter::selectMap(const std::string &mapFilename) {
     this->graph = processGraph(mapFilename, true);
@@ -73,11 +106,6 @@ bool VaccineRouter::setUpACS(const std::string &mapFilename) {
     return true;
 }
 
-
-
-// ----------------------------------------------------------------------------------------------
-
-// finds nearest SC considering all selectedACs
 StorageCenter *VaccineRouter::findNearestSC() {
     auto cmp = [](const std::pair<StorageCenter *, double> &a,
                   const std::pair<StorageCenter *, double> &b) {
@@ -99,7 +127,6 @@ StorageCenter *VaccineRouter::findNearestSC() {
     return dists.top().first;
 }
 
-// does not take into account whether the SC is in optimal state or not -> will return always the same if given the same AC
 StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter) {
     double minDist = DOUBLE_MAX;
     double dist = 0;
@@ -135,15 +162,14 @@ bool VaccineRouter::calculateSCRoute(StorageCenter *sc) {
             startingPoint->setVisited();
             nextPoint = sc->findNextNearestAC(startingPoint);
             visited++;
-        } else if(vehicle->getPathDuration(path)> this->vaccineLifeTime){
-          sc->removeAC(nextPoint);
-          nextPoint = sc->findNextNearestAC(startingPoint);
-        }
-          else {
+        } else if (vehicle->getPathDuration(path) > this->vaccineLifeTime) {
+            sc->removeAC(nextPoint);
+            nextPoint = sc->findNextNearestAC(startingPoint);
+        } else {
             if (!vehicle->hasEmptyPath())
-              sc->setOptimalState();
-          }
+                sc->setOptimalState();
         }
+    }
 
 
     return (visited == sc->getAssignedAC().size());
@@ -212,8 +238,6 @@ void VaccineRouter::deleteDispatchedACs() {
     }
 }
 
-// ----------------------------------------------------------------------------------------------
-
 void VaccineRouter::calculateRouteSingleSCSingleAC() {
     ApplicationCenter *ac = selectedACs[0]; // single AC -> we can assume it
     // corresponds to index 0
@@ -252,7 +276,7 @@ void VaccineRouter::calculateRouteSingleSCMultipleAC() {
         startingPoint = nextPoint;
         nextPoint = sc->findNextNearestAC(startingPoint);
     }
-   displayVehiclesPath(this);
+    displayVehiclesPath(this);
 }
 
 void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
@@ -275,27 +299,26 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
         if (vehicle->setVehicleRoute(path, true)) {
             startingPoint = nextPoint;
             nextPoint = sc->findNextNearestAC(startingPoint);
-        } else if (vehicle->getPathDuration(path) > this->vaccineLifeTime){//if AC can never be reached
-          sc->removeAC(nextPoint); //remove AC from assigned SC
-          unattainableAc.push_back(nextPoint);
-          nextPoint = sc->findNextNearestAC(startingPoint);
-        }
-        else {sc->addVehicle();}
+        } else if (vehicle->getPathDuration(path) > this->vaccineLifeTime) {//if AC can never be reached
+            sc->removeAC(nextPoint); //remove AC from assigned SC
+            unattainableAc.push_back(nextPoint);
+            nextPoint = sc->findNextNearestAC(startingPoint);
+        } else { sc->addVehicle(); }
     }
 
     displayVehiclesPath(this);
     if (!unattainableAc.empty())
-      std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
-    for (Center * c : unattainableAc){
-      std::cout<< c->getName() << " couldn't be reached without exceeding "
-                                   "vaccine's lifetime\n";
+        std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
+    for (Center *c : unattainableAc) {
+        std::cout << c->getName() << " couldn't be reached without exceeding "
+                                     "vaccine's lifetime\n";
     }
 }
 
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
-  std::vector<Center *> unattainableAc;
+    std::vector<Center *> unattainableAc;
 
-  // assign selectedACs to SCs
+    // assign selectedACs to SCs
     for (ApplicationCenter *ac : this->selectedACs) {
         StorageCenter *sc = findNearestSC(ac);
         sc->assignAC(ac);
@@ -312,80 +335,44 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     handleACsNotVisited();
     displayVehiclesPath(this);
 
-  if (!unattainableAc.empty())
-    std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
-  for (ApplicationCenter *ac : this->selectedACs){
-    std::cout<< ac->getName() << " couldn't be reached without exceeding "
-                                "vaccine's lifetime\n";
-  }
+    if (!unattainableAc.empty())
+        std::cout << "\n\n -----------UNATTAINABLE ACs-----------\n";
+    for (ApplicationCenter *ac : this->selectedACs) {
+        std::cout << ac->getName() << " couldn't be reached without exceeding "
+                                      "vaccine's lifetime\n";
+    }
 
 }
 
-int VaccineRouter::getCenter(Node *node) {
-    for (StorageCenter *sc: this->SCs) {
-        if (*sc->getNode() == *node) {
-            return 0;
+void VaccineRouter::outputDataResults() {
+    std::cout << "\n\n----- DATA RESULTS -----\n";
+    std::cout << "\n\n----- STORAGE CENTERS -----\n";
+    int node = 0;
+
+    for (StorageCenter *sc :this->SCs) {
+        std::cout << sc;
+
+        std::cout << "Path(s): \n";
+        for (Vehicle *vehicle : sc->getFleet()) {
+            if (vehicle->hasEmptyPath()) {
+                std::cout << "There were no distributions from this Center!\n";
+                break;
+            }
+            std::cout << "Path time duration: " << vehicle->getPathDuration() <<
+                      std::endl;
+            for (Node *n : vehicle->getPath()) {
+                node++;
+                if (getCenter(n) != -1)
+                    std::cout << getCenterName(n) << " ";
+                else
+                    std::cout << n->getId() << " ";
+            }
+            std::cout << "\n";
         }
     }
-    for (ApplicationCenter *ac: this->availableACs) {
-        if (*ac->getNode() == *node) {
-            return 1;
-        }
+
+    std::cout << "\n\n----- APPLICATION CENTERS -----\n";
+    for (ApplicationCenter *ac : this->selectedACs) {
+        std::cout << ac;
     }
-    return -1;
-}
-
-std::string VaccineRouter::getCenterName(Node *node) {
-    for (StorageCenter *sc : this->SCs) {
-        if (sc->getNode() == node) {
-            return sc->getName();
-        }
-    }
-    for (ApplicationCenter *ac : this->availableACs) {
-        if (ac->getNode() == node) {
-            return ac->getName();
-        }
-    }
-}
-
-void VaccineRouter::outputDataResults(){
-
-  std::cout << "\n\n----- DATA RESULTS -----\n";
-  std::cout << "\n\n----- STORAGE CENTERS -----\n";
-  int node = 0;
-
-  for (StorageCenter *sc :this->SCs) {
-    std::cout << sc;
-
-    std::cout << "Path(s): \n";
-    for (Vehicle *vehicle : sc->getFleet()) {
-      if (vehicle->hasEmptyPath()) {
-        std::cout << "There were no distributions from this Center!\n";
-        break;
-      }
-      std::cout << "Path time duration: " << vehicle->getPathDuration() <<
-          std::endl;
-      for (Node *n : vehicle->getPath()) {
-        node++;
-        if (getCenter(n) != -1)
-          std::cout << getCenterName(n)<< " ";
-        else
-          std::cout << n->getId() << " ";
-      }
-      std::cout << "\n";
-    }
-  }
-
-  std::cout << "\n\n----- APPLICATION CENTERS -----\n";
-  for (ApplicationCenter *ac : this->selectedACs){
-    std::cout << ac;
-  }
-
-}
-void VaccineRouter::setVaccineLifetime(std::string lifetime) {
-  this->vaccineLifeTime =  Time(lifetime);
-
-  for (StorageCenter *sc : this->SCs){
-    sc->setVaccineLifetime(this->vaccineLifeTime);
-  }
 }

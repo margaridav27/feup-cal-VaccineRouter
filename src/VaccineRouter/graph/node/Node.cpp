@@ -66,9 +66,7 @@ bool Node::removeNodeTo(Node *node) {
     return false;
 }
 
-double Node::calculateDist(Node *n) {
-    return this->coordinates.calculateEuclideanDistance(n->getCoordinates());
-}
+double Node::calculateDist(Node *n) { return this->coordinates.calculateEuclideanDistance(n->getCoordinates()); }
 
 bool Node::operator<(Node &node) const {
     if (this->dist == node.getDist())

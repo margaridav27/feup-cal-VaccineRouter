@@ -42,6 +42,7 @@ private:
 public:
     Interface();
     void initInterface();
+    bool checkTimeValidity(std::string time);
 };
 
 

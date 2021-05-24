@@ -57,11 +57,6 @@ public:
   VaccineRouter();
 
   /**
-   * sets the parameter vaccineLifeTime
-   * @param vaccineLifeTime
-   */
-  VaccineRouter(Time vaccineLifeTime);
-  /**
    *
    * @return graph
    */
@@ -77,6 +72,12 @@ public:
    * @param cityName
    */
   void setCityName(std::string cityName);
+
+  /**
+   * sets the parameter vaccineLifetime
+   * @param lifetime
+   */
+  void setVaccineLifetime(std::string lifetime);
 
   /**
    *
@@ -147,12 +148,6 @@ public:
    * @return
    */
   bool setUpACS(const std::string &basicString);
-
-  /**
-   *
-   * @return vaccineLifeTime
-   */
-  Time getVaccineLifeTime() const;
 
   /**
    * calculates, with A* algorithm, the route from a SC to an AC

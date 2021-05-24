@@ -1,18 +1,14 @@
 #include "VaccineRouter.h"
-#include "../GraphViewer/graphViewer.h"
+#include "../graphviewer/graphViewer.h"
 #include "../algorithms/AStar.h"
-#include "../algorithms/Dijkstra.h"
 #include "../graph/GraphProcessor.h"
 #include <fstream>
 #include <list>
-#include <utility>
 
 VaccineRouter::VaccineRouter()
         : vaccineLifeTime("03:00:00"), // comback: maybe change this default value?
           graph(new Graph()) {}
 
-VaccineRouter::VaccineRouter(Time vaccineLifeTime)
-        : vaccineLifeTime(vaccineLifeTime), graph(new Graph()) {}
 
 const std::vector<StorageCenter *> &VaccineRouter::getSCs() const { return this->SCs; }
 
@@ -50,7 +46,7 @@ bool VaccineRouter::setUpSCs(const std::string &mapFilename) {
     unsigned int id;
     std::string name;
     while (istream >> id >> name) {
-        auto *newSC = new StorageCenter(this->graph->findNode(id), name);
+        auto *newSC = new StorageCenter(this->graph->findNode(id), name, vaccineLifeTime);
         addStorageCenter(newSC);
     }
 
@@ -78,7 +74,6 @@ bool VaccineRouter::setUpACS(const std::string &mapFilename) {
 }
 
 
-Time VaccineRouter::getVaccineLifeTime() const { return this->vaccineLifeTime; }
 
 // ----------------------------------------------------------------------------------------------
 
@@ -108,7 +103,7 @@ StorageCenter *VaccineRouter::findNearestSC() {
 StorageCenter *VaccineRouter::findNearestSC(ApplicationCenter *applicationCenter) {
     double minDist = DOUBLE_MAX;
     double dist = 0;
-    auto *nearest = new StorageCenter();
+    StorageCenter *nearest = nullptr;
 
     Coordinates ACCoords = applicationCenter->getNode()->getCoordinates();
 
@@ -281,7 +276,6 @@ void VaccineRouter::calculateRouteSingleSCMultipleACWithTW() {
 }
 
 void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
-    std::list<std::thread *> threadList;
     // assign selectedACs to SCs
     for (ApplicationCenter *ac : this->selectedACs) {
         StorageCenter *sc = findNearestSC(ac);
@@ -291,16 +285,8 @@ void VaccineRouter::calculateRouteMultipleSCMultipleACWithTW() {
     // iterate over SCs to calculate its optimal route -> multi-threaded function
     for (StorageCenter *sc : this->SCs) {
         if (sc->getAssignedAC().empty()) continue;
-        // std::thread thread([&]() {
         calculateSCRoute(sc);
-        //    threadList.push_back(&thread);
-        //    thread.join();
-        //});
     }
-    /* while (!threadList.empty()) {
-         threadList.back()->join();
-         threadList.pop_back();
-     }*/
 
     // handles the selectedACs that could not fit in its optimally assigned SC route
     deleteDispatchedACs();
@@ -350,9 +336,13 @@ void VaccineRouter::outputDataResults(){
         std::cout << "There were no distributions from this Center!\n";
         break;
       }
+      std::cout << "Path time duration: " << vehicle->getPathDuration() <<
+          std::endl;
       for (Node *n : vehicle->getPath()) {
         if (getCenter(n) != -1)
           std::cout << getCenterName(n)<< " ";
+        else
+          std::cout << n->getId() << " ";
       }
       std::cout << "\n";
     }
@@ -363,4 +353,11 @@ void VaccineRouter::outputDataResults(){
     std::cout << ac;
   }
 
+}
+void VaccineRouter::setVaccineLifetime(std::string lifetime) {
+  this->vaccineLifeTime =  Time(lifetime);
+
+  for (StorageCenter *sc : this->SCs){
+    sc->setVaccineLifetime(this->vaccineLifeTime);
+  }
 }

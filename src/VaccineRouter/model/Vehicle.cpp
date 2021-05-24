@@ -1,5 +1,12 @@
 #include "Vehicle.h"
-#include <algorithm>
+
+
+Vehicle::Vehicle() {
+  this->vPath = std::vector<Node *>();
+  this->qPath = std::stack<Node *>();
+  this->pathDuration = Time(0, 0, 0);
+  this->maxPathDuration = Time(3,0,0);
+}
 
 Vehicle::Vehicle(Time maxPathDuration) {
     this->vPath = std::vector<Node *>();
@@ -19,7 +26,7 @@ Time Vehicle::getPathDuration(std::vector<Node *> path) const {
         Coordinates coord1 = node1->getCoordinates();
         Coordinates coord2 = node2->getCoordinates();
         double dist = coord1.calculateEuclideanDistance(coord2);
-        duration += Time((dist / 1000) / this->speed);
+        duration += Time((dist/100) / this->speed);
     }
     return duration;
 }
@@ -59,3 +66,9 @@ bool Vehicle::operator==(const Vehicle &rhs) const {
 void Vehicle::setPath(std::vector<Node *> oldPath) {
     this->vPath.swap(oldPath);
 }
+
+void Vehicle::setMaxPathDuration(const Time &maxPathDuration) {
+  Vehicle::maxPathDuration = maxPathDuration;
+}
+
+Time *Vehicle::getPathDuration() { return &this->pathDuration; }

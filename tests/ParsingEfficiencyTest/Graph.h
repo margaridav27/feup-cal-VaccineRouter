@@ -112,14 +112,14 @@ public:
 
     // Fp06 - single source
     void unweightedShortestPath(const T &orig);
-    void dijkstraShortestPath(const T &s);      //TODO...
-    void bellmanFordShortestPath(const T &s);   //TODO...
+    void dijkstraShortestPath(const T &s);
+    void bellmanFordShortestPath(const T &s);
     std::vector<T> getPath(const T &origin, const T &dest) const;
     bool allVisited();
 
     // Fp06 - all pairs
-    void floydWarshallShortestPath();   //TODO...
-    std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;   //TODO...
+    void floydWarshallShortestPath();
+    std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;
 
 };
 

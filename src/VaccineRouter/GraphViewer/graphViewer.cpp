@@ -17,6 +17,48 @@ GVNode getNodeID(std::map<Node *,GVNode> GVNodes, Node *n) {
     return itr->second;
 }
 
+
+void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph){
+  std::map<Node *, GVNode> GVNodes;
+  std::map<Edge *, GVEdge> GVEdges;
+
+  int idNode = 0;
+  int idEdge = 0;
+  GraphViewer gv;
+  gv.createWindow();
+
+  for (Node *n :graph->getNodeSet()) {
+    GVNode &node =
+        gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX(),
+                                          n->getCoordinates().getY()));
+    GVNodes.insert(std::pair<Node *, GVNode>(n, node));
+  }
+  for (Node *n : graph->getNodeSet()) {
+    for (Edge *e : n->getAdj()) {
+      GVNode ixOrig = getNodeID(GVNodes, e->getOrig());
+      GVNode ixDest = getNodeID(GVNodes, e->getDest());
+      GVEdge &edge = gv.addEdge(idEdge++, ixOrig, ixDest,
+                                GraphViewer::Edge::EdgeType::UNDIRECTED);
+    }
+  }
+  int xShift = 1000;
+  for (Node *n :strongGraph->getNodeSet()) {
+    GVNode &node =
+        gv.addNode(idNode++, sf::Vector2f(n->getCoordinates().getX() + xShift,
+                                          n->getCoordinates().getY()));
+    GVNodes.insert(std::pair<Node *, GVNode>(n, node));
+  }
+  for (Node *n : strongGraph->getNodeSet()) {
+    for (Edge *e : n->getAdj()) {
+      GVNode ixOrig = getNodeID(GVNodes, e->getOrig());
+      GVNode ixDest = getNodeID(GVNodes, e->getDest());
+      GVEdge &edge = gv.addEdge(idEdge++, ixOrig, ixDest,
+                                GraphViewer::Edge::EdgeType::UNDIRECTED);
+    }
+  }
+
+  gv.join();
+}
 /**
  * displays the city graph and highlights the Application and Storage Centers
  * @param vaccineRouter

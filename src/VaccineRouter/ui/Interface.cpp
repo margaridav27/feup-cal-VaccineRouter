@@ -615,21 +615,17 @@ void Interface::setAdditionalSpecsMenu() {
 }
 
 void Interface::singleSCSingleAC() {
-    // TODO Apply method and display
     vaccineRouter->calculateRouteSingleSCSingleAC();
 }
 
 void Interface::singleSCMultipleAC() {
-    // TODO Apply method and display
     vaccineRouter->calculateRouteSingleSCMultipleAC();
 }
 
 void Interface::singleSCMultipleACWithTW() {
-    // TODO Apply method and display
     vaccineRouter->calculateRouteSingleSCMultipleACWithTW();
 }
 
 void Interface::multipleSCMultipleACWithTW() {
-    // TODO Apply method and display
     vaccineRouter->calculateRouteMultipleSCMultipleACWithTW();
 }

@@ -4,9 +4,6 @@
 #include <algorithm>
 #include <vector>
 
-// TESTS TO SEE IF STORING IN A VECTOR IS BETTER THAN GOING THROUGH AUXILIARY
-// QUEUE
-// TODO
 
 std::vector<Node *> AStar(Graph *graph, Node *orig, Node *dest) {
     for (Node *n : graph->getNodeSet()) {

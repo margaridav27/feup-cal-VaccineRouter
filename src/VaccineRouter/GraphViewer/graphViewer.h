@@ -12,9 +12,10 @@
 using GVNode = GraphViewer::Node;
 using GVEdge = GraphViewer::Edge;
 
-GVNode getNodeID(Node *n);
 
 void displayACsVisually(VaccineRouter *vaccineRouter);
+
+void displayConnectivityAnalisis(Graph *graph, Graph *strongGraph);
 
 GVNode getNodeID(std::map<Node*, GVNode> GVNodes, Node * n);
 
